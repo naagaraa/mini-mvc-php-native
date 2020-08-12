@@ -43,8 +43,8 @@
 
 ## Author
 
-* **Naagaraa**
-* **Sandhikagalih**
+* **Naagaraa Mahasiswa Darma Persada dan Content Creator Industri IT** 
+* **Sandhikagalih Dosen Unpas dan Content Creator Industri IT**
 
 ## Installation
 description
