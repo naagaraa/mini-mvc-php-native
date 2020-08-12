@@ -1,0 +1,16 @@
+{
+    "name": "ekajayanagara/mini-mvc-php-native",
+    "description": "project ini dibuat agar lebih mempercepat dalam menyelesaikan project kecil web menggunakan php dengan membuatnya layaknya small framework yang terinspirasi dari codeigniter3",
+    "authors": [
+        {
+            "name": "naagaraa",
+            "email": "ekabersinar@gmail.com"
+        }
+    ],
+    "require": {
+        "phpoffice/phpspreadsheet": "^1.14",
+        "twbs/bootstrap": "4.5.2",
+        "mjaschen/phpgeo": "^3.1",
+        "mpdf/mpdf": "^8.0"
+    }
+}
