@@ -6,8 +6,7 @@
 <p>Hi, Project ini dibuat dari latihan saya belajar web programing dari berbagai sumber di internet seperti youtube, stackoverflow dan github. project ini merupakan php native yang di buat menggunakan pattern MVC dengan konsep OOP (Object oriented programing ), mirip framework codeigniter 3, yang saya pelajari di YT WPU oleh Sandhika galih dan sudah saya modifikasi custom menyesuaikan tugas kuliah saya serta penambahan library lainnya.</p>
 <p>include libraries external : jquery, bootstrap 4.2.5, owl.js , slick.js, composer, ckeditor-5, chartjs, fontawensome, datatable.js, phpoffice, mpdf saya satukan agar lebih mudah untuk mencarinya</p>
 
-___
-___
+---
 <!-- table of content -->
 ## Daftar isi Content
 
@@ -42,7 +41,6 @@ ___
 
 * **Support Dev**
 
-___
 ## installation
 description
 
@@ -62,7 +60,7 @@ description
 
 	```
 	
-		git clone https://github.com/naagaraa/mini-mvc-phpnative.git
+	git clone https://github.com/naagaraa/mini-mvc-phpnative.git
 
 	```
 5. composer update
@@ -73,7 +71,6 @@ description
 	composer update
 
 	``` 
-___
 <br><br><br>
 
 ## Documentation Libraries Packages
