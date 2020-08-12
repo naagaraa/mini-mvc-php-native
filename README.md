@@ -229,6 +229,25 @@ define('DB_NAME', 'db_contents');
 	}
 	```
 
+	dan untuk menggunakan atau memanggil models pada controller tinggal gunakan saja. example :
+
+	```
+	class Welcome extends Controller
+	{
+		public function __construct()
+		{
+			#your code here
+		}
+
+		public function index()
+		{
+			#your code here
+			$data = $this->model('nana-modelnya')->functionmodel(params);
+			$this->view('Welcome');
+		}
+	}
+	```
+
 	**fungsi untuk hasil query database :**
 	* resultSet() => semua data dalam bentuk array assoc
 	* single() => single data dalam bentuk array assoc
@@ -271,12 +290,50 @@ define('DB_NAME', 'db_contents');
 	}
 	```
 
+	untuk mengirim data dalam views example :
+
+	```
+		class Welcome extends Controller
+	{
+		public function __construct()
+		{
+			#your code here
+		}
+
+		public function index()
+		{
+			#your code here
+			$data['data_artikel'] = $this->model('nana-modelnya')->functionmodel(params);
+			$this->view('Welcome', $data);
+		}
+	}
+	```
+
+	lalu pada halaman views kita tampilkan nama key array assocnya
+	example
+
+	```
+	<div class="container">
+		<span><?php echo $data[data_artikel] ?></span>
+	</div>
+	```
+
+	atau bisalakukan debug pada halaman views dengan seperti berikut
+	example
+	```
+	<?php var_dump($data['data_artikel']);
+	die();?>
+	<div class="container">
+		<span><?php echo $data['data_artikel'] ?></span>
+	</div>
+	```
+
 
 ## support Dev
 <br>
 <!-- description -->
 hi, kamu bisa support dengan cara follow account sosial media di bawah atau memberikan kami coffee
-<br><br><br>
+<br>
 
 <!-- Links -->
 **Please support me :**
