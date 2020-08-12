@@ -41,10 +41,16 @@ define('URL', 'http://localhost/MINI-PHP-MVC/');
  * DB_PASSOWRD	=> password pada Database
  * DB_NAMA			=> nama Database
  * 
+ * 
+ * example
+ * define('DB_HOST', 'localhost');
+ * define('DB_USER', 'root');
+ * define('DB_PASS', '');
+ * define('DB_NAME', 'db_content');
  */
 
 // config Database wrapper
 define('DB_HOST', 'localhost');
 define('DB_USER', 'root');
 define('DB_PASS', '');
-define('DB_NAME', 'digital_training');
+define('DB_NAME', '');
