@@ -10,7 +10,7 @@
 <!-- table of content -->
 ## Daftar isi Content
 
-* **Contributor**
+* **Author dan Contributor**
 *  **Documentation**
 
 	*  **installation**
@@ -40,6 +40,11 @@
 		5. Models
 
 * **Support Dev**
+
+## Author
+
+* **Naagaraa**
+* **Sandhikagalih**
 
 ## Installation
 description
