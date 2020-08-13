@@ -39,37 +39,39 @@
 		4. Views
 		5. Models
 
-* **Support Dev**
+* **Support Me**
 
-## Author
+## Author dan Contribution
 
-* **Naagaraa Mahasiswa Darma Persada dan Content Creator Industri IT** 
-* **Sandhikagalih Dosen Unpas dan Content Creator Industri IT**
+* **Naagaraa Mahasiswa Darma Persada dan Content Creator**  [ instagram ](https://www.instagram.com/naagaraa/)
+* **Sandhikagalih Dosen Unpas dan Content Creator** [ Instagram ](https://www.instagram.com/sandhikagalih/)
+
 
 ## Installation
 description
 
 1. install composer
 
-	* untuk cara pakainya pertama siapkan atau setting envirotment terbelih dahulu, yaitu menginstal composer. 	[Composer](https://getcomposer.org) adalah sebuah package manager untuk php language atau untuk bahasa php. kamu bisa download composer windows pada link ini 
+	* untuk cara pakainya pertama siapkan atau setting envirotment terbelih dahulu, yaitu menginstal composer. 	[Composer](https://getcomposer.org) adalah sebuah package manager untuk php language atau bahasa php. kamu bisa download composer untuk windows pada link ini 
 	[Composer](https://getcomposer.org/download/). lalu pilih windows installer
 
 2. install phpdebug
-	* untuk menginstall php debug, pastikan php yang berjalan dilocal server kamu adalah versi 7. atau lebih tinggi. xdebug digunakan untuk membuat error dan debuging php menjadi lebih rapih. silahkan download dan ikuti dokumentasi yang diberikan oleh xdebug [xdebug](https://xdebug.org/wizard). 
+	* untuk menginstall php debug, pastikan php yang berjalan dilocal server kamu adalah versi 7.2 atau lebih tinggi. xdebug digunakan untuk menampilkan  error yang ada dan debuging php menjadi lebih rapih. silahkan download dan ikuti dokumentasi yang diberikan oleh xdebug [xdebug](https://xdebug.org/wizard). 
 
 3. install git client
-	* untuk melakukan clone petama harus menginstall git client terlebih dahulu, git adalah sebuah  source control management atau scm. silahkan install [git](https://git-scm.com/downloads)
+	* untuk melakukan clone repo  hal petama harus yaitu bisa dengan menginstall git client terlebih dahulu, git adalah sebuah  source control management atau scm. silahkan install [git](https://git-scm.com/downloads) disini.
 
 4. clone repository mini mvc php native
-	* untuk melakukan clone repository buka terminal atau cmd atau gitbash. agar lebih mudah, langsung clone pada directory localserve. xampp => htdoc 
+	* untuk melakukan clone repository buka terminal atau cmd atau gitbash. agar lebih mudah, langsung clone pada directory localserve. pada folder xampp => htdoc 
 
 	```
 	
 	git clone https://github.com/naagaraa/mini-mvc-phpnative.git
 
 	```
+
 5. composer update
-	* setelah melakukan clone repo, saya sarankan untuk melakukan composer update untuk mengecek apakah pada folder/vendor ada upate package. dengan jalankan pada terminal atau command seperti ini.
+	* setelah melakukan clone repo, saya sarankan untuk melakukan composer update untuk mengecek apakah pada folder/vendor ada upate package. dengan jalankan command pada terminal atau commandline seperti ini.
 
 	```
 
@@ -80,7 +82,7 @@ description
 
 
 ## Documentation Libraries Packages
-untuk Documentasi cara penggunaan masing masing libraries yang saya includekan pada folder vendor dan public/assets saya cantumkan di link berikut :
+untuk Documentasi cara penggunaan masing masing libraries yang saya include-kan pada folder vendor dan public/assets saya cantumkan di link berikut :
 
 * [Boostsrap](https://getbootstrap.com/docs/4.5/getting-started/introduction/)
 * [CKEditor-5](https://ckeditor.com/docs/ckeditor5/latest/builds/)
@@ -95,7 +97,7 @@ untuk Documentasi cara penggunaan masing masing libraries yang saya includekan p
 
 
 ## Basic Penjelasan 
-basic guide ini adalah penjelasan dasar tentang structur yang akan saya bahas. project ini terdiri dari 4 folder, yaitu apps, public, upload, dan vendor. apps berisi semua fungsi dan konsept MVC ada di dalamannya. folder public adalah tempat saya meletakan assets seperti css dan js, maupun assets jika menggukanan template. upload adalah tempat saya meletakan file uploads berupa gambar. folder vendor adalah assets yang di download melalu composer.
+basic guide ini adalah penjelasan dasar tentang structur yang akan saya bahas. project ini terdiri dari 4 folder, yaitu apps, public, upload, dan vendor. apps berisi semua fungsi dan konsept MVC ada di dalamannya. folder public adalah tempat saya meletakan assets seperti css dan js, dan  upload adalah tempat saya meletakan file uploads berupa gambar atau yang lainnya. folder vendor adalah assets yang di download melalu composer.
 
 * apps
 	* config
@@ -128,6 +130,9 @@ folder apps terdiri dari beberapa bagian yaitu :
 	* config => untuk configurasi root URL dan set database
 
 	#### URL root dan Assets
+	
+	
+	**define('name', 'url-pada-browser/location-path');**
 
 	```
 	define('Assets', 'http://localhost/MINI-PHP-MVC/public');
@@ -143,12 +148,14 @@ folder apps terdiri dari beberapa bagian yaitu :
 	<a href="<?= URL . 'home' ?>">Docs</a>
 	
 	<!-- pada hyper link source -->
-	<link rel="stylesheet" href="<?= BASE_URL . '/admin'; ?>/vendor/bootstrap/css/bootstrap.min.css">
+	<link rel="stylesheet" href="<?= URL . '/admin'; ?>/vendor/bootstrap/css/bootstrap.min.css">
 
 	```
 
 	#### Database Config
-	untuk configurasi database digunakan pada file apps/config/config.php sesuaikan database mysql yang digunakan :
+	untuk configurasi database yang digunakan terletak pada pada file apps/config/config.php sesuaikan database mysql yang kamu digunakan :
+
+	**config :**
 
  * *DB_HOST			=> nama host*
  * *DB_USER			=> user pada database*
@@ -168,10 +175,10 @@ define('DB_NAME', 'db_contents');
 * controller
 	* welcome.php => contoh controller default yang saya deklarasikan
 	#### controller
-	pada controller digunakan untuk mengatur semua logika program yang ada seperti validation form, login, dan lain lain.
-	untuk membuat controller caranya tinggal buat langsung filenya atau simpan ke dalam sebuah folder jika memiliki banyak controller.
+	pada controller digunakan untuk mengatur semua logika program yang ada seperti validation form, login, dan lain-lain.
+	untuk membuat controller caranya tinggal buat langsung **{filenya}** atau simpan ke dalam sebuah **{folder}** jika memiliki banyak controller.
 
-	contoh folder :
+	**contoh folder :**
 	> controllers/admin/login.php
 	<br>
 	> controllers/user/home.php
@@ -203,9 +210,9 @@ define('DB_NAME', 'db_contents');
 	```
 
 * [x] core
-	* sedang dalam penulisan 
+	* **sedang dalam penulisan** 
 * [x] libraries
-	* sedang dalam penulisan 
+	* **sedang dalam penulisan**
 
 ## Models
 * models
@@ -213,12 +220,14 @@ define('DB_NAME', 'db_contents');
 
 	#### Models
 
-	Models digunakan untuk melakukan Query pada database, semua query database saya definisikan pada folder models ini dan membuat models nya masing masing, example jika ingin melakukan CRUD pada table artikel bisa membuat models dengan nama Article_models.php
+	Models digunakan untuk melakukan Query pada database, semua query database saya definisikan pada folder models ini dan membuat models nya masing masing, example jika ingin melakukan CRUD pada table artikel bisa membuat models dengan nama **Artikel_model.php**
 
+
+	###### Model Artickel_model.php
 	```
 	class Artikel_model
 	{
-		private $table = 'tb_artikel';
+		private $table = 'tb_artikel';	// nama-table
 		private $db;
 
 		public function __construct()
@@ -226,6 +235,7 @@ define('DB_NAME', 'db_contents');
 			$this->db = new Database;
 		}
 
+		// fungsi untuk menampilkan semua data
 		public function getAllArtikel()
 		{
 			$this->db->query('SELECT * FROM ' . $this->table);
@@ -234,7 +244,12 @@ define('DB_NAME', 'db_contents');
 	}
 	```
 
-	dan untuk menggunakan atau memanggil models pada controller tinggal gunakan saja. example :
+	dan untuk menggunakan atau memanggil models pada controller tinggal gunakan saja command berikut. example pada controller **Welcome.php**:
+
+
+	> **$this->model('nana-modelnya')->functionmodel(params);**
+
+	###### Class Welcome.php
 
 	```
 	class Welcome extends Controller
@@ -253,7 +268,7 @@ define('DB_NAME', 'db_contents');
 	}
 	```
 
-	**fungsi untuk hasil query database :**
+	**fungsi untuk hasil query pada database :**
 	* resultSet() => semua data dalam bentuk array assoc
 	* single() => single data dalam bentuk array assoc
 	* rowCount() => hasil jumlah colomn pada tabel
@@ -275,8 +290,10 @@ define('DB_NAME', 'db_contents');
 	yang nantinya bisa panggil pada controller :
 	example :
 
+	> **$this->view('namaviews-nya');**
+
 	```
-		class Welcome extends Controller
+	class Welcome extends Controller
 	{
 		public function __construct()
 		{
@@ -296,6 +313,7 @@ define('DB_NAME', 'db_contents');
 	```
 
 	untuk mengirim data dalam views example :
+	> **$this->view('Welcome', $databentuk-array-assoc);**
 
 	```
 		class Welcome extends Controller
@@ -334,7 +352,7 @@ define('DB_NAME', 'db_contents');
 	```
 
 
-## support Dev
+## support Me
 <br>
 <!-- description -->
 hi, kamu bisa support dengan cara follow account sosial media di bawah atau memberikan kami coffee
