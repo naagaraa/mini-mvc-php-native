@@ -15,6 +15,8 @@ class App
 
 	public function __construct()
 	{
+		// hidden error log
+		error_reporting(0);
 		// write code here
 		$url = $this->ParserURL();
 
