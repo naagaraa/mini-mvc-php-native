@@ -75,7 +75,7 @@
 
 			<div class="links">
 				<a href="<?= URL . 'home' ?>">Docs</a>
-				<a href="">GitHub</a>
+				<a href="https://github.com/naagaraa/mini-mvc-phpnative">GitHub</a>
 			</div>
 			<footer>
 				<p>Dibuat oleh YT WPU oleh sandhika galih, modifated custom oleh YT NAGARA oleh naagaraa</p>
