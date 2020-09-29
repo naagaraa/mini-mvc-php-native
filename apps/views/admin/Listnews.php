@@ -1,7 +1,7 @@
 <!-- WRAPPER -->
 <div id="wrapper">
 	<!-- LEFT SIDE BAR -->
-	<?= $this->view('templateadmin/sidebar', $_SESSION); ?>
+	<?= $this->view('templateadmin/sidebar'); ?>
 	<!-- END LEFT SIDE BAR -->
 	<!-- MAIN -->
 	<div class="main">
@@ -32,47 +32,7 @@
 										</tr>
 									</thead>
 									<tbody>
-										<?php $i = 1; ?>
-										<?php foreach ($data['listNews'] as $row) : ?>
-										<tr>
-											<th scope="row"><?= $i++ ?></th>
-											<td><?= $row['judul']; ?></td>
-											<td>
-												<?php if ($row['status'] == 1) : ?>
-												Publish
-												<?php else : ?>
-												Unpublish
-												<?php endif; ?>
-											</td>
-											<td><?= $row['penulis']; ?></td>
-											<td>
-												<div class="btn-group" role="group" aria-label="Basic example">
 
-													<?php if ($row['status'] == 1) : ?>
-													<a href="<?= BASEURL ?>Listnews/unpulishArtikel/<?= $row['urlid']; ?>" <button type="button"
-														class="btn btn-primary">unPublish</button>
-													</a>
-													<?php else : ?>
-													<a href="<?= BASEURL ?>Listnews/publishArtikel/<?= $row['urlid']; ?>" <button type="button"
-														class="btn btn-info">Publish</button>
-													</a>
-													<?php endif; ?>
-
-													<a href="<?= BASEURL ?>News/detail/<?= $row['urlid']; ?>" target="_blank">
-														<button type="button" class="btn btn-warning">Preview</button>
-													</a>
-													<a href="<?= BASEURL . 'EditNews/' . $row['urlid']; ?>">
-														<button type="button" class="btn btn-success">Edit</button>
-													</a>
-													<?php if ($_SESSION['login'] == true & $_SESSION['level'] == '0') : ?>
-													<a href="<?= BASEURL . 'Listnews/DeleteArtikel/' . $row['uniqid']; ?>">
-														<button type="button" class="btn btn-danger">Delete</button>
-													</a>
-													<?php endif; ?>
-												</div>
-											</td>
-										</tr>
-										<?php endforeach; ?>
 									</tbody>
 								</table>
 								<!-- END DATA TABLE -->

@@ -13,35 +13,22 @@ class Userlist extends Controller
 	public function index()
 	{
 		// init user info
-		$this->lib('info')->getinfo();
-
-		if (!isset($_SESSION['login'])) {
-			header('Location:' . BASEURL . 'Dasshubodo');
-			exit;
-		}
-
-		// cek jika bukan super admin / admin
-		if ($_SESSION['level'] === '2') {
-			header('Location:' . BASEURL . 'Dasshubodo');
-			exit;
-		}
 
 		$data['judul'] = 'User List';
-		$data['user'] = $this->model('User_model')->getAllUser();
 
 		$this->view("templateadmin/index", $data);
 		$this->view("templateadmin/Header");
-		$this->view("admin/Userlist", $data);
+		$this->view("admin/Userlist");
 		$this->view("templateadmin/Footer");
 	}
 
 	public function DeleteUser($id)
 	{
-			// cek jika bukan super admin / admin
-			if ($_SESSION['level'] === '2') {
-				header('Location:' . BASEURL . 'Dasshubodo');
-				exit;
-			}
+		// cek jika bukan super admin / admin
+		if ($_SESSION['level'] === '2') {
+			header('Location:' . URL . 'Dasshubodo');
+			exit;
+		}
 		/**
 		 * Belum Buat Pengecekan jika file gambar tidak ada
 		 */
@@ -54,14 +41,14 @@ class Userlist extends Controller
 			unlink($path);
 			if (!unlink($path)) {
 				echo "File Not Found or file Move";
-				header('Location: ' . BASEURL . 'Userlist');
+				header('Location: ' . URL . 'Userlist');
 			} else {
 				echo "You file has been Deleted";
-				header('Location: ' . BASEURL . 'Userlist');
+				header('Location: ' . URL . 'Userlist');
 			}
 			// var_dump('file ada');
 		} elseif (!file_exists($path)) {
-			header('Location: ' . BASEURL . 'Userlist');
+			header('Location: ' . URL . 'Userlist');
 			// var_dump('file tidak ada');
 		}
 		// unlink($path);

@@ -14,20 +14,11 @@ class EditNews extends Controller
 	public function index($urlid)
 	{
 		// init user info
-		$this->lib('info')->getinfo();
-
-		if (!isset($_SESSION['login'])) {
-			// var_dump($_SESSION);
-			header('Location:' . BASEURL . 'Kepo');
-			exit;
-		}
-
 		$data['judul'] = 'Edit News';
-		$data['News'] = $this->model('Artikel_model')->getArtikelId($urlid);
 
 		$this->view("templateadmin/index", $data);
 		$this->view("templateadmin/Header");
-		$this->view("admin/Editnews", $data);
+		$this->view("admin/Editnews");
 		$this->view("templateadmin/Footer");
 	}
 

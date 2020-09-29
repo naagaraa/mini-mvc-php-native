@@ -2,7 +2,7 @@
 <nav class="navbar navbar-default navbar-fixed-top">
 	<div class="brand">
 		<!-- <h5>Digital Training</h5> -->
-		<!-- <a href="<?= BASEURL . 'dashboard'; ?>"><img src="<?= BASE_URL . '/admin'; ?>/img/logo-dark.png"
+		<!-- <a href="<?= URL . 'dashboard'; ?>"><img src="<?= ASSET . '/admin'; ?>/img/logo-dark.png"
 				alt="Klorofil Logo" class="img-responsive logo"></a> -->
 	</div>
 	<div class="container-fluid">
@@ -53,14 +53,13 @@
 					</ul>
 				</li> -->
 				<li class="dropdown">
-					<a href="#" class="dropdown-toggle" data-toggle="dropdown"><img
-							src="<?= BASEURL; ?>upload/user/<?= $_SESSION['foto']; ?>" class="img-circle" alt="Avatar">
-						<span><?= $_SESSION['username']; ?></span> <i class="icon-submenu lnr lnr-chevron-down"></i></a>
+					<a href="#" class="dropdown-toggle" data-toggle="dropdown"><img src="upload/user/" class="img-circle">
+						<span>"USERNAME"</span> <i class="icon-submenu lnr lnr-chevron-down"></i></a>
 					<ul class="dropdown-menu">
 						<!-- <li><a href="#"><i class="lnr lnr-user"></i> <span>My Profile</span></a></li>
 						<li><a href="#"><i class="lnr lnr-envelope"></i> <span>Message</span></a></li>
 						<li><a href="#"><i class="lnr lnr-cog"></i> <span>Settings</span></a></li> -->
-						<li><a href="<?= BASEURL . 'Kepo/Logout'; ?>"><i class="lnr lnr-exit"></i>
+						<li><a href="<?= URL . 'Kepo/Logout'; ?>"><i class="lnr lnr-exit"></i>
 								<span>Logout</span></a>
 						</li>
 					</ul>

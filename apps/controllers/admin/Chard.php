@@ -13,13 +13,6 @@ class Chard extends Controller
 	public function index()
 	{
 		// init user info
-		$this->lib('info')->getinfo();
-
-		if (!isset($_SESSION['login'])) {
-			// var_dump($_SESSION);
-			header('Location:' . BASEURL . 'Kepo');
-			exit;
-		}
 		$data['judul'] = 'Chard';
 
 		$this->view("templateadmin/index", $data);

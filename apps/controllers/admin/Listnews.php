@@ -13,19 +13,19 @@ class Listnews extends Controller
 	public function index()
 	{
 		// init user info
-		$this->lib('info')->getinfo();
+		// $this->lib('info')->getinfo();
 
-		if (!isset($_SESSION['login'])) {
-			header('Location:' . BASEURL . 'Kepo');
-			exit;
-		}
+		// if (!isset($_SESSION['login'])) {
+		// 	header('Location:' . BASEURL . 'Kepo');
+		// 	exit;
+		// }
 
 		$data['judul'] = 'List News';
-		$data['listNews'] = $this->model('Artikel_model')->getAllArtikel();
+		// $data['listNews'] = $this->model('Artikel_model')->getAllArtikel();
 
 		$this->view("templateadmin/index", $data);
 		$this->view("templateadmin/Header");
-		$this->view("admin/Listnews", $data);
+		$this->view("admin/Listnews");
 		$this->view("templateadmin/Footer");
 	}
 

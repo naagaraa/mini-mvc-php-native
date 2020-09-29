@@ -26,7 +26,7 @@
 
 
 // base Url untuk asset
-define('BASE_URL', 'http://localhost/mini-mvc-phpnative/public');
+define('ASSET', 'http://localhost/mini-mvc-phpnative/public');
 // base Url untuk URL
 define('URL', 'http://localhost/mini-mvc-phpnative/');
 

@@ -3,7 +3,7 @@
 <script src="<?= BASE_URL . '/admin'; ?>/vendor/chartjs/chart.js"></script>
 <div id="wrapper">
 	<!-- LEFT SIDE BAR -->
-	<?= $this->view('templateadmin/sidebar', $_SESSION) ?>
+	<?= $this->view('templateadmin/sidebar') ?>
 	<!-- END LEFT SIDE BAR -->
 	<!-- MAIN -->
 	<div class="main">
@@ -24,7 +24,7 @@
 								<div class="metric">
 									<span class="icon"><i class="fa fa-eye"></i></span>
 									<p>
-										<span class="number"><?= $data['views']; ?></span>
+										<span class="number">11</span>
 										<span class="title">Visits Artikel</span>
 									</p>
 								</div>
@@ -35,7 +35,7 @@
 								<div class="metric">
 									<span class="icon"><i class="fa fa-file"></i></span>
 									<p>
-										<span class="number"><?= $data['totalResource']; ?></span>
+										<span class="number">11</span>
 										<span class="title">Resource Artikel</span>
 									</p>
 								</div>
@@ -65,17 +65,17 @@
 				<div class="panel">
 					<div class="panel-heading">
 						<h3 class="panel-title">Statistik Artikel Bar<h3>
-						<div class="right">
-							<button type="button" class="btn-toggle-collapse"><i class="lnr lnr-chevron-up"></i></button>
-							<!-- <button type="button" class="btn-remove"><i class="lnr lnr-cross"></i></button> -->
-						</div>
+								<div class="right">
+									<button type="button" class="btn-toggle-collapse"><i class="lnr lnr-chevron-up"></i></button>
+									<!-- <button type="button" class="btn-remove"><i class="lnr lnr-cross"></i></button> -->
+								</div>
 					</div>
 					<div class="panel-body">
 						<canvas id="myChartBar" width="400" height="150"></canvas>
 					</div>
 				</div>
 				<!-- END TASKS Artikel bar -->
-				
+
 
 			</div>
 			<!-- END MAIN CONTENT -->
@@ -84,14 +84,13 @@
 
 
 		<script>
-
 		// passing data php array ke json javascript
-		var data = <?php echo json_encode($data['artikel']);?>;
+		// var data = <?php echo json_encode($data['artikel']); ?>;
 
 		// array labels kosong  
 		var labels = []
 		data.forEach(label => {
-			labels.push(label['judul_content'].substr(0,10) + '...');
+			labels.push(label['judul_content'].substr(0, 10) + '...');
 		});
 
 		// array values	 kosong  
@@ -123,7 +122,7 @@
 			// Configuration options go here
 			options: {}
 		});
-			// end line bar
+		// end line bar
 
 		// line bar 
 		var ctx2 = document.getElementById('myChartBar').getContext('2d');
@@ -144,5 +143,5 @@
 			// Configuration options go here
 			options: {}
 		});
-			// end line bar
+		// end line bar
 		</script>

@@ -13,8 +13,8 @@
 	<link href="https://fonts.googleapis.com/css?family=Fredoka+One" rel="stylesheet">
 	<link href="https://fonts.googleapis.com/css?family=Raleway:400,700" rel="stylesheet">
 	<!-- ICONS -->
-	<link rel="apple-touch-icon" sizes="76x76" href="<?= BASE_URL . '/admin'; ?>/img/apple-icon.png">
-	<link rel="icon" type="image/png" sizes="96x96" href="<?= BASE_URL . '/admin'; ?>/img/favicon.png">
+	<link rel="apple-touch-icon" sizes="76x76" href="<?= ASSET . '/admin'; ?>/img/apple-icon.png">
+	<link rel="icon" type="image/png" sizes="96x96" href="<?= ASSET . '/admin'; ?>/img/favicon.png">
 	<title>Document</title>
 	<style>
 	* {

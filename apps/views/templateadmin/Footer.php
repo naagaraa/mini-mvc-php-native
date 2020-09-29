@@ -8,12 +8,12 @@
 </div>
 <!-- END WRAPPER -->
 <!-- Javascript -->
-<script src="<?= BASE_URL . '/admin'; ?>/vendor/jquery/jquery.min.js"></script>
-<script src="<?= BASE_URL . '/admin'; ?>/vendor/bootstrap/js/bootstrap.min.js"></script>
-<script src="<?= BASE_URL . '/admin'; ?>/vendor/jquery-slimscroll/jquery.slimscroll.min.js"></script>
-<script src="<?= BASE_URL . '/admin'; ?>/vendor/jquery.easy-pie-chart/jquery.easypiechart.min.js"></script>
-<script src="<?= BASE_URL . '/admin'; ?>/vendor/chartist/js/chartist.min.js"></script>
-<script src="<?= BASE_URL . '/admin'; ?>/scripts/klorofil-common.js"></script>
+<script src="<?= ASSET . '/admin'; ?>/vendor/jquery/jquery.min.js"></script>
+<script src="<?= ASSET . '/admin'; ?>/vendor/bootstrap/js/bootstrap.min.js"></script>
+<script src="<?= ASSET . '/admin'; ?>/vendor/jquery-slimscroll/jquery.slimscroll.min.js"></script>
+<script src="<?= ASSET . '/admin'; ?>/vendor/jquery.easy-pie-chart/jquery.easypiechart.min.js"></script>
+<script src="<?= ASSET . '/admin'; ?>/vendor/chartist/js/chartist.min.js"></script>
+<script src="<?= ASSET . '/admin'; ?>/scripts/klorofil-common.js"></script>
 <script>
 $(function() {
 	var data, options;
@@ -136,7 +136,7 @@ $(function() {
 <!-- <script type="text/javascript" charset="utf8" src="https://cdn.datatables.net/1.10.21/js/jquery.dataTables.js">
 </script> -->
 <script type="text/javascript" charset="utf8"
-	src="<?= BASE_URL . '/admin' ?>/datatable/DataTables/js/jquery.dataTables.js">
+	src="<?= ASSET . '/admin' ?>/datatable/DataTables/js/jquery.dataTables.js">
 </script>
 
 <script>

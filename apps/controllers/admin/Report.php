@@ -13,25 +13,12 @@ class Report extends Controller
 	public function index()
 	{
 		// init user info
-		$this->lib('info')->getinfo();
-
-		if (!isset($_SESSION['login'])) {
-			header('Location:' . BASEURL . 'Dasshubodo');
-			exit;
-		}
-
-			// cek jika bukan super admin / admin
-			if ($_SESSION['level'] === '2') {
-				header('Location:' . BASEURL . 'Dasshubodo');
-				exit;
-			}
 
 		$data['judul'] = 'Report Track';
-		$data['info'] = $this->model('Info_model')->getAllInfoUser();
 
 		$this->view("templateadmin/index", $data);
 		$this->view("templateadmin/Header");
-		$this->view("admin/Report", $data);
+		$this->view("admin/Report");
 		$this->view("templateadmin/Footer");
 	}
 
@@ -45,11 +32,11 @@ class Report extends Controller
 			exit;
 		}
 
-			// cek jika bukan super admin / admin
-			if ($_SESSION['level'] === '2') {
-				header('Location:' . BASEURL . 'Dasshubodo');
-				exit;
-			}
+		// cek jika bukan super admin / admin
+		if ($_SESSION['level'] === '2') {
+			header('Location:' . BASEURL . 'Dasshubodo');
+			exit;
+		}
 
 		$data['judul'] = 'Visit';
 		$data['visitor'] = $this->model('Visitor_model')->getAllInfoVisitor();

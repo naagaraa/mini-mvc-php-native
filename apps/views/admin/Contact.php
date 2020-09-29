@@ -1,7 +1,7 @@
 <!-- WRAPPER -->
 <div id="wrapper">
 	<!-- LEFT SIDE BAR -->
-	<?= $this->view('templateadmin/sidebar', $_SESSION); ?>
+	<?= $this->view('templateadmin/sidebar'); ?>
 	<!-- END LEFT SIDE BAR -->
 	<!-- MAIN -->
 	<div class="main">
@@ -15,8 +15,7 @@
 							<div class="panel-heading">
 								<h3 class="panel-title">Halaman Contact</h3>
 								<div class="right">
-									<button type="button" class="btn-toggle-collapse"><i
-											class="lnr lnr-chevron-up"></i></button>
+									<button type="button" class="btn-toggle-collapse"><i class="lnr lnr-chevron-up"></i></button>
 									<!-- <button type="button" class="btn-remove"><i class="lnr lnr-cross"></i></button> -->
 								</div>
 							</div>
@@ -34,24 +33,7 @@
 										</tr>
 									</thead>
 									<tbody>
-										<?php $i = 1;
-										foreach ($data['contact'] as $contact) : ?>
-										
-										<?php //var_dump($contact);die; ?>
-										
-										<tr>
-											<th scope="row"><?= $i++; ?></th>
-											<td><?= $contact['nama']; ?></td>
-											<td><?= $contact['email']; ?></td>
-											<td><?= $contact['pesan']; ?></td>
-											<td><?= $contact['tanggal']; ?></td>
-											<td>
-											<a target="_blank" href="<?= BASEURL ?>Contact/cetak/<?= $contact['id']; ?>">
-												<button type="button" class="btn btn-info">Cetak</button>
-											</a>
-											</td>
-										</tr>
-										<?php endforeach; ?>
+
 									</tbody>
 								</table>
 								<!-- END DATA TABLE -->

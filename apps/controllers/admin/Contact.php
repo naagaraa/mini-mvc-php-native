@@ -13,25 +13,16 @@ class Contact extends Controller
 	public function index()
 	{
 		// init user info
-		$this->lib('info')->getinfo();
-
-		if (!isset($_SESSION['login'])) {
-			// var_dump($_SESSION);
-			header('Location:' . BASEURL . 'Kepo');
-			exit;
-		}
-
 		$data['judul'] = 'Contact';
-		$data['contact'] = $this->model('contact_model')->getAllContact();
-		// $data['contact'] = $this->model('contact_model')->getContactId($id);
 
 		$this->view("templateadmin/index", $data);
 		$this->view("templateadmin/Header");
-		$this->view("admin/Contact", $data);
+		$this->view("admin/Contact");
 		$this->view("templateadmin/Footer");
 	}
 
-	public function cetak($id){
+	public function cetak($id)
+	{
 		$data['cetakinfo'] = $this->model('contact_model')->getContactId($id);
 
 		// var_dump($data['cetakinfo']);

@@ -13,12 +13,7 @@ class TambahNews extends Controller
 	public function index()
 	{
 		// init user info
-		$this->lib('info')->getinfo();
 
-		if (!isset($_SESSION['login'])) {
-			header('Location:' . BASEURL . 'Dasshubodo');
-			exit;
-		}
 		$data['judul'] = 'Tambah News';
 
 		$this->view("templateadmin/index", $data);

@@ -1,7 +1,7 @@
 <!-- WRAPPER -->
 <div id="wrapper">
 	<!-- LEFT SIDE BAR -->
-	<?= $this->view('templateadmin/sidebar', $_SESSION); ?>
+	<?= $this->view('templateadmin/sidebar'); ?>
 	<!-- END LEFT SIDE BAR -->
 	<!-- MAIN -->
 	<div class="main">
@@ -20,7 +20,7 @@
 								</div>
 							</div>
 							<div class="panel-body">
-								<form action="<?php BASEURL; ?>TambahNews/addArtikel" method="POST" enctype="multipart/form-data">
+								<form action="<?php URL; ?>TambahNews/addArtikel" method="POST" enctype="multipart/form-data">
 									<div class="form-group mb-5">
 										<div class="col-md">
 											<label for="judul"><span style="color: red;">*</span>Judul</label>
