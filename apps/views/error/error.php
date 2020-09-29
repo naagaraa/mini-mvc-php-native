@@ -155,7 +155,7 @@
 				<button type="button">Search</button>
 			</form> -->
 			<br>
-			<a href="<?= BASEURL; ?>"><span class="arrow"></span>Return To Homepage</a>
+			<a href="<?= URL; ?>"><span class="arrow"></span>Return To Homepage</a>
 		</div>
 	</div>
 

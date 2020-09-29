@@ -3,7 +3,7 @@
 /**
  * Documentasi Code App
  * 
- * 
+ *  untuk mengatur url yang diambil pada controller
  */
 
 class App
@@ -13,23 +13,31 @@ class App
 	protected $method = 'index'; // ini untuk method
 	protected $params = [];	// ini untuk parameter
 
+
+
 	public function __construct()
 	{
+		// constan folder pada controller yang di atur pada file config
+		$folder_controller_user = controller_user;
+		$folder_controller_admin = controller_admin;
+
+
 		// hidden error log
-		error_reporting(0);
+		// error_reporting(0);
 		// write code here
 		$url = $this->ParserURL();
 
-		// var_dump($url);
+		//  untuk debug Url
+		// var_dump($folder_controller_user);
 		// die;
 
 		// 	membuat controller user	
-		if (file_exists('apps/controllers/user/' . $url[0] . '.php')) {
+		if (file_exists('apps/controllers/' . $folder_controller_user . '/' . $url[0] . '.php')) {
 			$this->controller = $url[0];
 			unset($url[0]);
 
 			// instasiasi class tersebut
-			require_once 'apps/controllers/user/' . $this->controller . '.php';
+			require_once 'apps/controllers/' . $folder_controller_user . '/' . $this->controller . '.php';
 			$this->controller = new $this->controller;
 
 			// untuk method user
@@ -50,12 +58,12 @@ class App
 
 
 			// untuk controller halaman admin
-		} elseif (file_exists('apps/controllers/admin/' . $url[0] . '.php')) {
+		} elseif (file_exists('apps/controllers/' . $folder_controller_admin . '/' . $url[0] . '.php')) {
 			$this->controller = $url[0];
 			unset($url[0]);
 
 			// instasiasi class tersebut
-			require_once 'apps/controllers/admin/' . $this->controller . '.php';
+			require_once 'apps/controllers/' . $folder_controller_admin . '/' . $this->controller . '.php';
 			$this->controller = new $this->controller;
 
 			// untuk method admin
@@ -138,7 +146,7 @@ class App
 			$params = [];										// ini unutk parameter
 
 			// instasiasi class tersebut
-			require_once 'apps/controllers/user/' . $controller . '.php';
+			require_once 'apps/controllers/' . $folder_controller_user . '/' . $controller . '.php';
 			$controller = new $controller;
 
 

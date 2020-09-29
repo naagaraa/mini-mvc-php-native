@@ -31,6 +31,11 @@ define('BASE_URL', 'http://localhost/mini-mvc-phpnative/public');
 define('URL', 'http://localhost/mini-mvc-phpnative/');
 
 
+// Constant untuk folder pada Controller
+define('controller_user', 'user');
+define('controller_admin', 'admin');
+
+
 /**
  * Documentation Config @database
  * 
