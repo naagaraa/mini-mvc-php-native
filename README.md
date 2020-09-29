@@ -177,12 +177,11 @@ define('DB_NAME', 'db_contents');
 ## Define Constant
 
 * controller
-	* welcome.php => contoh controller default yang saya deklarasikan
+	* controller_user => contoh constans default yang saya deklarasikan
 	#### define constant
-	pada controller digunakan untuk mengatur semua logika program yang ada seperti validation form, login, dan lain-lain.
-	untuk membuat controller caranya tinggal buat langsung **{filenya}** atau simpan ke dalam sebuah **{folder}** jika memiliki banyak controller.
+	define constans digunakan untuk mengatur controller folder yang di set pada **{filenya}** App.php pada sebuah **{folder}** core/App.
 
-	**contoh folder :**
+	**contoh folder pada sub controller:**
 	> controllers/admin/login.php
 	<br>
 	> controllers/user/home.php
@@ -191,6 +190,9 @@ define('DB_NAME', 'db_contents');
 
 	```
 	// Constant untuk folder pada Controller
+
+	// define('controller_user', 'nama_folder_sub_controller');
+
 	define('controller_user', 'user');
 	define('controller_admin', 'admin');
 
