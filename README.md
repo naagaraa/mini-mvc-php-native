@@ -170,6 +170,33 @@ define('DB_PASS', '');
 define('DB_NAME', 'db_contents');
  ```
 
+
+
+
+
+## Define Constant
+
+* controller
+	* welcome.php => contoh controller default yang saya deklarasikan
+	#### define constant
+	pada controller digunakan untuk mengatur semua logika program yang ada seperti validation form, login, dan lain-lain.
+	untuk membuat controller caranya tinggal buat langsung **{filenya}** atau simpan ke dalam sebuah **{folder}** jika memiliki banyak controller.
+
+	**contoh folder :**
+	> controllers/admin/login.php
+	<br>
+	> controllers/user/home.php
+	<br>
+	> controllers/Welcome.php
+
+	```
+	// Constant untuk folder pada Controller
+	define('controller_user', 'user');
+	define('controller_admin', 'admin');
+
+	```
+
+
 ## Controller
 
 * controller
