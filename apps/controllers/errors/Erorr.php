@@ -1,5 +1,5 @@
 <?php
-
+defined('BASEURL') or exit('No direct script access allowed');
 /**
  * Class Error akan akan menampilan view/error/error.php
  * Digunakan untuk menghadle error code atau message
@@ -8,6 +8,10 @@
 
 class Erorr extends Controller
 {
+	public function __construct()
+	{
+		// code ...
+	}
 	/**
 	 * Saat class error dipanggil yang akan pertama kali
 	 * dipanggil adalah function index.

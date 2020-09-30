@@ -25,10 +25,15 @@
  */
 
 
-// base Url untuk asset
+// base-Url untuk asset
 define('ASSET', 'http://localhost/mini-mvc-phpnative/public');
-// base Url untuk URL
+// base-Url untuk URL
 define('URL', 'http://localhost/mini-mvc-phpnative/');
+// base-url untuh path
+define('BASEURL', 'http://localhost/mini-mvc-phpnative/');
+// vendor-URL
+$vendor = $_SERVER['DOCUMENT_ROOT'] . '/companyprofile/vendor/autoload.php';
+define('vendor', $vendor);
 
 
 // Constant untuk folder pada Controller

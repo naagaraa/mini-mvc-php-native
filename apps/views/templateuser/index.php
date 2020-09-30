@@ -31,20 +31,20 @@
 		integrity="sha384-JcKb8q3iqJ61gNV9KGb8thSsNjpSL0n8PARn9HuZOnIxN0hoP+VmmDGMN5t9UJ0Z" crossorigin="anonymous">
 
 	<!-- Place favicon.ico in the root directory -->
-	<link rel="icon" type="image/png" sizes="96x96" href="<?= BASE_URL . '/admin'; ?>/img/favicon.png">
+	<link rel="icon" type="image/png" sizes="96x96" href="<?= ASSET . '/admin'; ?>/img/favicon.png">
 	<!-- CSS here -->
-	<link rel="stylesheet" href="<?= BASE_URL . '/user'; ?>/css/bootstrap.min.css">
-	<link rel="stylesheet" href="<?= BASE_URL . '/user'; ?>/css/owl.carousel.min.css">
-	<link rel="stylesheet" href="<?= BASE_URL . '/user'; ?>/css/magnific-popup.css">
-	<link rel="stylesheet" href="<?= BASE_URL . '/user'; ?>/css/font-awesome.min.css">
-	<link rel="stylesheet" href="<?= BASE_URL . '/user'; ?>/css/themify-icons.css">
-	<link rel="stylesheet" href="<?= BASE_URL . '/user'; ?>/css/nice-select.css">
-	<link rel="stylesheet" href="<?= BASE_URL . '/user'; ?>/css/flaticon.css">
-	<link rel="stylesheet" href="<?= BASE_URL . '/user'; ?>/css/gijgo.css">
-	<link rel="stylesheet" href="<?= BASE_URL . '/user'; ?>/css/animate.min.css">
-	<link rel="stylesheet" href="<?= BASE_URL . '/user'; ?>/css/slick.css">
-	<link rel="stylesheet" href="<?= BASE_URL . '/user'; ?>/css/slicknav.css">
-	<link rel="stylesheet" href="<?= BASE_URL . '/user'; ?>/css/style.css">
+	<link rel="stylesheet" href="<?= ASSET . '/user'; ?>/css/bootstrap.min.css">
+	<link rel="stylesheet" href="<?= ASSET . '/user'; ?>/css/owl.carousel.min.css">
+	<link rel="stylesheet" href="<?= ASSET . '/user'; ?>/css/magnific-popup.css">
+	<link rel="stylesheet" href="<?= ASSET . '/user'; ?>/css/font-awesome.min.css">
+	<link rel="stylesheet" href="<?= ASSET . '/user'; ?>/css/themify-icons.css">
+	<link rel="stylesheet" href="<?= ASSET . '/user'; ?>/css/nice-select.css">
+	<link rel="stylesheet" href="<?= ASSET . '/user'; ?>/css/flaticon.css">
+	<link rel="stylesheet" href="<?= ASSET . '/user'; ?>/css/gijgo.css">
+	<link rel="stylesheet" href="<?= ASSET . '/user'; ?>/css/animate.min.css">
+	<link rel="stylesheet" href="<?= ASSET . '/user'; ?>/css/slick.css">
+	<link rel="stylesheet" href="<?= ASSET . '/user'; ?>/css/slicknav.css">
+	<link rel="stylesheet" href="<?= ASSET . '/user'; ?>/css/style.css">
 	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.12.0-2/css/all.min.css">
 	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.12.0-2/css/fontawesome.min.css">
 	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.12.0-2/css/brands.min.css">
