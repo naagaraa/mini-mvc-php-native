@@ -1,6 +1,6 @@
 <!-- title -->
 
-# MINI MVC PHP NATIVE
+# MINI MVC PHP NATIVE PROJECT
 
 <!-- Description -->
 <p>Hi, Project ini dibuat dari latihan saya belajar web programing dari berbagai sumber di internet seperti youtube, stackoverflow dan github. project ini merupakan php native yang di buat menggunakan pattern MVC dengan konsep OOP (Object oriented programing ), mirip framework codeigniter 3, yang saya pelajari di YT WPU oleh Sandhika galih dan sudah saya modifikasi custom menyesuaikan tugas kuliah saya serta penambahan library lainnya.</p>
