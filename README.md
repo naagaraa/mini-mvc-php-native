@@ -3,9 +3,12 @@
 # MINI MVC PHP NATIVE PROJECT
 
 <!-- Description -->
+<p>indoneisa : </p>
 <p>Hi, Project ini dibuat dari latihan saya belajar web programing dari berbagai sumber di internet seperti youtube, stackoverflow dan github. project ini merupakan php native yang di buat menggunakan pattern MVC dengan konsep OOP (Object oriented programing ), mirip framework codeigniter 3, yang saya pelajari di YT WPU oleh Sandhika galih dan sudah saya modifikasi custom menyesuaikan tugas kuliah saya serta penambahan library lainnya.</p>
 <p>include libraries external : jquery, bootstrap 4.2.5, owl.js , slick.js, composer, ckeditor-5, chartjs, fontawensome, datatable.js, phpoffice, mpdf saya satukan agar lebih mudah untuk mencarinya</p>
-
+<p>English : </p>
+<p>Hi, this project was made from my practice to learn web programming from various sources on the internet such as YouTube, Stackoverflow and Github. This project is a native php that is made using the MVC pattern with the concept of OOP (Object oriented programming), similar to the Codeigniter 3 framework, which I learned at YT WPU by Sandhika Galih and I have custom modifications to suit my college assignments and the addition of other libraries.</p>
+<p>include external libraries: jquery, bootstrap 4.2.5, owl.js, slick.js, composer, ckeditor-5, chartjs, fontawensome, datatable.js, phpoffice, mpdf I put together to make it easier to find</p>
 ---
 <!-- table of content -->
 ## Daftar isi Content
@@ -18,7 +21,7 @@
 		2.  *install phpxdebug*
 		3.  *install git-client*
 		4.  *clone myrepository mini mvc php native*
-		5.	*composer update*
+		5.  *composer update*
 
 	* **Documentation Libraries Package**
 		1. Boostsrap
