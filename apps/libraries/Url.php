@@ -8,7 +8,7 @@ class Url extends Controller
 {
 
 	// function getUrl user akses
-	public function getUrl()
+	public function geturl()
 	{
 		# code...
 		if (isset($_GET['url'])) {

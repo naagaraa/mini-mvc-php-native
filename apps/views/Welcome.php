@@ -18,10 +18,10 @@
 	<style>
 	html,
 	body {
-		background-color: #fff;
-		color: #636b6f;
+		background-color: #1b1b1b;
+		color: #d239b8;
 		font-family: 'Nunito', sans-serif;
-		font-weight: 200;
+		font-weight: bold;
 		height: 100vh;
 		margin: 0;
 	}
@@ -55,7 +55,7 @@
 	}
 
 	.links>a {
-		color: #636b6f;
+		color: #d239b8;
 		padding: 0 25px;
 		font-size: 13px;
 		font-weight: 600;

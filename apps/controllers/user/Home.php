@@ -15,7 +15,7 @@ class Home extends Controller
 	{
 		// // init user info
 		// $this->lib('info')->getinfo();
-
+		// var_dump($this->lib('Url')->geturl());
 		$data['title'] = 'Home';
 
 		$this->view("templateuser/index", $data);

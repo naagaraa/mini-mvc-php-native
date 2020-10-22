@@ -11,6 +11,7 @@
         "phpoffice/phpspreadsheet": "^1.14",
         "twbs/bootstrap": "4.5.2",
         "mjaschen/phpgeo": "^3.1",
-        "mpdf/mpdf": "^8.0"
+        "mpdf/mpdf": "^8.0",
+        "vlucas/phpdotenv": "^5.2"
     }
 }

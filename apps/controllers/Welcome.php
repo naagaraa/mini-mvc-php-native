@@ -18,6 +18,7 @@ class Welcome extends Controller
 
 	public function index()
 	{
+		// var_dump($this->lib('Url')->geturl());
 		$this->view('Welcome');
 	}
 }
