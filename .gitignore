@@ -1,2 +1,7 @@
 # not ignore
+
+# folder vendor
 /vendor/*
+
+# file envirotment variabel
+.env
