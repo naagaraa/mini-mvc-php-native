@@ -1,0 +1,1 @@
+# for folder file image profile or small image

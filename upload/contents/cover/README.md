@@ -1,0 +1,1 @@
+# for folder file image cover or small image

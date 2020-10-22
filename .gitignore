@@ -1,5 +1,7 @@
-# not ignore
-
+# Ignore everything in this directory
+*/uploads
+# Except this file
+!.gitignore
 # folder vendor
 /vendor/*
 
