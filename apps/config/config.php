@@ -29,28 +29,16 @@
 # config file .evnv untuk configurasi pada file
 # apps/config/config.php
 
-// APP_NAME=mini-mvc-phpnative
-// APP_HOST=http://localhost/
-// APP_URL=http://localhost/mini-mvc-phpnative/
-
-// DB_HOST=localhost
-// DB_PORT=3306
-// DB_NAME=
-// DB_USERNAME=root
-// DB_PASSWORD=
-$dotenv = Dotenv\Dotenv::createImmutable(__DIR__);
-$dotenv->load();
-
-// $configuration = [
-// 	"APP_NAME" 			=> $_ENV["APP_NAME"],
-// 	"APP_HOST" 			=> $_ENV["APP_HOST"],
-// 	"APP_URL" 			=> $_ENV["APP_URL"],
-// 	"DB_HOST" 			=> $_ENV["DB_HOST"],
-// 	"DB_PORT" 			=> $_ENV["DB_PORT"],
-// 	"DB_NAME" 			=> $_ENV["DB_NAME"],
-// 	"DB_USERNAME" 	=> $_ENV["DB_USERNAME"],
-// 	"DB_PASSWORD" 	=> $_ENV["DB_PASSWORD"],
-// ];
+$configuration = [
+	"APP_NAME" 			=> $_ENV["APP_NAME"],
+	"APP_HOST" 			=> $_ENV["APP_HOST"],
+	"APP_URL" 			=> $_ENV["APP_URL"],
+	"DB_HOST" 			=> $_ENV["DB_HOST"],
+	"DB_PORT" 			=> $_ENV["DB_PORT"],
+	"DB_NAME" 			=> $_ENV["DB_NAME"],
+	"DB_USERNAME" 	=> $_ENV["DB_USERNAME"],
+	"DB_PASSWORD" 	=> $_ENV["DB_PASSWORD"],
+];
 
 
 // base-Url untuk asset
