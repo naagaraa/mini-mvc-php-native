@@ -12,7 +12,7 @@ class Chard extends Controller
 	}
 	public function index()
 	{
-		// code here
+		// init user info
 		$data['judul'] = 'Chard';
 
 		$this->view("templateadmin/index", $data);

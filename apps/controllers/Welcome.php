@@ -19,21 +19,11 @@ class Welcome extends Controller
 	{
 		// $spreadsheet = new Spreadsheet();
 		// $sheet = $spreadsheet->getActiveSheet();
-		// var_dump($spreadsheet);
 
+		# jika tidak ingin mengarah kepada controller welcome bisa dengan menghapus controller
+		# atau uncomment header('Location: ' . BASEURL . 'kepo');
+		#header('Location: ' . BASEURL . 'kepo');
 
-		// $dotenv = Dotenv\Dotenv::createImmutable(__DIR__);
-		// $dotenv->load();
-
-		// var_dump($this->lib('Url')->geturl());
-
-
-		// var_dump(__DIR__ . '/.env');
-		// var_dump($_SERVER);
 		$this->view('Welcome');
-
-
-		// $dotenv = new Dotenv();
-		// $dotenv->load(__DIR__ . '/.env');
 	}
 }

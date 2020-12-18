@@ -31,17 +31,7 @@
 										</tr>
 									</thead>
 									<tbody>
-										<?php $i = 1; ?>
-										<?php foreach ($data['visitor'] as $row) : ?>
-										<tr>
-											<th scope="row"><?= $i++; ?></th>
-											<td><?= $row['judul_content'] ?></td>
-											<td><?= $row['visit_views'] ?></td>
-											<td><?= $row['visitor_ip'] ?></td>
-											<td><?= $row['waktu'] ?></td>
-										</tr>
-										<?php endforeach; ?>
-
+										<!-- looping data here -->
 									</tbody>
 								</table>
 							</div>

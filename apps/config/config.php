@@ -85,3 +85,7 @@ define('DB_HOST', $configuration['DB_HOST']);
 define('DB_USER', $configuration['DB_USERNAME']);
 define('DB_PASS', $configuration['DB_PASSWORD']);
 define('DB_NAME', $configuration['DB_NAME']);
+
+// config folder upload
+define("PathCover", $_SERVER['DOCUMENT_ROOT'] . '/' . $configuration['APP_NAME'] . '/upload/contents/cover/');
+define("PathImage", $_SERVER['DOCUMENT_ROOT'] . '/' . $configuration['APP_NAME'] . '/upload/contents/cover/');

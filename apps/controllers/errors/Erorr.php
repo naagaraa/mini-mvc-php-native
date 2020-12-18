@@ -10,7 +10,7 @@ class Erorr extends Controller
 {
 	public function __construct()
 	{
-		// code ...
+		// code here
 	}
 	/**
 	 * Saat class error dipanggil yang akan pertama kali
@@ -18,6 +18,7 @@ class Erorr extends Controller
 	 */
 	public function index()
 	{
+		// code here
 		/**
 		 * $this->view('folderview/namafile')
 		 */

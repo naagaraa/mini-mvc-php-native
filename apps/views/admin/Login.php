@@ -14,7 +14,7 @@
 							</div>
 							<p class="lead">Login to your account</p>
 						</div>
-						<form class="form-auth-small" action="<?= URL . 'Kepo/loginAja'; ?>" method="POST">
+						<form class="form-auth-small" action="<?= URL . 'dasshubodo'; ?>" method="POST">
 							<div class="form-group">
 								<label for="signin-username" class="control-label sr-only">Username</label>
 								<input type="text" class="form-control" id="signin-username" name="username" placeholder="Username">
@@ -30,14 +30,21 @@
 								<span class="helper-text"><i class="fa fa-lock"></i>
 									Forgot password?</span>
 							</div>
+
+							<span>
+								<a href="<?= URL ?>">
+									<p class="text-right mt-5 pt-5">back to Welcome</p>
+								</a>
+							</span>
+
 						</form>
 					</div>
 				</div>
 				<div class="right">
 					<div class="overlay"></div>
 					<div class="content text">
-						<h1 class="heading">Digital Training</h1>
-						<p>by The Develovers | PT SPS</p>
+						<h1 class="heading">Your Title</h1>
+						<p>by The Develovers </p>
 					</div>
 				</div>
 				<div class="clearfix"></div>
