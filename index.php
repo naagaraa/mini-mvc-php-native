@@ -7,7 +7,10 @@
  * menggunakan file init.php lalu di call melalui index.php 
  */
 
+require 'vendor/autoload.php';
 require_once 'apps/init.php';
+
+
 
 /**
  *  Initialisasi Class App untuk menjalankan File App
@@ -16,6 +19,7 @@ require_once 'apps/init.php';
 
 $App = new App;
 
+
 /**
- *  panggil file init dna initialize dengan Filee App
+ *  panggil file init dan initialize dengan Filee App
  */
