@@ -24,7 +24,7 @@
 								<div class="metric">
 									<span class="icon"><i class="fa fa-eye"></i></span>
 									<p>
-										<span class="number">11</span>
+										<span class="number">10019</span>
 										<span class="title">Visits Artikel</span>
 									</p>
 								</div>
@@ -35,7 +35,7 @@
 								<div class="metric">
 									<span class="icon"><i class="fa fa-file"></i></span>
 									<p>
-										<span class="number">11</span>
+										<span class="number">1200</span>
 										<span class="title">Resource Artikel</span>
 									</p>
 								</div>

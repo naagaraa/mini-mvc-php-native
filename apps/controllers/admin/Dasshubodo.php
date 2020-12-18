@@ -13,10 +13,7 @@ class Dasshubodo extends Controller
 
 	public function index()
 	{
-
-		// init user info
-		// $this->lib('info')->getinfo();
-
+		// code here
 		$data = [
 			'judul' =>  'Dashboard',
 		];
