@@ -387,7 +387,7 @@ define('DB_NAME', 'db_contents');
 ## support Me
 <br>
 <!-- description -->
-hi, kamu bisa support dengan cara follow account sosial media di bawah atau memberikan kami coffee
+hi, kamu bisa support dengan cara follow account sosial media di bawah atau memberikan kami kopi pada link di bio social media mereka dibawah ini
 <br>
 
 <!-- Links -->

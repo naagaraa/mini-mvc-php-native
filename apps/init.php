@@ -1,7 +1,9 @@
 <?php
 
 /**
+ * -------------------------------------------------------------------------------------------
  * Documentasi Code init
+ * -------------------------------------------------------------------------------------------
  * 
  * init atau initializa/ inisialisasi digunakan untuk memanggil semua file yang dibutuhkan 
  * dalam satu file yaitu init.php. bisa menggunakan method require_once atau include. 
@@ -10,6 +12,31 @@
  * digunakan untuk mengatur Apps, membuat konsep MVC pada Controller, membuat
  * sistem database wrapper menggunakan PHPPDO: Data Object
  * 
+ */
+
+/**
+ * -------------------------------------------------------------------------------------------
+ * Load Dotenv Library vlucas/phpdotenv
+ * -------------------------------------------------------------------------------------------
+ 
+ * 
+ * $dotenv = Dotenv\Dotenv::createImmutable(__DIR__);
+ * $dotenv->load();
+ * 
+ * keterangan :
+ *  __DIR__ => directiory saat ini
+ * 
+ */
+
+
+$dotenv = Dotenv\Dotenv::createImmutable(__DIR__);
+$dotenv->load();
+
+/**
+ * --------------------------------------------------------------------------------------------
+ *  Documentasi Code
+ * --------------------------------------------------------------------------------------------
+ * 
  * APP 				: membuat aturan MVC 
  * Controller : function yang akan digunakan untuk
  * 							konsep MVC seperti view(), model(),
@@ -17,7 +44,6 @@
  * config			: digunakan untuk menbuat configurasi
  * 							URL dan database.
  */
-
 require_once 'core/App.php';
 require_once 'core/Controller.php';
 require_once 'core/Database.php';
