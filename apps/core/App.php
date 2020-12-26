@@ -1,5 +1,7 @@
 <?php
 
+namespace MiniMvc\Core;
+
 /**
  * -------------------------------------------------------------------------------
  * Documentasi Code App
@@ -7,6 +9,7 @@
  * 
  *  untuk mengatur url yang diambil pada controller
  */
+
 
 class App
 {
@@ -19,8 +22,10 @@ class App
 	public function __construct()
 	{
 		# constan folder pada controller yang di atur pada file config
-		$folder_controller_user = controller_user;
-		$folder_controller_admin = controller_admin;
+		// $folder_controller_user = controller_user;
+		// $folder_controller_admin = controller_admin;
+		$folder_controller_user = "user";
+		$folder_controller_admin = "admin";
 
 
 		// hidden error log

@@ -1,5 +1,8 @@
 <?php
 defined('BASEURL') or exit('No direct script access allowed');
+
+use MiniMvc\Core\Controller;
+
 /**
  * Documentasi Code
  */

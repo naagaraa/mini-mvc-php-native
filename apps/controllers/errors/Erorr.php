@@ -1,10 +1,14 @@
 <?php
 defined('BASEURL') or exit('No direct script access allowed');
+
+use MiniMvc\Core\Controller;
+
 /**
  * Class Error akan akan menampilan view/error/error.php
  * Digunakan untuk menghadle error code atau message
  * 404
  */
+
 
 class Erorr extends Controller
 {

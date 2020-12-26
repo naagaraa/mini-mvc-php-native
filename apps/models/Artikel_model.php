@@ -1,5 +1,7 @@
 <?php
 
+use MiniMvc\Core\Database;
+
 /**
  * Documentasi Code
  */

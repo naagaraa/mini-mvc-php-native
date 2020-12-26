@@ -1,5 +1,7 @@
 <?php
 
+use MiniMvc\Core\Controller;
+
 /**
  * Documentasi Code
  */
@@ -33,23 +35,23 @@ class Info extends Controller
       'date' => date('Y-m-d H:i:s', time())
     ];
 
-  //  $info =  $this->model('info_model')->getAllInfoUser();
-  //   # code...
-  //   var_dump($data);
-  //   var_dump($info);
-  //   $i = 0;
-  //   if ( in_array($data['remote_adr'],$info[$i++])) {
-  //     echo '<br>';
-  //     echo $i++;
-  //     echo '<br>';
-  //     echo 'ipsama';
-  //     // echo '<br>';
-  //   }else {
-  //     echo 'beda';
-  //    // insert data ke dalam fungsi pada model Info
-  //   // $this->model('Info_model')->createInfoData($data);
-  //   }
-  // die;
+    //  $info =  $this->model('info_model')->getAllInfoUser();
+    //   # code...
+    //   var_dump($data);
+    //   var_dump($info);
+    //   $i = 0;
+    //   if ( in_array($data['remote_adr'],$info[$i++])) {
+    //     echo '<br>';
+    //     echo $i++;
+    //     echo '<br>';
+    //     echo 'ipsama';
+    //     // echo '<br>';
+    //   }else {
+    //     echo 'beda';
+    //    // insert data ke dalam fungsi pada model Info
+    //   // $this->model('Info_model')->createInfoData($data);
+    //   }
+    // die;
     // insert data ke dalam fungsi pada model Info
     // $this->model('Info_model')->createInfoData($data);
   }

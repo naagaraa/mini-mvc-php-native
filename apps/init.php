@@ -44,8 +44,13 @@ $dotenv->load();
  * config			: digunakan untuk menbuat configurasi
  * 							URL dan database.
  */
-require_once 'core/App.php';
-require_once 'core/Controller.php';
-require_once 'core/Database.php';
-require_once 'config/config.php';
-require_once 'routes/route.php';
+
+include 'config/config.php';
+// require_once 'routes/route.php';
+
+// spl autoload php atau bootstrap loading classname pada folder core
+spl_autoload_register(function ($class) {
+	$class = explode("\\", $class);
+	$class = end($class);
+	require_once __DIR__ . '//core/' . $class . '.php';
+});
