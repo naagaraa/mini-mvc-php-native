@@ -73,12 +73,12 @@ description
 
 	```
 
-5. composer update
-	* setelah melakukan clone repo, saya sarankan untuk melakukan composer update untuk mengecek apakah pada folder/vendor ada upate package. dengan jalankan command pada terminal atau commandline seperti ini.
+5. composer install
+	* setelah melakukan clone repo, saya sarankan untuk melakukan composer install untuk mengecek apakah pada folder/vendor ada package yg tersedia. dengan jalankan command pada terminal atau commandline seperti ini.
 
 	```
 
-	composer update
+	composer install
 
 	``` 
 
