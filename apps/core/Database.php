@@ -1,5 +1,7 @@
 <?php
 
+namespace MiniMvc\Core;
+
 /**
  * Documentasi Code
  * config database wrapper menggunakan PDO

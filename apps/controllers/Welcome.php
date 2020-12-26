@@ -1,10 +1,11 @@
 <?php
-defined('BASEURL') or exit('No direct script access allowed');
+// defined('BASEURL') or exit('No direct script access allowed');
 
-// php office vendor lib
+use MiniMvc\Core\Controller;
+
+// php office vendor libraries
 use PhpOffice\PhpSpreadsheet\Spreadsheet;
 use PhpOffice\PhpSpreadsheet\Writer\Xlsx;
-
 
 class Welcome extends Controller
 {

@@ -8,9 +8,13 @@
  */
 
 require 'vendor/autoload.php';
+
+
+
 require_once 'apps/init.php';
 
-
+// use naming or namespace
+use MiniMvc\Core\App;
 
 /**
  *  Initialisasi Class App untuk menjalankan File App

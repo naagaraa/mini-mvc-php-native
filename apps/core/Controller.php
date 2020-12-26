@@ -1,5 +1,9 @@
 <?php
 
+namespace MiniMvc\Core;
+
+use Matrix\Functions;
+
 /**
  * Documentasi Code Controller
  * 
@@ -54,4 +58,9 @@ class Controller
 		require_once 'apps/libraries/' . $lib . '.php';
 		return new $lib;
 	}
+
+	// public function controller($controller)
+	// {
+	// 	require_once 'apps/controllers/' . $controller . '.php';
+	// }
 }
