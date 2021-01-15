@@ -10,9 +10,10 @@ class Web extends Routes
 	/**
 	 * -------------------------------------------------------------------------------
 	 * Documentasi Code App
+	 * Author : nagara
 	 * -------------------------------------------------------------------------------
 	 * 
-	 *  untuk mengatur Route yang diambil pada controller
+	 *  untuk mengatur Route view yang diambil pada controller
 	 *  Route menggunakan library bramus/router
 	 * -------------------------------------------------------------------------------
 	 *  Example 

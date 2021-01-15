@@ -24,8 +24,6 @@ use MiniMvc\Apps\Routes\Bootstraping\Web;
 $Route = new Web;
 $App = new App;
 
-// var_dump($Route->info());
-
 
 /**
  *  panggil file init dan initialize dengan Filee App
