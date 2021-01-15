@@ -4,30 +4,30 @@
 		<nav>
 			<ul class="nav">
 				<li>
-					<a href="<?= URL . 'Dasshubodo'; ?>">
+					<a href="<?= URL . 'dashboard'; ?>">
 						<!-- <i class="lnr lnr-home"></i> -->
 						<span>Dashboard</span>
 					</a>
 				</li>
-				<!-- <li>
-					<a href="<?= URL . 'Chard'; ?>" class="">
-						<i class="lnr lnr-chart-bars"></i>
+				<li>
+					<a href="<?= URL . 'chard'; ?>" class="">
+						<!-- <i class="lnr lnr-chart-bars"></i> -->
 						<span>Charts</span>
 					</a>
-				</li> -->
+				</li>
 				<li>
-					<a href="<?= URL . 'ListNews'; ?>" class="">
+					<a href="<?= URL . 'list-artikel'; ?>" class="">
 						<!-- <i class="lnr lnr-code"></i> -->
 						<span>List Article</span>
 					</a>
 				</li>
-				<li><a href="<?= URL . 'Tambahnews'; ?>" class="">
+				<li><a href="<?= URL . 'tambah-artikel'; ?>" class="">
 						<!-- <i class="lnr lnr-code"></i> -->
 						<span>Tambah Article</span>
 					</a>
 				</li>
 				<li>
-					<a href="<?= URL . 'Contact'; ?>" class="">
+					<a href="<?= URL . 'contact-us'; ?>" class="">
 						<!-- <i class="lnr lnr-code"> -->
 						</i> <span>Contact Us</span>
 					</a>
@@ -38,34 +38,28 @@
 				?>
 				<?php
 				echo "<li>
-							<a href=" . "'" . URL . "Register'" . "class=''>
+							<a href=" . "'" . URL . "tambah-user'" . "class=''>
 								</i> <span>Tambah User</span>
 							</a>
 						</li>
 						<li>
-						<a href=" . "'" . URL . "Userlist'" . "class=''>
+						<a href=" . "'" . URL . "user-list'" . "class=''>
 								</i> <span>User List</span>
 							</a>
 						</li>
 						<li>
-						<a href=" . "'" . URL . "Report'" . "class=''>
+						<a href=" . "'" . URL . "track-akses'" . "class=''>
 								</i> <span>Track Akses</span>
 							</a>
 						</li>
 						<li>
-						<a href=" . "'" . URL . "Report/VisitPage'" . "class=''>
+						<a href=" . "'" . URL . "visit-page'" . "class=''>
 								</i> <span>Visit Page</span>
 							</a>
 						</li>"; ?>
 				<?php //elseif ($_SESSION['level'] === '1') : 
 				?>
-				<?php
-				echo "
-						<li>
-						<a href=" . "'" . URL . "Userlist'" . "class=''>
-								</i> <span>User List</span>
-							</a>
-						</li>"; ?>
+				<?php echo ""; ?>
 				<?php //endif; 
 				?>
 				<!--  end akses super admin -->

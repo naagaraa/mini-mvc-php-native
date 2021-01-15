@@ -14,7 +14,7 @@
 							</div>
 							<p class="lead">Login to your account</p>
 						</div>
-						<form class="form-auth-small" action="<?= URL . 'dasshubodo'; ?>" method="POST">
+						<form class="form-auth-small" action="<?= URL . 'dashboard'; ?>" method="POST">
 							<div class="form-group">
 								<label for="signin-username" class="control-label sr-only">Username</label>
 								<input type="text" class="form-control" id="signin-username" name="username" placeholder="Username">

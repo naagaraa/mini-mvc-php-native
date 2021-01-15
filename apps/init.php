@@ -46,9 +46,9 @@ $dotenv->load();
  */
 
 include 'config/config.php';
-// require 'routes/web.php';
+// include __DIR__ . '/routes/web.php';
+// include __DIR__ . '/core/Routes.php';
 // include 'config/route.php';
-// include 'core/Routes.php';
 // include 'core/Controller.php';
 // include 'core/Database.php';
 // include 'core/App.php';
@@ -58,5 +58,21 @@ include 'config/config.php';
 spl_autoload_register(function ($class) {
 	$class = explode("\\", $class);
 	$class = end($class);
-	require_once __DIR__ . '/core' . '/' . $class . '.php';
+	// var_dump($class);
+	// die;
+	if (file_exists(__DIR__ . '/core/' . $class . '.php')) {
+		require_once __DIR__ . '/core/' . $class . '.php';
+	}
+	return false;
+});
+
+spl_autoload_register(function ($class) {
+	$class = explode("\\", $class);
+	$class = end($class);
+	// var_dump($class);
+	// die;
+	if (file_exists(__DIR__ . '/routes/' . $class . '.php')) {
+		require_once __DIR__ . '/routes/' . $class . '.php';
+	}
+	return false;
 });

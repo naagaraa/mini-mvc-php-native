@@ -24,51 +24,6 @@ class Routes
 		) {
 			return false;
 		}
-
-		// Create a Router
-		$router = new \Bramus\Router\Router();
-
-		// Repalce URL sementara disini
-		/**
-		 * Example 
-		 * 
-		 * 
-		 * 	$router->get('/login', function () {
-		 *  	$this->RouteWithFolder('folder', 'controller', 'method');
-		 * 	die;
-		 * 	});
-		 * 
-		 * 	$router->get('/about', function () {
-		 *  	$this->RouteWithFolder('controller', 'method');
-		 * 	die;
-		 * 	});
-		 * 
-		 * 	$router->get('/info', function () {
-		 *  	phpinfo();
-		 * 	die;
-		 * 	});
-		 * 
-		 * 
-		 * 
-		 */
-		$router->get('/home', function () {
-			$this->RouteWithFolder('user', 'home', 'index');
-			die;
-		});
-		$router->get('/login', function () {
-			$this->RouteWithFolder('admin', 'kepo', 'index');
-			die;
-		});
-		$router->get('/about', function () {
-			$this->RouteWithoutFolder('about', 'index');
-			die;
-		});
-		$router->get('/info', function () {
-			phpinfo();
-			die;
-		});
-		// Thunderbirds are go!
-		$router->run();
 	}
 
 	// get URL
@@ -87,76 +42,9 @@ class Routes
 		}
 	}
 
-	// handle file in controller
-	public function handleWithFolder()
-	{
-		// unset($url[0]);
-		$url = $this->ParserURL();
-		$this->controller = $url[1];
-		unset($url[1]);
-
-		if (!file_exists('apps/controllers/' . $url[0] . '/' . $this->controller . '.php')) {
-			$this->handleWithoutFolder();
-			die;
-		}
-
-		# instasiasi class tersebut
-		require_once 'apps/controllers/' . $url[0] . '/' . $this->controller . '.php';
-		$this->controller = new $this->controller;
-
-		# untuk method user
-		if (isset($url[2])) {
-			if (method_exists($this->controller, $url[2])) {
-				$this->method = $url[2];
-				unset($url[2]);
-			}
-		}
-
-		# params user
-		if (!empty($url)) {
-			$this->params = array_values($url);
-		}
-
-		# call controller and method, and send params is !empy
-		call_user_func_array([$this->controller, $this->method], $this->params);
-		die;
-	}
-
-
-	public function handleWithoutFolder()
-	{
-		$url = $this->ParserURL();
-		$this->controller = $url[0];
-		unset($url[0]);
-
-		if (!file_exists('apps/controllers/' . $this->controller . '.php')) {
-			$this->showerror();
-			die;
-		}
-		# instasiasi class tersebut
-		require_once 'apps/controllers/' . $this->controller . '.php';
-		$this->controller = new $this->controller;
-
-		# untuk method user
-		if (isset($url[1])) {
-			if (method_exists($this->controller, $url[1])) {
-				$this->method = $url[1];
-				unset($url[1]);
-			}
-		}
-
-		# params user
-		if (!empty($url)) {
-			$this->params = array_values($url);
-		}
-
-		# call controller and method, and send params is !empy
-		call_user_func_array([$this->controller, $this->method], $this->params);
-		die;
-	}
-
 	public function showerror()
 	{
+		header($_SERVER['SERVER_PROTOCOL'] . ' 404 Not Found');
 		$controller = 'Error_404'; 				# ini untuk controller
 		$method = 'index'; 							# ini untuk method
 		$params = [];										# ini unutk parameter

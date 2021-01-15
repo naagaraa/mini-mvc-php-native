@@ -15,13 +15,13 @@ require_once 'apps/init.php';
 
 // use naming or namespace
 use MiniMvc\Apps\Core\Bootstraping\App;
-use MiniMvc\Apps\Core\Bootstraping\Routes;
+use MiniMvc\Apps\Routes\Bootstraping\Web;
 
 /**
  *  Initialisasi Class App untuk menjalankan File App
  * 	App/core/App.php
  */
-$Route = new Routes;
+$Route = new Web;
 $App = new App;
 
 // var_dump($Route->info());

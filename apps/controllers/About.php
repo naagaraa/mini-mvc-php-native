@@ -3,7 +3,7 @@
 
 use MiniMvc\Core\Controller;
 
-class About extends Controller
+class About      extends Controller
 {
 
 	public function __construct()
