@@ -23,4 +23,11 @@ class Test extends Controller
 		// var_dump($url);
 		// die;
 	}
+	public function show()
+	{
+		echo "ini controller test method show";
+		// $url = $this->lib('Url')->geturl();
+		// var_dump($url);
+		// die;
+	}
 }

@@ -46,12 +46,13 @@ $dotenv->load();
  */
 
 include 'config/config.php';
+// require 'routes/web.php';
 // include 'config/route.php';
 // include 'core/Routes.php';
 // include 'core/Controller.php';
 // include 'core/Database.php';
 // include 'core/App.php';
-// include 'routes/Route.php';
+
 
 // spl autoload php atau bootstrap loading classname pada folder core
 spl_autoload_register(function ($class) {

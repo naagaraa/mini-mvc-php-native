@@ -4,8 +4,6 @@
 use MiniMvc\Core\Controller;
 use MiniMvc\Core\Route;
 
-include 'apps/core/Controller.php';
-
 // php office vendor libraries
 use PhpOffice\PhpSpreadsheet\Spreadsheet;
 use PhpOffice\PhpSpreadsheet\Writer\Xlsx;
@@ -31,5 +29,10 @@ class Welcome extends Controller
 
 		$this->view('Welcome');
 		// $Route->router('about');
+	}
+
+	public function show()
+	{
+		echo "ini welcome method show";
 	}
 }

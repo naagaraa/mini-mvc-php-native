@@ -58,4 +58,9 @@ class Controller
 		require_once 'apps/libraries/' . $lib . '.php';
 		return new $lib;
 	}
+
+	public function myRoute()
+	{
+		// 
+	}
 }
