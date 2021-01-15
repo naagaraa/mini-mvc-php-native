@@ -15,6 +15,7 @@ require_once 'apps/init.php';
 
 // use naming or namespace
 use MiniMvc\Core\App;
+use MiniMvc\Core\Route;
 
 /**
  *  Initialisasi Class App untuk menjalankan File App
@@ -22,6 +23,9 @@ use MiniMvc\Core\App;
  */
 
 $App = new App;
+$Route = new Route;
+
+// var_dump($Route->info());
 
 
 /**

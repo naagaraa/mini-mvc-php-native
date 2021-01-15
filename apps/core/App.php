@@ -26,6 +26,7 @@ class App
 		// $folder_controller_admin = controller_admin;
 		$folder_controller_user = "user";
 		$folder_controller_admin = "admin";
+		// $folder_controller = $url[0];
 
 
 		// hidden error log
@@ -37,112 +38,74 @@ class App
 		// var_dump($folder_controller_user);
 		// die;
 
-		# 	membuat controller user	
-		if (file_exists('apps/controllers/' . $folder_controller_user . '/' . $url[0] . '.php')) {
-			$this->controller = $url[0];
-			unset($url[0]);
+		# handle url / root
+		(!isset($url[1]) && !isset($url[0])) 			? $this->welcome()							  :  false;
 
-			# instasiasi class tersebut
-			require_once 'apps/controllers/' . $folder_controller_user . '/' . $this->controller . '.php';
-			$this->controller = new $this->controller;
+		# 	handle url
+		(!isset($url[0]) && !isset($url[1])) 			? $this->showerror() 							:  false;
+		(isset($url[0]) && isset($url[1]))				? $this->handleWithFolder() 			:  false;
+		(isset($url[0])) 													? $this->handleWithoutFolder()	  :  false;
+		(isset($url[0]) && !isset($url[1])) 			? 	$this->showerror()					  :  false;
+		(!isset($url[0]) || !isset($url[1])) 			? 	$this->showerror()					  :  false;
 
-			# untuk method user
-			if (isset($url[1])) {
-				if (method_exists($this->controller, $url[1])) {
-					$this->method = $url[1];
-					unset($url[1]);
-				}
-			}
+		/** 
+		 * 
+		 *  jika url tidak ada
+		 *  cek jika url == null => halaman index untuk user
+		 * 
+		 */
+		if (empty($url) && !isset($url) == true) {
 
-			# params user
-			if (!empty($url)) {
-				$this->params = array_values($url);
-			}
-
-			# call controller and method, and send params is !empy
-			call_user_func_array([$this->controller, $this->method], $this->params);
-
-
-			# untuk controller halaman admin
-		} elseif (file_exists('apps/controllers/' . $folder_controller_admin . '/' . $url[0] . '.php')) {
-			$this->controller = $url[0];
-			unset($url[0]);
-
-			# instasiasi class tersebut
-			require_once 'apps/controllers/' . $folder_controller_admin . '/' . $this->controller . '.php';
-			$this->controller = new $this->controller;
-
-			# untuk method admin
-			if (isset($url[1])) {
-				if (method_exists($this->controller, $url[1])) {
-					$this->method = $url[1];
-					unset($url[1]);
-				}
-			}
-			# params user
-			if (!empty($url)) {
-				$this->params = array_values($url);
-			}
-
-			# call controller and method, and send params is !empy
-			call_user_func_array([$this->controller, $this->method], $this->params);
-		} else {
-			/** 
-			 * 
-			 *  jika url tidak ada
-			 *  cek jika url == null => halaman index untuk user
-			 * 
+			/**
+			 *   jika url / index not found atau null buat controller defaultnya menjadi welcome
+			 *  atau arahkan controller ke welcome
 			 */
-			if (empty($url) && !isset($url) == true) {
 
-				/**
-				 *   jika url / index not found atau null buat controller defaultnya menjadi welcome
-				 *  atau arahkan controller ke welcome
-				 */
+			/**
+			 * default view/ controller == Welcome
+			 * jika ingin custon silangkan ganti controller
+			 * dan file require_once arahkan pada folder utaman kalian
+			 */
 
-				/**
-				 * default view/ controller == Welcome
-				 * jika ingin custon silangkan ganti controller
-				 * dan file require_once arahkan pada folder utaman kalian
-				 */
-
-				$controller = 'Welcome'; 				# ini untuk controller
-				$method = 'index'; 							# ini untuk method
-				$params = [];										# ini unutk parameter
-
-				# instasiasi class tersebut
-				require_once 'apps/controllers/' . $controller . '.php';
-				$controller = new $controller;
-
-
-				# call controller and method, and send params is !empy
-				call_user_func_array([$controller, $method], $params);
-				return false;
-			}
-
-			# error url 404 handling method
-			$this->controller = 'Erorr';
-			unset($url[0]);
+			$controller = 'Welcome'; 				# ini untuk controller
+			$method = 'index'; 							# ini untuk method
+			$params = [];										# ini unutk parameter
 
 			# instasiasi class tersebut
-			require_once 'apps/controllers/errors/' . $this->controller . '.php';
-			$this->controller = new $this->controller;
+			require_once 'apps/controllers/' . $controller . '.php';
+			$controller = new $controller;
 
-			# untuk method admin
-			if (isset($url[1])) {
-				if (method_exists($this->controller, $url[1])) {
-					$this->method = $url[1];
-					unset($url[1]);
-				}
-			}
-			# params user
-			if (!empty($url)) {
-				$this->params = array_values($url);
-			}
 
 			# call controller and method, and send params is !empy
-			call_user_func_array([$this->controller, $this->method], $this->params);
+			call_user_func_array([$controller, $method], $params);
+			return false;
 		}
+
+		# error url 404 handling method
+		$this->controller = 'Erorr';
+		unset($url[0]);
+
+		# instasiasi class tersebut
+		require_once 'apps/controllers/errors/' . $this->controller . '.php';
+		$this->controller = new $this->controller;
+
+		# untuk method admin
+		if (isset($url[1])) {
+			if (method_exists($this->controller, $url[1])) {
+				$this->method = $url[1];
+				unset($url[1]);
+			}
+		}
+		# params user
+		if (!empty($url)) {
+			$this->params = array_values($url);
+		}
+
+		# call controller and method, and send params is !empy
+		call_user_func_array([$this->controller, $this->method], $this->params);
+
+
+
 
 		# cek jika url == null = halaman index untuk user
 		if (empty($url) && !isset($url) == true) {
@@ -186,5 +149,109 @@ class App
 			$url = explode('/', $url);
 			return $url;
 		}
+	}
+
+
+
+
+	// new function
+
+	// handle satu
+	public function handleWithFolder()
+	{
+		// unset($url[0]);
+		$url = $this->ParserURL();
+		$this->controller = $url[1];
+		unset($url[1]);
+
+		if (!file_exists('apps/controllers/' . $url[0] . '/' . $this->controller . '.php')) {
+			$this->showerror();
+			die;
+		}
+
+		# instasiasi class tersebut
+		require_once 'apps/controllers/' . $url[0] . '/' . $this->controller . '.php';
+		$this->controller = new $this->controller;
+
+		# untuk method user
+		if (isset($url[2])) {
+			if (method_exists($this->controller, $url[2])) {
+				$this->method = $url[2];
+				unset($url[2]);
+			}
+		}
+
+		# params user
+		if (!empty($url)) {
+			$this->params = array_values($url);
+		}
+
+		# call controller and method, and send params is !empy
+		call_user_func_array([$this->controller, $this->method], $this->params);
+		die;
+	}
+
+	public function handleWithoutFolder()
+	{
+		$url = $this->ParserURL();
+		$this->controller = $url[0];
+		unset($url[0]);
+
+		if (!file_exists('apps/controllers/' . $this->controller . '.php')) {
+			$this->showerror();
+			die;
+		}
+		# instasiasi class tersebut
+		require_once 'apps/controllers/' . $this->controller . '.php';
+		$this->controller = new $this->controller;
+
+		# untuk method admin
+		if (isset($url[1])) {
+			if (method_exists($this->controller, $url[1])) {
+				$this->method = $url[1];
+				unset($url[1]);
+			}
+		}
+		# params user
+		if (!empty($url)) {
+			$this->params = array_values($url);
+		}
+
+		# call controller and method, and send params is !empy
+		call_user_func_array([$this->controller, $this->method], $this->params);
+	}
+
+	public function showerror()
+	{
+		$controller = 'Error_404'; 				# ini untuk controller
+		$method = 'index'; 							# ini untuk method
+		$params = [];										# ini unutk parameter
+
+		# instasiasi class tersebut
+		require_once 'apps/controllers/error/' . $controller . '.php';
+		$controller = new $controller;
+
+
+		# call controller and method, and send params is !empy
+		call_user_func_array([$controller, $method], $params);
+		return false;
+		die;
+	}
+
+	public function welcome()
+	{
+		$controller = 'Welcome'; 				# ini untuk controller
+		$method = 'index'; 							# ini untuk method
+		$params = [];										# ini unutk parameter
+
+		# instasiasi class tersebut
+		require_once 'apps/controllers/' . $controller . '.php';
+		$controller = new $controller;
+
+
+		# call controller and method, and send params is !empy
+		call_user_func_array([$controller, $method], $params);
+		return false;
+		die;
 	}
 }

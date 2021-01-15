@@ -2,6 +2,9 @@
 // defined('BASEURL') or exit('No direct script access allowed');
 
 use MiniMvc\Core\Controller;
+use MiniMvc\Core\Route;
+
+include 'apps/core/Controller.php';
 
 // php office vendor libraries
 use PhpOffice\PhpSpreadsheet\Spreadsheet;
@@ -18,6 +21,7 @@ class Welcome extends Controller
 
 	public function index()
 	{
+		// $Route = new Route;
 		// $spreadsheet = new Spreadsheet();
 		// $sheet = $spreadsheet->getActiveSheet();
 
@@ -26,5 +30,6 @@ class Welcome extends Controller
 		#header('Location: ' . BASEURL . 'kepo');
 
 		$this->view('Welcome');
+		// $Route->router('about');
 	}
 }
