@@ -59,8 +59,8 @@ class Controller
 		return new $lib;
 	}
 
-	// public function controller($controller)
-	// {
-	// 	require_once 'apps/controllers/' . $controller . '.php';
-	// }
+	public function myRoute()
+	{
+		// 
+	}
 }

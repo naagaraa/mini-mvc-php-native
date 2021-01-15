@@ -2,62 +2,76 @@
 
 namespace MiniMvc\Apps\Core\Bootstraping;
 
-// use MiniMvc\Core\Bootstraping\Route;
-// use MiniMvc\Core\Route\Bootstraping\Route as BootstrapingRoute;
-
 /**
  * -------------------------------------------------------------------------------
  * Documentasi Code App
  * -------------------------------------------------------------------------------
  * 
- *  untuk mengatur url yang diambil pada controller
+ *  untuk mengatur Route yang diambil pada controller
  */
 
 
-class App
+class Routes
 {
-
-	protected $controller = 'Home';  # ini untuk controller
-	protected $method = 'index';     # ini untuk method
-	protected $params = [];	         # ini untuk parameter
-
 
 	public function __construct()
 	{
-		// 	$myroute = new Routes;
-		// hidden error log
-		// error_reporting(0);
-		// write code here
-		$url = $this->ParserURL();
 
-		//  untuk debug Url
-		// var_dump($folder_controller_user);
-		// die;
+		// In case one is using PHP 5.4's built-in server
+		$filename = __DIR__ . preg_replace('#(\?.*)$#', '', $_SERVER['REQUEST_URI']);
+		if (
+			php_sapi_name() === 'cli-server' && is_file($filename)
+		) {
+			return false;
+		}
 
-		# handle url / root
-		(!isset($url[1]) 				&& !isset($url[0])) 			? $this->welcome()							  :  false;
+		// Create a Router
+		$router = new \Bramus\Router\Router();
 
-		# 	handle url
-		(!isset($url[0]) 				&& !isset($url[1])) 			? $this->showerror() 							:  false;
-
-		(isset($url[0])					&& isset($url[1]))				? $this->handleWithFolder() 			:  false;
-		(isset($url[0]) 				&& !isset($url[1])) 			? $this->showerror()					 		:  false;
-		(isset($url[0])					|| isset($url[1])) 				? $this->handleWithoutFolder()	 	:  false;
-
-		(!isset($url[0]) 				|| !isset($url[1])) 			? $this->showerror()					  	:  false;
+		// Repalce URL sementara disini
+		/**
+		 * Example 
+		 * 
+		 * 
+		 * 	$router->get('/login', function () {
+		 *  	$this->RouteWithFolder('folder', 'controller', 'method');
+		 * 	die;
+		 * 	});
+		 * 
+		 * 	$router->get('/about', function () {
+		 *  	$this->RouteWithFolder('controller', 'method');
+		 * 	die;
+		 * 	});
+		 * 
+		 * 	$router->get('/info', function () {
+		 *  	phpinfo();
+		 * 	die;
+		 * 	});
+		 * 
+		 * 
+		 * 
+		 */
+		$router->get('/home', function () {
+			$this->RouteWithFolder('user', 'home', 'index');
+			die;
+		});
+		$router->get('/login', function () {
+			$this->RouteWithFolder('admin', 'kepo', 'index');
+			die;
+		});
+		$router->get('/about', function () {
+			$this->RouteWithoutFolder('about', 'index');
+			die;
+		});
+		$router->get('/info', function () {
+			phpinfo();
+			die;
+		});
+		// Thunderbirds are go!
+		$router->run();
 	}
 
-	/**
-	 * membuat function parseURL / preety URL
-	 * 
-	 * yaitu untuk mengambil value yang di kirimkan melalui url menggunakan method $_GET 
-	 * untuk mengirimkan data melalui url digunakan tanda *?* setelah file
-	 * 
-	 * Example : http://localhost/CompantProfile/?url=Home
-	 * 
-	 * url 	  	= nama dari 'url'
-	 * home		= value dari 'url'
-	 */
+	// get URL
 	public function ParserURL()
 	{
 		if (isset($_GET['url'])) {
@@ -154,6 +168,7 @@ class App
 
 		# call controller and method, and send params is !empy
 		call_user_func_array([$controller, $method], $params);
+		return false;
 		die;
 	}
 

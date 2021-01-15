@@ -46,11 +46,17 @@ $dotenv->load();
  */
 
 include 'config/config.php';
-// require_once 'routes/route.php';
+// require 'routes/web.php';
+// include 'config/route.php';
+// include 'core/Routes.php';
+// include 'core/Controller.php';
+// include 'core/Database.php';
+// include 'core/App.php';
+
 
 // spl autoload php atau bootstrap loading classname pada folder core
 spl_autoload_register(function ($class) {
 	$class = explode("\\", $class);
 	$class = end($class);
-	require_once __DIR__ . '//core/' . $class . '.php';
+	require_once __DIR__ . '/core' . '/' . $class . '.php';
 });
