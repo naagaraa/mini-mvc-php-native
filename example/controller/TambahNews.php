@@ -1,6 +1,6 @@
 <?php
 
-use MiniMvc\Core\Controller;
+use MiniMvc\Apps\Core\Bootstraping\Controller;
 
 /**
  * Documentasi Code

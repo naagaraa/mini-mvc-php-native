@@ -9,15 +9,17 @@ class Web extends Routes
 {
 	/**
 	 * -------------------------------------------------------------------------------
-	 * Documentasi Code App
+	 * Documentasi Code Web
 	 * Author : nagara
 	 * -------------------------------------------------------------------------------
 	 * 
 	 *  untuk mengatur Route view yang diambil pada controller
 	 *  Route menggunakan library bramus/router
+	 * 
 	 * -------------------------------------------------------------------------------
 	 *  Example 
 	 * -------------------------------------------------------------------------------
+	 * 
 	 * 	$router->get('/login', function () {
 	 *  	$this->RouteWithFolder('folder', 'controller', 'method');
 	 *  die;

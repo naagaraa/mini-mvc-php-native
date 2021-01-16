@@ -2,7 +2,7 @@
 
 require 'vendor/autoload.php';
 
-use MiniMvc\Core\Controller;
+use MiniMvc\Apps\Core\Bootstraping\Controller;
 
 // php office vendor lib
 use PhpOffice\PhpSpreadsheet\Spreadsheet;

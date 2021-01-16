@@ -2,12 +2,10 @@
 
 namespace MiniMvc\Apps\Core\Bootstraping;
 
-// use MiniMvc\Core\Bootstraping\Route;
-// use MiniMvc\Core\Route\Bootstraping\Route as BootstrapingRoute;
-
 /**
  * -------------------------------------------------------------------------------
  * Documentasi Code App
+ * Author : Nagara
  * -------------------------------------------------------------------------------
  * 
  *  untuk mengatur url yang diambil pada controller

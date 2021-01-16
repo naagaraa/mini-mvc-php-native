@@ -3,6 +3,7 @@
 /**
  * -------------------------------------------------------------------------------------------
  * Documentasi Code init
+ * Author : Nagara
  * -------------------------------------------------------------------------------------------
  * 
  * init atau initializa/ inisialisasi digunakan untuk memanggil semua file yang dibutuhkan 
@@ -51,8 +52,6 @@ include 'config/config.php';
 spl_autoload_register(function ($class) {
 	$class = explode("\\", $class);
 	$class = end($class);
-	// var_dump($class);
-	// die;
 	if (file_exists(__DIR__ . '/core/' . $class . '.php')) {
 		require_once __DIR__ . '/core/' . $class . '.php';
 	}
@@ -63,8 +62,6 @@ spl_autoload_register(function ($class) {
 spl_autoload_register(function ($class) {
 	$class = explode("\\", $class);
 	$class = end($class);
-	// var_dump($class);
-	// die;
 	if (file_exists(__DIR__ . '/routes/' . $class . '.php')) {
 		require_once __DIR__ . '/routes/' . $class . '.php';
 	}

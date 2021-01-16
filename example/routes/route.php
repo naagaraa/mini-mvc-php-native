@@ -1,6 +1,14 @@
 <?php
 
-
+/**
+ * ------------------------------------------------------------------------
+ * Documentation code Library bramus/router
+ * Author : Bramus
+ * ------------------------------------------------------------------------
+ * 
+ * 
+ * 
+ */
 
 // In case one is using PHP 5.4's built-in server
 $filename = __DIR__ . preg_replace('#(\?.*)$#', '', $_SERVER['REQUEST_URI']);

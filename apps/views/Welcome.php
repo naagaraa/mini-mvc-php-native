@@ -93,8 +93,8 @@
 
 			<div class="links">
 				<a href="<?= URL . 'home' ?>">Docs</a>
-				<a href="https://github.com/naagaraa/mini-mvc-phpnative">GitHub</a>
-				<a href="<?= URL . 'kepo' ?>">Admin Dashboard</a>
+				<a href="https://github.com/naagaraa/mini-mvc-phpnative" target="_blank">GitHub</a>
+				<a href="<?= URL . 'login' ?>">Admin Page</a>
 			</div>
 			<footer>
 				<br><br>

@@ -1,9 +1,10 @@
 <?php
 
 /**
- * -----------------------------------------------------------------------------------------------------------
+ * --------------------------------------------------------------------
  *  Example Code untuk mencari Array di dalam Array - Documentation
- * -----------------------------------------------------------------------------------------------------------
+ *  Author : Nagara
+ * --------------------------------------------------------------------
  * 
  *  berikut adalah potongan code untuk melakukan pencarian array
  *  didalam array dengan base codeigniter 3. dan masih dalam

@@ -1,16 +1,21 @@
 <?php
 
-namespace MiniMvc\Core;
+namespace MiniMvc\Apps\Core\Bootstraping;
 
 use Matrix\Functions;
 
 /**
+ * ------------------------------------------------------------------
  * Documentasi Code Controller
+ * Author : Nagara
+ * ------------------------------------------------------------------
  * 
  * ini adalah kelas induk yang nantinya akan digunakan pada child
  * yang akan inheritance dengan Class Controller.
  * 
+ * ------------------------------------------------------------------
  * example :
+ * ------------------------------------------------------------------
  * 
  * class welcomen extends Controller
  * maka untuk memanggil file views cukup dengan 

@@ -3,8 +3,11 @@
     "description": "project ini dibuat agar lebih mempercepat dalam menyelesaikan project kecil web menggunakan php dengan membuatnya layaknya small framework yang terinspirasi dari codeigniter3",
     "authors": [
         {
-            "name": "naagaraa",
+            "name": "pengembang : naagaraa",
             "email": "ekabersinar@gmail.com"
+        },
+        {
+            "name": "pengajar : sandhika galih"
         }
     ],
     "require": {

@@ -1,9 +1,13 @@
 <?php
 
-namespace MiniMvc\Core;
+namespace MiniMvc\Apps\Core\Bootstraping;
 
 /**
- * Documentasi Code
+ * -----------------------------------------------------------
+ * Documentasi Code Database
+ * Author : Nagara
+ * -----------------------------------------------------------
+ * 
  * config database wrapper menggunakan PDO
  */
 class Database

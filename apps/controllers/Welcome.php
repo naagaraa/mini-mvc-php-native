@@ -1,8 +1,7 @@
 <?php
-// defined('BASEURL') or exit('No direct script access allowed');
+defined('BASEURL') or exit('No direct script access allowed');
 
-use MiniMvc\Core\Controller;
-use MiniMvc\Core\Route;
+use MiniMvc\Apps\Core\Bootstraping\Controller;
 
 // php office vendor libraries
 use PhpOffice\PhpSpreadsheet\Spreadsheet;

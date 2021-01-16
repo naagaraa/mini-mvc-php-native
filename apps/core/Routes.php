@@ -4,9 +4,12 @@ namespace MiniMvc\Apps\Core\Bootstraping;
 
 /**
  * -------------------------------------------------------------------------------
- * Documentasi Code App
+ * Documentasi Code App Routes
+ * Author 	: Nagara
  * -------------------------------------------------------------------------------
+ *  
  * 
+ *  routes
  *  untuk mengatur Route yang diambil pada controller
  */
 

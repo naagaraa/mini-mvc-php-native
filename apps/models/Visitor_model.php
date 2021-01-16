@@ -1,6 +1,6 @@
 <?php
 
-use MiniMvc\Core\Database;
+use MiniMvc\Apps\Core\Bootstraping\Database;
 
 /**
  * Documentasi Code

@@ -3,9 +3,12 @@
 /**
  * -----------------------------------------------------------------------------
  * Documentation @config
+ * Author : Nagara
  * -----------------------------------------------------------------------------
  * 
  * untuk set base_url atau membuat url rootnya dengan membuat definenya
+ * kalian bisa membuat config sendiri atau Variabel global dengan
+ * melakukan set up define.
  * 
  * example root url :
  * 
