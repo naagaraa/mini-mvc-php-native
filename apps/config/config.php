@@ -44,12 +44,25 @@ $configuration = [
 ];
 
 
+//-------------------------------------Development----------------------------------------------//
+
 // base-Url untuk asset
 define('ASSET', $configuration['APP_HOST'] . $configuration['APP_NAME'] . '/public');
-// base-Url untuk URL
+// base-Url untuk URL 
 define('URL', $configuration['APP_HOST'] . $configuration['APP_NAME'] . '/');
 // base-url untuh path
 define('BASEURL', $configuration['APP_HOST'] . $configuration['APP_NAME'] . '/');
+
+//-------------------------------------/production-----------------------------------------------//
+
+// // base-Url untuk asset
+// define('ASSET', $configuration['APP_URL']  . '/public');
+// // base-Url untuk URL 
+// define('URL', $configuration['APP_URL'] . '/');
+// // base-url untuh path
+// define('BASEURL', $configuration['APP_URL']  . '/');
+
+
 // vendor-URL
 $vendor = $_SERVER['DOCUMENT_ROOT'] . '/' . $configuration['APP_NAME'] . '/vendor/autoload.php';
 define('vendor', $vendor);
