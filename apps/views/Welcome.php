@@ -2,8 +2,14 @@
 <html lang="en">
 
 <head>
-	<meta charset="utf-8">
+	<meta charset="UTF-8">
 	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<meta name="description" content="welcome message">
+	<meta name="keywords" content="mini mvc php native project">
+	<meta name="author" content="nagara">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+	<?php header('Content-type: text/html; charset=utf-8'); ?>
 
 	<title>MINI MVC PHP NATIVE </title>
 
@@ -20,6 +26,10 @@
 
 	<!-- Styles -->
 	<style>
+	* {
+		font-display: swap
+	}
+
 	.theme {
 		background-color: rgb(237, 237, 237);
 		color: rgb(255, 81, 0);
@@ -116,11 +126,12 @@
 				</div>
 			</div>
 			<div class="links">
-				<a href="https://naagaraa.github.io/documentation-mini-mvc-php-project/" target="_blank">Documentation</a>
-				<a href="https://github.com/naagaraa/mini-mvc-phpnative" target="_blank">GitHub</a>
-				<a href="https://www.youtube.com/channel/UCYsZhw6Mlk23Q-nUPP9t1YA" target="_blank">Youtube</a>
-				<a href="https://www.instagram.com/naagaraa/" target="_blank">Instagram</a>
-				<a href="https://dribbble.com/naagaraa/" target="_blank">Dribbble</a>
+				<a rel="noreferrer" href="https://naagaraa.github.io/documentation-mini-mvc-php-project/"
+					target="_blank">Documentation</a>
+				<a rel="noreferrer" href="https://github.com/naagaraa/mini-mvc-phpnative" target="_blank">GitHub</a>
+				<a rel="noreferrer" href="https://www.youtube.com/channel/UCYsZhw6Mlk23Q-nUPP9t1YA" target="_blank">Youtube</a>
+				<a rel="noreferrer" href="https://www.instagram.com/naagaraa/" target="_blank">Instagram</a>
+				<a rel="noreferrer" href="https://dribbble.com/naagaraa/" target="_blank">Dribbble</a>
 			</div>
 			<footer>
 				<div class="container">
