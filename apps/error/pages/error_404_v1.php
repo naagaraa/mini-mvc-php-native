@@ -136,6 +136,7 @@
 		.notfound h2 {
 			font-size: 22px;
 		}
+
 	}
 	</style>
 </head>
@@ -147,6 +148,7 @@
 				<h1>404</h1>
 			</div>
 			<h2>Oops! Nothing was found</h2>
+			<p class="error" style="font-weight:bold;font-size:large">Error Message : <?= $data['message']; ?></p>
 			<p>The page you are looking for might have been removed had its name changed or is temporarily unavailable. <a
 					href="<?= URL; ?>">Return to homepage</a></p>
 			<!-- <div class="notfound-social">

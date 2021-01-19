@@ -150,6 +150,7 @@
 				<h1>404</h1>
 			</div>
 			<h2>Oops, The Page you are looking for can't be found!</h2>
+			<p class="error" style="font-weight:bold;font-size:large">Error Message : <?= $data['message']; ?></p>
 			<br>
 			<a href="<?= URL; ?>">Return To Homepage</a>
 		</div>

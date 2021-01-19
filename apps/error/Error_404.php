@@ -14,8 +14,11 @@ class Error_404 extends Controller
 		// code here
 	}
 
-	public function index()
+	public function index($response = "Halaman tidak ditemukan")
 	{
-		$this->error_view('error_404_v1');
+		$data = [
+			'message' => $response,
+		];
+		$this->error_view('error_404_v1', $data);
 	}
 }

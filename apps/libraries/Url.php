@@ -25,4 +25,9 @@ class Url extends Controller
 			return $url;
 		}
 	}
+	public function Redirect($url, $permanent = false)
+	{
+		header('Location: ' . $url, true, $permanent ? 301 : 302);
+		exit();
+	}
 }

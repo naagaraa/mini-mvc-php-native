@@ -15,7 +15,7 @@ namespace MiniMvc\Apps\Core\Bootstraping;
 class App
 {
 
-	protected $controller = 'Home';  # ini untuk controller
+	protected $controller = 'Welcome';  # ini untuk controller
 	protected $method = 'index';     # ini untuk method
 	protected $params = [];	         # ini untuk parameter
 
@@ -77,16 +77,18 @@ class App
 		// unset($url[0]);
 		$url = $this->ParserURL();
 		$this->controller = $url[1];
-		unset($url[1]);
+		$this->folder = $url[0];
 
-		if (!file_exists('apps/controllers/' . $url[0] . '/' . $this->controller . '.php')) {
+		if (!file_exists('apps/controllers/' . $this->folder . '/' . $this->controller . '.php')) {
 			$this->handleWithoutFolder();
 			die;
 		}
 
 		# instasiasi class tersebut
-		require_once 'apps/controllers/' . $url[0] . '/' . $this->controller . '.php';
+		require_once 'apps/controllers/' . $this->folder . '/' . $this->controller . '.php';
 		$this->controller = new $this->controller;
+		unset($url[0]);
+		unset($url[1]);
 
 		# untuk method user
 		if (isset($url[2])) {
@@ -99,6 +101,9 @@ class App
 		# params user
 		if (!empty($url)) {
 			$this->params = array_values($url);
+			unset($url[0]);
+		} else {
+			$this->params = [];
 		}
 
 		# call controller and method, and send params is !empy
@@ -111,6 +116,7 @@ class App
 	{
 		$url = $this->ParserURL();
 		$this->controller = $url[0];
+
 		unset($url[0]);
 
 		if (!file_exists('apps/controllers/' . $this->controller . '.php')) {
@@ -127,11 +133,13 @@ class App
 				$this->method = $url[1];
 				unset($url[1]);
 			}
-		}
+		};
 
 		# params user
 		if (!empty($url)) {
 			$this->params = array_values($url);
+		} else {
+			$this->params = [];
 		}
 
 		# call controller and method, and send params is !empy
@@ -141,6 +149,8 @@ class App
 
 	public function showerror_404()
 	{
+		$message = "gagal";
+
 		$controller = 'Error_404'; 				# ini untuk controller
 		$method = 'index'; 							# ini untuk method
 		$params = [];										# ini unutk parameter
@@ -183,80 +193,6 @@ class App
 
 		# call controller and method, and send params is !empy
 		call_user_func_array([$this->controller, $this->method], $this->params);
-		die;
-	}
-
-	public function RouteWithFolder($folder, $controller, $method)
-	{
-		// unset($url[0]);
-		$folder = $folder;
-		$controller = $controller;
-		$method = $method;
-		$url = $this->ParserURL();
-		// $this->controller = $url[1];
-		// unset($url[1]);
-
-		if (!file_exists('apps/controllers/' . $folder . '/' . $controller . '.php')) {
-			$this->showerror_404();
-			die;
-		}
-
-		# instasiasi class tersebut
-		require_once 'apps/controllers/' . $folder . '/' . $controller . '.php';
-		$controller = new $controller;
-
-		# untuk method user
-		if (isset($this->method)) {
-			if (method_exists($this->controller, $this->method)) {
-				$this->method = $this->method;
-				unset($this->method);
-			}
-		}
-
-		# params user
-		if (!empty($url)) {
-			$this->params = array_values($url);
-		}
-
-		# call controller and method, and send params is !empy
-		call_user_func_array([$controller, $method], $this->params);
-		die;
-	}
-
-	public function RouteWithoutFolder($controller, $method)
-	{
-		// unset($url[0]);
-		// $folder = $folder;
-		$controller = $controller;
-		$method = $method;
-		$url = $this->ParserURL();
-		// $this->controller = $url[1];
-		// unset($url[1]);
-
-		if (!file_exists('apps/controllers/' . $controller . '.php')) {
-			$this->showerror_404();
-			die;
-		}
-
-		# instasiasi class tersebut
-		require_once 'apps/controllers/' . $controller . '.php';
-		$controller = new $controller;
-
-		# untuk method user
-		// if (isset($this->method)) {
-		// 	if (method_exists($this->controller, $this->method)) {
-		// 		$this->method = $this->method;
-		// 		unset($this->method);
-		// 	}
-		// }
-
-		# params user
-		if (!empty($url)) {
-			$this->params = array_values($url);
-		}
-
-		# call controller and method, and send params is !empy
-		call_user_func_array([$controller, $method], $this->params);
 		die;
 	}
 }

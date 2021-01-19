@@ -25,6 +25,11 @@ class Web extends Routes
 	 *  die;
 	 * 	});
 	 * 
+	 * 	$router->get('/news/{slug}', function ($slug) {
+	 *  	$this->RouteWithFolder('folder', 'controller', 'method',[$slug]);
+	 *  die;
+	 * 	});
+	 * 
 	 * 	$router->get('/about', function () {
 	 *  	$this->RouteWithFolder('controller', 'method');
 	 * 	die;
@@ -45,9 +50,6 @@ class Web extends Routes
 		$router = new Router();
 
 		// your route here
-		$router->get('/home', function () {
-			$this->RouteWithFolder('apps', 'dashboard', 'index');
-		});
 		$router->get('/info-php', function () {
 			$this->RouteWithoutFolder('welcome', 'show');
 		});
