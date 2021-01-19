@@ -2,6 +2,8 @@
 
 namespace MiniMvc\Apps\Core\Bootstraping;
 
+use \PDO;
+
 /**
  * -----------------------------------------------------------
  * Documentasi Code Database
