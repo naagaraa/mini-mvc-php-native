@@ -36,13 +36,13 @@ class App
 		(!isset($url[1]) 				&& !isset($url[0])) 			? $this->welcome()							  :  false;
 
 		# 	handle url
-		(!isset($url[0]) 				&& !isset($url[1])) 			? $this->showerror() 							:  false;
+		(!isset($url[0]) 				&& !isset($url[1])) 			? $this->showerror_404() 							:  false;
 
 		(isset($url[0])					&& isset($url[1]))				? $this->handleWithFolder() 			:  false;
-		(isset($url[0]) 				&& !isset($url[1])) 			? $this->showerror()					 		:  false;
+		(isset($url[0]) 				&& !isset($url[1])) 			? $this->showerror_404()					 		:  false;
 		(isset($url[0])					|| isset($url[1])) 				? $this->handleWithoutFolder()	 	:  false;
 
-		(!isset($url[0]) 				|| !isset($url[1])) 			? $this->showerror()					  	:  false;
+		(!isset($url[0]) 				|| !isset($url[1])) 			? $this->showerror_404()					  	:  false;
 	}
 
 	/**
@@ -114,7 +114,7 @@ class App
 		unset($url[0]);
 
 		if (!file_exists('apps/controllers/' . $this->controller . '.php')) {
-			$this->showerror();
+			$this->showerror_404();
 			die;
 		}
 		# instasiasi class tersebut
@@ -139,14 +139,14 @@ class App
 		die;
 	}
 
-	public function showerror()
+	public function showerror_404()
 	{
 		$controller = 'Error_404'; 				# ini untuk controller
 		$method = 'index'; 							# ini untuk method
 		$params = [];										# ini unutk parameter
 
 		# instasiasi class tersebut
-		require_once 'apps/controllers/error/' . $controller . '.php';
+		require_once 'apps/error/' . $controller . '.php';
 		$controller = new $controller;
 
 
@@ -162,7 +162,7 @@ class App
 		unset($url[0]);
 
 		if (!file_exists('apps/controllers/' . $this->controller . '.php')) {
-			$this->showerror();
+			$this->showerror_404();
 			die;
 		}
 		# instasiasi class tersebut
@@ -197,7 +197,7 @@ class App
 		// unset($url[1]);
 
 		if (!file_exists('apps/controllers/' . $folder . '/' . $controller . '.php')) {
-			$this->showerror();
+			$this->showerror_404();
 			die;
 		}
 
@@ -234,7 +234,7 @@ class App
 		// unset($url[1]);
 
 		if (!file_exists('apps/controllers/' . $controller . '.php')) {
-			$this->showerror();
+			$this->showerror_404();
 			die;
 		}
 

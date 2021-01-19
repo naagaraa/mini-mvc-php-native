@@ -32,6 +32,6 @@ class Welcome extends Controller
 
 	public function show()
 	{
-		echo "ini Controller welcome method show";
+		phpinfo();
 	}
 }

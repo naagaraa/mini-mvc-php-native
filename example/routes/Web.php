@@ -44,15 +44,45 @@ class Web extends Routes
 		// Create a Router object
 		$router = new Router();
 
-		// your route here
 		$router->get('/home', function () {
-			$this->RouteWithFolder('apps', 'dashboard', 'index');
+			$this->RouteWithFolder('user', 'home', 'index');
 		});
-		$router->get('/info-php', function () {
+		$router->get('/about', function () {
 			$this->RouteWithoutFolder('welcome', 'show');
 		});
-		$router->get('/', function () {
-			$this->RouteWithoutFolder('welcome', 'index');
+
+		// admin login
+		$router->get('/login', function () {
+			$this->RouteWithFolder('admin', 'Kepo', 'index');
+		});
+
+		// admin dashboard
+		$router->post('/dashboard', function () {
+			$this->RouteWithFolder('admin', 'Dasshubodo', 'index');
+		});
+		$router->get('/chard', function () {
+			$this->RouteWithFolder('admin', 'Chard', 'index');
+		});
+		$router->get('/list-artikel', function () {
+			$this->RouteWithFolder('admin', 'ListNews', 'index');
+		});
+		$router->get('/tambah-artikel', function () {
+			$this->RouteWithFolder('admin', 'TambahNews', 'index');
+		});
+		$router->get('/contact-us', function () {
+			$this->RouteWithFolder('admin', 'Contact', 'index');
+		});
+		$router->get('/tambah-user', function () {
+			$this->RouteWithFolder('admin', 'Register', 'index');
+		});
+		$router->get('/user-list', function () {
+			$this->RouteWithFolder('admin', 'Userlist', 'index');
+		});
+		$router->get('/track-akses', function () {
+			$this->RouteWithFolder('admin', 'Report', 'index');
+		});
+		$router->get('/visit-page', function () {
+			$this->RouteWithFolder('admin', 'Report', 'VisitPage');
 		});
 
 		// run route!

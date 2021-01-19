@@ -45,7 +45,7 @@ class Routes
 		}
 	}
 
-	public function showerror()
+	public function showerror_404()
 	{
 		header($_SERVER['SERVER_PROTOCOL'] . ' 404 Not Found');
 		$controller = 'Error_404'; 				# ini untuk controller
@@ -53,7 +53,7 @@ class Routes
 		$params = [];										# ini unutk parameter
 
 		# instasiasi class tersebut
-		require_once 'apps/controllers/error/' . $controller . '.php';
+		require_once 'apps/error/' . $controller . '.php';
 		$controller = new $controller;
 
 
@@ -70,7 +70,7 @@ class Routes
 		unset($url[0]);
 
 		if (!file_exists('apps/controllers/' . $this->controller . '.php')) {
-			$this->showerror();
+			$this->showerror_404();
 			die;
 		}
 		# instasiasi class tersebut
@@ -105,7 +105,7 @@ class Routes
 		// unset($url[1]);
 
 		if (!file_exists('apps/controllers/' . $folder . '/' . $controller . '.php')) {
-			$this->showerror();
+			$this->showerror_404();
 			die;
 		}
 
@@ -142,7 +142,7 @@ class Routes
 		// unset($url[1]);
 
 		if (!file_exists('apps/controllers/' . $controller . '.php')) {
-			$this->showerror();
+			$this->showerror_404();
 			die;
 		}
 
@@ -161,6 +161,8 @@ class Routes
 		# params user
 		if (!empty($url)) {
 			$this->params = array_values($url);
+		} else {
+			$this->params = [];
 		}
 
 		# call controller and method, and send params is !empy

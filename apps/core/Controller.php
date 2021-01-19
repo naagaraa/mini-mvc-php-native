@@ -64,8 +64,15 @@ class Controller
 		return new $lib;
 	}
 
-	public function myRoute()
+
+	/**
+	 * @Error_view
+	 * 
+	 * function untuk memanggil error view
+	 */
+	public function error_view($view, $data = [])
 	{
-		// 
+		// mengarah pada folder apps/error/pages/ namaviews.php
+		require_once 'apps/error/pages/' . $view . '.php';
 	}
 }

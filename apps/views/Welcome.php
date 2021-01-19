@@ -5,11 +5,11 @@
 	<meta charset="utf-8">
 	<meta name="viewport" content="width=device-width, initial-scale=1">
 
-	<title>PHP NATIVE MVC</title>
+	<title>MINI MVC PHP NATIVE </title>
 
 	<!-- ICONS -->
-	<link rel="apple-touch-icon" sizes="76x76" href="<?= ASSET . '/admin'; ?>/img/apple-icon.png">
-	<link rel="icon" type="image/png" sizes="96x96" href="<?= ASSET . '/admin'; ?>/img/favicon.png">
+	<link rel="apple-touch-icon" sizes="76x76" href="<?= ASSET . '/image'; ?>/PHP-logo.png">
+	<link rel="icon" type="image/png" sizes="96x96" href="<?= ASSET . '/image'; ?>/PHP-logo.png">
 
 	<!-- Fonts -->
 	<link href="https://fonts.googleapis.com/css?family=Nunito:200,600" rel="stylesheet">
@@ -20,15 +20,29 @@
 
 	<!-- Styles -->
 	<style>
-	html,
-	body {
-		background-color: #1b1b1b;
-		color: white;
-		font-size: large;
+	.theme {
+		background-color: rgb(237, 237, 237);
+		color: rgb(255, 81, 0);
+		font-size: medium;
 		font-family: 'Nunito', sans-serif;
 		font-weight: bold;
 		height: 100vh;
 		margin: 0;
+	}
+
+	.color-orange {
+		background-color: rgb(255, 81, 0);
+		color: white;
+	}
+
+	.color-orange:hover {
+		background-color: rgb(196, 69, 10);
+		color: white;
+	}
+
+	.dark-theme {
+		background-color: black;
+		color: white;
 	}
 
 	.full-height {
@@ -60,7 +74,7 @@
 	}
 
 	.links>a {
-		color: white;
+		color: gray;
 		padding: 0 25px;
 		font-size: 13px;
 		font-weight: 600;
@@ -76,44 +90,46 @@
 	.background {
 		width: 800px;
 		height: 80px;
-		background-color: #2b2bff;
+		/* background-color: #2b2bff; */
 		margin: auto;
 	}
 	</style>
 </head>
 
-<body>
+<body id="my-theme" class="theme">
 	<div class="flex-center position-ref full-height">
 		<div class="content">
 			<div class="title m-b-md">
 				<div class="background">
-					MINI-MVC PHP-NATIVE
+					MINI MVC PHP NATIVE
 				</div>
 			</div>
 
 			<div class="links">
-				<a href="<?= URL . 'home' ?>">Docs</a>
+				<a href="https://naagaraa.github.io/documentation-mini-mvc-php-project/" target="_blank">Documentation</a>
 				<a href="https://github.com/naagaraa/mini-mvc-phpnative" target="_blank">GitHub</a>
-				<a href="<?= URL . 'login' ?>">Admin Page</a>
 			</div>
 			<footer>
-				<br><br>
-				<p>Dibuat oleh YT WPU oleh sandhika galih, modifated custom oleh YT n1ght w0lf oleh naagaraa</p>
-				<div class="container ">
-					<p>ini adalah sebuah hasil pembelajaran dari PHP dasar, OOP PHP , PDO ,dan MVC dasar yang dipelajari pada
-						Youtube
-						Web Programming Unpas dan saya kembangkan menjadi Mini MVC PHP Native Project untuk tujuan membuat kerangka
-						kerja beberapa library sudah saya includkan pada composer.json, dan saat installasi diharapkan melakukan
-						composer
-						install
-					</p>
+				<div class="container">
+					<button id="theme" class="mt-4 btn color-orange btn-primary">change the theme</button>
 				</div>
 			</footer>
 		</div>
 
 	</div>
 
-
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.5.1/jquery.min.js"
+		integrity="sha512-bLT0Qm9VnAYZDflyKcBaQ2gg0hSYNQrJ8RilYldYQ1FxQYoCLtUjuuRuZo+fjqhx/qtq/1itJ0C2ejDxltZVFg=="
+		crossorigin="anonymous"></script>
+	<script>
+	$(document).ready(function() {
+		$("#theme").click(function(e) {
+			// e.preventDefault();
+			$("#my-theme").toggleClass("dark-theme");
+			$(this).toggleClass("color-orange");
+		});
+	});
+	</script>
 </body>
 
 </html>
