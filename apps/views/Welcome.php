@@ -90,7 +90,6 @@
 	.background {
 		width: 800px;
 		height: 80px;
-		/* background-color: #2b2bff; */
 		margin: auto;
 	}
 	</style>
@@ -111,7 +110,7 @@
 			</div>
 			<footer>
 				<div class="container">
-					<button id="theme" class="mt-4 btn color-orange btn-primary">change the theme</button>
+					<button id="theme" class="mt-4 btn color-orange">change theme</button>
 				</div>
 			</footer>
 		</div>
@@ -124,9 +123,8 @@
 	<script>
 	$(document).ready(function() {
 		$("#theme").click(function(e) {
-			// e.preventDefault();
 			$("#my-theme").toggleClass("dark-theme");
-			$(this).toggleClass("color-orange");
+			$(this).toggleClass("btn-primary");
 		});
 	});
 	</script>
