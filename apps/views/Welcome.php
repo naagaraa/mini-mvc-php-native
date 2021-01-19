@@ -30,13 +30,18 @@
 		margin: 0;
 	}
 
+	.text {
+		color: gray;
+		font-size: small;
+		text-align: center;
+	}
+
 	.color-orange {
 		background-color: rgb(255, 81, 0);
 		color: white;
 	}
 
 	.color-orange:hover {
-		background-color: rgb(196, 69, 10);
 		color: white;
 	}
 
@@ -102,11 +107,20 @@
 				<div class="background">
 					MINI MVC PHP NATIVE
 				</div>
+				<div class="container">
+					<p class="text">
+						simple mvc php native project learn at sandhika galih, develop by alias name on internet miyuki nagara
+						<br>*note
+						my english not fluent also not good
+					</p>
+				</div>
 			</div>
-
 			<div class="links">
 				<a href="https://naagaraa.github.io/documentation-mini-mvc-php-project/" target="_blank">Documentation</a>
 				<a href="https://github.com/naagaraa/mini-mvc-phpnative" target="_blank">GitHub</a>
+				<a href="https://www.youtube.com/channel/UCYsZhw6Mlk23Q-nUPP9t1YA" target="_blank">Youtube</a>
+				<a href="https://www.instagram.com/naagaraa/" target="_blank">Instagram</a>
+				<a href="https://dribbble.com/naagaraa/" target="_blank">Dribbble</a>
 			</div>
 			<footer>
 				<div class="container">
