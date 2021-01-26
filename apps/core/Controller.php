@@ -10,8 +10,8 @@ use Matrix\Functions;
  * Author : Nagara
  * ------------------------------------------------------------------
  * 
- * ini adalah kelas induk yang nantinya akan digunakan pada child
- * yang akan inheritance dengan Class Controller.
+ * ini adalah kelas induk/ parent class yang nantinya akan digunakan 
+ * pada child class yang inheritance dengan Class Controller.
  * 
  * ------------------------------------------------------------------
  * example :
@@ -68,7 +68,7 @@ class Controller
 	/**
 	 * @Error_view
 	 * 
-	 * function untuk memanggil error view
+	 * function untuk memanggil error view pada folder error/pages
 	 */
 	public function error_view($view, $data = [])
 	{

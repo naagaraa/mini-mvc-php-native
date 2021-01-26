@@ -8,9 +8,10 @@ namespace MiniMvc\Apps\Core\Bootstraping;
  * Author 	: Nagara
  * -------------------------------------------------------------------------------
  *  
- * 
  *  routes
- *  untuk mengatur Route yang diambil pada controller
+ *  untuk mengatur Route yang diambil pada controller atau membuat function routing
+ *  yang akan di parsing dari routes/web kepada class routes, dibuatlah function
+ *  yang meng hanling semuanya disini.
  */
 
 
@@ -19,7 +20,6 @@ class Routes
 
 	public function __construct()
 	{
-
 		// In case one is using PHP 5.4's built-in server
 		$filename = __DIR__ . preg_replace('#(\?.*)$#', '', $_SERVER['REQUEST_URI']);
 		if (

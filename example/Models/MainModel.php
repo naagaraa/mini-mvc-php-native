@@ -3,7 +3,14 @@
 use MiniMvc\Apps\Core\Bootstraping\Database;
 
 /**
+ * -----------------------------------------------------------------------
  * Documentasi Code
+ * -----------------------------------------------------------------------
+ * 
+ * untuk melakukan query pada tabel dalam database silahkan lakukan disini
+ * query dibuat dalam bentuk public function yang nantinya akan digunakan
+ * pada controller. berikut ini adalah example dari models yang
+ * tersedia,
  */
 
 class MainModel
@@ -16,13 +23,13 @@ class MainModel
 		$this->db = new Database;
 	}
 
-	public function get_all_data()
+	public function getall()
 	{
 		$this->db->query('SELECT * FROM ' . $this->table);
 		return $this->db->resultSet();
 	}
 
-	public function get_data_by_urlid($urlid)
+	public function get_data_by_condition($urlid)
 	{
 		$this->db->query('SELECT * FROM ' . $this->table . ' WHERE urlid=:urlid');
 		$this->db->bind('urlid', $urlid);
@@ -48,7 +55,7 @@ class MainModel
 		return $this->db->rowCount();
 	}
 
-	public function remove_data_by_uniqid($uniqid)
+	public function remove_data_by_condition($uniqid)
 	{
 		$this->db->query('DELETE FROM ' . $this->table . ' WHERE uniqid=:uniqid');
 		$this->db->bind('uniqid', $uniqid);

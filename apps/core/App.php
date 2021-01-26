@@ -8,7 +8,9 @@ namespace MiniMvc\Apps\Core\Bootstraping;
  * Author : Nagara
  * -------------------------------------------------------------------------------
  * 
- *  untuk mengatur url yang diambil pada controller
+ *  untuk mengatur url yang diambil pada browser dan memanggil controller
+ *  default route dibuat untuk memanggil namecontroller/method/params
+ *  dibuat mirip seperti framework CI_3 .
  */
 
 
@@ -16,26 +18,25 @@ class App
 {
 
 	protected $controller = 'Welcome';  # ini untuk controller
-	protected $method = 'index';     # ini untuk method
-	protected $params = [];	         # ini untuk parameter
+	protected $method = 'index';     		# ini untuk method
+	protected $params = [];	         		# ini untuk parameter
 
 
 	public function __construct()
 	{
-		// 	$myroute = new Routes;
-		// hidden error log
+		# hidden error log : uncommnent satu baris dibawah
 		// error_reporting(0);
 		// write code here
 		$url = $this->ParserURL();
 
-		//  untuk debug Url
-		// var_dump($folder_controller_user);
+		#  untuk debug Url : uncomment dua baris dibawah
+		// var_dump($url);
 		// die;
 
 		# handle url / root
 		(!isset($url[1]) 				&& !isset($url[0])) 			? $this->welcome()							  :  false;
 
-		# 	handle url
+		# 	handle default url
 		(!isset($url[0]) 				&& !isset($url[1])) 			? $this->showerror_404() 							:  false;
 
 		(isset($url[0])					&& isset($url[1]))				? $this->handleWithFolder() 			:  false;
@@ -74,7 +75,6 @@ class App
 	// handle file in controller
 	public function handleWithFolder()
 	{
-		// unset($url[0]);
 		$url = $this->ParserURL();
 		$this->controller = $url[1];
 		$this->folder = $url[0];
@@ -152,8 +152,8 @@ class App
 		$message = "gagal";
 
 		$controller = 'Error_404'; 				# ini untuk controller
-		$method = 'index'; 							# ini untuk method
-		$params = [];										# ini unutk parameter
+		$method = 'index'; 								# ini untuk method
+		$params = [];											# ini unutk parameter
 
 		# instasiasi class tersebut
 		require_once 'apps/error/' . $controller . '.php';

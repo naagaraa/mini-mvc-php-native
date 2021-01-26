@@ -3,7 +3,14 @@
 use MiniMvc\Apps\Core\Bootstraping\Database;
 
 /**
+ * -----------------------------------------------------------------------
  * Documentasi Code
+ * -----------------------------------------------------------------------
+ * 
+ * untuk melakukan query pada tabel dalam database silahkan lakukan disini
+ * query dibuat dalam bentuk public function yang nantinya akan digunakan
+ * pada controller. berikut ini adalah example dari models yang
+ * tersedia, dan tersedia example code pada folder example
  */
 
 class User_model

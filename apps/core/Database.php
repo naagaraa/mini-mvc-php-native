@@ -5,12 +5,17 @@ namespace MiniMvc\Apps\Core\Bootstraping;
 use \PDO;
 
 /**
- * -----------------------------------------------------------
- * Documentasi Code Database
+ * -------------------------------------------------------------
+ * Documentasi Code Database Wrapper PDO
  * Author : Nagara
- * -----------------------------------------------------------
+ * -------------------------------------------------------------
  * 
- * config database wrapper menggunakan PDO
+ * config database wrapper menggunakan PDO, atau PHP data object
+ * semua yang ada disini ditulis dengan konsep PDO, untuk lebih
+ * jelasnya dan memahami konsep PDO silahkan buka documentasi
+ * resminya. https://www.php.net/manual/en/book.pdo.php 
+ * pada intinya semua handling core query
+ * berada disini.
  */
 class Database
 {
