@@ -21,7 +21,6 @@
 		2.  *install phpxdebug*
 		3.  *install git-client*
 		4.  *clone myrepository mini mvc php native*
-		5.  *composer update*
 
 	* **Documentation Libraries Package**
 		1. Boostsrap
