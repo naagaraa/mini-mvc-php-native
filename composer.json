@@ -33,5 +33,7 @@
         "post-autoload-dump": [
             "php composer.phar install --no-scripts"
         ]
-    }
+    },
+    "minimum-stability": "dev",
+    "prefer-stable": true
 }
