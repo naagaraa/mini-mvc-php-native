@@ -24,12 +24,12 @@
     "prefer-stable": true,
     "require": {
         "php": ">=7.3.2",
-        "phpoffice/phpspreadsheet": "^1.14*@dev",
-        "twbs/bootstrap": "4.5.2*@dev",
-        "mjaschen/phpgeo": "^3.1*@dev",
-        "mpdf/mpdf": "^8.0*@dev",
-        "vlucas/phpdotenv": "^5.2*@dev",
-        "bramus/router": "~1.5*@dev"
+        "phpoffice/phpspreadsheet": "dev-master*@dev",
+        "twbs/bootstrap": "dev-master*@dev",
+        "mjaschen/phpgeo": "dev-master*@dev",
+        "mpdf/mpdf": "dev-master*@dev",
+        "vlucas/phpdotenv": "dev-master*@dev",
+        "bramus/router": "dev-master*@dev"
     },
     "scripts": {
         "post-autoload-dump": [
