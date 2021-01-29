@@ -4,6 +4,10 @@
     "homepage": "https://github.com/naagaraa/mini-mvc-phpnative",
     "type": "project",
     "license": "MIT",
+    "keywords": [
+        "framework",
+        "mini mvc php"
+    ],
     "authors": [
         {
             "name": "nagara",
@@ -20,22 +24,31 @@
             "MiniMvc\\": "apps/core"
         }
     },
-    "minimum-stability": "dev",
-    "prefer-stable": true,
     "require": {
         "php": ">=7.3.2",
-        "phpoffice/phpspreadsheet": "dev-master*@dev",
-        "twbs/bootstrap": "dev-master*@dev",
-        "mjaschen/phpgeo": "dev-master*@dev",
-        "mpdf/mpdf": "dev-master*@dev",
-        "vlucas/phpdotenv": "dev-master*@dev",
-        "bramus/router": "dev-master*@dev"
+        "phpoffice/phpspreadsheet": "^1.14",
+        "twbs/bootstrap": "4.5.2",
+        "mjaschen/phpgeo": "^3.1",
+        "mpdf/mpdf": "^8.0",
+        "vlucas/phpdotenv": "^5.2",
+        "bramus/router": "~1.5"
     },
-    "scripts": {
-        "post-autoload-dump": [
-            "php composer.phar install --no-scripts"
-        ]
+    "require-dev": {
+        "php": ">=7.3.2",
+        "phpoffice/phpspreadsheet": "^1.14",
+        "twbs/bootstrap": "4.5.2",
+        "mjaschen/phpgeo": "^3.1",
+        "mpdf/mpdf": "^8.0",
+        "vlucas/phpdotenv": "^5.2",
+        "bramus/router": "~1.5"
     },
+    "config": {
+        "optimize-autoloader": true,
+        "preferred-install": "dist",
+        "sort-packages": true
+    },
+    "minimum-stability": "dev",
+    "prefer-stable": true,
     "repositories": [
         {
             "type": "vcs",
