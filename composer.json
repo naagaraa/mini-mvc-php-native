@@ -35,5 +35,11 @@
         "post-autoload-dump": [
             "php composer.phar install --no-scripts"
         ]
-    }
+    },
+    "repositories": [
+        {
+            "type": "vcs",
+            "url": "https://github.com/naagaraa/mini-mvc-phpnative"
+        }
+    ]
 }
