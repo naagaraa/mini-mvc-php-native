@@ -19,19 +19,14 @@
             "role": "dosen"
         }
     ],
-    "autoload": {
-        "psr-4": {
-            "MiniMvc\\": "apps/core"
-        }
-    },
     "require": {
         "php": ">=7.3.2",
-        "phpoffice/phpspreadsheet": "1.14*@dev",
-        "twbs/bootstrap": "4.5.2*@dev",
-        "mjaschen/phpgeo": "3.1*@dev",
-        "mpdf/mpdf": "8.0*@dev",
-        "vlucas/phpdotenv": "5.2*@dev",
-        "bramus/router": "1.5*@dev"
+        "phpoffice/phpspreadsheet": "1.14",
+        "twbs/bootstrap": "4.5.2",
+        "mjaschen/phpgeo": "3.1",
+        "mpdf/mpdf": "8.0",
+        "vlucas/phpdotenv": "5.2",
+        "bramus/router": "1.5"
     },
     "require-dev": {
         "php": ">=7.3.2",
