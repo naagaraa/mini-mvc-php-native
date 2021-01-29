@@ -49,9 +49,6 @@
     },
     "minimum-stability": "dev",
     "prefer-stable": true,
-    "require": {
-        "nagara/mini-mvc-php-native": "dev-master@dev"
-    },
     "repositories": [
         {
             "type": "vcs",
