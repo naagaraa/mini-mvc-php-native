@@ -26,28 +26,28 @@
     },
     "require": {
         "php": ">=7.3.2",
-        "phpoffice/phpspreadsheet": "^1.14.*@dev",
-        "twbs/bootstrap": "4.5.2.*@dev",
-        "mjaschen/phpgeo": "^3.1.*@dev",
-        "mpdf/mpdf": "^8.0.*@dev",
-        "vlucas/phpdotenv": "^5.2.*@dev",
-        "bramus/router": "~1.5.*@dev"
+        "phpoffice/phpspreadsheet": "^1.14.*@dev-master",
+        "twbs/bootstrap": "4.5.2.*@dev-master",
+        "mjaschen/phpgeo": "^3.1.*@dev-master",
+        "mpdf/mpdf": "^8.0.*@dev-master",
+        "vlucas/phpdotenv": "^5.2.*@dev-master",
+        "bramus/router": "~1.5.*@dev-master"
     },
     "require-dev": {
         "php": ">=7.3.2",
-        "phpoffice/phpspreadsheet": "^1.14.*@dev",
-        "twbs/bootstrap": "4.5.2.*@dev",
-        "mjaschen/phpgeo": "^3.1.*@dev",
-        "mpdf/mpdf": "^8.0.*@dev",
-        "vlucas/phpdotenv": "^5.2.*@dev",
-        "bramus/router": "~1.5.*@dev"
+        "phpoffice/phpspreadsheet": "^1.14.*@dev-master",
+        "twbs/bootstrap": "4.5.2.*@dev-master",
+        "mjaschen/phpgeo": "^3.1.*@dev-master",
+        "mpdf/mpdf": "^8.0.*@dev-master",
+        "vlucas/phpdotenv": "^5.2.*@dev-master",
+        "bramus/router": "~1.5.*@dev-master"
     },
     "config": {
         "optimize-autoloader": true,
         "preferred-install": "dist",
         "sort-packages": true
     },
-    "minimum-stability": "RC",
+    "minimum-stability": "dev",
     "prefer-stable": true,
     "repositories": [
         {
