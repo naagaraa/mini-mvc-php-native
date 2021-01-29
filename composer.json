@@ -34,6 +34,6 @@
             "php composer.phar install --no-scripts"
         ]
     },
-    "minimum-stability": "dev",
+    "minimum-stability": "stable",
     "prefer-stable": true
 }
