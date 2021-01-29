@@ -52,27 +52,7 @@
     "repositories": [
         {
             "type": "vcs",
-            "url": "https://github.com/PHPOffice/PhpSpreadsheet.git"
-        },
-        {
-            "type": "vcs",
-            "url": "https://github.com/twbs/bootstrap.git"
-        },
-        {
-            "type": "vcs",
-            "url": "https://github.com/mjaschen/phpgeo.git"
-        },
-        {
-            "type": "vcs",
-            "url": "https://github.com/mpdf/mpdf.git"
-        },
-        {
-            "type": "vcs",
-            "url": "https://github.com/vlucas/phpdotenv.git"
-        },
-        {
-            "type": "vcs",
-            "url": "https://github.com/bramus/router.git"
+            "url": "https://github.com/naagaraa/mini-mvc-phpnative.git"
         }
     ]
 }
