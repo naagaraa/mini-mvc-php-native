@@ -4,5 +4,6 @@
 !.gitignore
 # folder vendor
 /vendor/*
+/public/assets/*
 
 # file envirotment variabel
