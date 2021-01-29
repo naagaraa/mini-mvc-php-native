@@ -1,11 +1,12 @@
 {
-    "name": "naagaraa/mini-mvc-php-native",
-    "description": "project ini dibuat agar lebih mempercepat dalam menyelesaikan project kecil web menggunakan php dengan membuatnya layaknya small framework yang terinspirasi dari codeigniter3",
+    "name": "nagara/mini-mvc-php-native",
+    "description": "MINI MVC PHP NATIVE PROJECT",
     "homepage": "https://github.com/naagaraa/mini-mvc-phpnative",
+    "type": "project",
     "license": "MIT",
     "authors": [
         {
-            "name": "naagaraa",
+            "name": "nagara",
             "email": "ekabersinar@gmail.com",
             "role": "developer"
         },
@@ -14,6 +15,11 @@
             "role": "dosen"
         }
     ],
+    "autoload": {
+        "psr-4": {
+            "MiniMvc\\": "apps/core"
+        }
+    },
     "require": {
         "php": ">=7.3.2",
         "phpoffice/phpspreadsheet": "^1.14",
