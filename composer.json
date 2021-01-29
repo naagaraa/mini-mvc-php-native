@@ -28,5 +28,10 @@
         "mpdf/mpdf": "^8.0",
         "vlucas/phpdotenv": "^5.2",
         "bramus/router": "~1.5"
+    },
+    "scripts": {
+        "post-autoload-dump": [
+            "php composer.phar install --no-scripts"
+        ]
     }
 }
