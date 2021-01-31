@@ -60,19 +60,6 @@ class Web extends Routes
 		$router->get('/', function () {
 			$this->Routing('welcome', 'index');
 		});
-		$router->get('/home/{slug}', function ($slug) {
-			$this->Routing('admin/middleware/AuthController', 'show', [$slug]);
-		});
-		$router->get('/home', function () {
-			$this->Routing('admin/middleware/AuthController', 'index');
-		});
-		$router->get('/about', function () {
-			$this->Routing('AboutController', 'index');
-		});
-		$router->get('/about/{slug}', function ($slug) {
-			$this->Routing('AboutController', 'show', [$slug]);
-		});
-
 		// run route!
 		$router->run();
 	}
