@@ -98,83 +98,109 @@ class Routes
 		die;
 	}
 
-	public function RouteWithFolder($folder, $controller, $method, $url = [])
-	{
-		$folder = $folder;
-		$controller = $controller;
-		$method = $method;
-		$params = $url;
-
-
-		if (!file_exists('apps/controllers/' . $folder . '/' . $controller . '.php')) {
-			$this->showerror_404("File tidak ditemukan | controller tidak ditemukan | cek file routes/web.php");
-			die;
-		}
-
-		# instasiasi class tersebut
-		require_once 'apps/controllers/' . $folder . '/' . $controller . '.php';
-		$controller = new $controller;
-
-		# untuk method user
-		if (isset($method)) {
-			if (method_exists($controller, $method)) {
-				$method = $method;
-			} else {
-				$this->showerror_404("method tidak ditemukan harap cek file routes/Web.php");
-				die;
-			}
-		}
-
-		# params user
-		if (!empty($params)) {
-			$params = array_values($params);
-		} else {
-			$params = [];
-		}
-
-
-		# call controller and method, and send params is !empy
-		call_user_func_array([$controller, $method], $params);
-		die;
-	}
-
-	public function RouteWithoutFolder($controller, $method, $parameter = [])
+	public function Routing($controller, $method, $parameter = [])
 	{
 
-		$controller = $controller;
-		$method = $method;
-		$params = $parameter;
+		// extract name folder
+		$newController = explode('/' ,$controller); 
+		$namafolder = '';
+
+		// var_dump(count($newController));
+		for ($i=0 ; $i <= count($newController) - 2 ; $i++) { 
+			$namafolder .= $newController[$i] . '/';
+		}
+		// end extract name folder
 
 
-		if (!file_exists('apps/controllers/' . $controller . '.php')) {
-			$this->showerror_404("File tidak ditemukan | controller tidak ditemukan | cek file routes/web.php");
-			die;
+		// extract new params
+		$newparams = [];
+		if ($parameter) {
+			# code...
+			$newparams = explode('/', $parameter[0]);
 		}
 
-		# instasiasi class tersebut
-		require_once 'apps/controllers/' . $controller . '.php';
-		$controller = new $controller;
+		// end extract new params
 
-		# untuk method user
-		if (isset($method)) {
-			if (method_exists($controller, $method)) {
-				$method = $method;
-			} else {
-				$this->showerror_404("method tidak ditemukan harap cek file routes/Web.php");
+
+
+		// jika nama folder ada handle here
+		if (!$namafolder) 
+		{
+			// jika tidak berada di dalam folder : handle here
+			$controllers = end($newController);
+			$method = $method;
+			$params = $newparams;
+
+			if (!file_exists('apps/controllers/' . $controllers . '.php')) {
+				$this->showerror_404("File tidak ditemukan | controller tidak ditemukan | cek file routes/web.php");
 				die;
 			}
-		}
 
-		# params user
-		if (!empty($params)) {
-			$params = array_values($params);
-			return false;
-		} else {
-			$params = [];
-		}
 
-		# call controller and method, and send params is !empy
-		call_user_func_array([$controller, $method], $params);
+			# instasiasi class tersebut
+			require_once 'apps/controllers/' . $controllers . '.php';
+			$controller = new $controllers;
+
+			# untuk method user
+			if (isset($method)) {
+				if (method_exists($controller, $method)) {
+					$method = $method;		
+				} else {
+					$this->showerror_404("method tidak ditemukan harap cek file routes/Web.php");
+					die;
+				}
+			}
+
+			# params user
+			if (!empty($params)) {
+				$params = array_values($params);			
+			} else {
+				$params = [];
+			}
+
+			# call controller and method, and send params is !empy
+			call_user_func_array([$controller, $method], $params);
+			die;
+		}
+		else
+		{
+			// jika berada di dalam folder : handle here
+			$folder = $namafolder;
+			$controller = end($newController);
+			$method = $method;
+			$params = $newparams;
+
+
+			if (!file_exists('apps/controllers/' . $folder . '/' . $controller . '.php')) {
+				$this->showerror_404("File tidak ditemukan | controller tidak ditemukan | cek file routes/web.php");
+				die;
+			}
+
+			# instasiasi class tersebut
+			require_once 'apps/controllers/' . $folder . '/' . $controller . '.php';
+			$controller = new $controller;
+
+			# untuk method user
+			if (isset($method)) {
+				if (method_exists($controller, $method)) {
+					$method = $method;
+				} else {
+					$this->showerror_404("method tidak ditemukan harap cek file routes/Web.php");
+					die;
+				}
+			}
+
+			# params user
+			if (!empty($params)) {
+				$params = array_values($params);
+			} else {
+				$params = [];
+			}
+
+			# call controller and method, and send params is !empy
+			call_user_func_array([$controller, $method], $params);
+			die;
+		}
 		die;
 	}
 }

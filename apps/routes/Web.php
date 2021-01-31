@@ -21,21 +21,25 @@ class Web extends Routes
 	 * -------------------------------------------------------------------------------
 	 * 
 	 * 	$router->get('/login', function () {
-	 *  	$this->RouteWithFolder('folder', 'controller', 'method');
+	 *      // handle here
+	 *  	$this->Routing('folder/controller', 'method');
 	 *  die;
 	 * 	});
 	 * 
 	 * 	$router->get('/news/{slug}', function ($slug) {
-	 *  	$this->RouteWithFolder('folder', 'controller', 'method',[$slug]);
+	 * 		// handle here
+	 *  	$this->Routing('folder/controller', 'method',[$slug]);
 	 *  die;
 	 * 	});
 	 * 
 	 * 	$router->get('/about', function () {
-	 *  	$this->RouteWithFolder('controller', 'method');
+	 * 		// handle here
+	 *  	$this->Routing('controller', 'method');
 	 * 	die;
 	 * 	});
 	 * 
 	 * 	$router->get('/info', function () {
+	 * 		// handle here
 	 *  	phpinfo();
 	 *  die;
 	 * 	});
@@ -51,10 +55,22 @@ class Web extends Routes
 
 		// your route here
 		$router->get('/info-php', function () {
-			$this->RouteWithoutFolder('welcome', 'show');
+			$this->Routing('welcome', 'show');
 		});
 		$router->get('/', function () {
-			$this->RouteWithoutFolder('welcome', 'index');
+			$this->Routing('welcome', 'index');
+		});
+		$router->get('/home/{slug}', function ($slug) {
+			$this->Routing('admin/middleware/AuthController', 'show', [$slug]);
+		});
+		$router->get('/home', function () {
+			$this->Routing('admin/middleware/AuthController', 'index');
+		});
+		$router->get('/about', function () {
+			$this->Routing('AboutController', 'index');
+		});
+		$router->get('/about/{slug}', function ($slug) {
+			$this->Routing('AboutController', 'show', [$slug]);
 		});
 
 		// run route!

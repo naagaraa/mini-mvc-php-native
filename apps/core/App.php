@@ -142,6 +142,8 @@ class App
 			$this->params = [];
 		}
 
+		// var_dump($this->params);
+		// die;
 		# call controller and method, and send params is !empy
 		call_user_func_array([$this->controller, $this->method], $this->params);
 		die;
