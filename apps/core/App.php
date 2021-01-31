@@ -40,7 +40,8 @@ class App
 		(!isset($url[0]) 				&& !isset($url[1])) 			? $this->showerror_404() 							:  false;
 
 		(isset($url[0])					&& isset($url[1]))				? $this->handleWithFolder() 			:  false;
-		(isset($url[0]) 				&& !isset($url[1])) 			? $this->showerror_404()					 		:  false;
+		// (isset($url[0]) 				&& !isset($url[1])) 			? $this->showerror_404()					 		:  false;
+		(isset($url[0]) 				&& !isset($url[1])) 			? $this->handleWithoutFolder()					 		:  false;
 		(isset($url[0])					|| isset($url[1])) 				? $this->handleWithoutFolder()	 	:  false;
 
 		(!isset($url[0]) 				|| !isset($url[1])) 			? $this->showerror_404()					  	:  false;
