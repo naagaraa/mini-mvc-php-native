@@ -50,7 +50,7 @@
 * **Sandhikagalih Dosen Unpas dan Content Creator** [ Instagram ](https://www.instagram.com/sandhikagalih/)
 
 
-## Installation
+## Installation manual
 description or requretment
 
 1. install composer
@@ -79,6 +79,32 @@ description or requretment
 	```
 
 	composer install
+
+	``` 
+
+## Installation via composer 
+1. buka / masuk dalam folder htdocs
+
+	```
+
+	c:\xampp> cd htdocs
+
+	``` 
+	```
+
+	c:\xampp\htdocs> 
+
+	``` 
+2. composer create project
+
+	```
+
+	composer create-project nagara/mini-mvc-php-native:dev-master
+
+	``` 
+	```
+
+	c:\xampp\htdocs> composer create-project nagara/mini-mvc-php-native:1.0.0-beta2
 
 	``` 
 
