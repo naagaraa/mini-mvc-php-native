@@ -18,7 +18,7 @@
 
 	*  **installation**
 		1.  *install composer*
-		2.  *install phpxdebug*
+		2.  *install phpxdebug* (optional : agar debug rapih/ pretty )
 		3.  *install git-client*
 		4.  *clone myrepository mini mvc php native*
 
@@ -40,6 +40,7 @@
 		3. Controller
 		4. Views
 		5. Models
+		6. Routing
 
 * **Support Me**
 
@@ -50,7 +51,7 @@
 
 
 ## Installation
-description
+description or requretment
 
 1. install composer
 
@@ -107,6 +108,7 @@ basic guide ini adalah penjelasan dasar tentang structur yang akan saya bahas. p
 	* core
 	* libraries
 	* models
+	* routes
 	* views
 * public
 	* boostraps
@@ -137,8 +139,9 @@ folder apps terdiri dari beberapa bagian yaitu :
 	**define('name', 'url-pada-browser/location-path');**
 
 	```
-	define('Assets', 'http://localhost/MINI-PHP-MVC/public');
-	define('URL', 'http://localhost/MINI-PHP-MVC/');
+	define('ASSET', $configuration['APP_HOST'] . $configuration['APP_NAME'] . '/public'');
+	define('URL', $configuration['APP_HOST'] . $configuration['APP_NAME'] . '/');
+	define('BASEURL', $configuration['APP_HOST'] . $configuration['APP_NAME'] . '/');
 	```
 
 
@@ -154,23 +157,53 @@ folder apps terdiri dari beberapa bagian yaitu :
 
 	```
 
+	Membuat path location pada  folder, untuk membuat path atau mendeklarasi path diletakan pada file apps/config/constant.php
+	**exmpale** :
+
+	
+	```
+	define("PathCover", $_SERVER['DOCUMENT_ROOT'] . '/' . $configuration['APP_NAME'] . '/upload/contents/cover/');
+	define("PathImage", $_SERVER['DOCUMENT_ROOT'] . '/' . $configuration['APP_NAME'] . '/upload/contents/cover/');
+	```
+
 	#### Database Config
 	untuk configurasi database yang digunakan terletak pada pada file apps/config/config.php sesuaikan database mysql yang kamu digunakan :
 
 	**config :**
 
- * *DB_HOST			=> nama host*
- * *DB_USER			=> user pada database*
- * *DB_PASSOWRD	=> password pada Database*
- * *DB_NAMA			=> nama Database*
+	* *DB_HOST			=> nama host*
+	* *DB_USER			=> user pada database*
+	* *DB_PASSOWRD		=> password pada Database*
+	* *DB_NAMA			=> nama Database*
 
- **example :**
- ```
-define('DB_HOST', 'localhost');
-define('DB_USER', 'root');
-define('DB_PASS', '');
-define('DB_NAME', 'db_contents');
- ```
+	**config/database.php :**
+	```
+	define('DB_HOST', ($configuration['DB_HOST']) 		? $configuration['DB_HOST'] 		: 'localhost');
+	define('DB_USER', ($configuration['DB_USERNAME']) 	? $configuration['DB_USERNAME'] 	: 'root');
+	define('DB_PASS', ($configuration['DB_PASSWORD']) 	? $configuration['DB_PASSWORD'] 	: '');
+	define('DB_NAME', ($configuration['DB_NAME']) 		? $configuration['DB_NAME'] 		: '');
+	```
+
+	untuk configurasi file database sekarang ada file .env, apps/.env
+
+	**exampale** :
+	```
+	# config file .env untuk configurasi pada file
+	# apps/config/config.php
+
+	# configurasi Path here 
+	APP_NAME=mini-mvc-phpnative
+	APP_HOST=http://localhost/
+	APP_URL=http://localhost/mini-mvc-phpnative/
+
+	# configurasi Database here
+	DB_HOST=localhost
+	DB_PORT=3306
+	DB_NAME=
+	DB_USERNAME=root
+	DB_PASSWORD=
+
+	```
 
 
 
@@ -178,27 +211,18 @@ define('DB_NAME', 'db_contents');
 
 ## Define Constant
 
-* controller
-	* controller_user => contoh constans default yang saya deklarasikan
-	#### define constant
-	define constans digunakan untuk mengatur controller folder yang di set pada **{filenya}** App.php pada sebuah **{folder}** core/App.
+**define('name', 'url-pada-browser/location-path');**
 
-	**contoh folder pada sub controller:**
-	> controllers/admin/login.php
-	<br>
-	> controllers/user/home.php
-	<br>
-	> controllers/Welcome.php
+### Define constant
 
-	```
-	// Constant untuk folder pada Controller
+Membuat path location pada  folder, untuk membuat path atau mendeklarasi path diletakan pada file apps/config/constant.php
+**exmpale** :
 
-	// define('controller_user', 'nama_folder_sub_controller');
 
-	define('controller_user', 'user');
-	define('controller_admin', 'admin');
-
-	```
+```
+define("PathCover", $_SERVER['DOCUMENT_ROOT'] . '/' . $configuration['APP_NAME'] . '/upload/contents/cover/');
+define("PathImage", $_SERVER['DOCUMENT_ROOT'] . '/' . $configuration['APP_NAME'] . '/upload/contents/cover/');
+```
 
 
 ## Controller
@@ -217,26 +241,50 @@ define('DB_NAME', 'db_contents');
 	> controllers/Welcome.php
 
 	```
-	class Welcome extends Controller
+	<?php
+	use MiniMvc\Apps\Core\Bootstraping\Controller;
+
+	/**
+	* Documentasi Code
+	*/
+
+	class MainController extends Controller
 	{
 		public function __construct()
 		{
-			#your code here
-		}
+			// constructor here
 
+		}
 		public function index()
 		{
-			#your code here
-			$this->view('Welcome');
+			// code index here
+			$data = [
+				'judul' => "Example view",
+				'content' => "this is content"
+			];
+
+			$this->view("nameofview", $data);
 		}
 
-		// add beberapa function yang kamu butuhkan
-		public function example()
+		public function show($request)
 		{
-			#your code
-			php_info();
+			// code here show here
 		}
 
+		public function create()
+		{
+			// code here create here
+		}
+
+		public function update($request)
+		{
+			// code here update here
+		}
+
+		public function remove($request)
+		{
+			// code here remove here
+		}
 	}
 	```
 
@@ -256,9 +304,23 @@ define('DB_NAME', 'db_contents');
 
 	###### Model Artickel_model.php
 	```
-	class Artikel_model
+	<?php
+	use MiniMvc\Apps\Core\Bootstraping\Database;
+
+	/**
+	* -----------------------------------------------------------------------
+	* Documentasi Code
+	* -----------------------------------------------------------------------
+	* 
+	* untuk melakukan query pada tabel dalam database silahkan lakukan disini
+	* query dibuat dalam bentuk public function yang nantinya akan digunakan
+	* pada controller. berikut ini adalah example dari models yang
+	* tersedia,
+	*/
+
+	class MainModel
 	{
-		private $table = 'tb_artikel';	// nama-table
+		private $table = 'tb_name';
 		private $db;
 
 		public function __construct()
@@ -266,11 +328,64 @@ define('DB_NAME', 'db_contents');
 			$this->db = new Database;
 		}
 
-		// fungsi untuk menampilkan semua data
-		public function getAllArtikel()
+		public function getall()
 		{
 			$this->db->query('SELECT * FROM ' . $this->table);
-			return $this->db->resultSet();
+			return $this->db->resultSetArray();
+		}
+
+		public function get_data_by_condition($urlid)
+		{
+			$this->db->query('SELECT * FROM ' . $this->table . ' WHERE urlid=:urlid');
+			$this->db->bind('urlid', $urlid);
+			return $this->db->singleArray();
+		}
+
+
+		public function insert_data($data)
+		{
+			// INSERT INTO `tb_visitor`(`id`, `urlid`,`uniqid`, `judul_content`, `visit_views`, `visitor_ip`, `date`) 
+			$query = "INSERT INTO $this->table VALUES ('',:uniqid , :urlid, :judul_content, :visit_views, :visitor_ip, :waktu)";
+			$this->db->query($query);
+
+			// binding untuk data text
+			$this->db->bind('uniqid', $data['uniqid']);
+			$this->db->bind('urlid', $data['urlid']);
+			$this->db->bind('judul_content', $data['judul']);
+			$this->db->bind('visit_views', $data['current_visit']);
+			$this->db->bind('visitor_ip', $data['remote_adr']);
+			$this->db->bind('waktu', $data['posting']);
+
+			$this->db->execute();
+			return $this->db->rowCount();
+		}
+
+		public function remove_data_by_condition($uniqid)
+		{
+			$this->db->query('DELETE FROM ' . $this->table . ' WHERE uniqid=:uniqid');
+			$this->db->bind('uniqid', $uniqid);
+
+			$this->db->execute();
+			return $this->db->rowCount();
+		}
+
+		public function update_data($data)
+		{
+			// UPDATE `tb_visitor` SET `id`=[value-1],`urlid`=[value-2],`judul_content`=[value-3],`visit_views`=[value-4],`visitor_ip`=[value-5],`waktu`=[value-6] WHERE 1
+			$query = "UPDATE " . $this->table . " SET id=:id, uniqid=:uniqid, urlid=:urlid, judul_content=:judul_content, visit_views=:visit_views, visitor_ip=:visitor_ip, waktu=:waktu WHERE uniqid=:uniqid";
+			$this->db->query($query);
+
+			// binding untuk data text
+			$this->db->bind('id', $data['id']);
+			$this->db->bind('uniqid', $data['uniqid']);
+			$this->db->bind('urlid', $data['urlid']);
+			$this->db->bind('judul_content', $data['judul_content']);
+			$this->db->bind('visit_views', $data['visit_views']);
+			$this->db->bind('visitor_ip', $data['visitor_ip']);
+			$this->db->bind('waktu', $data['waktu']);
+
+			$this->db->execute();
+			return $this->db->rowCount();
 		}
 	}
 	```
@@ -278,11 +393,17 @@ define('DB_NAME', 'db_contents');
 	dan untuk menggunakan atau memanggil models pada controller tinggal gunakan saja command berikut. example pada controller **Welcome.php**:
 
 
-	> **$this->model('nana-modelnya')->functionmodel(params);**
+	> **$this->model('nama-modelnya')->functionmodel(params);**
 
-	###### Class Welcome.php
+	##### Class Welcome.php
+	
+	contoh penggunaan pada Controller Welcome
+
+	**exmpale** :
 
 	```
+	use MiniMvc\Apps\Core\Bootstraping\Database;
+
 	class Welcome extends Controller
 	{
 		public function __construct()
@@ -300,10 +421,108 @@ define('DB_NAME', 'db_contents');
 	```
 
 	**fungsi untuk hasil query pada database :**
-	* resultSet() => semua data dalam bentuk array assoc
-	* single() => single data dalam bentuk array assoc
+	* resultSetArray() => semua data dalam bentuk array assoc format
+	* resultSetObject() => semua data dalam bentuk array object format
+	* resultSetJSON() => semua data dalam bentuk array JSON format
+	* singleArray() => single data dalam bentuk array assoc format
+	* singleObject() => single data dalam bentuk array obect format
+	* singleJSON() => single data dalam bentuk array JSON format
 	* rowCount() => hasil jumlah colomn pada tabel
 
+## Routes
+* Routes
+	* api.php => ondevelop
+	* web.php => untuk mengatur routing
+
+	#### web
+
+	Web digunakan untuk mengatur alur routing atau alur dari sebuah pat url akan di handle seperti apa
+
+
+	###### web.php
+	```
+	<?php
+
+	namespace MiniMvc\Apps\Routes\Bootstraping;
+
+	use MiniMvc\Apps\Core\Bootstraping\Routes;
+	use \Bramus\Router\Router;
+
+	class Web extends Routes
+	{
+		/**
+		* -------------------------------------------------------------------------------
+		* Documentasi Code Web
+		* Author : nagara
+		* -------------------------------------------------------------------------------
+		* 
+		*  untuk mengatur Route view yang diambil pada controller
+		*  Route menggunakan library bramus/router
+		* 
+		* -------------------------------------------------------------------------------
+		*  Example 
+		* -------------------------------------------------------------------------------
+		* 
+		* 	$router->get('/login', function () {
+		*      // handle here
+		*  	$this->Routing('folder/controller', 'method');
+		*  die;
+		* 	});
+		* 
+		* 	$router->get('/news/{slug}', function ($slug) {
+		* 		// handle here
+		*  	$this->Routing('folder/controller', 'method',[$slug]);
+		*  die;
+		* 	});
+		* 
+		* 	$router->get('/about', function () {
+		* 		// handle here
+		*  	$this->Routing('controller', 'method');
+		* 	die;
+		* 	});
+		* 
+		* 	$router->get('/info', function () {
+		* 		// handle here
+		*  	phpinfo();
+		*  die;
+		* 	});
+		* --------------------------------------------------------------------------------
+		* 
+		* 
+		*/
+
+		public function __construct()
+		{
+			// Create a Router object
+			$router = new Router();
+
+			// your route here
+			$router->get('/info-php', function () {
+				$this->Routing('welcome', 'show');
+			});
+			$router->get('/', function () {
+				$this->Routing('welcome', 'index');
+			});
+
+			// run route!
+			$router->run();
+		}
+	}
+	```
+
+	dan untuk custor route pada **Web.php**:
+
+
+	> **$this->Routing('controller', 'method',['params'])**
+
+
+	**config pada routing :**
+	* $this->Routing('controller', 'method') => tampa parameter
+	* $this->Routing('controller', 'method', ['params']) => menerima parameter
+
+	**example pada routing :**
+	* $this->Routing('Welcome', 'show') => tampa parameter
+	* $this->Routing('About', 'profile', [$slug]) => menerima parameter
 
 ## Views
 * views
@@ -324,6 +543,8 @@ define('DB_NAME', 'db_contents');
 	> **$this->view('namaviews-nya');**
 
 	```
+	use MiniMvc\Apps\Core\Bootstraping\Database; 
+
 	class Welcome extends Controller
 	{
 		public function __construct()
@@ -347,7 +568,9 @@ define('DB_NAME', 'db_contents');
 	> **$this->view('Welcome', $databentuk-array-assoc);**
 
 	```
-		class Welcome extends Controller
+	use MiniMvc\Apps\Core\Bootstraping\Database;
+
+	class Welcome extends Controller
 	{
 		public function __construct()
 		{
@@ -371,8 +594,15 @@ define('DB_NAME', 'db_contents');
 		<span><?php echo $data[data_artikel] ?></span>
 	</div>
 	```
+	atau 
 
-	atau bisalakukan debug pada halaman views dengan seperti berikut
+	```
+	<div class="container">
+		<span><?= $data[data_artikel] ?></span>
+	</div>
+	```
+
+	atau bisa lakukan debug pada halaman views dengan seperti berikut
 	example
 	```
 	<?php var_dump($data['data_artikel']);
