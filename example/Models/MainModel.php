@@ -26,14 +26,14 @@ class MainModel
 	public function getall()
 	{
 		$this->db->query('SELECT * FROM ' . $this->table);
-		return $this->db->resultSet();
+		return $this->db->resultSetArray();
 	}
 
 	public function get_data_by_condition($urlid)
 	{
 		$this->db->query('SELECT * FROM ' . $this->table . ' WHERE urlid=:urlid');
 		$this->db->bind('urlid', $urlid);
-		return $this->db->single();
+		return $this->db->singleArray();
 	}
 
 

@@ -23,18 +23,20 @@ class User_model
 		$this->db = new Database;
 	}
 
+	// code here
 	public function getAllUser()
 	{
 
 		$this->db->query('SELECT * FROM ' . $this->table);
-		return $this->db->resultSet();
+		return $this->db->resultSetArray();
 	}
 
 	public function getUserId($id)
 	{
 		$this->db->query('SELECT * FROM ' . $this->table . ' WHERE id=:id');
+		
 		$this->db->bind('id', $id);
-		return $this->db->single();
+		return $this->db->singleArray();
 	}
 
 	public function deleteUserId($id)
@@ -53,7 +55,7 @@ class User_model
 
 		$this->db->bind('user_name', $username);
 		$this->db->bind('passw', $password);
-		return $this->db->single();
+		return $this->db->singleArray();
 	}
 
 	public function register($data)

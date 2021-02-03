@@ -5,17 +5,12 @@ namespace MiniMvc\Apps\Core\Bootstraping;
 use \PDO;
 
 /**
- * -------------------------------------------------------------
- * Documentasi Code Database Wrapper PDO
+ * -----------------------------------------------------------
+ * Documentasi Code Database
  * Author : Nagara
- * -------------------------------------------------------------
+ * -----------------------------------------------------------
  * 
- * config database wrapper menggunakan PDO, atau PHP data object
- * semua yang ada disini ditulis dengan konsep PDO, untuk lebih
- * jelasnya dan memahami konsep PDO silahkan buka documentasi
- * resminya. https://www.php.net/manual/en/book.pdo.php 
- * pada intinya semua handling core query
- * berada disini.
+ * config database wrapper menggunakan PDO
  */
 class Database
 {
@@ -84,28 +79,80 @@ class Database
 	}
 
 	/**
-	 * @resultset
+	 * @resultSetArray
 	 * 
-	 * untuk menampilkan semua data query dengan format array
-	 * assosiatif
+	 * untuk menampilkan semua data query dengan array
+	 * assosiatif foramt
 	 */
-	public function resultSet()
+	public function resultSetArray()
 	{
 		$this->execute();
 		return $this->statement->fetchAll(PDO::FETCH_ASSOC);
 	}
 
 	/**
-	 * @single
+	 * @resultSetJSON
 	 * 
-	 * untuk menampilkan single data query dengan format array
-	 * assosiatif
+	 * untuk menampilkan semua data query dengan JSON
+	 * format
 	 */
-	public function single()
+	public function resultSetJSON()
+	{
+		header('Content-Type: application/json');
+		$this->execute();
+		return json_encode($this->statement->fetchAll(PDO::FETCH_ASSOC), JSON_PRETTY_PRINT);
+	}
+
+	/**
+	 * @resultSetObject
+	 * 
+	 * untuk menampilkan semua data query dengan Object
+	 * format
+	 */
+	public function resultSetObject()
+	{
+		$this->execute();
+		return $this->statement->fetchAll(PDO::FETCH_OBJ);
+	}
+
+	/**
+	 * @singleArray
+	 * 
+	 * untuk menampilkan single data query dengan array
+	 * assosiatif format
+	 */
+	public function singleArray()
 	{
 		$this->execute();
 		return $this->statement->fetch(PDO::FETCH_ASSOC);
 	}
+
+	/**
+	 * @singleJSON
+	 * 
+	 * untuk menampilkan single data query dengan JSON
+	 * format
+	 */
+	public function singleJSON()
+	{
+		header('Content-Type: application/json');
+		$this->execute();
+		return json_encode($this->statement->fetch(PDO::FETCH_ASSOC),  JSON_PRETTY_PRINT);
+	}
+
+	/**
+	 * @singleObject
+	 * 
+	 * untuk menampilkan single data query dengan object
+	 * format
+	 */
+	public function singleObject()
+	{
+		$this->execute();
+		return $this->statement->fetch(PDO::FETCH_OBJ);
+	}
+
+
 	/**
 	 * @rowCount
 	 * 

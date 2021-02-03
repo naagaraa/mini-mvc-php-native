@@ -12,22 +12,12 @@ class Welcome extends Controller
 
 	public function __construct()
 	{
-		// $spreadsheet = new Spreadsheet();
-		// $sheet = $spreadsheet->getActiveSheet();
+		// code here
 	}
 
 	public function index()
 	{
-		// $Route = new Route;
-		// $spreadsheet = new Spreadsheet();
-		// $sheet = $spreadsheet->getActiveSheet();
-
-		# jika tidak ingin mengarah kepada controller welcome bisa dengan menghapus controller
-		# atau uncomment header('Location: ' . BASEURL . 'kepo');
-		#header('Location: ' . BASEURL . 'kepo');
-
 		$this->view('Welcome');
-		// $Route->router('about');
 	}
 
 	public function show()
