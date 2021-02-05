@@ -53,8 +53,6 @@ class Web extends Routes
 		// Create a Router object
 		$router = new Router();
 
-
-
 		// your route here
 		$router->get('/info-php', function () {
 			$this->Routing('welcome', 'show');
@@ -62,12 +60,6 @@ class Web extends Routes
 		$router->get('/', function () {
 			$this->Routing('welcome', 'index');
 		});
-
-
-
-
-
-
 
 
 		// run route!

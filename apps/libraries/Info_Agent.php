@@ -1,69 +1,40 @@
 <?php
 
-use MiniMvc\Apps\Core\Bootstraping\Controller;
+Namespace MiniMvc\Apps\Libraries;
 
 /**
+ * ===============================================================================================
  * Documentasi Code
+ * @author nagara 
+ * ===============================================================================================
+ * 
+ * untuk menggunakan info_agent yang ada disini silahkan panggil mengunakan nama namespacenya
+ * lalu deklarasi sebuah object baru.
+ * 
+ * contoh :
+ * use MiniMvc\Apps\Libraries\Info_Agent;
+ * 
+ * $info_agent = new Info_Agent;
+ * 
+ * $info_agent->get_os();
+ * $info_agent->get_browser();
+ * $info_agent->get_ip_client();
+ * $info_agent->get_ip_server();
+ * 
  */
 
-class Info extends Controller
+class Info_Agent 
 {
 
-  // function getinfo user akses
-  public function getInfo()
-  {
-    // get url
-    $url = $this->lib('Url')->getUrl();
-    // covert arrat to string
-    $getURI = implode(",", $url);
-
-    // print_r($getURI);
-    // die;
-    // buat zona time indonesia
-    date_default_timezone_set('Asia/Jakarta');
-
-    $data = [
-      'host' => $_SERVER['HTTP_HOST'],
-      'server' => $_SERVER['SERVER_NAME'],
-      'remote_adr' => $_SERVER['REMOTE_ADDR'],
-      'server_adr' => $_SERVER['SERVER_ADDR'],
-      'php_self' => $_SERVER['PHP_SELF'],
-      'script_name' => $_SERVER['SCRIPT_NAME'],
-      'file_name' => $getURI,
-      'browser' => $this->getBrowser(),
-      'platform' => $this->getOS(),
-      'date' => date('Y-m-d H:i:s', time())
-    ];
-
-    //  $info =  $this->model('info_model')->getAllInfoUser();
-    //   # code...
-    //   var_dump($data);
-    //   var_dump($info);
-    //   $i = 0;
-    //   if ( in_array($data['remote_adr'],$info[$i++])) {
-    //     echo '<br>';
-    //     echo $i++;
-    //     echo '<br>';
-    //     echo 'ipsama';
-    //     // echo '<br>';
-    //   }else {
-    //     echo 'beda';
-    //    // insert data ke dalam fungsi pada model Info
-    //   // $this->model('Info_model')->createInfoData($data);
-    //   }
-    // die;
-    // insert data ke dalam fungsi pada model Info
-    // $this->model('Info_model')->createInfoData($data);
-  }
-
-  //get OS
-  public function getOS()
+  /**
+	 * membuat function untuk get sistem operasi yang digunakan user
+	 * @author nagara 
+	 */
+  public function get_os()
   {
 
     $user_agent = $_SERVER['HTTP_USER_AGENT'];
-
     $os_platform  = "Unknown OS Platform";
-
     $os_array     = array(
       '/windows nt 10/i'      =>  'Windows 10',
       '/windows nt 6.3/i'     =>  'Windows 8.1',
@@ -97,13 +68,15 @@ class Info extends Controller
     return $os_platform;
   }
 
-  function getBrowser()
+  /**
+	 * membuat function untuk get info browser yang digunakan user
+	 * @author nagara 
+	 */
+  function get_browser()
   {
 
     $user_agent = $_SERVER['HTTP_USER_AGENT'];
-
     $browser        =   "Unknown Browser";
-
     $browser_array  =   array(
       '/msie/i'       =>  'Internet Explorer',
       '/firefox/i'    =>  'Firefox',
@@ -117,11 +90,42 @@ class Info extends Controller
     );
 
     foreach ($browser_array as $regex => $value) {
-
       if (preg_match($regex, $user_agent)) {
         $browser    =   $value;
       }
     }
     return $browser;
+  }
+
+  /**
+	 * membuat function untuk get ip client / ip yang digunakan user
+	 * @author nagara 
+	 */
+  public function get_ip_client()
+  {
+    echo $_SERVER['REMOTE_ADDR'];
+    exit();
+  }
+
+  /**
+	 * membuat function untuk get ip server / ip yang digunakan pada server
+	 * @author nagara 
+	 */
+
+  public function get_ip_server()
+  {
+    echo $_SERVER['SERVER_ADDR'];
+    exit();
+  }
+
+  /**
+	 * membuat function untuk get host atau host yang digunakan 
+	 * @author nagara 
+	 */
+
+  public function get_host()
+  {
+    echo $_SERVER['HTTP_HOST'];
+    exit();
   }
 }

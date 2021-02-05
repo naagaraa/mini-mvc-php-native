@@ -119,9 +119,9 @@
 				</div>
 				<div class="container">
 					<p class="text">
-						simple mvc php native project learn at sandhika galih, develop by alias name on internet miyuki nagara
+						simple mvc php native project learn at sandhika galih, develop by nagara alias name on internet miyuki nagara and my real name is secret
 						<br>*note
-						my english not fluent also not good
+						my english is not fluent also not good, but I love programming and computer sains
 					</p>
 				</div>
 			</div>
