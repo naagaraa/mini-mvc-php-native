@@ -13,6 +13,8 @@
 <!-- table of content -->
 ## Daftar isi Content
 
+*note : libraries has been delete, libraries yang sudah saya includkan sudah saya delete karna terlalu banyak resource dan memberatkan, alternatif , bisa install sendiri dan tetap saya cantumkan di link documentation atau deskripsi
+
 * **Author dan Contributor**
 *  **Documentation**
 
@@ -29,10 +31,11 @@
 		4. Datatable.js
 		5. Slick.js
 		6. Chart.js
-		7. fontawensome
-		8. phpoffice/phpspreadsheet
-		9. mjaschen/phpgeo
-		10. mpdf/mpdf
+		7. sweatalert.js
+		8. fontawensome
+		9. phpoffice/phpspreadsheet
+		10. mjaschen/phpgeo
+		11. mpdf/mpdf
 
 	* **Basic Guide**
 		1. Core Folder
@@ -119,6 +122,7 @@ untuk Documentasi cara penggunaan masing masing libraries yang saya include-kan 
 * [Datatable.js](https://datatables.net/)
 * [Slick.js](https://kenwheeler.github.io/slick/)
 * [Chart.js](https://www.chartjs.org/)
+* [sweatalert.js](https://sweetalert.js.org/)
 * [fontawensome](https://fontawesome.com/icons?d=gallery&m=free)
 * [phpoffice/phpspreadsheet](https://phpspreadsheet.readthedocs.io/en/latest/)
 * [mjaschen/phpgeo](https://github.com/mjaschen/phpgeo)
