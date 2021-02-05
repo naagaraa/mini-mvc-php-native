@@ -1,8 +1,7 @@
 <?php
-
 namespace MiniMvc\Apps\Routes\Bootstraping;
 
-use MiniMvc\Apps\Core\Bootstraping\Routes;
+use \MiniMvc\Apps\Core\Bootstraping\Routes;
 use \Bramus\Router\Router;
 
 class Web extends Routes
@@ -10,7 +9,7 @@ class Web extends Routes
 	/**
 	 * -------------------------------------------------------------------------------
 	 * Documentasi Code Web
-	 * Author : nagara
+	 * @author : nagara
 	 * -------------------------------------------------------------------------------
 	 * 
 	 *  untuk mengatur Route view yang diambil pada controller
@@ -48,13 +47,23 @@ class Web extends Routes
 	 * 
 	 */
 
+	
 	public function __construct()
 	{
+
 		// Create a Router object
 		$router = new Router();
 
+		#custom 404 header un-commnet baris berikut
+		// $router->set404(function() {
+		// 	header('HTTP/1.1 404 Not Found');
+		// 	$this->showerror_404();
+		// 	exit();
+		// });
+
+
 		// your route here
-		$router->get('/info-php', function () {
+		$router->get('/info', function () {
 			$this->Routing('welcome', 'show');
 		});
 		$router->get('/', function () {

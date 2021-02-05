@@ -51,4 +51,6 @@ class Upload
 		$new_file = $file . '.' . $extFiles;
 		return $new_file;
 	}
+
+	// jika punya punya function lain
 }

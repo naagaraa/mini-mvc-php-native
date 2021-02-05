@@ -4,7 +4,10 @@ defined('BASEURL') or exit('No direct script access allowed');
 use MiniMvc\Apps\Core\Bootstraping\Controller;
 
 /**
+ * ===============================================================================================
  * Documentasi Code
+ * @author nagara 
+ * ===============================================================================================
  * 
  * pada file ini digunakan untuk handling error 404, atau mengatasi
  * halaman yang tidak ditemukan, untuk melakukan customize 
@@ -15,11 +18,6 @@ use MiniMvc\Apps\Core\Bootstraping\Controller;
 
 class Error_404 extends Controller
 {
-	public function __construct()
-	{
-		// code here
-	}
-
 	public function index($response = "Halaman tidak ditemukan")
 	{
 		$data = [

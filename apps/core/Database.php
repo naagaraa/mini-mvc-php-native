@@ -3,12 +3,13 @@
 namespace MiniMvc\Apps\Core\Bootstraping;
 
 use \PDO;
+use \PDOException;
 
 /**
- * -----------------------------------------------------------
- * Documentasi Code Database
- * Author : Nagara
- * -----------------------------------------------------------
+ * ===============================================================================================
+ * Documentasi Code
+ * @author sandhika and nagara
+ * ===============================================================================================
  * 
  * config database wrapper menggunakan PDO
  */

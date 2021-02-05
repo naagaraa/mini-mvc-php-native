@@ -45,10 +45,8 @@ class Helper
 
 			if ($index !== '') {
 				return $url[$index];
-				exit();
 			}else{
 				return $url;
-				exit();
 			}
 
 		}
@@ -63,7 +61,6 @@ class Helper
 		 */
 
 		header('Location: ' . URL . $url, true, $permanent ? 301 : 302);
-		exit();
 	}
 
 
@@ -79,7 +76,6 @@ class Helper
 			$now_url .= $route . '/';
 		}
 
-		echo URL . $now_url;
-		exit();
+		return URL . $now_url;
 	}
 }

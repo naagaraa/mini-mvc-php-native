@@ -31,7 +31,13 @@ class Office
 	 */
 	public function example_phpspreadsheet()
 	{
-		//  on development libraries
+		// on development
+		/**
+		 * untuk melakukan print atau preview kepada php spreadsheet menggunakan HTML harus 
+		 * melakukan technik web scrapping yang pasti pake metode
+		 * algoritma yang lumayan lah jadi belum bisa gue buat.
+		 */
+
 		// $spreadsheet = new Spreadsheet();
 		// $sheet = $spreadsheet->getActiveSheet();
 		// $sheet->setCellValue('A1', 'Hello World !');
@@ -54,5 +60,10 @@ class Office
 	public function example_mpdf()
 	{
 		// on development
+		/**
+		 * untuk melakukan print atau preview kepada mpdf menggunakan HTML harus 
+		 * melakukan technik web scrapping yang pasti pake metode
+		 * algoritma yang lumayan lah jadi belum bisa gue buat.
+		 */
 	}
 }

@@ -1,14 +1,14 @@
 <?php
 
 namespace MiniMvc\Apps\Core\Bootstraping;
-
+use Exception;
 use Matrix\Functions;
 
 /**
- * ------------------------------------------------------------------
- * Documentasi Code Controller
- * Author : Nagara
- * ------------------------------------------------------------------
+ * ===============================================================================================
+ * Documentasi Code
+ * @author nagara 
+ * ===============================================================================================
  * 
  * ini adalah kelas induk/ parent class yang nantinya akan digunakan 
  * pada child class yang inheritance dengan Class Controller.
@@ -35,10 +35,24 @@ class Controller
 	 * 
 	 * function untuk memanggil views
 	 */
-	public function view($view, $data = [])
+	public function view($view = '', $data = [])
 	{
 		// mengarah pada folder apps/views/ namaviews.php
-		require_once 'apps/views/' . $view . '.php';
+		try {
+			if (!file_exists('apps/views/' . $view . '.php')) {
+				throw new Exception("View ". $view ." Not Found. Check Controllernya Bro");
+			}
+
+			require_once 'apps/views/' . $view . '.php';
+			exit;
+		} catch (Exception $exception) {
+			$message = $exception->getMessage();
+			$filename = $exception->getFile();
+			$line = $exception->getLine();
+			$trace = $exception->getTraceAsString();
+			$this->showerror_message($message , $filename , $line , $trace);
+			die();
+		}
 	}
 
 	/**
@@ -49,21 +63,24 @@ class Controller
 	public function model($model)
 	{
 		// mengarah pada folder apps/models/ namamodels.php
-		require_once 'apps/models/' . $model . '.php';
-		return new $model;
-	}
-	/**
-	 * @LIBRARIES
-	 * 
-	 * function untuk memanggil Libraries
-	 */
-	public function lib($lib)
-	{
-		// mengarah pada folder apps/lib/ namalib.php
-		require_once 'apps/libraries/' . $lib . '.php';
-		return new $lib;
-	}
+		
+		try {
+			if (!file_exists('apps/models/' . $model . '.php')) {
+				throw new Exception("Models ". $model ." Not Found. Check Controllernya Bro di bagian load modelnya ");
+			}
 
+			require_once 'apps/models/' . $model . '.php';
+			return new $model;
+			exit;
+		} catch (Exception $exception) {
+			$message = $exception->getMessage();
+			$filename = $exception->getFile();
+			$line = $exception->getLine();
+			$trace = $exception->getTraceAsString();
+			$this->showerror_message($message , $filename , $line , $trace);
+			die();
+		}
+	}
 
 	/**
 	 * @Error_view
@@ -74,5 +91,21 @@ class Controller
 	{
 		// mengarah pada folder apps/error/pages/ namaviews.php
 		require_once 'apps/error/pages/' . $view . '.php';
+	}
+
+	public function showerror_message($message='', $filename='', $line='', $trace='')
+	{
+		$controller = 'Error_Message'; 				# ini untuk controller
+		$method = 'index'; 								# ini untuk method
+		$params = [$message, $filename, $line, $trace];											# ini unutk parameter
+
+		# instasiasi class tersebut
+		require_once 'apps/error/' . $controller . '.php';
+		$controller = new $controller;
+
+
+		# call controller and method, and send params is !empy
+		call_user_func_array([$controller, $method], $params);
+		// die;
 	}
 }

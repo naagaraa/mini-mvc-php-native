@@ -1,23 +1,28 @@
 <?php
 
 namespace MiniMvc\Apps\Core\Bootstraping;
-
+use Exception;
 /**
- * -------------------------------------------------------------------------------
- * Documentasi Code App
- * Author : Nagara
- * -------------------------------------------------------------------------------
+ * ===============================================================================================
+ * Documentasi Code
+ * @author nagara 
+ * ===============================================================================================
  * 
  *  untuk mengatur url yang diambil pada browser dan memanggil controller
  *  default route dibuat untuk memanggil namecontroller/method/params
- *  dibuat mirip seperti framework CI_3 .
+ *  dibuat mirip seperti framework CI_3 namun belum sempurna.
+ * 
+ * issue :
+ *  
+ * issue yang saya hadapi adalah untuk default
+ * url belum support nested navigation
  */
 
 
 class App
 {
 
-	protected $controller = 'Welcome';  # ini untuk controller
+	protected $controller = 'Welcome'; 		# ini untuk controller
 	protected $method = 'index';     		# ini untuk method
 	protected $params = [];	         		# ini untuk parameter
 
@@ -34,17 +39,17 @@ class App
 		// die;
 
 		# handle url / root
-		(!isset($url[1]) 				&& !isset($url[0])) 			? $this->welcome()							  :  false;
+		(!isset($url[1]) 				&& !isset($url[0])) 			? $this->welcome()							  		:  false;
 
 		# 	handle default url
 		(!isset($url[0]) 				&& !isset($url[1])) 			? $this->showerror_404() 							:  false;
 
-		(isset($url[0])					&& isset($url[1]))				? $this->handleWithFolder() 			:  false;
+		(isset($url[0])					&& isset($url[1]))				? $this->handleWithFolder() 						:  false;
 		// (isset($url[0]) 				&& !isset($url[1])) 			? $this->showerror_404()					 		:  false;
-		(isset($url[0]) 				&& !isset($url[1])) 			? $this->handleWithoutFolder()					 		:  false;
-		(isset($url[0])					|| isset($url[1])) 				? $this->handleWithoutFolder()	 	:  false;
+		(isset($url[0]) 				&& !isset($url[1])) 			? $this->handleWithoutFolder()					 	:  false;
+		(isset($url[0])					|| isset($url[1])) 				? $this->handleWithoutFolder()	 					:  false;
 
-		(!isset($url[0]) 				|| !isset($url[1])) 			? $this->showerror_404()					  	:  false;
+		(!isset($url[0]) 				|| !isset($url[1])) 			? $this->showerror_404()					  		:  false;
 	}
 
 	/**
@@ -80,36 +85,48 @@ class App
 		$this->controller = $url[1];
 		$this->folder = $url[0];
 
-		if (!file_exists('apps/controllers/' . $this->folder . '/' . $this->controller . '.php')) {
-			$this->handleWithoutFolder();
-			die;
-		}
-
-		# instasiasi class tersebut
-		require_once 'apps/controllers/' . $this->folder . '/' . $this->controller . '.php';
-		$this->controller = new $this->controller;
-		unset($url[0]);
-		unset($url[1]);
-
-		# untuk method user
-		if (isset($url[2])) {
-			if (method_exists($this->controller, $url[2])) {
-				$this->method = $url[2];
-				unset($url[2]);
+		try {
+			if (!file_exists('apps/controllers/' . $this->folder . '/' . $this->controller . '.php')) {
+				throw new Exception("Folder ". $this->folder ." Controller ". $this->controller . " Not Found. | cek nama controllernya udah bener belum?");
 			}
-		}
-
-		# params user
-		if (!empty($url)) {
-			$this->params = array_values($url);
+	
+			# instasiasi class tersebut
+			require_once 'apps/controllers/' . $this->folder . '/' . $this->controller . '.php';
+			$this->controller = new $this->controller;
 			unset($url[0]);
-		} else {
-			$this->params = [];
+			unset($url[1]);
+	
+			# untuk method user
+			if (isset($url[2])) {
+				if (method_exists($this->controller, $url[2])) {
+					$this->method = $url[2];
+					unset($url[2]);
+				}else{
+					throw new Exception("Method " . $url[2] . " Not Found. | cek nama methodnya udah bener belum?");
+				}
+			}
+	
+			# params user
+			if (!empty($url)) {
+				$this->params = array_values($url);
+				unset($url[0]);
+			} else {
+				$this->params = [];
+			}
+	
+			# call controller and method, and send params is !empy
+			call_user_func_array([$this->controller, $this->method], $this->params);
+			exit;
+		} catch (\Throwable $exception) {
+			$message = $exception->getMessage();
+			$filename = $exception->getFile();
+			$line = $exception->getLine();
+			$trace = $exception->getTraceAsString();
+			$this->showerror_message($message , $filename , $line , $trace);
+			die();
 		}
 
-		# call controller and method, and send params is !empy
-		call_user_func_array([$this->controller, $this->method], $this->params);
-		die;
+		
 	}
 
 
@@ -120,34 +137,45 @@ class App
 
 		unset($url[0]);
 
-		if (!file_exists('apps/controllers/' . $this->controller . '.php')) {
-			$this->showerror_404();
-			die;
-		}
-		# instasiasi class tersebut
-		require_once 'apps/controllers/' . $this->controller . '.php';
-		$this->controller = new $this->controller;
-
-		# untuk method user
-		if (isset($url[1])) {
-			if (method_exists($this->controller, $url[1])) {
-				$this->method = $url[1];
-				unset($url[1]);
+		try {
+			//code...
+			if (!file_exists('apps/controllers/' . $this->controller . '.php')) {
+				throw new Exception("Controller ". $this->controller ." Not Found. | cek nama controllernya udah bener belum?");
 			}
-		};
-
-		# params user
-		if (!empty($url)) {
-			$this->params = array_values($url);
-		} else {
-			$this->params = [];
+			# instasiasi class tersebut
+			require_once 'apps/controllers/' . $this->controller . '.php';
+			$this->controller = new $this->controller;
+	
+			# untuk method user
+			if (isset($url[1])) {
+				if (method_exists($this->controller, $url[1])) {
+					$this->method = $url[1];
+					unset($url[1]);
+				}else{
+					throw new Exception("Method " . $url[1] . " Not Found. | cek nama methodnya udah bener belum?");
+				}
+			};
+	
+			# params user
+			if (!empty($url)) {
+				$this->params = array_values($url);
+			} else {
+				$this->params = [];
+			}
+	
+			# call controller and method, and send params is !empy
+			call_user_func_array([$this->controller, $this->method], $this->params);
+			exit;
+		} catch (\Throwable $exception) {
+			// throw $exception;
+			$message = $exception->getMessage();
+			$filename = $exception->getFile();
+			$line = $exception->getLine();
+			$trace = $exception->getTraceAsString();
+			$this->showerror_message($message , $filename , $line , $trace);
+			die();
 		}
-
-		// var_dump($this->params);
-		// die;
-		# call controller and method, and send params is !empy
-		call_user_func_array([$this->controller, $this->method], $this->params);
-		die;
+		
 	}
 
 	public function showerror_404()
@@ -166,6 +194,22 @@ class App
 		# call controller and method, and send params is !empy
 		call_user_func_array([$controller, $method], $params);
 		die;
+	}
+
+	public function showerror_message($message='', $filename='', $line='', $trace='')
+	{
+		$controller = 'Error_Message'; 				# ini untuk controller
+		$method = 'index'; 								# ini untuk method
+		$params = [$message, $filename, $line, $trace];											# ini unutk parameter
+
+		# instasiasi class tersebut
+		require_once 'apps/error/' . $controller . '.php';
+		$controller = new $controller;
+
+
+		# call controller and method, and send params is !empy
+		call_user_func_array([$controller, $method], $params);
+		// die;
 	}
 
 	public function welcome()

@@ -1,12 +1,12 @@
 <?php
 
 namespace MiniMvc\Apps\Core\Bootstraping;
-
+use Exception;
 /**
- * -------------------------------------------------------------------------------
- * Documentasi Code App Routes
- * Author 	: Nagara
- * -------------------------------------------------------------------------------
+ * ===============================================================================================
+ * Documentasi Code
+ * @author nagara 
+ * ===============================================================================================
  *  
  *  routes
  *  untuk mengatur Route yang diambil pada controller atau membuat function routing
@@ -98,7 +98,7 @@ class Routes
 		die;
 	}
 
-	public function Routing($controller, $method, $parameter = [])
+	public function Routing($controller = '' , $method = '', $parameter = [])
 	{
 
 		// extract name folder
@@ -131,36 +131,45 @@ class Routes
 			$method = $method;
 			$params = $newparams;
 
-			if (!file_exists('apps/controllers/' . $controllers . '.php')) {
-				$this->showerror_404("File tidak ditemukan | controller tidak ditemukan | cek file routes/web.php");
-				die;
-			}
-
-
-			# instasiasi class tersebut
-			require_once 'apps/controllers/' . $controllers . '.php';
-			$controller = new $controllers;
-
-			# untuk method user
-			if (isset($method)) {
-				if (method_exists($controller, $method)) {
-					$method = $method;		
-				} else {
-					$this->showerror_404("method tidak ditemukan harap cek file routes/Web.php");
-					die;
+			try {
+				//code...
+				if (!file_exists('apps/controllers/' . $controllers . '.php')) {
+					throw new Exception("Controller " . $controller . " Not Found. | cek nama Controller-nya udah bener belum? pada Routing Web.php");
 				}
+	
+	
+				# instasiasi class tersebut
+				require_once 'apps/controllers/' . $controllers . '.php';
+				$controller = new $controllers;
+	
+				# untuk method user
+				if (isset($method)) {
+					if (method_exists($controller, $method)) {
+						$method = $method;		
+					} else {
+						throw new Exception("Method " . $method . " Not Found. | cek nama method-nya udah bener belum? pada Routing Web.php");
+					}
+				}
+	
+				# params user
+				if (!empty($params)) {
+					$params = array_values($params);			
+				} else {
+					$params = [];
+				}
+	
+				# call controller and method, and send params is !empy
+				call_user_func_array([$controller, $method], $params);
+				die;
+			} catch (\Throwable $exception) {
+				$message = $exception->getMessage();
+				$filename = $exception->getFile();
+				$line = $exception->getLine();
+				$trace = $exception->getTraceAsString();
+				$this->showerror_message($message , $filename , $line , $trace);
+				die();
 			}
-
-			# params user
-			if (!empty($params)) {
-				$params = array_values($params);			
-			} else {
-				$params = [];
-			}
-
-			# call controller and method, and send params is !empy
-			call_user_func_array([$controller, $method], $params);
-			die;
+			
 		}
 		else
 		{
@@ -170,37 +179,62 @@ class Routes
 			$method = $method;
 			$params = $newparams;
 
-
-			if (!file_exists('apps/controllers/' . $folder . '/' . $controller . '.php')) {
-				$this->showerror_404("File tidak ditemukan | controller tidak ditemukan | cek file routes/web.php");
-				die;
-			}
-
-			# instasiasi class tersebut
-			require_once 'apps/controllers/' . $folder . '/' . $controller . '.php';
-			$controller = new $controller;
-
-			# untuk method user
-			if (isset($method)) {
-				if (method_exists($controller, $method)) {
-					$method = $method;
-				} else {
-					$this->showerror_404("method tidak ditemukan harap cek file routes/Web.php");
-					die;
+			try {
+				//code...
+				if (!file_exists('apps/controllers/' . $folder . '/' . $controller . '.php')) {
+					throw new Exception( $folder . $controller . " Not Found. | cek nama Controller-nya atau Folder-nya udah bener belum? pada Routing Web.php");
 				}
+	
+				# instasiasi class tersebut
+				require_once 'apps/controllers/' . $folder . '/' . $controller . '.php';
+				$controller = new $controller;
+	
+				# untuk method user
+				if (isset($method)) {
+					if (method_exists($controller, $method)) {
+						$method = $method;
+					} else {
+						throw new Exception("Method " . $method . " Not Found. | cek nama method-nya udah bener belum? pada Routing Web.php");
+						die;
+					}
+				}
+	
+				# params user
+				if (!empty($params)) {
+					$params = array_values($params);
+				} else {
+					$params = [];
+				}
+	
+				# call controller and method, and send params is !empy
+				call_user_func_array([$controller, $method], $params);
+				die;
+			} catch (\Throwable $exception) {
+				$message = $exception->getMessage();
+				$filename = $exception->getFile();
+				$line = $exception->getLine();
+				$trace = $exception->getTraceAsString();
+				$this->showerror_message($message , $filename , $line , $trace);
+				die();
 			}
-
-			# params user
-			if (!empty($params)) {
-				$params = array_values($params);
-			} else {
-				$params = [];
-			}
-
-			# call controller and method, and send params is !empy
-			call_user_func_array([$controller, $method], $params);
-			die;
+			
 		}
 		die;
+	}
+
+	public function showerror_message($message='', $filename='', $line='', $trace='')
+	{
+		$controller = 'Error_Message'; 				# ini untuk controller
+		$method = 'index'; 								# ini untuk method
+		$params = [$message, $filename, $line, $trace];											# ini unutk parameter
+
+		# instasiasi class tersebut
+		require_once 'apps/error/' . $controller . '.php';
+		$controller = new $controller;
+
+
+		# call controller and method, and send params is !empy
+		call_user_func_array([$controller, $method], $params);
+		// die;
 	}
 }
