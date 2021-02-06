@@ -2,7 +2,7 @@
 
 namespace MiniMvc\Apps\Core\Bootstraping;
 use Exception;
-use Matrix\Functions;
+use MiniMvc\Apps\Core\Bootstraping\Error_Handling;
 
 /**
  * ===============================================================================================
@@ -31,8 +31,8 @@ use Matrix\Functions;
 class Controller
 {
 	/**
-	 * @VIEWS
-	 * 
+	 * VIEWS
+	 * @author nagara
 	 * function untuk memanggil views
 	 */
 	public function view($view = '', $data = [])
@@ -46,21 +46,18 @@ class Controller
 			require_once 'apps/views/' . $view . '.php';
 			exit;
 		} catch (Exception $exception) {
-			$message = $exception->getMessage();
-			$filename = $exception->getFile();
-			$line = $exception->getLine();
-			$trace = $exception->getTraceAsString();
-			$this->showerror_message($message , $filename , $line , $trace);
-			die();
+			$my_error = new Error_Handling;
+			$my_error->showerror_message($exception->getMessage() , $exception->getFile() , $exception->getLine() , $exception->getTraceAsString());
+			exit;
 		}
 	}
 
 	/**
-	 * @Models
-	 * 
+	 * Models
+	 * @author nagara
 	 * function untuk memanggil Models
 	 */
-	public function model($model)
+	public function model($model = '')
 	{
 		// mengarah pada folder apps/models/ namamodels.php
 		
@@ -73,39 +70,31 @@ class Controller
 			return new $model;
 			exit;
 		} catch (Exception $exception) {
-			$message = $exception->getMessage();
-			$filename = $exception->getFile();
-			$line = $exception->getLine();
-			$trace = $exception->getTraceAsString();
-			$this->showerror_message($message , $filename , $line , $trace);
-			die();
+			$my_error = new Error_Handling;
+			$my_error->showerror_message($exception->getMessage() , $exception->getFile() , $exception->getLine() , $exception->getTraceAsString());
+			exit;
 		}
 	}
 
 	/**
-	 * @Error_view
-	 * 
+	 * Error_view
+	 * @author nagara
 	 * function untuk memanggil error view pada folder error/pages
 	 */
-	public function error_view($view, $data = [])
+	public function error_view($view = '', $data = [])
 	{
 		// mengarah pada folder apps/error/pages/ namaviews.php
-		require_once 'apps/error/pages/' . $view . '.php';
-	}
+		try {
+			
+			if(!file_exists('apps/error/pages/' . $view . '.php')){
+				throw new Exception("views ". $view ." Not Found. Check Controllernya Bro di bagian load view-nya ");
+			}
+			require_once 'apps/error/pages/' . $view . '.php';
 
-	public function showerror_message($message='', $filename='', $line='', $trace='')
-	{
-		$controller = 'Error_Message'; 				# ini untuk controller
-		$method = 'index'; 								# ini untuk method
-		$params = [$message, $filename, $line, $trace];											# ini unutk parameter
-
-		# instasiasi class tersebut
-		require_once 'apps/error/' . $controller . '.php';
-		$controller = new $controller;
-
-
-		# call controller and method, and send params is !empy
-		call_user_func_array([$controller, $method], $params);
-		// die;
+		} catch (\Throwable $exception) {
+			$my_error = new Error_Handling;
+			$my_error->showerror_message($exception->getMessage() , $exception->getFile() , $exception->getLine() , $exception->getTraceAsString());
+			exit;
+		}
 	}
 }

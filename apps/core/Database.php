@@ -4,7 +4,7 @@ namespace MiniMvc\Apps\Core\Bootstraping;
 
 use \PDO;
 use \PDOException;
-
+use MiniMvc\Apps\Core\Bootstraping\Error_Handling;
 /**
  * ===============================================================================================
  * Documentasi Code
@@ -37,19 +37,29 @@ class Database
 		try {
 			//code...
 			$this->dbh = new PDO($dsn, $this->user, $this->pass, $option);
-		} catch (PDOException $e) {
+		} catch (PDOException $exception) {
 			//throw $e;
-			die($e->getMessage());
+			$my_error = new Error_Handling;
+			$my_error->showerror_message($exception->getMessage() , $exception->getFile() , $exception->getLine() , $exception->getTraceAsString());
+			exit;
 		}
 	}
 
-	// membuat generate query
+	/**
+	 * 
+	 * function untuk membuat query
+	 * @author sandhika and nagara
+	 */
 	public function query($query)
 	{
 		$this->statement = $this->dbh->prepare($query);
 	}
 
-	// data binding
+	/**
+	 * 
+	 * function untuk handle data binding
+	 * @author dandhika and nagara
+	 */
 	public function bind($param, $value, $type =  null)
 	{
 		if (is_null($type)) {
@@ -74,13 +84,19 @@ class Database
 		$this->statement->bindValue($param, $value, $type);
 	}
 
+	/**
+	 * 
+	 * function untuk handle execute statement
+	 * @author danshika and nagara
+	 */
 	public function execute()
 	{
 		$this->statement->execute();
 	}
 
 	/**
-	 * @resultSetArray
+	 * resultSetArray
+	 * @author nagara
 	 * 
 	 * untuk menampilkan semua data query dengan array
 	 * assosiatif foramt
@@ -92,7 +108,8 @@ class Database
 	}
 
 	/**
-	 * @resultSetJSON
+	 * resultSetJSON
+	 * @author nagara
 	 * 
 	 * untuk menampilkan semua data query dengan JSON
 	 * format
@@ -105,8 +122,8 @@ class Database
 	}
 
 	/**
-	 * @resultSetObject
-	 * 
+	 * resultSetObject
+	 * @author nagara
 	 * untuk menampilkan semua data query dengan Object
 	 * format
 	 */
@@ -117,7 +134,8 @@ class Database
 	}
 
 	/**
-	 * @singleArray
+	 * singleArray
+	 * @author nagara
 	 * 
 	 * untuk menampilkan single data query dengan array
 	 * assosiatif format
@@ -129,7 +147,8 @@ class Database
 	}
 
 	/**
-	 * @singleJSON
+	 * singleJSON
+	 * @author nagara
 	 * 
 	 * untuk menampilkan single data query dengan JSON
 	 * format
@@ -142,7 +161,8 @@ class Database
 	}
 
 	/**
-	 * @singleObject
+	 * singleObject
+	 * @author nagara
 	 * 
 	 * untuk menampilkan single data query dengan object
 	 * format
@@ -155,7 +175,8 @@ class Database
 
 
 	/**
-	 * @rowCount
+	 * rowCount
+	 * @author nagara
 	 * 
 	 * untuk menampilkan jumlah row yang ada pada tabel
 	 */

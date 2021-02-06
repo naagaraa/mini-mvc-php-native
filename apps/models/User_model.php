@@ -5,6 +5,7 @@ use MiniMvc\Apps\Core\Bootstraping\Database;
 /**
  * -----------------------------------------------------------------------
  * Documentasi Code
+ * @author nagara
  * -----------------------------------------------------------------------
  * 
  * untuk melakukan query pada tabel dalam database silahkan lakukan disini

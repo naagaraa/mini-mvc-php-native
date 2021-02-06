@@ -41,7 +41,7 @@ class Api extends API_Handling
 			 * return get /users/slug/hobby
 			 */
 			$router->get('/users/{id}/hobby', function($id) {
-				$this->Routing('api_management_user', 'show_hobby_by_i', [$id]);
+				$this->Routing('api_management_user', 'show_hobby_by_id', [$id]);
 			});
 
 			/**

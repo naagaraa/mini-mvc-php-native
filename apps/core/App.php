@@ -2,6 +2,7 @@
 
 namespace MiniMvc\Apps\Core\Bootstraping;
 use Exception;
+use MiniMvc\Apps\Core\Bootstraping\Error_Handling;
 /**
  * ===============================================================================================
  * Documentasi Code
@@ -15,7 +16,7 @@ use Exception;
  * issue :
  *  
  * issue yang saya hadapi adalah untuk default
- * url belum support nested navigation
+ * url belum support nested navigation folder
  */
 
 
@@ -63,6 +64,11 @@ class App
 	 * url 	  	= nama dari 'url'
 	 * home		= value dari 'url'
 	 */
+	/**
+	 * 
+	 * function untuk parserURL
+	 * @author sandhika galih
+	 */
 	public function ParserURL()
 	{
 		if (isset($_GET['url'])) {
@@ -78,7 +84,11 @@ class App
 		}
 	}
 
-	// handle file in controller
+	/**
+	 * 
+	 * function untuk handle dengan folder
+	 * @author nagara
+	 */
 	public function handleWithFolder()
 	{
 		$url = $this->ParserURL();
@@ -118,11 +128,8 @@ class App
 			call_user_func_array([$this->controller, $this->method], $this->params);
 			exit;
 		} catch (\Throwable $exception) {
-			$message = $exception->getMessage();
-			$filename = $exception->getFile();
-			$line = $exception->getLine();
-			$trace = $exception->getTraceAsString();
-			$this->showerror_message($message , $filename , $line , $trace);
+			$my_error = new Error_Handling;
+			$my_error->showerror_message($exception->getMessage() , $exception->getFile() , $exception->getLine() , $exception->getTraceAsString());
 			die();
 		}
 
@@ -130,6 +137,11 @@ class App
 	}
 
 
+	/**
+	 * 
+	 * function untuk handle tampa nested folder
+	 * @author nagara
+	 */
 	public function handleWithoutFolder()
 	{
 		$url = $this->ParserURL();
@@ -167,17 +179,18 @@ class App
 			call_user_func_array([$this->controller, $this->method], $this->params);
 			exit;
 		} catch (\Throwable $exception) {
-			// throw $exception;
-			$message = $exception->getMessage();
-			$filename = $exception->getFile();
-			$line = $exception->getLine();
-			$trace = $exception->getTraceAsString();
-			$this->showerror_message($message , $filename , $line , $trace);
+			$my_error = new Error_Handling;
+			$my_error->showerror_message($exception->getMessage() , $exception->getFile() , $exception->getLine() , $exception->getTraceAsString());
 			die();
 		}
 		
 	}
 
+	/**
+	 * 
+	 * function untuk handle 404 view / display
+	 * @author nagara
+	 */
 	public function showerror_404()
 	{
 		$message = "gagal";
@@ -196,22 +209,12 @@ class App
 		die;
 	}
 
-	public function showerror_message($message='', $filename='', $line='', $trace='')
-	{
-		$controller = 'Error_Message'; 				# ini untuk controller
-		$method = 'index'; 								# ini untuk method
-		$params = [$message, $filename, $line, $trace];											# ini unutk parameter
 
-		# instasiasi class tersebut
-		require_once 'apps/error/' . $controller . '.php';
-		$controller = new $controller;
-
-
-		# call controller and method, and send params is !empy
-		call_user_func_array([$controller, $method], $params);
-		// die;
-	}
-
+	/**
+	 * 
+	 * function untuk handle default view
+	 * @author nagara
+	 */
 	public function welcome()
 	{
 		$url = $this->ParserURL();

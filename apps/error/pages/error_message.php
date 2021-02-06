@@ -14,7 +14,8 @@
 	<!-- ICONS -->
 	<link rel="apple-touch-icon" sizes="76x76" href="<?= ASSET . '/admin'; ?>/img/apple-icon.png">
 	<link rel="icon" type="image/png" sizes="96x96" href="<?= ASSET . '/admin'; ?>/img/favicon.png">
-	<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-giJF6kkoqNQ00vy+HMDP7azOuL0xtbfIcaT9wjKHr8RbDVddVHyTfAAsrekwKmP1" crossorigin="anonymous">
+	<link href=<?= ASSET . "/css/bootstrap.min.css" ?> rel="stylesheet">
+	<!-- <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.6.0/css/bootstrap.min.css" integrity="sha512-P5MgMn1jBN01asBgU0z60Qk4QxiXo86+wlFahKrsQf37c9cro517WzVSPPV1tDKzhku2iJ2FVgL67wG03SGnNA==" crossorigin="anonymous" /> -->
 	<title>Document</title>
 	<style>
 		body{
@@ -22,6 +23,9 @@
 		}
 		.color-white{
 			color:white;
+		}
+		.color-black{
+			color:black;
 		}
 	</style>
 </head>
@@ -34,6 +38,7 @@
 			<div class="col">
 				<h5 class="mt-5 mb-3">Error Handling </h5>
 				<ul class="list-group">
+					<li class="list-group-item list-group-item-success">Routing : <?= $data['route'] ?>  &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; | &nbsp;&nbsp;&nbsp;    Not Found </li>
 					<li class="list-group-item list-group-item-warning">Message : <?= $data['message'] ?></li>
 					<li class="list-group-item list-group-item-primary">File : <?= $data['file'] ?></li>
 					<li class="list-group-item list-group-item-danger">Line : <?= $data['line'] ?></li>
@@ -45,8 +50,8 @@
 				<h5 class="mt-5 mb-3">&nbsp;</h5>
 				<div class="card bg-primary color-white">
 					<div class="card-body">
-						<h5 class="card-title">Info</h5>
-						<p class="card-text">Semangat ngodingnya bro wkwkwkwk, jangan lupa istirahat, sama selalu jaga kesehatan dan makan 3x sehari</p>
+						<h5 class="card-title">Semangat dari Gue</h5>
+						<p class="card-text">Semangat ngodingnya bro hahaha, jangan lupa istirahat, sama selalu jaga kesehatan dan makan 3x sehari</p>
 						<span class="small" >masih ada yang error, kacau lo :v</span>
 					</div>
 				</div>

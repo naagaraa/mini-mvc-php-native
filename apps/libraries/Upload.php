@@ -27,7 +27,7 @@ class Upload
 	 * membuat function untuk handling random name pada file yang di upload 
 	 * @author nagara 
 	 */
-	public function random_name($keyname = '')
+	public function random_file_name($keyname = '')
 	{
 		// config generate uniq
 		/* A uniqid, like: 4b3403665fea6 */

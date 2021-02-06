@@ -36,14 +36,16 @@
 		9. phpoffice/phpspreadsheet
 		10. mjaschen/phpgeo
 		11. mpdf/mpdf
+		12. phpmailer/phpmailer
 
 	* **Basic Guide**
 		1. Core Folder
-		2. Database Config
-		3. Controller
-		4. Views
-		5. Models
-		6. Routing
+		2. api
+		3. Database Config
+		4. Controller
+		5. Views
+		6. Models
+		7. Routing
 
 * **Support Me**
 

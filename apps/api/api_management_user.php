@@ -3,16 +3,25 @@ defined('BASEURL') or exit('No direct script access allowed');
 
 use MiniMvc\Apps\Core\Bootstraping\API_Handling;
 
+
+
 class api_management_user extends API_Handling
 {
     /**
-     * exmple api code
+     * -----------------------------------------------------------------------
+     * Documentasi Code
+     * @author nagara
+     * -----------------------------------------------------------------------
+     * untuk membuat data api berformat JSON silahkan lakukan hal yang sama 
+     * pada controller yakni memanggil models-nya
+     *  $this->model('namaModels)->method()
      */
 	public function __construct()
 	{
 		// code here
 	}
 
+    // example Api 
 	public function index()
 	{
 		// code here

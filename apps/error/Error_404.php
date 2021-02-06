@@ -18,6 +18,11 @@ use MiniMvc\Apps\Core\Bootstraping\Controller;
 
 class Error_404 extends Controller
 {
+	/**
+	 * 
+	 * function untuk handle view 404
+	 * @author nagara
+	 */
 	public function index($response = "Halaman tidak ditemukan")
 	{
 		$data = [

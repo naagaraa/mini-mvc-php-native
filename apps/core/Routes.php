@@ -2,6 +2,8 @@
 
 namespace MiniMvc\Apps\Core\Bootstraping;
 use Exception;
+use MiniMvc\Apps\Core\Bootstraping\Error_Handling;
+
 /**
  * ===============================================================================================
  * Documentasi Code
@@ -21,6 +23,7 @@ class Routes
 	public function __construct()
 	{
 		// In case one is using PHP 5.4's built-in server
+		// by example bramus lib router
 		$filename = __DIR__ . preg_replace('#(\?.*)$#', '', $_SERVER['REQUEST_URI']);
 		if (
 			php_sapi_name() === 'cli-server' && is_file($filename)
@@ -45,58 +48,6 @@ class Routes
 		}
 	}
 
-	public function showerror_404($message = "404 Not Found")
-	{
-		header($_SERVER['SERVER_PROTOCOL'] . ' 404 Not Found');
-		$controller = 'Error_404'; 				# ini untuk controller
-		$method = 'index'; 							# ini untuk method
-		$params = [$message];										# ini unutk parameter
-
-		# instasiasi class tersebut
-		require_once 'apps/error/' . $controller . '.php';
-		$controller = new $controller;
-
-		# params user
-		if (!empty($url)) {
-			$this->params = array_values($url);
-		}
-
-		# call controller and method, and send params is !empy
-		call_user_func_array([$controller, $method], $params);
-		return false;
-		die;
-	}
-
-	public function welcome()
-	{
-		$url = $this->ParserURL();
-		$this->controller = 'Welcome';
-		unset($url[0]);
-
-		if (!file_exists('apps/controllers/' . $this->controller . '.php')) {
-			$this->showerror_404("File tidak ditemukan | controller tidak ditemukan | cek file routes/web.php");
-			die;
-		}
-		# instasiasi class tersebut
-		require_once 'apps/controllers/' . $this->controller . '.php';
-		$this->controller = new $this->controller;
-
-		# untuk method admin
-		if (isset($url[1])) {
-			if (method_exists($this->controller, $url[1])) {
-				$this->method = $url[1];
-				unset($url[1]);
-			}
-		}
-		# params user
-		if (!empty($url)) {
-			$this->params = array_values($url);
-		}
-
-		# call controller and method, and send params is !empy
-		call_user_func_array([$this->controller, $this->method], $this->params);
-		die;
-	}
 
 	public function Routing($controller = '' , $method = '', $parameter = [])
 	{
@@ -160,14 +111,11 @@ class Routes
 	
 				# call controller and method, and send params is !empy
 				call_user_func_array([$controller, $method], $params);
-				die;
+				exit;
 			} catch (\Throwable $exception) {
-				$message = $exception->getMessage();
-				$filename = $exception->getFile();
-				$line = $exception->getLine();
-				$trace = $exception->getTraceAsString();
-				$this->showerror_message($message , $filename , $line , $trace);
-				die();
+				$my_error = new Error_Handling;
+				$my_error->showerror_message($exception->getMessage() , $exception->getFile() , $exception->getLine() , $exception->getTraceAsString());
+				exit;
 			}
 			
 		}
@@ -210,11 +158,8 @@ class Routes
 				call_user_func_array([$controller, $method], $params);
 				die;
 			} catch (\Throwable $exception) {
-				$message = $exception->getMessage();
-				$filename = $exception->getFile();
-				$line = $exception->getLine();
-				$trace = $exception->getTraceAsString();
-				$this->showerror_message($message , $filename , $line , $trace);
+				$my_error = new Error_Handling;
+				$my_error->showerror_message($exception->getMessage() , $exception->getFile() , $exception->getLine() , $exception->getTraceAsString());
 				die();
 			}
 			
@@ -222,19 +167,4 @@ class Routes
 		die;
 	}
 
-	public function showerror_message($message='', $filename='', $line='', $trace='')
-	{
-		$controller = 'Error_Message'; 				# ini untuk controller
-		$method = 'index'; 								# ini untuk method
-		$params = [$message, $filename, $line, $trace];											# ini unutk parameter
-
-		# instasiasi class tersebut
-		require_once 'apps/error/' . $controller . '.php';
-		$controller = new $controller;
-
-
-		# call controller and method, and send params is !empy
-		call_user_func_array([$controller, $method], $params);
-		// die;
-	}
 }
