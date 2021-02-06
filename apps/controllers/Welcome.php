@@ -20,6 +20,8 @@ class Welcome extends Controller
 
 	public function show()
 	{
-		phpinfo();
+		$helper = new Helper;
+		var_dump($helper->current_url());
+		// phpinfo();
 	}
 }
