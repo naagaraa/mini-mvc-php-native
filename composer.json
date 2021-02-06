@@ -33,6 +33,10 @@
         "preferred-install": "dist",
         "sort-packages": true
     },
+    "archive": {
+        "directory": "dist",
+        "skip-dev": false
+      },
     "minimum-stability": "dev",
     "prefer-stable": true,
     "repositories": [
