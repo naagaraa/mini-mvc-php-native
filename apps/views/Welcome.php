@@ -11,7 +11,7 @@
 
 	<?php header('Content-type: text/html; charset=utf-8'); ?>
 
-	<title>MINI MVC PHP NATIVE </title>
+	<title>NAGARA/MINI MVC PHP NATIVE </title>
 
 	<!-- ICONS -->
 	<link rel="apple-touch-icon" sizes="76x76" href="<?= ASSET . '/image'; ?>/PHP-logo.png">

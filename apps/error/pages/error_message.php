@@ -33,7 +33,7 @@
 <body>
 	<div class="container">
 		<h2 class="mt-5" style="color:rgb(255, 81, 0)" >MINI MVC PHP NATIVE</h2>
-		<p class="small">oke, nih sudah gue coba buat error hanlingnya dengan try and catch Exception</p>	
+		<p class="small">oke, nih sudah gue coba buat error hanlingnya untuk routes, controller dan view dengan try and catch Exception</p>	
 		<div class="row">
 			<div class="col">
 				<h5 class="mt-5 mb-3">Error Handling </h5>
@@ -41,7 +41,8 @@
 					<li class="list-group-item list-group-item-success">Routing : <?= $data['route'] ?>  &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; | &nbsp;&nbsp;&nbsp;    Not Found </li>
 					<li class="list-group-item list-group-item-warning">Message : <?= $data['message'] ?></li>
 					<li class="list-group-item list-group-item-primary">File : <?= $data['file'] ?></li>
-					<li class="list-group-item list-group-item-danger">Line : <?= $data['line'] ?></li>
+					<li class="list-group-item list-group-item-danger">Core Line  : <?= $data['line'] ?></li>
+					<li class="list-group-item list-group-item-primary">Line : <?= $data['line'] ?></li>
 				</ul>
 			</div>
 		</div>
