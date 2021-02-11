@@ -49,7 +49,7 @@ class Routes
 	}
 
 
-	public function Routing($controller = '' , $method = '', $parameter = [])
+	public static function Routing($controller = '' , $method = '', $parameter = [])
 	{
 
 		// extract name folder

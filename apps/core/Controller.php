@@ -35,7 +35,7 @@ class Controller
 	 * @author nagara
 	 * function untuk memanggil views
 	 */
-	public function view($view = '', $data = [])
+	public static function view($view = '', $data = [])
 	{
 		// mengarah pada folder apps/views/ namaviews.php
 		try {
@@ -57,7 +57,7 @@ class Controller
 	 * @author nagara
 	 * function untuk memanggil Models
 	 */
-	public function model($model = '')
+	public static function model($model = '')
 	{
 		// mengarah pada folder apps/models/ namamodels.php
 		
@@ -81,7 +81,7 @@ class Controller
 	 * @author nagara
 	 * function untuk memanggil error view pada folder error/pages
 	 */
-	public function error_view($view = '', $data = [])
+	public static function error_view($view = '', $data = [])
 	{
 		// mengarah pada folder apps/error/pages/ namaviews.php
 		try {

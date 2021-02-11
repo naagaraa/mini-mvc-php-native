@@ -34,7 +34,7 @@ class API_Handling
 	 * @author nagara
 	 * function untuk memanggil Models
 	 */
-	public function model($model = '')
+	public static function model($model = '')
 	{
 		// mengarah pada folder apps/models/ namamodels.php
 		try {
@@ -58,7 +58,7 @@ class API_Handling
 	 * function untuk handling routing
 	 */
 	
-	public function Routing($controller = '' , $method = '', $parameter = [])
+	public static function Routing($controller = '' , $method = '', $parameter = [])
 	{
 
 		// extract name folder

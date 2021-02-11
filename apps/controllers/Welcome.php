@@ -2,7 +2,28 @@
 defined('BASEURL') or exit('No direct script access allowed');
 
 use MiniMvc\Apps\Core\Bootstraping\Controller;
-use MiniMvc\Apps\Libraries\Helper;
+
+/**
+ * ------------------------------------------------------------------------------------
+ * Documentasi
+ * @author nagara
+ * ------------------------------------------------------------------------------------
+ * 
+ * oke new, untuk menggunakan atau memanngil models ataupun view dapat menggunakan 
+ * keyword $this ataupung menggunakan static function
+ * 
+ * contoh : 
+ * menggunakan keyword $this
+ * 
+ * $this->view('namaview)
+ * $this->model('namamodel)
+ * 
+ * menggunakan static function dengan memanggil nama class
+ * 
+ * Controller::view('namaview)
+ * Controller::model('namamodel)
+ * 
+ */
 
 class Welcome extends Controller
 {
@@ -15,13 +36,11 @@ class Welcome extends Controller
 
 	public function index()
 	{
-		$this->view('Welcome');
+		echo "ini controller home";
 	}
 
 	public function show()
 	{
-		$helper = new Helper;
-		var_dump($helper->current_url());
-		// phpinfo();
+		echo "hi";
 	}
 }

@@ -30,7 +30,7 @@ class Error_Handling
 	 * membuat function untuk get show error_404
 	 * @author nagara 
 	 */
-    public function showerror_404($message = "404 Not Found")
+    public static function showerror_404($message = "404 Not Found")
 	{
 		header($_SERVER['SERVER_PROTOCOL'] . ' 404 Not Found');
 		$controller = 'Error_404'; 				# ini untuk controller
@@ -43,7 +43,7 @@ class Error_Handling
 
 		# params user
 		if (!empty($url)) {
-			$this->params = array_values($url);
+			$params = array_values($url);
 		}
 
 		# call controller and method, and send params is !empy
@@ -57,7 +57,7 @@ class Error_Handling
 	 * membuat function untuk show meesage error code
 	 * @author nagara 
 	 */
-    public function showerror_message($message='', $filename='', $line='', $trace='')
+    public static function showerror_message($message='', $filename='', $line='', $trace='')
 	{
         header($_SERVER['SERVER_PROTOCOL'] . ' 404 Not Found');
 		$controller = 'Error_Message'; 				# ini untuk controller

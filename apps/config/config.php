@@ -2,14 +2,15 @@
 
 /**
  * -------------------------------------------------------------------------
- * Documentation Config @database
- * Author nagara
+ * Documentation Config config
+ * @author nagara
  * -------------------------------------------------------------------------
  * 
- * untuk configurasi loading config akan dilakukan pada file ini config.php
- * config.php akan melakukan load file variabel atau constant pada 
- * constant.php, dan juga melakukan load file database.php
+ * untuk configurasi loading config pada file autoload.php yang melakukan require
+ * automatis pada folder config saja
  * 
  */
-include 'constant.php';
-include 'database.php';
+// include 'constant.php';
+// include 'database.php';
+// include 'functions.php';
+include 'autoload.php';

@@ -2,7 +2,6 @@
 defined('BASEURL') or exit('No direct script access allowed');
 
 use MiniMvc\Apps\Core\Bootstraping\Controller;
-use MiniMvc\Apps\Libraries\Helper;
 
 /**
  * ===============================================================================================
@@ -22,12 +21,11 @@ class Error_Message extends Controller
 	 */
 	public function index($message = "", $file = '', $line = '', $trace = '' )
 	{
-		$helper = new Helper;
 		$jumlah = count(explode(' ', $trace));
 
 		$data = [
 			'message'   => $message,
-			'route'		=> $helper->current_url(),
+			'route'		=> current_url(),
 			'file'      => $file,
 			'line'      => $line,
 			'trace'     => explode(' ', $trace),
@@ -42,7 +40,7 @@ class Error_Message extends Controller
 			}
 			$data = [
 				'message'   => $message,
-				'route'		=> $helper->current_url(),
+				'route'		=> current_url(),
 				'file'      => $file,
 				'line'      => $line,
 				'trace'     => $trace,

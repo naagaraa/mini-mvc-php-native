@@ -2,10 +2,11 @@
 namespace MiniMvc\Apps\Routes\Bootstraping;
 
 use \MiniMvc\Apps\Core\Bootstraping\Routes;
+use \MiniMvc\Apps\Core\Bootstraping\Controller;
 use \Bramus\Router\Router;
 
-class Web extends Routes
-{
+class Web 
+ {
 	/**
 	 * -------------------------------------------------------------------------------
 	 * Documentasi Code Web
@@ -21,19 +22,19 @@ class Web extends Routes
 	 * 
 	 * 	$router->get('/login', function () {
 	 *      // handle here
-	 *  	$this->Routing('folder/controller', 'method');
+	 *  	Routes::Routing('folder/controller', 'method');
 	 *  die;
 	 * 	});
 	 * 
 	 * 	$router->get('/news/{slug}', function ($slug) {
 	 * 		// handle here
-	 *  	$this->Routing('folder/controller', 'method',[$slug]);
+	 *  	Routes::Routing('folder/controller', 'method',[$slug]);
 	 *  die;
 	 * 	});
 	 * 
 	 * 	$router->get('/about', function () {
 	 * 		// handle here
-	 *  	$this->Routing('controller', 'method');
+	 *  	Routes::Routing('controller', 'method');
 	 * 	die;
 	 * 	});
 	 * 
@@ -48,7 +49,7 @@ class Web extends Routes
 	 */
 
 	
-	public function __construct()
+	 public function __construct()
 	{
 
 		// Create a Router object
@@ -64,10 +65,14 @@ class Web extends Routes
 
 		// your route here
 		$router->get('/info', function () {
-			$this->Routing('welcome', 'show');
+			phpinfo();
+			exit;
 		});
+
+
+
 		$router->get('/', function () {
-			$this->Routing('welcome', 'index');
+			return view('Welcome');
 		});
 
 

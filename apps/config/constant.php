@@ -45,7 +45,7 @@ $configuration = [
  */
 
 // base-Url untuk asset
-define('ASSET', $configuration['APP_HOST'] . $configuration['APP_NAME'] . '/public');
+define('ASSET', $configuration['APP_HOST'] . $configuration['APP_NAME'] . '/public/');
 // base-Url untuk URL
 define('URL', $configuration['APP_HOST'] . $configuration['APP_NAME'] . '/');
 // base-url untuh path
@@ -84,6 +84,5 @@ define('DIR_VENDOR', $DIR_VENDOR);
 define('DIR_ROOT', $DIR_ROOT);
 
 
-// config folder upload
-define("PathCover", $_SERVER['DOCUMENT_ROOT'] . '/' . $configuration['APP_NAME'] . '/upload/contents/cover/');
-define("PathImage", $_SERVER['DOCUMENT_ROOT'] . '/' . $configuration['APP_NAME'] . '/upload/contents/cover/');
+// config constant folder upload
+define('UPLOAD_F', $_SERVER['DOCUMENT_ROOT'] . '/' . $configuration['APP_NAME'] . '/upload/');

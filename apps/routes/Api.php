@@ -5,7 +5,7 @@ namespace MiniMvc\Apps\Routes\Bootstraping;
 use MiniMvc\Apps\Core\Bootstraping\API_Handling;
 use \Bramus\Router\Router;
 
-class Api extends API_Handling
+class Api 
 {
 	public function __construct()
 	{
@@ -34,21 +34,21 @@ class Api extends API_Handling
 			 * return get /api/users
 			 */
 			$router->get('/users', function() {
-				$this->Routing('api_management_user', 'index');
+				API_Handling::Routing('api_management_user', 'index');
 			});
 		
 			/**
 			 * return get /users/slug/hobby
 			 */
 			$router->get('/users/{id}/hobby', function($id) {
-				$this->Routing('api_management_user', 'show_hobby_by_id', [$id]);
+				API_Handling::Routing('api_management_user', 'show_hobby_by_id', [$id]);
 			});
 
 			/**
 			 * return get /api/users/{slug}/address
 			 */
 			$router->get('/users/{id}/address', function($id) {
-				$this->Routing('api_management_user', 'show_addres_by_id', [$id]);
+				API_Handling::Routing('api_management_user', 'show_addres_by_id', [$id]);
 			});
 		
 		});

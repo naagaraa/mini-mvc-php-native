@@ -132,6 +132,7 @@
 				<a rel="noreferrer" href="https://www.youtube.com/channel/UCYsZhw6Mlk23Q-nUPP9t1YA" target="_blank">Youtube</a>
 				<a rel="noreferrer" href="https://www.instagram.com/naagaraa/" target="_blank">Instagram</a>
 				<a rel="noreferrer" href="https://dribbble.com/naagaraa/" target="_blank">Dribbble</a>
+				<a rel="noreferrer" href="<?= url('info') ?>" target="_blank">PHP info</a>
 			</div>
 			<footer>
 				<div class="container">
