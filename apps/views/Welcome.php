@@ -31,23 +31,27 @@
 	}
 
 	.theme {
-		background-color: rgb(237, 237, 237);
-		color: rgb(255, 81, 0);
+		/* background-color: rgb(237, 237, 237); */
+		background-image: url('<?= asset('image/background.png') ?>');
+		background-repeat: no-repeat;
+		background-size: cover;
+		/* background-position-y: -50px; */
+		color: #cf0237;
 		font-size: medium;
 		font-family: 'Nunito', sans-serif;
 		font-weight: bold;
 		height: 100vh;
+		position: fixed;
 		margin: 0;
 	}
 
 	.text {
-		color: gray;
-		font-size: small;
-		text-align: center;
+		color: #7c7c7c;
+		text-align: start;
 	}
 
 	.color-orange {
-		background-color: rgb(255, 81, 0);
+		background-color: #cf0237;
 		color: white;
 	}
 
@@ -89,59 +93,90 @@
 	}
 
 	.links>a {
-		color: gray;
-		padding: 0 25px;
-		font-size: 13px;
+		color: #e1eaf9;
 		font-weight: 600;
 		letter-spacing: .1rem;
 		text-decoration: none;
+		padding-top: 20px;
 		text-transform: uppercase;
+	}
+
+	.links{
+		font-size: 22px;
+		margin-top: 25px;
+		margin-left: -35px;
+	}
+
+	.links a:hover{
+		color: #cf0237;
+	}
+
+	.mt-20{
+		margin-top: 5rem;
+	}
+
+	.mr-20{
+		margin-left: 5rem !important;
 	}
 
 	.m-b-md {
 		margin-bottom: 30px;
 	}
 
-	.background {
-		width: 800px;
-		height: 80px;
-		margin: auto;
+	.background h1 {
+		font-weight: bold;
+	}
+
+	footer{
+		margin-top: 10rem;
+		display: relative !important;
+		font-size: small;
+		color: #7c7c7c;
+		text-align: end;
 	}
 	</style>
 </head>
 
 <body id="my-theme" class="theme">
-	<div class="flex-center position-ref full-height">
-		<div class="content">
-			<div class="title m-b-md">
+	<div class="container mr-20 ">
+		<div class="row mt-20">
+			<div class="col">
 				<div class="background">
-					MINI MVC PHP NATIVE
-				</div>
-				<div class="container">
-					<p class="text">
-						simple mvc php native project learn at sandhika galih, develop by nagara alias name on internet miyuki nagara and my real name is secret
-						<br>*note
-						my english is not fluent also not good, but I love programming and computer sains
-					</p>
+					<h1>NAGARA/MINI MVC PHP NATIVE</h2>
 				</div>
 			</div>
-			<div class="links">
-				<a rel="noreferrer" href="https://naagaraa.github.io/documentation-mini-mvc-php-project/"
-					target="_blank">Documentation</a>
-				<a rel="noreferrer" href="https://github.com/naagaraa/mini-mvc-phpnative" target="_blank">GitHub</a>
-				<a rel="noreferrer" href="https://www.youtube.com/channel/UCYsZhw6Mlk23Q-nUPP9t1YA" target="_blank">Youtube</a>
-				<a rel="noreferrer" href="https://www.instagram.com/naagaraa/" target="_blank">Instagram</a>
-				<a rel="noreferrer" href="https://dribbble.com/naagaraa/" target="_blank">Dribbble</a>
-				<a rel="noreferrer" href="<?= url('info') ?>" target="_blank">PHP info</a>
-			</div>
-			<footer>
-				<div class="container">
-					<button id="theme" class="mt-4 btn color-orange">change theme</button>
-				</div>
-			</footer>
 		</div>
-
+		<div class="row">
+			<div class="col">
+				<p class="text">
+					simple mvc php native project learn at sandhika galih, develop by nagara alias name on internet miyuki nagara and my real name is secret
+					<br>*note
+					my english is not fluent also not good, but I love programming and computer sains
+				</p>
+			</div>
+		</div>
+		<div class="row">
+			<div class="col-3">
+				<ul type="none" class="links" >
+					<a href="https://naagaraa.github.io/documentation-mini-mvc-php-project/" target="_blank" ><li>DOCUMENTATION</li></a>
+					<a href="https://github.com/naagaraa/mini-mvc-phpnative" target="_blank"><li>GITHUB</li></a>
+					<a href="https://www.youtube.com/channel/UCYsZhw6Mlk23Q-nUPP9t1YA" target="_blank"><li>YOUTUBE</li></a>
+					<a href="https://www.instagram.com/naagaraa/" target="_blank"><li>INSTAGRAM</li></a>
+					<a href="https://dribbble.com/naagaraa/" target="_blank"><li>DRIBBLE</li></a>
+					<a href="<?= url('info') ?>" target="_blank"><li>PHP INFO</li></a>
+				</ul>
+			</div>
+		</div>
+		<div class="row">
+			<div class="col">
+				<footer>
+					<p>source image : photo by Sebastiaan Stam from Pexels</p>
+				</footer>
+			</div>
+		</div>
 	</div>
+
+	
 
 	<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.5.1/jquery.min.js"
 		integrity="sha512-bLT0Qm9VnAYZDflyKcBaQ2gg0hSYNQrJ8RilYldYQ1FxQYoCLtUjuuRuZo+fjqhx/qtq/1itJ0C2ejDxltZVFg=="

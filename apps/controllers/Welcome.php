@@ -41,6 +41,11 @@ class Welcome extends Controller
 
 	public function show()
 	{
-		echo "hi";
+		redirect_404();
+	}
+
+	public function about()
+	{
+		echo " ini about";
 	}
 }

@@ -58,7 +58,7 @@ class Database
 	/**
 	 * 
 	 * function untuk handle data binding
-	 * @author dandhika and nagara
+	 * @author sandhika and nagara
 	 */
 	public function bind($param, $value, $type =  null)
 	{
@@ -87,7 +87,7 @@ class Database
 	/**
 	 * 
 	 * function untuk handle execute statement
-	 * @author danshika and nagara
+	 * @author sandshika and nagara
 	 */
 	public function execute()
 	{

@@ -56,11 +56,10 @@ class Web
 		$router = new Router();
 
 		#custom 404 header un-commnet baris berikut
-		// $router->set404(function() {
-		// 	header('HTTP/1.1 404 Not Found');
-		// 	$this->showerror_404();
-		// 	exit();
-		// });
+		$router->set404(function() {
+			header('HTTP/1.1 404 Not Found');
+			redirect_404();
+		});
 
 
 		// your route here
@@ -68,7 +67,6 @@ class Web
 			phpinfo();
 			exit;
 		});
-
 
 
 		$router->get('/', function () {

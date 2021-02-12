@@ -36,6 +36,7 @@ class Api
 			$router->get('/users', function() {
 				API_Handling::Routing('api_management_user', 'index');
 			});
+
 		
 			/**
 			 * return get /users/slug/hobby
