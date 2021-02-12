@@ -1,7 +1,7 @@
 {
     "name": "nagara/mini-mvc-php-native",
     "description": "MINI MVC PHP NATIVE PROJECT",
-    "homepage": "https://github.com/naagaraa/mini-mvc-phpnative",
+    "homepage": "https://github.com/naagaraa/mini-mvc-php-native",
     "type": "project",
     "license": "MIT",
     "keywords": [
@@ -42,7 +42,7 @@
     "repositories": [
         {
             "type": "vcs",
-            "url": "https://github.com/naagaraa/mini-mvc-phpnative.git"
+            "url": "https://github.com/naagaraa/mini-mvc-php-native.git"
         }
     ]
 }
