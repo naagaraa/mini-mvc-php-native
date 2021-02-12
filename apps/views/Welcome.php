@@ -31,11 +31,13 @@
 	}
 
 	.theme {
-		/* background-color: rgb(237, 237, 237); */
+		background-color: black;
 		background-image: url('<?= asset('image/background.png') ?>');
 		background-repeat: no-repeat;
 		background-size: cover;
 		/* background-position-y: -50px; */
+		width: 100%;
+		height: auto;
 		color: #cf0237;
 		font-size: medium;
 		font-family: 'Nunito', sans-serif;
@@ -93,11 +95,12 @@
 	}
 
 	.links>a {
+		display: inline-block;
+		padding-top: 3.5vh;
 		color: #e1eaf9;
 		font-weight: 600;
-		letter-spacing: .1rem;
+		letter-spacing: 0.4rem;
 		text-decoration: none;
-		padding-top: 20px;
 		text-transform: uppercase;
 	}
 
@@ -112,11 +115,11 @@
 	}
 
 	.mt-20{
-		margin-top: 5rem;
+		margin-top: 10vh;
 	}
 
 	.mr-20{
-		margin-left: 5rem !important;
+		margin-left: 10vw !important;
 	}
 
 	.m-b-md {
@@ -128,11 +131,12 @@
 	}
 
 	footer{
-		margin-top: 10rem;
-		display: relative !important;
+		display: flex !important;
+		justify-content: flex-end;
 		font-size: small;
 		color: #7c7c7c;
-		text-align: end;
+		marker: auto;
+		margin-right: 50px !important;
 	}
 	</style>
 </head>
@@ -159,16 +163,16 @@
 			<div class="col-3">
 				<ul type="none" class="links" >
 					<a href="https://naagaraa.github.io/documentation-mini-mvc-php-project/" target="_blank" ><li>DOCUMENTATION</li></a>
-					<a href="https://github.com/naagaraa/mini-mvc-phpnative" target="_blank"><li>GITHUB</li></a>
+					<a href="https://github.com/naagaraa/mini-mvc-phpnative" target="_blank"><li>GITHUB</li></a><br>
 					<a href="https://www.youtube.com/channel/UCYsZhw6Mlk23Q-nUPP9t1YA" target="_blank"><li>YOUTUBE</li></a>
 					<a href="https://www.instagram.com/naagaraa/" target="_blank"><li>INSTAGRAM</li></a>
-					<a href="https://dribbble.com/naagaraa/" target="_blank"><li>DRIBBLE</li></a>
+					<a href="https://dribbble.com/naagaraa/" target="_blank"><li>DRIBBLE</li></a><br>
 					<a href="<?= url('info') ?>" target="_blank"><li>PHP INFO</li></a>
 				</ul>
 			</div>
 		</div>
-		<div class="row">
-			<div class="col">
+		<div class="row me-5">
+			<div class="col d-flex fixed-bottom justify-content-end ">
 				<footer>
 					<p>source image : photo by Sebastiaan Stam from Pexels</p>
 				</footer>
