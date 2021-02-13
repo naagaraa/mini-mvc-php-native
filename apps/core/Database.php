@@ -48,7 +48,7 @@ class Database
 	/**
 	 * 
 	 * function untuk membuat query
-	 * @author sandhika and nagara
+	 * @author sandhika galih and nagara
 	 */
 	public function query($query)
 	{
@@ -58,7 +58,7 @@ class Database
 	/**
 	 * 
 	 * function untuk handle data binding
-	 * @author sandhika and nagara
+	 * @author sandhika galih and nagara
 	 */
 	public function bind($param, $value, $type =  null)
 	{
@@ -87,7 +87,7 @@ class Database
 	/**
 	 * 
 	 * function untuk handle execute statement
-	 * @author sandshika and nagara
+	 * @author sandhika galih and nagara
 	 */
 	public function execute()
 	{
@@ -96,7 +96,7 @@ class Database
 
 	/**
 	 * resultSetArray
-	 * @author nagara
+	 * @author sandhika galih dan nagara
 	 * 
 	 * untuk menampilkan semua data query dengan array
 	 * assosiatif foramt
@@ -135,7 +135,7 @@ class Database
 
 	/**
 	 * singleArray
-	 * @author nagara
+	 * @author sandhika galih dan nagara
 	 * 
 	 * untuk menampilkan single data query dengan array
 	 * assosiatif format

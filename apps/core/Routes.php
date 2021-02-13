@@ -35,6 +35,12 @@ class Routes
 	// get URL
 	public function ParserURL()
 	{
+	 /**
+     * $_GET['url'] merupakan URL atau pretty url yang di set
+     * atau dirapikan pada file .htaccess, jadi penulisannya yang di set
+     * menggunakan htaccess adalah index.php?url=xyz sebagai default
+     * maka dari itu bisa memanggil $_get['url']
+     */
 		if (isset($_GET['url'])) {
 			/**
 			 *  Merapikan url menggukan method rtrim untuk menhapus / dibagian akhir url

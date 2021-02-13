@@ -39,5 +39,9 @@ class Welcome extends Controller
 		echo "ini controller home";
 	}
 
+	public function about()
+	{
+		# code...
+	}
 
 }

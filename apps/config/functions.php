@@ -168,7 +168,12 @@ function current_url()
  */
 function get_url($index = '')
 {
-    var_dump($_GET);die;
+    /**
+     * $_GET['url'] merupakan URL atau pretty url yang di set
+     * atau dirapikan pada file .htaccess, jadi penulisannya yang di set
+     * menggunakan htaccess adalah index.php?url=xyz sebagai default
+     * maka dari itu bisa memanggil $_get['url']
+     */
     if (isset($_GET['url'])) {
         /**
          *  Merapikan url menggukan method rtrim untuk menhapus / dibagian akhir url
