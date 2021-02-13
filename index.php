@@ -6,7 +6,7 @@
  * Bootstraping adalah salah satu teknik untuk memanggil semua file pada direktori tertentu
  * menggunakan file init.php lalu di call melalui index.php 
  */
-
+require 'system/index.php';
 require 'vendor/autoload.php';
 
 require_once 'apps/init.php';

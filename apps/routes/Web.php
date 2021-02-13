@@ -64,7 +64,7 @@ class Web
 
 		// your route here
 		$router->get('/info', function () {
-			phpinfo();
+			phpinfo(INFO_GENERAL);
 			exit;
 		});
 

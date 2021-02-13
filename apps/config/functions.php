@@ -39,7 +39,11 @@ use MiniMvc\Apps\Core\Bootstraping\Error_Handling;
  * @return fucntion
  * UNTUK VIEW ONLY
  * ----------------------------------------------------------------------------------------
- * view
+ * view()
+ * @return fucntion
+ * UNTUK DEGUB ONLY
+ * ----------------------------------------------------------------------------------------
+ * goblok()
  */
 
 /**
@@ -144,11 +148,16 @@ function current_url()
 {
     $now_url = '';
     $url = get_url();
-    foreach ($url as $route ) {
-        $now_url .= $route . '/';
+    if (!empty($url)) {
+        foreach ($url as $route ) {
+            $now_url .= $route . '/';
+        }
+        return URL . $now_url;
+    }else{
+        return URL . $now_url;
     }
 
-    return URL . $now_url;
+   
 }
 
 
@@ -159,6 +168,7 @@ function current_url()
  */
 function get_url($index = '')
 {
+    var_dump($_GET);die;
     if (isset($_GET['url'])) {
         /**
          *  Merapikan url menggukan method rtrim untuk menhapus / dibagian akhir url
@@ -224,4 +234,10 @@ function view($view = '', $data = [])
         $my_error->showerror_message($exception->getMessage() , $exception->getFile() , $exception->getLine() , $exception->getTraceAsString());
         exit;
     }
+}
+
+function goblok($val = '')
+{
+    var_dump($val);
+    die;
 }

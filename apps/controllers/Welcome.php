@@ -39,13 +39,5 @@ class Welcome extends Controller
 		echo "ini controller home";
 	}
 
-	public function show()
-	{
-		redirect_404();
-	}
 
-	public function about()
-	{
-		echo " ini about";
-	}
 }
