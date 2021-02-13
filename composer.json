@@ -38,5 +38,11 @@
         "skip-dev": false
       },
     "minimum-stability": "dev",
-    "prefer-stable": true
+    "prefer-stable": true,
+    "repositories": [
+        {
+            "type": "vcs",
+            "url": "https://github.com/naagaraa/mini-mvc-php-native.git"
+        }
+    ]
 }
