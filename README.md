@@ -12,8 +12,13 @@
 ---
 
 <!-- table of content -->
-## Documentasi saya dalam bentuk  video bahasa indonesia
+#### Documentasi saya dalam bentuk  video bahasa indonesia
 * **playlist** [ Youtube ](https://www.youtube.com/playlist?list=PLK5_CL-hAKCf-H7snj3RlLVjrkJ7yql6o)
+
+<!-- table of content -->
+#### Note 
+* saya sering melakukan update pada repo, saya sarankan untuk melakukan
+git pull jika terdapat ada update ahahaha
 
 <!-- table of content -->
 ## Daftar isi Content
