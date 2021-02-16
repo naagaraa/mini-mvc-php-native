@@ -1,5 +1,5 @@
 <?php
-#set php ini
+#set php.ini hardcode
 
 ini_set('poweredByHeader', false);
 ini_set('expose_php', 'off');

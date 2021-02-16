@@ -23,6 +23,9 @@ use MiniMvc\Apps\Core\Bootstraping\Controller;
  * Controller::view('namaview)
  * Controller::model('namamodel)
  * 
+ * menggunakan build in function
+ * 
+ * return view('namaview');
  */
 
 class Welcome extends Controller
@@ -37,11 +40,6 @@ class Welcome extends Controller
 	public function index()
 	{
 		echo "ini controller home";
-	}
-
-	public function about()
-	{
-		# code...
 	}
 
 }

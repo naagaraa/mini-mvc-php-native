@@ -2,12 +2,11 @@
 
 namespace MiniMvc\Apps\Routes\Bootstraping;
 
-use \MiniMvc\Apps\Core\Bootstraping\Routes;
-use \MiniMvc\Apps\Core\Bootstraping\Controller;
+use MiniMvc\Apps\Core\Bootstraping\API_Handling;
 use \Bramus\Router\Router;
 
-class Web 
- 	{
+class Api 
+{
 	/**
 	 * -------------------------------------------------------------------------------
 	 * Documentasi Code Web
@@ -23,19 +22,19 @@ class Web
 	 * 
 	 * 	$router->get('/login', function () {
 	 *      // handle here
-	 *  	Routes::Routing('folder/controller', 'method');
+	 *  	API_Handling::Routing('folder/controller', 'method');
 	 *  die;
 	 * 	});
 	 * 
 	 * 	$router->get('/news/{slug}', function ($slug) {
 	 * 		// handle here
-	 *  	Routes::Routing('folder/controller', 'method',[$slug]);
+	 *  	API_Handling::Routing('folder/controller', 'method',[$slug]);
 	 *  die;
 	 * 	});
 	 * 
 	 * 	$router->get('/about', function () {
 	 * 		// handle here
-	 *  	Routes::Routing('controller', 'method');
+	 *  	API_Handling::Routing('controller', 'method');
 	 * 	die;
 	 * 	});
 	 * 
@@ -51,28 +50,50 @@ class Web
 
 	public function __construct()
 	{
-
 		// Create a Router object
 		$router = new Router();
 
-		#custom 404 header un-commnet baris berikut
-		// $router->set404(function() {
-		// 	header('HTTP/1.1 404 Not Found');
-		// 	redirect_404();
-		// });
 
 
-		// your route here
-		$router->get('/info', function () {
-			phpinfo(INFO_GENERAL);
-			exit;
+		# on development | beta masih penulisan
+		/**
+		 * belum kelar gue masih mikirin konsepnya soal route, emg rada susah dimengerti soal 
+		 * routing, on the future gue coba buat lib route sendiri, untuk saat ini
+		 * masih pakai bramus router
+		 */
+
+
+
+		/**
+		 * membuat function URL masuk ke dalam group /Api
+		 * @author nagara 
+		 * menggunakan tools bramus router
+		 */
+		$router->mount('/api', function() use ($router) {
+
+			/**
+			 * return get /api/users
+			 */
+			$router->get('/users', function() {
+				API_Handling::Routing('api_management_user', 'index');
+			});
+
+		
+			/**
+			 * return get /users/slug/hobby
+			 */
+			$router->get('/users/{id}/hobby', function($id) {
+				API_Handling::Routing('api_management_user', 'show_hobby_by_id', [$id]);
+			});
+
+			/**
+			 * return get /api/users/{slug}/address
+			 */
+			$router->get('/users/{id}/address', function($id) {
+				API_Handling::Routing('api_management_user', 'show_addres_by_id', [$id]);
+			});
+		
 		});
-
-
-		$router->get('/', function () {
-			return view('Welcome');
-		});
-
 
 		// run route!
 		$router->run();

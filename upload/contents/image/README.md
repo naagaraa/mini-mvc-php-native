@@ -1,1 +1,0 @@
-# for folder file image cover or big image

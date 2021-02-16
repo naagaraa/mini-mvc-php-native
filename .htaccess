@@ -4,5 +4,5 @@ RewriteEngine On
 RewriteCond %{REQUEST_FILENAME} !-d
 RewriteCond %{REQUEST_FILENAME} !-f 
 
-# untuk membuat pretty url menghilangkan index.php?url=$xyz
-RewriteRule ^(.*)$ index.php?xyz=$1 [L]
+# untuk membuat pretty url menghilangkan index.php?url=$url
+RewriteRule ^(.*)$ index.php?url=$1 [L]

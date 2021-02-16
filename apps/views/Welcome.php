@@ -14,20 +14,22 @@
 	<title>NAGARA/MINI MVC PHP NATIVE </title>
 
 	<!-- ICONS -->
-	<link rel="apple-touch-icon" sizes="76x76" href="<?= ASSET . '/image'; ?>/PHP-logo.png">
-	<link rel="icon" type="image/png" sizes="96x96" href="<?= ASSET . '/image'; ?>/PHP-logo.png">
+	<link rel="apple-touch-icon" sizes="76x76" href="<?= asset('image/PHP-logo.png') ?>">
+	<link rel="icon" type="image/png" sizes="96x96" href="<?=  asset('image/PHP-logo.png') ?> ">
 
 	<!-- Fonts -->
 	<link href="https://fonts.googleapis.com/css?family=Nunito:200,600" rel="stylesheet">
+	<link rel="stylesheet" href="<?= asset('css/fontfamily.css') ?>">
 
 	<!-- Bootstrap 5 CDN-->
 	<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta1/dist/css/bootstrap.min.css" rel="stylesheet"
 		integrity="sha384-giJF6kkoqNQ00vy+HMDP7azOuL0xtbfIcaT9wjKHr8RbDVddVHyTfAAsrekwKmP1" crossorigin="anonymous">
+	<link rel="stylesheet" href="<?= asset('css/bootstrap.min.css') ?>">
 
 	<!-- Styles -->
 	<style>
 	* {
-		font-display: swap
+    font-display: swap
 	}
 
 	.theme {
@@ -186,12 +188,12 @@
 		integrity="sha512-bLT0Qm9VnAYZDflyKcBaQ2gg0hSYNQrJ8RilYldYQ1FxQYoCLtUjuuRuZo+fjqhx/qtq/1itJ0C2ejDxltZVFg=="
 		crossorigin="anonymous"></script>
 	<script>
-	$(document).ready(function() {
-		$("#theme").click(function(e) {
-			$("#my-theme").toggleClass("dark-theme");
-			$(this).toggleClass("btn-primary");
-		});
-	});
+	// $(document).ready(function() {
+	// 	$("#theme").click(function(e) {
+	// 		$("#my-theme").toggleClass("dark-theme");
+	// 		$(this).toggleClass("btn-primary");
+	// 	});
+	// });
 	</script>
 </body>
 
