@@ -10,6 +10,11 @@
 <p>Hi, this project was made from my practice to learn web programming from various sources on the internet such as YouTube, Stackoverflow and Github. This project is a native php that is made using the MVC pattern with the concept of OOP (Object oriented programming), similar to the Codeigniter 3 framework, which I learned at YT WPU by Sandhika Galih and I have custom modifications to suit my college assignments and the addition of other libraries.</p>
 <p>include external libraries: jquery, bootstrap 4.2.5, owl.js, slick.js, composer, ckeditor-5, chartjs, fontawensome, datatable.js, phpoffice, mpdf I put together to make it easier to find</p>
 ---
+
+<!-- table of content -->
+## Documentasi saya dalam bentuk  video bahasa indonesia
+* **playlist** [ Youtube ](https://www.youtube.com/playlist?list=PLK5_CL-hAKCf-H7snj3RlLVjrkJ7yql6o)
+
 <!-- table of content -->
 ## Daftar isi Content
 
