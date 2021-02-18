@@ -28,6 +28,12 @@
         "twbs/bootstrap": "^4.5.2",
         "vlucas/phpdotenv": "^5.2"
     },
+    "require-dev": {
+        "php": ">=7.3.2",
+        "bramus/router": "~1.5",
+        "phpmailer/phpmailer": "^6.2",
+        "vlucas/phpdotenv": "^5.2"
+    },
     "config": {
         "optimize-autoloader": true,
         "preferred-install": "dist",
