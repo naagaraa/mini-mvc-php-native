@@ -47,7 +47,7 @@
     "prefer-stable": true,
     "scripts": {
         "post-root-package-install": [
-            "@php script.php"
+            "php script.php"
         ]
     },
     "repositories": [
