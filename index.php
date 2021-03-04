@@ -118,3 +118,5 @@ $App = new App;
  * saat ini oleh saya
  * 
  */
+
+require_once 'system/script.php';
