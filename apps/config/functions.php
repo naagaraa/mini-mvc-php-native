@@ -41,9 +41,13 @@ use MiniMvc\Apps\Core\Bootstraping\Error_Handling;
  * ----------------------------------------------------------------------------------------
  * view()
  * @return fucntion
+ * UNTUK Model ONLY
+ * ----------------------------------------------------------------------------------------
+ * model()
+ * @return fucntion
  * UNTUK DEGUB ONLY
  * ----------------------------------------------------------------------------------------
- * goblok()
+ * testme()
  */
 
 /**
@@ -74,6 +78,16 @@ function asset($url = '' )
 function upload_dir($url = '' )
 {
    return UPLOAD_F . $url ; 
+}
+
+/**
+ * Membuat function untuk directory upload base path /upload/
+ * @author nagara 
+ * @return string
+ */
+function python_dir($url = '' )
+{
+   return PYTHON_DIR . $url . 'index.py' ; 
 }
 
 
@@ -223,7 +237,10 @@ function random_file_name($keyname = '')
     return $new_file;
 }
 
-
+/**
+ * membuat function panggil view
+ * @author nagara
+ */
 function view($view = '', $data = [])
 {
     // mengarah pada folder apps/views/ namaviews.php
@@ -233,7 +250,6 @@ function view($view = '', $data = [])
         }
 
         require_once 'apps/views/' . $view . '.php';
-        exit;
     } catch (Exception $exception) {
         $my_error = new Error_Handling;
         $my_error->showerror_message($exception->getMessage() , $exception->getFile() , $exception->getLine() , $exception->getTraceAsString());
@@ -241,7 +257,32 @@ function view($view = '', $data = [])
     }
 }
 
-function goblok($val = '')
+/**
+ * membuat function panggil model
+ * @author nagara
+ */
+function model($model = '')
+	{
+		// mengarah pada folder apps/models/ namamodels.php
+		try {
+			if (!file_exists('apps/models/' . $model . '.php')) {
+				throw new Exception("Models ". $model ." Not Found. Check Controllernya Bro di bagian load modelnya ");
+			}
+
+			require_once 'apps/models/' . $model . '.php';
+			return new $model;
+		} catch (Exception $exception) {
+			$my_error = new Error_Handling;
+			$my_error->showerror_message($exception->getMessage() , $exception->getFile() , $exception->getLine() , $exception->getTraceAsString());
+			exit;
+		}
+	}
+
+/**
+ * membuat function testing atau debug variabel
+ * @author nagara
+ */
+function testme($val = '')
 {
     var_dump($val);
     die;

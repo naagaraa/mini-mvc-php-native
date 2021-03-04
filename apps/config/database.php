@@ -1,5 +1,4 @@
 <?php
-
 /** 
  * ----------------------------------------------------------------------------------------------
  * 	Database
@@ -13,7 +12,6 @@
 $configuration = [
 	"APP_NAME" 			=> $_ENV["APP_NAME"],
 	"APP_HOST" 			=> $_ENV["APP_HOST"],
-	"APP_URL" 			=> $_ENV["APP_URL"],
 	"DB_HOST" 			=> $_ENV["DB_HOST"],
 	"DB_PORT" 			=> $_ENV["DB_PORT"],
 	"DB_NAME" 			=> $_ENV["DB_NAME"],

@@ -29,7 +29,6 @@
 $configuration = [
 	"APP_NAME" => $_ENV["APP_NAME"],
 	"APP_HOST" => $_ENV["APP_HOST"],
-	"APP_URL" => $_ENV["APP_URL"],
 	"DB_HOST" => $_ENV["DB_HOST"],
 	"DB_PORT" => $_ENV["DB_PORT"],
 	"DB_NAME" => $_ENV["DB_NAME"],
@@ -85,3 +84,6 @@ define('DIR_ROOT', $DIR_ROOT);
 
 // config constant folder upload
 define('UPLOAD_F', $_SERVER['DOCUMENT_ROOT'] . '/' . $configuration['APP_NAME'] . '/upload/');
+
+// config script
+define('PYTHON_DIR', $configuration['APP_HOST'] . $configuration['APP_NAME'] . '/python/');

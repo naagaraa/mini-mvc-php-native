@@ -45,6 +45,11 @@
       },
     "minimum-stability": "dev",
     "prefer-stable": true,
+    "scripts": {
+        "post-root-package-install": [
+            "@php script.php"
+        ]
+    },
     "repositories": [
         {
             "type": "vcs",
