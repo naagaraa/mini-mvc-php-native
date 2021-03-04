@@ -46,7 +46,7 @@
     "minimum-stability": "dev",
     "prefer-stable": true,
     "scripts": {
-        "post-create-project-cmd": [
+        "post-autoload-dump": [
             "php script.php"
         ]
     },
