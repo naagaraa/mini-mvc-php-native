@@ -250,6 +250,7 @@ function view($view = '', $data = [])
         }
 
         require_once 'apps/views/' . $view . '.php';
+        exit;
     } catch (Exception $exception) {
         $my_error = new Error_Handling;
         $my_error->showerror_message($exception->getMessage() , $exception->getFile() , $exception->getLine() , $exception->getTraceAsString());

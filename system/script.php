@@ -1,6 +1,7 @@
 <?php
 /**
  * Handle untuk create automation file .env
+ * untuk create env project sesuai folder project
  */
 
 $path = dirname( __FILE__ , 2 );

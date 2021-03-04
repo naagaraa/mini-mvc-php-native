@@ -111,15 +111,38 @@ description or requretment
 
 	``` 
 2. composer create project
+	<p>dev master </p>
 
 	```
 
-	composer create-project nagara/mini-mvc-php-native:dev-master
+	composer create-project nagara/mini-mvc-php-native:dev-master namaprojectnya
+
+	``` 
+
+	```
+
+	composer create-project nagara/mini-mvc-php-native:dev-master belajarmvc
+
+	``` 
+	<p>update terbaru atau latest version : </p>
+
+	```
+
+	c:\xampp\htdocs> composer create-project nagara/mini-mvc-php-native belajaramvc
+
+	``` 
+
+
+3. update envirotment project
+
+	```
+
+	c:\xampp\htdocs> cd belajaramvc
 
 	``` 
 	```
 
-	c:\xampp\htdocs> composer create-project nagara/mini-mvc-php-native:1.0.0-beta2
+	c:\xampp\htdocs> php system/script.php
 
 	``` 
 
@@ -167,6 +190,7 @@ folder apps terdiri dari beberapa bagian yaitu :
 * apps
 * public
 * uploads
+* system
 * vendor
 * composer.json
 * .htaccess
