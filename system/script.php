@@ -17,7 +17,6 @@ $txt ="# config file .env untuk configurasi pada file
 # configurasi Path here
 APP_NAME=". $new_project ."
 APP_HOST=http://localhost/
-# APP_URL=http://localhost/mini-mvc-php-native/
 
 # configurasi Database here
 DB_HOST=localhost
@@ -39,7 +38,6 @@ $txt ="# config file .env untuk configurasi pada file
 # configurasi Path here
 APP_NAME=". $new_project ."
 APP_HOST=http://localhost/
-# APP_URL=http://localhost/mini-mvc-php-native/
 
 # configurasi Database here
 DB_HOST=localhost
