@@ -2,6 +2,7 @@
 */uploads
 # Except this file
 !.gitignore
+!composer.lock
 # folder vendor
 /vendor/*
 /public/assets/*

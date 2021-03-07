@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "da7f912caa947886c6258d47a71d29a1",
+    "content-hash": "33316bd5fc9843e4bf913ef6fc115425",
     "packages": [
         {
             "name": "bramus/router",
@@ -1484,67 +1484,6 @@
                 }
             ],
             "time": "2021-01-07T16:49:33+00:00"
-        },
-        {
-            "name": "twbs/bootstrap",
-            "version": "v4.6.0",
-            "source": {
-                "type": "git",
-                "url": "https://github.com/twbs/bootstrap.git",
-                "reference": "6ffb0b48e455430f8a5359ed689ad64c1143fac2"
-            },
-            "dist": {
-                "type": "zip",
-                "url": "https://api.github.com/repos/twbs/bootstrap/zipball/6ffb0b48e455430f8a5359ed689ad64c1143fac2",
-                "reference": "6ffb0b48e455430f8a5359ed689ad64c1143fac2",
-                "shasum": ""
-            },
-            "replace": {
-                "twitter/bootstrap": "self.version"
-            },
-            "type": "library",
-            "extra": {
-                "branch-alias": {
-                    "dev-master": "3.3.x-dev"
-                }
-            },
-            "notification-url": "https://packagist.org/downloads/",
-            "license": [
-                "MIT"
-            ],
-            "authors": [
-                {
-                    "name": "Mark Otto",
-                    "email": "markdotto@gmail.com"
-                },
-                {
-                    "name": "Jacob Thornton",
-                    "email": "jacobthornton@gmail.com"
-                }
-            ],
-            "description": "The most popular front-end framework for developing responsive, mobile first projects on the web.",
-            "homepage": "https://getbootstrap.com/",
-            "keywords": [
-                "JS",
-                "css",
-                "framework",
-                "front-end",
-                "mobile-first",
-                "responsive",
-                "sass",
-                "web"
-            ],
-            "support": {
-                "issues": "https://github.com/twbs/bootstrap/issues",
-                "source": "https://github.com/twbs/bootstrap/tree/v4.6.0"
-            },
-            "funding": [
-                {
-                    "url": "https://opencollective.com/bootstrap",
-                    "type": "open_collective"
-                }
-            ],
-            "time": "2021-01-19T16:16:38+00:00"
         },
         {
             "name": "vlucas/phpdotenv",
