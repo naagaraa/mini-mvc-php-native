@@ -34,7 +34,7 @@
 
 	.theme {
 		background-color: black;
-		background-image: url('<?= asset('image/background.png') ?>');
+		background-image: url('<?= asset('image/background.jpg') ?>');
 		background-repeat: no-repeat;
 		background-size: cover;
 		/* background-position-y: -50px; */

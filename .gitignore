@@ -1,8 +1,10 @@
 # Ignore everything in this directory
 */uploads
+
 # Except this file
 !.gitignore
-!composer.lock
+composer.lock
+
 # folder vendor
 /vendor/*
 /public/assets/*
