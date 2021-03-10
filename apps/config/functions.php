@@ -80,16 +80,6 @@ function upload_dir($url = '' )
    return UPLOAD_F . $url ; 
 }
 
-/**
- * Membuat function untuk directory upload base path /upload/
- * @author nagara 
- * @return string
- */
-function python_dir($url = '' )
-{
-   return PYTHON_DIR . $url . 'index.py' ; 
-}
-
 
 /**
  * Membuat function redirect url

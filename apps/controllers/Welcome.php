@@ -44,7 +44,7 @@ class Welcome extends Controller
 
 	public function about()
 	{
-		echo "about";
+		echo "controller about";
 	}
 
 }

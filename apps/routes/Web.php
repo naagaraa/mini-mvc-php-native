@@ -68,6 +68,12 @@ class Web
 		});
 
 
+		$router->get('/about', function () {
+			Routes::Routing('Welcome', 'about');
+		});
+
+
+
 		$router->get('/', function () {
 			return view('Welcome');
 		});

@@ -38,52 +38,77 @@ $configuration = [
 
 /** 
  * ----------------------------------------------------------------------------------------------
- * 	Development
+ * 	Development 
+ *  beri commnet saja jika tidak diperlukan
  * ----------------------------------------------------------------------------------------------
  */
 
-// base-Url untuk asset
+# base-Url untuk asset
 define('ASSET', $configuration['APP_HOST'] . $configuration['APP_NAME'] . '/public/');
-// base-Url untuk URL
+# base-Url untuk URL
 define('URL', $configuration['APP_HOST'] . $configuration['APP_NAME'] . '/');
-// base-url untuh path
+# base-url untuh path
 define('BASEURL', $configuration['APP_HOST'] . $configuration['APP_NAME'] . '/');
 
-
 /** 
  * ----------------------------------------------------------------------------------------------
- * 	production beta 
+ * 	Constant in debelopment
  * ----------------------------------------------------------------------------------------------
  */
 
-// // base-Url untuk asset
-// define('ASSET', $configuration['APP_URL'] . '/public');
-// // base-Url untuk URL
-// define('URL', $configuration['APP_URL'] . '/');
-// // base-url untuh path
-// define('BASEURL', $configuration['APP_URL'] . '/');
-
-
-/** 
- * ----------------------------------------------------------------------------------------------
- * 	Constant
- * ----------------------------------------------------------------------------------------------
- */
-
-
-// vendor-URL-autoload
+# vendor-URL-autoload
 $vendor = $_SERVER['DOCUMENT_ROOT'] . '/' . $configuration['APP_NAME'] . '/vendor/autoload.php';
 define('vendor', $vendor);
 
-// directory vendor
+# directory vendor
 $DIR_VENDOR = $_SERVER['DOCUMENT_ROOT'] . '/' . $configuration['APP_NAME'] . '/vendor' . '/';
 $DIR_ROOT = $_SERVER['DOCUMENT_ROOT'] . '/' . $configuration['APP_NAME'];
 define('DIR_VENDOR', $DIR_VENDOR);
 define('DIR_ROOT', $DIR_ROOT);
 
 
-// config constant folder upload
+# config constant folder upload
 define('UPLOAD_F', $_SERVER['DOCUMENT_ROOT'] . '/' . $configuration['APP_NAME'] . '/upload/');
 
-// config script
-define('PYTHON_DIR', $configuration['APP_HOST'] . $configuration['APP_NAME'] . '/python/');
+
+
+/** 
+ * ----------------------------------------------------------------------------------------------
+ * 	production format
+ * beri commnet saja jika tidak diperlukan
+ * ----------------------------------------------------------------------------------------------
+ */
+
+# base-Url untuk asset
+// define('ASSET', $configuration['APP_HOST'] . 'public/');
+# base-Url untuk URL
+// define('URL', $configuration['APP_HOST'] );
+# base-url untuh path
+// define('BASEURL', $configuration['APP_HOST'] );
+
+/** 
+ * ----------------------------------------------------------------------------------------------
+ * 	Constant on production
+ *  beri commnet saja jika tidak diperlukan
+ * ----------------------------------------------------------------------------------------------
+ */
+
+
+# vendor-URL-autoload
+// $vendor = $_SERVER['DOCUMENT_ROOT'] . '/' .  'vendor/autoload.php';
+// define('vendor', $vendor);
+
+# directory vendor
+// $DIR_VENDOR = $_SERVER['DOCUMENT_ROOT'] . '/' .  'vendor' . '/';
+// $DIR_ROOT = $_SERVER['DOCUMENT_ROOT'] ;
+// define('DIR_VENDOR', $DIR_VENDOR);
+// define('DIR_ROOT', $DIR_ROOT);
+
+
+# config constant folder upload
+// define('UPLOAD_F', $_SERVER['DOCUMENT_ROOT'] . '/' .  'upload/');
+
+
+
+
+
