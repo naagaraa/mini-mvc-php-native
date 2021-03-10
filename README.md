@@ -11,9 +11,13 @@
 <p>include external libraries: jquery, bootstrap 4.2.5, owl.js, slick.js, composer, ckeditor-5, chartjs, fontawensome, datatable.js, phpoffice, mpdf I put together to make it easier to find</p>
 ---
 
-<!-- table of content -->
+<!-- table of content YT -->
 #### Documentasi saya dalam bentuk  video bahasa indonesia
 * **playlist** [ Youtube ](https://www.youtube.com/playlist?list=PLK5_CL-hAKCf-H7snj3RlLVjrkJ7yql6o)
+
+<!-- table of content YT -->
+#### Fork repo
+<p>jika mau clone repo ini ke github kalian, kalian tinggal klik forked di pojok kanan atas. thx</p>
 
 <!-- table of content -->
 #### Note 
