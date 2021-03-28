@@ -239,7 +239,7 @@ function view($view = '', $data = [])
             throw new Exception("View ". $view ." Not Found. Check Controllernya Bro");
         }else{
             require_once 'apps/views/' . $view . '.php';
-            return true;
+            // return true;
         }
         return false;
     } catch (Exception $exception) {
