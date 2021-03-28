@@ -702,3 +702,7 @@ hi, kamu bisa support dengan cara follow account sosial media di bawah atau memb
 * Sandhika galih : [ IG Web programing unpas ](https://www.instagram.com/sandhikagalih/)
 
 * Naagaraa : [ IG Naagaraa ](https://www.instagram.com/naagaraa/)
+
+
+ *Donasi ?* : 
+* Naagaraa : [ Traktir baso aja ](https://saweria.co/naagaraa)
