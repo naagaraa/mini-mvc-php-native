@@ -67,16 +67,23 @@ class Web
 			exit;
 		});
 
+	
 
-		// $router->get('/about', function () {
-		// 	Routes::Routing('Welcome', 'about');
-		// });
+		/**
+		 * if you want default root / login page just uncommnet here default login 
+		 * and commnet default welcome
+		 */
 
 
-
+		//  default welcome
 		$router->get('/', function () {
 			return view('Welcome');
 		});
+
+		// default login
+		// $router->get('/', function () {
+		// 	Routes::Routing('/auth/SignInUserController','index');
+		// });
 
 		$router->get('/login', function () {
 			Routes::Routing('/auth/SignInUserController','index');

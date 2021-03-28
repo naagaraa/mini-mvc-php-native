@@ -96,7 +96,7 @@
 
 	.links>a {
 		display: inline-block;
-		padding-top: 3.5vh;
+		padding-top: 2vh;
 		color: #e1eaf9;
 		font-weight: 600;
 		letter-spacing: 0.4rem;
@@ -168,6 +168,8 @@
 					<a href="https://www.instagram.com/naagaraa/" target="_blank"><li>INSTAGRAM</li></a>
 					<a href="https://dribbble.com/naagaraa/" target="_blank"><li>DRIBBLE</li></a><br>
 					<a href="<?= url('info') ?>" target="_blank"><li>PHP INFO</li></a>
+					<a href="<?= url('login') ?>" ><li>Login Page</li></a>
+					<a href="<?= url('register') ?>" ><li>Register Page</li></a>
 				</ul>
 			</div>
 		</div>
