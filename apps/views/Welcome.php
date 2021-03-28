@@ -12,8 +12,8 @@
 	<title>NAGARA/MINI MVC PHP NATIVE </title>
 
 	<!-- ICONS -->
-	<link rel="apple-touch-icon" sizes="76x76" href="<?= asset('image/PHP-logo.png') ?>">
-	<link rel="icon" type="image/png" sizes="96x96" href="<?=  asset('image/PHP-logo.png') ?> ">
+	<link rel="apple-touch-icon" sizes="76x76" href="<?= asset('image/php-logo.png') ?>">
+	<link rel="icon" type="image/png" sizes="96x96" href="<?=  asset('image/php-logo.png') ?> ">
 
 	<!-- Fonts -->
 	<link href="https://fonts.googleapis.com/css?family=Nunito:200,600" rel="stylesheet">
@@ -164,7 +164,7 @@
 				<ul type="none" class="links" >
 					<a href="https://naagaraa.github.io/documentation-mini-mvc-php-project/" target="_blank" ><li>DOCUMENTATION</li></a>
 					<a href="https://github.com/naagaraa/mini-mvc-phpnative" target="_blank"><li>GITHUB</li></a><br>
-					<a href="https://www.youtube.com/channel/UCYsZhw6Mlk23Q-nUPP9t1YA" target="_blank"><li>YOUTUBE</li></a>
+					<a href="https://www.youtube.com/playlist?list=PLK5_CL-hAKCf-H7snj3RlLVjrkJ7yql6o" target="_blank"><li>YOUTUBE</li></a>
 					<a href="https://www.instagram.com/naagaraa/" target="_blank"><li>INSTAGRAM</li></a>
 					<a href="https://dribbble.com/naagaraa/" target="_blank"><li>DRIBBLE</li></a><br>
 					<a href="<?= url('info') ?>" target="_blank"><li>PHP INFO</li></a>

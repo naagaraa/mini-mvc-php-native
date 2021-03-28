@@ -39,12 +39,12 @@ class Welcome extends Controller
 
 	public function index()
 	{
-		echo "ini controller home";
+		// echo "ini controller home";
 	}
 
 	public function about()
 	{
-		echo "controller about";
+		// echo "controller about";
 	}
 
 }

@@ -68,9 +68,9 @@ class Web
 		});
 
 
-		$router->get('/about', function () {
-			Routes::Routing('Welcome', 'about');
-		});
+		// $router->get('/about', function () {
+		// 	Routes::Routing('Welcome', 'about');
+		// });
 
 
 
@@ -78,6 +78,18 @@ class Web
 			return view('Welcome');
 		});
 
+		$router->get('/login', function () {
+			Routes::Routing('/auth/SignInUserController','index');
+		});
+		$router->get('/register', function () {
+			Routes::Routing('/auth/CreateUserController','index');
+		});
+		$router->get('/forgot-password', function () {
+			Routes::Routing('/auth/ForgotPasswordController','index');
+		});
+		$router->get('/verify/reset-password', function () {
+			Routes::Routing('/auth/ResetPasswordController','index');
+		});
 
 		// run route!
 		$router->run();

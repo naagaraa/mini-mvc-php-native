@@ -237,10 +237,11 @@ function view($view = '', $data = [])
     try {
         if (!file_exists('apps/views/' . $view . '.php')) {
             throw new Exception("View ". $view ." Not Found. Check Controllernya Bro");
+        }else{
+            require_once 'apps/views/' . $view . '.php';
+            return true;
         }
-
-        require_once 'apps/views/' . $view . '.php';
-        exit;
+        return false;
     } catch (Exception $exception) {
         $my_error = new Error_Handling;
         $my_error->showerror_message($exception->getMessage() , $exception->getFile() , $exception->getLine() , $exception->getTraceAsString());
