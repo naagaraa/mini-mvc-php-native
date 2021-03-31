@@ -24,6 +24,11 @@
 * saya sering melakukan update pada repo, saya sarankan untuk melakukan
 git pull jika terdapat ada update ahahaha
 
+<!-- update -->
+#### Update 
+* saya sedang development untuk implementation template engine menggunakan twig dari syphony
+ [ **Documentasi Resmi Twig 3.x** ](https://twig.symfony.com/doc/3.x/) 
+
 <!-- table of content -->
 ## Daftar isi Content
 

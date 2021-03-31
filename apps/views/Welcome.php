@@ -94,7 +94,7 @@
 		font-size: 50px;
 	}
 
-	.links>a {
+	.links> li a {
 		display: inline-block;
 		padding-top: 2vh;
 		color: #e1eaf9;
@@ -160,16 +160,16 @@
 			</div>
 		</div>
 		<div class="row">
-			<div class="col-3">
+			<div class="col-5">
 				<ul type="none" class="links" >
-					<a href="https://naagaraa.github.io/documentation-mini-mvc-php-project/" target="_blank" ><li>DOCUMENTATION</li></a>
-					<a href="https://github.com/naagaraa/mini-mvc-phpnative" target="_blank"><li>GITHUB</li></a><br>
-					<a href="https://www.youtube.com/playlist?list=PLK5_CL-hAKCf-H7snj3RlLVjrkJ7yql6o" target="_blank"><li>YOUTUBE</li></a>
-					<a href="https://www.instagram.com/naagaraa/" target="_blank"><li>INSTAGRAM</li></a>
-					<a href="https://dribbble.com/naagaraa/" target="_blank"><li>DRIBBLE</li></a><br>
-					<a href="<?= url('info') ?>" target="_blank"><li>PHP INFO</li></a>
-					<a href="<?= url('login') ?>" ><li>Login Page</li></a>
-					<a href="<?= url('register') ?>" ><li>Register Page</li></a>
+					<li><a href="https://naagaraa.github.io/documentation-mini-mvc-php-project/" target="_blank" >DOCUMENTATION</a></li>
+					<li><a href="https://github.com/naagaraa/mini-mvc-phpnative" target="_blank">GITHUB</a></li>
+					<li><a href="https://www.youtube.com/playlist?list=PLK5_CL-hAKCf-H7snj3RlLVjrkJ7yql6o" target="_blank">YOUTUBE</a></li>
+					<li><a href="https://www.instagram.com/naagaraa/" target="_blank">INSTAGRAM</a></li>
+					<li><a href="https://dribbble.com/naagaraa/" target="_blank">DRIBBLE</a></li>
+					<li><a href="<?= url('info') ?>" target="_blank">PHP INFO</a></li>
+					<li><a href="<?= url('login') ?>" >Login Page (Stisla)</a></li>
+					<li><a href="<?= url('register') ?>" >Register Page (Stisla)</a></li>
 				</ul>
 			</div>
 		</div>

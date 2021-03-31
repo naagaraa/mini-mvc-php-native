@@ -235,11 +235,18 @@ function view($view = '', $data = [])
 {
     // mengarah pada folder apps/views/ namaviews.php
     try {
-        if (!file_exists('apps/views/' . $view . '.php')) {
+        if (!file_exists(_ROOT_VIEW . $view . '.php')) {
             throw new Exception("View ". $view ." Not Found. Check Controllernya Bro");
         }else{
-            require_once 'apps/views/' . $view . '.php';
-            // return true;
+
+            # comment this jika tidak ingin menggunakan twig engine
+            // $loader = new \Twig\Loader\FilesystemLoader(_ROOT_VIEW);
+            // $twig = new \Twig\Environment($loader, ['debug' => true]);
+
+            // echo $twig->render($view . '.php' , $data);
+
+            # uncomment this jika tidak ingin menggunakan twig engine
+            require_once _ROOT_VIEW . $view . '.php';  //update template engine menggunakan twig
         }
         return false;
     } catch (Exception $exception) {
@@ -257,11 +264,11 @@ function model($model = '')
 	{
 		// mengarah pada folder apps/models/ namamodels.php
 		try {
-			if (!file_exists('apps/models/' . $model . '.php')) {
+			if (!file_exists(_ROOT_MODEL . $model . '.php')) {
 				throw new Exception("Models ". $model ." Not Found. Check Controllernya Bro di bagian load modelnya ");
 			}
 
-			require_once 'apps/models/' . $model . '.php';
+			require_once _ROOT_MODEL . $model . '.php';
 			return new $model;
 		} catch (Exception $exception) {
 			$my_error = new Error_Handling;

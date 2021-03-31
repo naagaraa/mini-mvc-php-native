@@ -50,6 +50,11 @@ define('URL', $configuration['APP_HOST'] . $configuration['APP_NAME'] . '/');
 # base-url untuh path
 define('BASEURL', $configuration['APP_HOST'] . $configuration['APP_NAME'] . '/');
 
+# root core
+define('_ROOT_VIEW', 'apps/views/');
+define('_ROOT_MODEL', 'apps/models/');
+define('_ROOT_ERROR_VIEW', 'apps/error/pages/');
+
 /** 
  * ----------------------------------------------------------------------------------------------
  * 	Constant in debelopment

@@ -76,6 +76,7 @@ require 'vendor/autoload.php';
 $dotenv = Dotenv\Dotenv::createImmutable(__DIR__);
 $dotenv->load();
 
+
 require 'system/_init.php';
 require_once 'apps/init.php';
 

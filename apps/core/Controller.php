@@ -39,11 +39,18 @@ class Controller
 	{
 		// mengarah pada folder apps/views/ namaviews.php
 		try {
-			if (!file_exists('apps/views/' . $view . '.php')) {
+			if (!file_exists(_ROOT_VIEW . $view . '.php')) {
 				throw new Exception("View ". $view ." Not Found. Check Controllernya Bro");
 			}
 
-			require_once 'apps/views/' . $view . '.php';
+			# comment this jika tidak ingin menggunakan twig engine
+			// $loader = new \Twig\Loader\FilesystemLoader(_ROOT_VIEW);
+            // $twig = new \Twig\Environment($loader, ['debug' => true]);
+
+            // echo $twig->render($view . '.php' , $data);
+
+			# uncomment this jika tidak ingin menggunakan twig engine
+			require_once _ROOT_VIEW . $view . '.php';  //update template engine menggunakan twig
 			exit;
 		} catch (Exception $exception) {
 			$my_error = new Error_Handling;
@@ -62,11 +69,11 @@ class Controller
 		// mengarah pada folder apps/models/ namamodels.php
 		
 		try {
-			if (!file_exists('apps/models/' . $model . '.php')) {
+			if (!file_exists(_ROOT_MODEL . $model . '.php')) {
 				throw new Exception("Models ". $model ." Not Found. Check Controllernya Bro di bagian load modelnya ");
 			}
 
-			require_once 'apps/models/' . $model . '.php';
+			require_once _ROOT_MODEL . $model . '.php';
 			return new $model;
 			exit;
 		} catch (Exception $exception) {
@@ -86,10 +93,12 @@ class Controller
 		// mengarah pada folder apps/error/pages/ namaviews.php
 		try {
 			
-			if(!file_exists('apps/error/pages/' . $view . '.php')){
+			if(!file_exists(_ROOT_ERROR_VIEW . $view . '.php')){
 				throw new Exception("views ". $view ." Not Found. Check Controllernya Bro di bagian load view-nya ");
 			}
-			require_once 'apps/error/pages/' . $view . '.php';
+
+			require_once _ROOT_ERROR_VIEW . $view . '.php';
+			
 
 		} catch (\Throwable $exception) {
 			$my_error = new Error_Handling;

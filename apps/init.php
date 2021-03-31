@@ -48,6 +48,7 @@
 include 'config/config.php';
 
 
+
 // spl autoload php atau bootstrap loading classname pada folder core
 spl_autoload_register(function ($class) {
 	$class = explode("\\", $class);
