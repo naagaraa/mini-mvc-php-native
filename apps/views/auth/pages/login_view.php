@@ -8,7 +8,7 @@
             <h4 class="text-dark font-weight-normal">Welcome to <span class="font-weight-bold">Stisla</span></h4>
             <p class="text-muted">Integration <a href="https://github.com/naagaraa/mini-mvc-php-native" target="_blank"> NAGARA/MINI MVC PHP NATIVE </a> with  <a target="_blank" href="https://github.com/stisla/stisla">Stisla Template</a></p>
             <!-- <p class="text-muted">Before you get started, you must login or register if you don't already have an account.</p> -->
-            <form method="POST" action="#" class="needs-validation" novalidate="">
+            <form  action="<?= url('home') ?>" class="needs-validation" novalidate="">
               <div class="form-group">
                 <label for="email">Email</label>
                 <input id="email" type="email" class="form-control" name="email" tabindex="1" required autofocus>

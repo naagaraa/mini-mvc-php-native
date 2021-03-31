@@ -17,7 +17,7 @@ class SignInUserController extends Controller
 		return view('auth/pages/login_view');
 	}
 
-	public function about()
+	public function authentication()
 	{
 		
 	}

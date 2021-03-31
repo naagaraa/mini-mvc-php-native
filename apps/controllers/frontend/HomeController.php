@@ -3,7 +3,7 @@ defined('BASEURL') or exit('No direct script access allowed');
 
 use MiniMvc\Apps\Core\Bootstraping\Controller;
 
-class CreateUserController extends Controller
+class HomeController extends Controller
 {
 
 	public function __construct()
@@ -14,12 +14,7 @@ class CreateUserController extends Controller
 
 	public function index()
 	{
-		return view('auth/pages/register_view');
-	}
-
-	public function store()
-	{
-		
+		return view('/frontend/pages/home_view');
 	}
 
 }

@@ -1,5 +1,4 @@
 <?php
-
 /**
  * -----------------------------------------------------------------------------------------------------------
  * Documentasi Code by me
@@ -102,7 +101,7 @@ use MiniMvc\Apps\Routes\Bootstraping\Api;
  */
 $Api = new Api;
 $Route = new Web;
-$App = new App;
+// $App = new App;  //upgrade versi nagara/mini-mvc next generation 
 
 
  /*

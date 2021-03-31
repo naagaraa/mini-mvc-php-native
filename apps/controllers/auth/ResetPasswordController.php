@@ -17,7 +17,7 @@ class ResetPasswordController extends Controller
 		return view('auth/pages/password/reset_password_view');
 	}
 
-	public function about()
+	public function update()
 	{
 		
 	}

@@ -17,7 +17,7 @@ class ForgotPasswordController extends Controller
 		return view('auth/pages/password/forgot_password_view');
 	}
 
-	public function about()
+	public function send()
 	{
 		
 	}

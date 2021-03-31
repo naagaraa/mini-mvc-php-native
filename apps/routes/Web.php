@@ -86,16 +86,23 @@ class Web
 		// });
 
 		$router->get('/login', function () {
-			Routes::Routing('/auth/SignInUserController','index');
+			Routes::Routing('auth/SignInUserController','index');
 		});
 		$router->get('/register', function () {
-			Routes::Routing('/auth/CreateUserController','index');
+			Routes::Routing('auth/CreateUserController','index');
 		});
 		$router->get('/forgot-password', function () {
-			Routes::Routing('/auth/ForgotPasswordController','index');
+			Routes::Routing('auth/ForgotPasswordController','index');
 		});
 		$router->get('/verify/reset-password', function () {
-			Routes::Routing('/auth/ResetPasswordController','index');
+			Routes::Routing('auth/ResetPasswordController','index');
+		});
+
+		$router->get('/home', function () {
+			Routes::Routing('frontend/HomeController', 'index');
+		});
+		$router->get('/profile', function () {
+			Routes::Routing('auth/UpdateInformationUserController','index');
 		});
 
 		// run route!
