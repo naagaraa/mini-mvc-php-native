@@ -286,3 +286,15 @@ function testme($val = '')
     var_dump($val);
     die;
 }
+
+/**
+ * untuk membuat slug
+ * string to slug
+ * example : judul satu dua menjadi judul-satu-dua
+ * @author nagara
+ */
+
+ function slug($str = '' )
+ {
+    str_replace(" ", "-", trim($str) );
+ }
