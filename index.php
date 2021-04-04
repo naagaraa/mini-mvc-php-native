@@ -3,6 +3,7 @@
  * -----------------------------------------------------------------------------------------------------------
  * Documentasi Code by me
  * @author nagara dan sandhika galih
+ * @pengembang eka jaya nagara atau di sapa miyuki nagara
  * -----------------------------------------------------------------------------------------------------------
  * Bootstraping adalah salah satu teknik untuk memanggil semua file pada direktori tertentu
  * menggunakan file init.php lalu di call melalui index.php 
@@ -59,7 +60,7 @@
  *---------------------------------------------------------------
  *
  * applikasi dibangun dengan konsep object oriented dan presentasion
- * pattern mvc (model - view - controller ).
+ * pattern mvc (model - view - controller ) dan Route atau routing.
  *
  * applikasi nya masih dalam bentuk pengembangan
  *

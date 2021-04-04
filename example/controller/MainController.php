@@ -1,5 +1,4 @@
 <?php
-
 use MiniMvc\Apps\Core\Bootstraping\Controller;
 
 /**
