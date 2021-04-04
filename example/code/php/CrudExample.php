@@ -67,7 +67,7 @@ if (file_exists($path['cover']) and file_exists($path['image'])) {
  * ----------------------------------------------------------------------
  */
 
-// get value gambar
+// get value gambar / image
 $gambar = [
 	'namaFile' => $this->lib('randName')->getRandomName($_FILES['foto']['name']),
 	'tmpName' => $_FILES['foto']['tmp_name'],

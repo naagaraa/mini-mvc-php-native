@@ -281,10 +281,18 @@ function model($model = '')
  * membuat function testing atau debug variabel
  * @author nagara
  */
-function testme($val = '')
+function dd($val = '')
 {
-    var_dump($val);
-    die;
+   
+    try {
+        var_dump($val);
+        die;
+        exit;
+    } catch (\Throwable $th) {
+        $my_error = new Error_Handling;
+        $my_error->showerror_message($exception->getMessage() , $exception->getFile() , $exception->getLine() , $exception->getTraceAsString());
+        exit;
+    }
 }
 
 /**
@@ -292,9 +300,10 @@ function testme($val = '')
  * string to slug
  * example : judul satu dua menjadi judul-satu-dua
  * @author nagara
+ * @return string
  */
 
- function slug($str = '' )
+ function slug($str = '' , $slug = '-')
  {
-    str_replace(" ", "-", trim($str) );
+   return str_replace(" ", $slug, trim($str) );
  }
