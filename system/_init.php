@@ -8,3 +8,5 @@ ini_set('safe_mode', false);
 // ini_set('allow_url_fopen', true);
 // ini_set('allow_url_include', 'on');
 
+// var_dump(ini_get_all());die;
+

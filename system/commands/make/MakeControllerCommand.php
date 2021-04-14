@@ -6,6 +6,7 @@ use Symfony\Component\Console\Command\Command;
 use Symfony\Component\Console\Input\InputInterface;
 use Symfony\Component\Console\Output\OutputInterface;
 use Symfony\Component\Console\Input\InputArgument;
+use MiniMvc\System\Console\Filesystem;
 
 class MakeControllerCommand extends Command
 {
@@ -14,13 +15,19 @@ class MakeControllerCommand extends Command
     {
         $this->setName('buat:controller')
             ->setDescription('buat new controller di folder controller')
-            ->setHelp('Demonstration of custom commands created by Symfony Console component.')
-            ->addArgument('username', InputArgument::REQUIRED, 'Pass the username.');
+            ->setHelp("author ekajayanagara as miyuki nagara\nstudent infomatic at darma persada\n\nUntuk membuat file controller\njika kamu ingin membuat file controller dengan cepat\n\nphp nagara buat:controller\n\n")
+            ->addArgument('controllername', InputArgument::REQUIRED, 'tuliskan nama controllernya bruh.');
     }
 
     protected function execute(InputInterface $input, OutputInterface $output)
     {
-        $output->writeln(sprintf('Hello World!, %s', $input->getArgument('username')));
+        $controller = MakeControllerCommand::handle_generate($input->getArgument('controllername'));
+        $output->write($controller);
         return Command::SUCCESS;
+    }
+
+    static public function handle_generate($input)
+    {
+        return Filesystem::create_controller($input);
     }
 }

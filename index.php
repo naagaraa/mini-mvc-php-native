@@ -67,6 +67,7 @@
  *
  */
 
+
  /*
  *---------------------------------------------------------------
  * REQUIRE VENDOR AUTOLOADING
@@ -104,6 +105,9 @@ require_once 'apps/init.php';
 // use MiniMvc\Apps\Core\Bootstraping\App;
 use MiniMvc\Apps\Routes\Bootstraping\Web;
 use MiniMvc\Apps\Routes\Bootstraping\Api;
+use MiniMvc\System\Console\Filesystem;
+
+
 
 
  /*
@@ -116,6 +120,9 @@ use MiniMvc\Apps\Routes\Bootstraping\Api;
 $Api = new Api;
 $Route = new Web;
 // $App = new App;  //upgrade versi nagara/mini-mvc next generation 
+
+// $test = Filesystem::create_env();
+// echo $test;die;
 
 
  /*
