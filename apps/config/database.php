@@ -2,22 +2,21 @@
 /** 
  * ----------------------------------------------------------------------------------------------
  * 	Database
- *  Author Nagara
+ *  @author nagara 
  * ----------------------------------------------------------------------------------------------
  *  untuk configurasi pada database adalah sebagai berikut ini dibawah, database akan di init
  *  atau inisiati pada file .env apps/.env dan untuk contoh .env ada pada file
  *  .env-example
  * 
  */
-$configuration = [
-	"APP_NAME" 			=> $_ENV["APP_NAME"],
-	"APP_HOST" 			=> $_ENV["APP_HOST"],
-	"DB_HOST" 			=> $_ENV["DB_HOST"],
-	"DB_PORT" 			=> $_ENV["DB_PORT"],
-	"DB_NAME" 			=> $_ENV["DB_NAME"],
-	"DB_USERNAME" 	=> $_ENV["DB_USERNAME"],
-	"DB_PASSWORD" 	=> $_ENV["DB_PASSWORD"],
-];
+
+# Database
+$config["DB_HOST"] 		 	=  $_ENV["DB_HOST"] 			? $_ENV["DB_HOST"] 				: 'http://localhost/';
+$config["DB_PORT"]		 	=  $_ENV["DB_PORT"] 			? $_ENV["DB_PORT"] 				: '3306';
+$config["DB_NAME"]		 	=  $_ENV["DB_NAME"] 			? $_ENV["DB_NAME"] 				: '';
+$config["DB_USERNAME"] 	 	=  $_ENV["DB_USERNAME"] 		? $_ENV["DB_USERNAME"] 			: 'root';
+$config["DB_PASSWORD"] 	 	=  $_ENV["DB_PASSWORD"] 		? $_ENV["DB_PASSWORD"] 			: '';
+
 
 /**
  * ----------------------------------------------------------------------------------------------
@@ -43,7 +42,7 @@ $configuration = [
 # apps/config/database.php
 
 // config Database wrapper
-define('DB_HOST', ($configuration['DB_HOST']) 		? $configuration['DB_HOST'] 		: 'localhost');
-define('DB_USER', ($configuration['DB_USERNAME']) ? $configuration['DB_USERNAME'] : 'root');
-define('DB_PASS', ($configuration['DB_PASSWORD']) ? $configuration['DB_PASSWORD'] : '');
-define('DB_NAME', ($configuration['DB_NAME']) 		? $configuration['DB_NAME'] 		: '');
+define('DB_HOST', $config['DB_HOST']);
+define('DB_USER', $config['DB_USERNAME']);
+define('DB_PASS', $config['DB_PASSWORD']);
+define('DB_NAME', $config['DB_NAME']);

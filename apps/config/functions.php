@@ -1,5 +1,7 @@
 <?php
+
 use MiniMvc\Apps\Core\Bootstraping\Error_Handling;
+
 /**
  * Documentasi functions file
  * @author nagara
@@ -55,9 +57,9 @@ use MiniMvc\Apps\Core\Bootstraping\Error_Handling;
  * @author nagara 
  * @return string
  */
-function url($url = '' )
+function url($url = '')
 {
-   return URL . $url ; 
+    return URL . $url;
 }
 
 /**
@@ -65,9 +67,9 @@ function url($url = '' )
  * @author nagara 
  * @return string
  */
-function asset($url = '' )
+function asset($url = '')
 {
-   return ASSET . $url ; 
+    return ASSET . $url;
 }
 
 /**
@@ -75,9 +77,9 @@ function asset($url = '' )
  * @author nagara 
  * @return string
  */
-function upload_dir($url = '' )
+function upload_dir($url = '')
 {
-   return UPLOAD_F . $url ; 
+    return UPLOAD_F . $url;
 }
 
 
@@ -86,12 +88,12 @@ function upload_dir($url = '' )
  * @author nagara 
  * @return redirect
  */
-function redirect($url = '' , $permanent = false)
+function redirect($url = '', $permanent = false)
 {
     if ($url != '') {
         header('Location: ' . URL . $url, true, $permanent ? 301 : 302);
-    }else{
-        header('Location: ' . URL , true, $permanent ? 301 : 302);
+    } else {
+        header('Location: ' . URL, true, $permanent ? 301 : 302);
     }
 }
 
@@ -116,7 +118,7 @@ function redirect_404()
  * @author nagara 
  * @return redirect
  */
- function redirect_403()
+function redirect_403()
 {
     // prevent Browser cache for php site
     header("Cache-Control: no-store, no-cache, must-revalidate, max-age=0");
@@ -131,7 +133,7 @@ function redirect_404()
  * @author nagara 
  * @return redirect
  */
-function redirect_301($url = '' , $permanent = false)
+function redirect_301($url = '', $permanent = false)
 {
     // prevent Browser cache for php site
     header("Cache-Control: no-store, no-cache, must-revalidate, max-age=0");
@@ -153,15 +155,13 @@ function current_url()
     $now_url = '';
     $url = get_url();
     if (!empty($url)) {
-        foreach ($url as $route ) {
+        foreach ($url as $route) {
             $now_url .= $route . '/';
         }
         return URL . $now_url;
-    }else{
+    } else {
         return URL . $now_url;
     }
-
-   
 }
 
 
@@ -190,10 +190,9 @@ function get_url($index = '')
 
         if ($index !== '') {
             return $url[$index];
-        }else{
+        } else {
             return $url;
         }
-
     }
 }
 
@@ -236,8 +235,8 @@ function view($view = '', $data = [])
     // mengarah pada folder apps/views/ namaviews.php
     try {
         if (!file_exists(_ROOT_VIEW . $view . '.php')) {
-            throw new Exception("View ". $view ." Not Found. Check Controllernya Bro");
-        }else{
+            throw new Exception("View " . $view . " Not Found. Check Controllernya Bro");
+        } else {
 
             # comment this jika tidak ingin menggunakan twig engine
             // $loader = new \Twig\Loader\FilesystemLoader(_ROOT_VIEW);
@@ -251,7 +250,7 @@ function view($view = '', $data = [])
         return false;
     } catch (Exception $exception) {
         $my_error = new Error_Handling;
-        $my_error->showerror_message($exception->getMessage() , $exception->getFile() , $exception->getLine() , $exception->getTraceAsString());
+        $my_error->showerror_message($exception->getMessage(), $exception->getFile(), $exception->getLine(), $exception->getTraceAsString());
         exit;
     }
 }
@@ -261,21 +260,21 @@ function view($view = '', $data = [])
  * @author nagara
  */
 function model($model = '')
-	{
-		// mengarah pada folder apps/models/ namamodels.php
-		try {
-			if (!file_exists(_ROOT_MODEL . $model . '.php')) {
-				throw new Exception("Models ". $model ." Not Found. Check Controllernya Bro di bagian load modelnya ");
-			}
+{
+    // mengarah pada folder apps/models/ namamodels.php
+    try {
+        if (!file_exists(_ROOT_MODEL . $model . '.php')) {
+            throw new Exception("Models " . $model . " Not Found. Check Controllernya Bro di bagian load modelnya ");
+        }
 
-			require_once _ROOT_MODEL . $model . '.php';
-			return new $model;
-		} catch (Exception $exception) {
-			$my_error = new Error_Handling;
-			$my_error->showerror_message($exception->getMessage() , $exception->getFile() , $exception->getLine() , $exception->getTraceAsString());
-			exit;
-		}
-	}
+        require_once _ROOT_MODEL . $model . '.php';
+        return new $model;
+    } catch (Exception $exception) {
+        $my_error = new Error_Handling;
+        $my_error->showerror_message($exception->getMessage(), $exception->getFile(), $exception->getLine(), $exception->getTraceAsString());
+        exit;
+    }
+}
 
 /**
  * membuat function testing atau debug variabel
@@ -283,14 +282,14 @@ function model($model = '')
  */
 function dd($val = '')
 {
-   
+
     try {
         var_dump($val);
         die;
         exit;
     } catch (\Throwable $th) {
         $my_error = new Error_Handling;
-        $my_error->showerror_message($exception->getMessage() , $exception->getFile() , $exception->getLine() , $exception->getTraceAsString());
+        $my_error->showerror_message($exception->getMessage(), $exception->getFile(), $exception->getLine(), $exception->getTraceAsString());
         exit;
     }
 }
@@ -303,7 +302,7 @@ function dd($val = '')
  * @return string
  */
 
- function slug($str = '' , $slug = '-')
- {
-   return str_replace(" ", $slug, trim($str) );
- }
+function slug($str = '', $slug = '-')
+{
+    return str_replace(" ", $slug, trim($str));
+}

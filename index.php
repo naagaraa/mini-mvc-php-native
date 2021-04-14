@@ -4,6 +4,7 @@
  * Documentasi Code by me
  * @author nagara dan sandhika galih
  * @pengembang eka jaya nagara atau di sapa miyuki nagara
+ * 
  * -----------------------------------------------------------------------------------------------------------
  * Bootstraping adalah salah satu teknik untuk memanggil semua file pada direktori tertentu
  * menggunakan file init.php lalu di call melalui index.php 
@@ -68,16 +69,27 @@
 
  /*
  *---------------------------------------------------------------
- * REQUIRE FILE INTI YANG MELAKUKAN AUTOLOADING
+ * REQUIRE VENDOR AUTOLOADING
  *---------------------------------------------------------------
  *
  */
 require 'vendor/autoload.php';
 
+ /*
+ *---------------------------------------------------------------
+ * REQUIRE ENV CREATE IMMUTABLE DIR
+ *---------------------------------------------------------------
+ *
+ */
 $dotenv = Dotenv\Dotenv::createImmutable(__DIR__);
-$dotenv->load();
+$dotenv->safeLoad();
 
-
+ /*
+ *---------------------------------------------------------------
+ * REQUIRE FILE INTI YANG MELAKUKAN AUTOLOADING
+ *---------------------------------------------------------------
+ *
+ */
 require 'system/_init.php';
 require_once 'apps/init.php';
 
@@ -89,7 +101,7 @@ require_once 'apps/init.php';
  *---------------------------------------------------------------
  * let go hahaha
  */
-use MiniMvc\Apps\Core\Bootstraping\App;
+// use MiniMvc\Apps\Core\Bootstraping\App;
 use MiniMvc\Apps\Routes\Bootstraping\Web;
 use MiniMvc\Apps\Routes\Bootstraping\Api;
 
@@ -116,6 +128,6 @@ $Route = new Web;
  * mempelajari programing php melalui internet dan youtube dan
  * salah satunya adalah channel web programing unpas bersama
  * pak sandhika galih sebagai dasar dan terus dikembangkan hingga
- * saat ini oleh saya
+ * saat ini oleh saya dan lahir mini mvc
  * 
  */

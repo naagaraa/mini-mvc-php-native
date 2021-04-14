@@ -1,5 +1,5 @@
 <?php
-#set php.ini hardcode
+#set php.ini hardcode untuk hidden technology
 
 ini_set('poweredByHeader', false);
 ini_set('expose_php', 'off');

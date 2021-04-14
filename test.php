@@ -1,3 +1,3 @@
 <?php
-$path = getcwd() . '>';
-shell_exec('cd public');
+// make dir
+mkdir("database/test");

@@ -37,7 +37,6 @@ use Console\App\Commands\ServerCommand;
 
 
 $app = new Application('project nagara/mini-mvc-php-native', '2.0.0');
-// $app->add(new DefaultCommand());
 $app->add(new TestCommand());
 $app->add(new ClearcacheCommand());
 $app->add(new MakeControllerCommand());
