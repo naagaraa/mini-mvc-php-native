@@ -155,6 +155,25 @@ description or requretment
 
 	``` 
 
+## jika envirotment project tidak ada
+"mendapat error Gagal Terhubung ke Server" maka lakukan ini :
+
+	```
+
+	c:\xampp\htdocs> cd belajaramvc
+
+	``` 
+	```
+
+	c:\xampp\htdocs\belajaramvc> php nagara generate:copyenv
+
+	``` 
+	```
+
+	c:\xampp\htdocs\belajaramvc> php nagara generate:env
+
+	``` 
+
 
 
 ## Documentation Libraries Packages
