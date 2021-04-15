@@ -12,7 +12,5 @@
   <script src="<?= asset('stisla/') ?>js/scripts.js"></script>
   <script src="<?= asset('stisla/') ?>js/custom.js"></script>
 
-   <!-- Page Specific JS File -->
-   <script src="<?= asset('stisla/') ?>js/page/auth-register.js"></script>
 </body>
 </html>

@@ -1,3 +1,4 @@
 ### CAUTION BRO
 
-jangan delete apapun difolder system atau akan terjadi error
+## WARNING
+"jangan delete apapun difolder system atau akan terjadi error"

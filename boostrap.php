@@ -93,9 +93,6 @@ $dotenv->safeLoad();
  */
 require 'system/_init.php';
 require_once 'apps/init.php';
-
-
-
  /*
  *---------------------------------------------------------------
  * USE / CALL NAMESPACE IN CORE FOLDER
@@ -103,29 +100,26 @@ require_once 'apps/init.php';
  * let go hahaha
  */
 // use MiniMvc\Apps\Core\Bootstraping\App;
-use MiniMvc\Apps\Routes\Bootstraping\Web;
-use MiniMvc\Apps\Routes\Bootstraping\Api;
-use MiniMvc\System\Console\Filesystem;
+// use MiniMvc\Apps\Routes\Bootstraping\Web;
+// use MiniMvc\Apps\Routes\Bootstraping\Api;
+// use MiniMvc\System\Console\Filesystem;
 
 
-
-
- /*
+ /**
  *---------------------------------------------------------------
- * BUAT OBJECT DARI NAMESPACE IN CORE FOLDER UNTUK FIRST RUN
+ * ROUTING BOOTSTRAPING CONFIG
  *---------------------------------------------------------------
  *
  * okay here we go
  */
-$Route = new Web;
+
+(get_url(0) == 'api') ? include 'apps/routes/Api.php' : include 'apps/routes/Web.php';
+
+// $Route = new Web;
 // $Api = new Api;
 // $App = new App;  //upgrade versi nagara/mini-mvc next generation 
 
-// $test = Filesystem::create_env();
-// echo $test;die;
-
-
- /*
+ /** 
  *---------------------------------------------------------------
  * NOTE : me
  * 

@@ -9,11 +9,14 @@
 	<meta name="author" content="nagara">
 	<meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-	<title>NAGARA/MINI MVC PHP NATIVE </title>
+	<title>NAGARA/MINI MVC</title>
 
 	<!-- ICONS -->
-	<link rel="apple-touch-icon" sizes="76x76" href="<?= asset('image/php-logo.png') ?>">
-	<link rel="icon" type="image/png" sizes="96x96" href="<?= asset('image/php-logo.png') ?> ">
+	<link rel="apple-touch-icon" sizes="180x180" href="<?= asset('image/ico') ?>/apple-touch-icon.png">
+	<link rel="icon" type="image/png" sizes="32x32" href="<?= asset('image/ico') ?>/favicon-32x32.png">
+	<link rel="icon" type="image/png" sizes="16x16" href="<?= asset('image/ico') ?>/favicon-16x16.png">
+	<link rel="manifest" href="/site.webmanifest">
+
 
 	<!-- Fonts -->
 	<link href="https://fonts.googleapis.com/css?family=Nunito:200,600" rel="stylesheet">
@@ -190,7 +193,7 @@
 	</div>
 
 	<footer class="container text-center my-4">
-		<p>Copyright © 2018 Backend By Eka Jaya Nagara as miyuki nagara</p>
+		<p>Copyright &copy; 2018-<?= year_now() ?> Backend By Eka Jaya Nagara as miyuki nagara</p>
 	</footer>
 
 	<script src="<?= asset('js/bootstrap.bundle.min.js') ?>"></script>
