@@ -3,6 +3,8 @@
  * -----------------------------------------------------------------------------------------------------------
  * Documentasi Code by me
  * @author nagara dan sandhika galih
+ * @pengembang eka jaya nagara atau di sapa miyuki nagara
+ * 
  * -----------------------------------------------------------------------------------------------------------
  * Bootstraping adalah salah satu teknik untuk memanggil semua file pada direktori tertentu
  * menggunakan file init.php lalu di call melalui index.php 
@@ -59,11 +61,29 @@
  *---------------------------------------------------------------
  *
  * applikasi dibangun dengan konsep object oriented dan presentasion
- * pattern mvc (model - view - controller ).
+ * pattern mvc (model - view - controller ) dan Route atau routing.
  *
  * applikasi nya masih dalam bentuk pengembangan
  *
  */
+
+
+ /*
+ *---------------------------------------------------------------
+ * REQUIRE VENDOR AUTOLOADING
+ *---------------------------------------------------------------
+ *
+ */
+require 'vendor/autoload.php';
+
+ /*
+ *---------------------------------------------------------------
+ * REQUIRE ENV CREATE IMMUTABLE DIR
+ *---------------------------------------------------------------
+ *
+ */
+$dotenv = Dotenv\Dotenv::createImmutable(__DIR__);
+$dotenv->safeLoad();
 
  /*
  *---------------------------------------------------------------
@@ -71,12 +91,6 @@
  *---------------------------------------------------------------
  *
  */
-require 'vendor/autoload.php';
-
-$dotenv = Dotenv\Dotenv::createImmutable(__DIR__);
-$dotenv->load();
-
-
 require 'system/_init.php';
 require_once 'apps/init.php';
 
@@ -88,9 +102,12 @@ require_once 'apps/init.php';
  *---------------------------------------------------------------
  * let go hahaha
  */
-use MiniMvc\Apps\Core\Bootstraping\App;
+// use MiniMvc\Apps\Core\Bootstraping\App;
 use MiniMvc\Apps\Routes\Bootstraping\Web;
 use MiniMvc\Apps\Routes\Bootstraping\Api;
+use MiniMvc\System\Console\Filesystem;
+
+
 
 
  /*
@@ -104,6 +121,9 @@ $Api = new Api;
 $Route = new Web;
 // $App = new App;  //upgrade versi nagara/mini-mvc next generation 
 
+// $test = Filesystem::create_env();
+// echo $test;die;
+
 
  /*
  *---------------------------------------------------------------
@@ -115,6 +135,6 @@ $Route = new Web;
  * mempelajari programing php melalui internet dan youtube dan
  * salah satunya adalah channel web programing unpas bersama
  * pak sandhika galih sebagai dasar dan terus dikembangkan hingga
- * saat ini oleh saya
+ * saat ini oleh saya dan lahir mini mvc
  * 
  */

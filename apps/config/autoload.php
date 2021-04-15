@@ -8,12 +8,11 @@
  * jumlah array atau file pada dir tersebut
  * 
  * @author nagara
- * @return 
+ * @return function
  */
 function load_dir_config()
 {
     $config_directory = __DIR__ ;
-    // var_dump($config_directory);die;
     $file_config = [];
     $scan = scandir( $config_directory );
     $index = 0;
@@ -33,10 +32,7 @@ function load_dir_config()
     }
 }
 
-/**
- * call the function
- * @author nagara
- */
+/* call the function name */
 load_dir_config();
 
 

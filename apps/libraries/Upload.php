@@ -16,7 +16,6 @@ Namespace MiniMvc\Apps\Libraries;
  * 
  * $upload = new Upload;
  * 
- * $upload->random_name();
  * 
  */
 

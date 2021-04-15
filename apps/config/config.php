@@ -10,7 +10,4 @@
  * automatis pada folder config saja
  * 
  */
-// include 'constant.php';
-// include 'database.php';
-// include 'functions.php';
 include 'autoload.php';

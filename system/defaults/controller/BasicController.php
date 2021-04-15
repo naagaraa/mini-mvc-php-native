@@ -1,26 +1,19 @@
 <?php
+defined('BASEURL') or exit('No direct script access allowed');
+
 use MiniMvc\Apps\Core\Bootstraping\Controller;
 
-/**
- * Documentasi Code
- */
-
-class MainController extends Controller
+class BasicController extends Controller
 {
+
 	public function __construct()
 	{
-		// constructor here
-
+		// code here
 	}
+
 	public function index()
 	{
-		// code index here
-		$data = [
-			'judul' => "Example view",
-			'content' => "this is content"
-		];
-
-		$this->view("nameofview", $data);
+		// echo "ini controller home";
 	}
 
 	public function show($request)
@@ -42,4 +35,5 @@ class MainController extends Controller
 	{
 		// code here remove here
 	}
+
 }

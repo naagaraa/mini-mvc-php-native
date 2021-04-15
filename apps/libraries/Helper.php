@@ -16,13 +16,6 @@ use MiniMvc\Apps\Core\Bootstraping\Error_Handling;
  * 
  * $helper = new Helper;
  * 
- * $helper->get_url();
- * $helper->current_url();
- * $helper->redirect();
- * $helper->redirect_404();
- * $helper->redirect_403();
- * $helper->redirect_301();
- * 
  */
 
 class Helper

@@ -3,7 +3,7 @@
 /**
  * -------------------------------------------------------------------------------------------
  * Documentasi Code init
- * Author : Nagara
+ * @author nagara 
  * -------------------------------------------------------------------------------------------
  * 
  * init atau initializa/ inisialisasi digunakan untuk memanggil semua file yang dibutuhkan 
@@ -16,37 +16,19 @@
  */
 
 /**
- * -------------------------------------------------------------------------------------------
- * Load Dotenv Library vlucas/phpdotenv
- * -------------------------------------------------------------------------------------------
- 
- * 
- * $dotenv = Dotenv\Dotenv::createImmutable(__DIR__);
- * $dotenv->load();
- * 
- * keterangan :
- *  __DIR__ => directiory saat ini
- * 
- */
-
-// $dotenv = Dotenv\Dotenv::createImmutable(__DIR__);
-// $dotenv->load();
-
-/**
  * --------------------------------------------------------------------------------------------
  *  Documentasi Code
  * --------------------------------------------------------------------------------------------
  * 
- * APP 				: membuat aturan MVC 
- * Controller : function yang akan digunakan untuk
- * 							konsep MVC seperti view(), model(),
- * Database		: dibuat untuk membuat sistem PHPPDO
- * config			: digunakan untuk menbuat configurasi
- * 							URL dan database.
+ * APP 						: membuat aturan MVC 
+ * Controller 				: function yang akan digunakan untuk
+ * 							  konsep MVC seperti view(), model(),
+ * Database					: dibuat untuk membuat sistem PHPPDO
+ * config					: digunakan untuk menbuat configurasi
+ * 							  URL dan database.
  */
 
 include 'config/config.php';
-
 
 
 // spl autoload php atau bootstrap loading classname pada folder core
