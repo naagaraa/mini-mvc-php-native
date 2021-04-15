@@ -151,7 +151,7 @@ description or requretment
 	``` 
 	```
 
-	c:\xampp\htdocs> php system/script.php
+	c:\xampp\htdocs\belajaramvc> php nagara generate:env
 
 	``` 
 
