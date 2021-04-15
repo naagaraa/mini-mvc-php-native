@@ -105,6 +105,15 @@ description or requretment
 	composer install
 
 	``` 
+## compress mini mvc project code 58.6mb
+
+minimvc compress zip : [ download ](http://cdn.nagara.my.id/nagara_minimvc.zip)
+
+1. download from this link
+2. extract and rename dir project
+3. masuk ke projectnya
+4. jalankan php nagara generate:copyenv
+5. jalankan php nagara generate:env
 
 ## Installation via composer 
 1. buka / masuk dalam folder htdocs
