@@ -7,7 +7,7 @@ composer.lock
 
 # folder vendor
 /vendor/*
-/.env/*
+.env/*
 
 # folder example tidak perlu di add ke git jika diinginka un-comment baris ini
 # /example/*
