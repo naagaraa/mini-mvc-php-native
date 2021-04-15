@@ -20,7 +20,7 @@ class CopyEnvirotmentCommand extends Command
     protected function execute(InputInterface $input, OutputInterface $output)
     {
         $copy = CopyEnvirotmentCommand::handle_generate();
-        $output->write($test);
+        $output->write($copy);
         $output->writeln(sprintf("sukses! env berhasil dibuat atau mengcopy dari .env.example ke .env"));
         return Command::SUCCESS;
     }
