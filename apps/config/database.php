@@ -9,6 +9,10 @@
  *  .env-example
  * 
  */
+if (empty($_ENV)) {
+    require dirname(__DIR__, 2) . '\system\badenvirotment.html';
+    exit;
+}
 
 # Database
 $config["DB_HOST"] 		 	=  $_ENV["DB_HOST"] 			? $_ENV["DB_HOST"] 				: 'http://localhost/';

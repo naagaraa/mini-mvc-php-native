@@ -25,6 +25,11 @@
 # config file .env untuk configurasi pada file
 # apps/config/constant.php
 
+if (empty($_ENV)) {
+    require dirname(__DIR__, 2) . '\system\badenvirotment.html';
+    exit;
+}
+
 # Application config
 $config["APP_NAME"] 	 	=  $_ENV["APP_NAME"] 			? $_ENV["APP_NAME"] 			: 'mini-mvc-php-native';
 $config["APP_HOST"] 	 	=  $_ENV["APP_HOST"] 			? $_ENV["APP_HOST"] 			: 'http://localhost/';
