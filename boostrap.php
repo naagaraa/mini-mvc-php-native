@@ -93,6 +93,7 @@ $dotenv->safeLoad();
  */
 
 require_once 'system/_init.php';
+// require_once 'system/config/function.php';
 require_once 'system/config/constant.php';
 require_once 'system/mail/mail.php';
 require_once 'apps/init.php';
