@@ -7,7 +7,12 @@ use Mpdf\Tag\Time;
  *------------------------------------------------------------------------------------------------------
  *
  */
-
+ 
+function start_session() {
+    session_start();
+    $_SESSION['_minimvc_session'] = sha1(uniqid());
+    $_SESSION['_token'] = sha1(Time());
+}
 
  /** 
  *------------------------------------------------------------------------------------------------------
@@ -17,15 +22,7 @@ use Mpdf\Tag\Time;
  *
  */
 
- 
-function start_session() {
-    session_start();
-    $_SESSION['_minimvc_session'] = sha1(uniqid());
-    $_SESSION['_token'] = sha1(Time());
-}
-
 start_session();
-
 
  /**
  *------------------------------------------------------------------------------------------------------

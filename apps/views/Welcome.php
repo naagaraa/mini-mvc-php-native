@@ -86,19 +86,28 @@
 		background-color: #2541B2;
 		color: white;
 	}
+
+	.code{
+		background-color: black;
+		padding: 10px;
+		color: greenyellow;
+		font-weight: bold;
+	}
 </style>
 
 <body id="my-theme" class="theme">
 	<div class="container my-3">
 		<div class="row d-flex justify-content-center">
 			<div class="col-10">
-				<div class="row">
+				<div class="row mt-2">
 					<div class="col">
 						<h1>MINI MVC PROJECT</h1>
 						<p class="text-muted">project mini mvc php native develop by eka jaya nagara as miyuki nagara, my background can't used framework popular php like symphony or CI or Laravel for finish exam "kerja praktik", so I'm develop this is.</p>
+						<span>kamu bisa mencoba Edit tampilan view ini : </span>
+						<p class="code mt-2">welcome page = apps/views/welcome.php</p>
 					</div>
 				</div>
-				<div class="row d-flex justify-content-center g-4 mt-2">
+				<div class="row d-flex justify-content-center g-4">
 					<div class="col-md-3">
 						<a class="nav-card" href="https://www.instagram.com/naagaraa/">
 							<div class="card card-list border-primary color-one">

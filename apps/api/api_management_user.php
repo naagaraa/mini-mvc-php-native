@@ -3,10 +3,6 @@ defined('BASEURL') or exit('No direct script access allowed');
 
 use MiniMvc\Apps\Core\Bootstraping\API_Handling;
 
-
-
-class api_management_user extends API_Handling
-{
     /**
      * -----------------------------------------------------------------------
      * Documentasi Code
@@ -16,6 +12,10 @@ class api_management_user extends API_Handling
      * pada controller yakni memanggil models-nya
      *  $this->model('namaModels)->method()
      */
+
+
+class api_management_user extends API_Handling
+{
 	public function __construct()
 	{
 		// code here

@@ -87,12 +87,16 @@ $dotenv->safeLoad();
 
  /*
  *---------------------------------------------------------------
- * REQUIRE FILE INTI YANG MELAKUKAN AUTOLOADING
+ * REQUIRE FILE INTI YANG MELAKUKAN AUTOLOADING PADA APPS
  *---------------------------------------------------------------
  *
  */
-require 'system/_init.php';
+
+require_once 'system/_init.php';
+require_once 'system/config/constant.php';
+require_once 'system/mail/mail.php';
 require_once 'apps/init.php';
+
  /*
  *---------------------------------------------------------------
  * USE / CALL NAMESPACE IN CORE FOLDER
@@ -132,3 +136,4 @@ require_once 'apps/init.php';
  * saat ini oleh saya dan lahir mini mvc
  * 
  */
+

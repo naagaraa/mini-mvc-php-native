@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Akses Denied</title>
+    <link href="https://fonts.googleapis.com/css?family=Nunito:200,600" rel="stylesheet">
+    <style>
+        body{
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            margin: 0;
+            font-family: "Gill Sans", sans-serif;
+        }
+
+        nav{
+            background-color: rgb(11, 173, 173);
+            top: 0px;
+            width: 100%;
+            left: 0px;
+            position: absolute;
+            height: 60px;
+            display: flex;
+            justify-content: space-between;
+            color: rgb(224, 224, 224);
+            padding-bottom: 10px;
+        }
+
+        .ml-5{
+            margin-left: 50px ;
+        }
+        .mr-5{
+            margin-right: 50px ;
+        }
+        .mt-5{
+            margin-top: 50px ;
+        }
+        .mb-5{
+            margin-bottom: 50px ;
+        }
+
+        .container{
+            padding-top: 5rem;
+            height: 100vh;
+            background-color: rgb(26, 26, 26);
+            font-size: large;
+        }
+
+        .text-info{
+            color: rgb(11, 173, 173);
+        }
+
+        .text-center{
+            text-align: center;
+        }
+
+        .message{
+            color: white;
+            text-align: justify;
+            width: 30rem;
+            margin: auto;
+        }
+
+        .guide{
+            color: white;
+            text-align: justify;
+            width: 30rem;
+            margin: auto;
+        }
+
+        .code{
+            background-color: yellowgreen;
+            color: rgb(1, 42, 42);
+        }
+
+        footer{
+            background-color: rgb(4, 117, 117);
+            color: white;
+        }
+    </style>
+</head>
+<body>
+    <nav>
+        <h1 class="ml-5" >INFO NIH BRO </h1>
+        <h1 class="mr-5" >500 ERROR</h1>
+    </nav>
+
+    <main class="container">
+        <h1 class="text-info text-center mt-5">Gagal Terhubung ke Server</h1>
+
+        <div class="message">
+            <p>check file .env pada folder root atau project ada atau tidak ? 
+                jika tidak ada silahkan buat file .env atau bisa copy dari file .env.example
+                atau bisa juga menggunakan command nagara pada terminal atau command promt atau copy saja perintah berikut ini</p>
+        </div>
+
+        <div class="guide">
+            <h5> Aturan atau how to fixed : </h5>
+            <div class="code">
+                <p>C:\xampp\htdocs\projectdir> php nagara generate:copyenv</p>
+                <p>C:\xampp\htdocs\projectdir> php nagara generate:env</p>
+            </div>
+        
+            <h5>Copy perintah berikut ini dan paste pada terminal atau powershell :</h5>
+
+            <div class="code">
+                <ol>
+                    <li>php nagara generate:copyenv</li>
+                    <li>php nagara generate:env</li>
+                </ol>
+            </div>
+        </div>
+    </main>
+    <footer class="text-center">
+        <p>Mini MVC NATIVE Backend By Eka Jaya Nagara as miyuki nagara</p>
+    </footer>
+</body>
+</html>

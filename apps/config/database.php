@@ -9,17 +9,20 @@
  *  .env-example
  * 
  */
-if (empty($_ENV)) {
-    require dirname(__DIR__, 2) . '\system\badenvirotment.html';
+global $system;
+
+if (empty($system)) {
+    require dirname(__DIR__, 2) . '\system\_500_error.html';
     exit;
 }
 
+
 # Database
-$config["DB_HOST"] 		 	=  $_ENV["DB_HOST"] 			? $_ENV["DB_HOST"] 				: 'http://localhost/';
-$config["DB_PORT"]		 	=  $_ENV["DB_PORT"] 			? $_ENV["DB_PORT"] 				: '3306';
-$config["DB_NAME"]		 	=  $_ENV["DB_NAME"] 			? $_ENV["DB_NAME"] 				: '';
-$config["DB_USERNAME"] 	 	=  $_ENV["DB_USERNAME"] 		? $_ENV["DB_USERNAME"] 			: 'root';
-$config["DB_PASSWORD"] 	 	=  $_ENV["DB_PASSWORD"] 		? $_ENV["DB_PASSWORD"] 			: '';
+$config["DB_HOST"] 		 	=  $system["DB_HOST"] 			? $system["DB_HOST"] 				: 'http://localhost/';
+$config["DB_PORT"]		 	=  $system["DB_PORT"] 			? $system["DB_PORT"] 				: '3306';
+$config["DB_NAME"]		 	=  $system["DB_NAME"] 			? $system["DB_NAME"] 				: '';
+$config["DB_USERNAME"] 	 	=  $system["DB_USERNAME"] 		? $system["DB_USERNAME"] 			: 'root';
+$config["DB_PASSWORD"] 	 	=  $system["DB_PASSWORD"] 		? $system["DB_PASSWORD"] 			: '';
 
 
 /**
