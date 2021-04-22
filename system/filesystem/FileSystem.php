@@ -23,17 +23,20 @@ class FileSystem
          * untuk create env project sesuai folder project
          */
         $path = dirname(__FILE__, 3);
-        $dir = explode('/', $path);
+
+        $newpt = str_replace("\\","/", $path);
+        
+        $dir = explode('/', $newpt);
         $new_project = end($dir);
 
-        if (file_exists($path . '//.env')) {
-            $FileEnvirotmentVariabel = fopen($path . '//.env', "w") or die("Unable to open file!");
+        if (file_exists($newpt . '//.env')) {
+            $FileEnvirotmentVariabel = fopen($newpt . '//.env', "w") or die("Unable to open file!");
             $txt = "# config file .env untuk configurasi pada file\n\n# apps/config/database.php\n# apps/config/constant.php\n\nAPP_DEBUG=true\nAPP_ENV=local\n\n# configurasi Path here\nAPP_NAME=" . $new_project . "\nAPP_HOST=http://localhost/\n\n# configurasi Database here\n\nDB_HOST=http://localhost/\nDB_PORT=3306\nDB_NAME=\nDB_USERNAME=root\nDB_PASSWORD=\n\n# configurasi mailer (on development)\nMAIL_MAILER=smtp\nMAIL_HOST=mailhog\nMAIL_PORT=1025\nMAIL_USERNAME=null\nMAIL_PASSWORD=null\nMAIL_ENCRYPTION=null\nMAIL_FROM_ADDRESS=null\nMAIL_FROM_NAME=null";
 
             fwrite($FileEnvirotmentVariabel, $txt);
             fclose($FileEnvirotmentVariabel);
         } else {
-            $FileEnvirotmentVariabel = fopen($path . '//.env', "w") or die("Unable to open file!");
+            $FileEnvirotmentVariabel = fopen($newpt . '//.env', "w") or die("Unable to open file!");
             $txt = "# config file .env untuk configurasi pada file\n# apps/config/database.php\n# apps/config/constant.php\n\nAPP_DEBUG=true\nAPP_ENV=local\n\n# configurasi Path here\nAPP_NAME=" . $new_project . "\nAPP_HOST=http://localhost/\n\n# configurasi Database here\nDB_HOST=http://localhost/\nDB_PORT=3306\nDB_NAME=\nDB_USERNAME=root\nDB_PASSWORD=\n\n# configurasi mailer (on development)\nMAIL_MAILER=smtp\nMAIL_HOST=mailhog\nMAIL_PORT=1025\nMAIL_USERNAME=null\nMAIL_PASSWORD=null\nMAIL_ENCRYPTION=null\nMAIL_FROM_ADDRESS=null\nMAIL_FROM_NAME=null";
 
             fwrite($FileEnvirotmentVariabel, $txt);
