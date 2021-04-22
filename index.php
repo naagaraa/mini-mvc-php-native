@@ -8,7 +8,7 @@
  * Melakuka Required file bootstrap
  *
  */
-require_once __DIR__ . '/boostrap.php';
+require_once __DIR__ . "//boostrap.php";
 
  /** *-------------------------------------------------------------------------------------------
  * About author or Developer

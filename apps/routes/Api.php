@@ -46,6 +46,13 @@ $router->mount('/api', function () use ($router) {
 	$router->get('/users/{id}/address', function ($id) {
 		API_Handling::Routing('api_management_user', 'show_addres_by_id', [$id]);
 	});
+
+	/**
+	 * contoh curl get API data indonesia
+	 */
+	$router->get('/daerah-indonesia', function () {
+		API_Handling::Routing('api_lokasi_indonesia', 'index');
+	});
 });
 
 // run route!

@@ -6,7 +6,7 @@ use Symfony\Component\Console\Command\Command;
 use Symfony\Component\Console\Input\InputInterface;
 use Symfony\Component\Console\Output\OutputInterface;
 use Symfony\Component\Console\Input\InputArgument;
-use MiniMvc\System\Console\Filesystem;
+use MiniMvc\System\Console\FileSystem;
 
 class MakeControllerCommand extends Command
 {
@@ -28,6 +28,6 @@ class MakeControllerCommand extends Command
 
     static public function handle_generate($input)
     {
-        return Filesystem::create_controller($input);
+        return FileSystem::create_controller($input);
     }
 }

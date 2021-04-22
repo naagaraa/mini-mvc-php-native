@@ -1,7 +1,7 @@
 <?php
 
 if (empty($_ENV)) {
-    require dirname(__DIR__, 1) .'\_500_error.html';
+    require dirname(__DIR__, 1) ."//_500_error.html";
     exit;
 }
 

@@ -5,7 +5,7 @@ use Symfony\Component\Console\Command\Command;
 use Symfony\Component\Console\Input\InputInterface;
 use Symfony\Component\Console\Output\OutputInterface;
 use Symfony\Component\Console\Input\InputArgument;
-use MiniMvc\System\Console\Filesystem;
+use MiniMvc\System\Console\FileSystem;
 
 
 class CopyEnvirotmentCommand extends Command
@@ -27,6 +27,6 @@ class CopyEnvirotmentCommand extends Command
 
     static public function handle_generate()
     {
-        return Filesystem::copy_exampe_env();
+        return FileSystem::copy_exampe_env();
     }
 }
