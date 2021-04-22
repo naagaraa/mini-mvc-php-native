@@ -6,7 +6,7 @@ if (empty($_ENV)) {
 }
 
 # Application syst$system
-$system["APP_NAME"] 	 	=  $_ENV["APP_NAME"] 			? $_ENV["APP_NAME"] 			: 'mini-mvc-php-native';
+$system["APP_NAME"] 	 	=  $_ENV["APP_NAME"] 			? $_ENV["APP_NAME"] 			: '';
 $system["APP_HOST"] 	 	=  $_ENV["APP_HOST"] 			? $_ENV["APP_HOST"] 			: 'http://localhost/';
 
 #app debug

@@ -35,7 +35,8 @@ if (empty($system)) {
 }
 
 # Application config
-$config["APP_NAME"] 	 	=  $system["APP_NAME"] 			    ? $system["APP_NAME"] 			    : 'mini-mvc-php-native';
+$config["APP_NAME"] 	 	=  '';
+// $config["APP_NAME"] 	 	=  $system["APP_NAME"] 			    ? $system["APP_NAME"] 			    : 'mini-mvc-php-native';
 $config["APP_HOST"] 	 	=  $system["APP_HOST"] 			    ? $system["APP_HOST"] 			    : 'http://localhost/';
 
 
