@@ -306,3 +306,34 @@ function slug($str = '', $slug = '-')
 {
     return str_replace(" ", $slug, trim($str));
 }
+
+/**
+ * untuk menapatkan data bentu json atau rest
+ * @author nagara
+ * @return string / JSON
+ */
+
+function get_rest_api($api_url = '')
+{
+   try {
+    // url
+    $url = $api_url;
+
+    // init
+    $curl = curl_init();
+    // execute rest
+    curl_setopt($curl, CURLOPT_URL, $url);
+    curl_setopt($curl, CURLOPT_RETURNTRANSFER, 1);
+    
+    // save data 
+    $response = curl_exec($curl);    
+
+    // close connection
+    curl_close($curl);
+
+    return $response;
+
+   } catch (\Throwable $th) {
+       //throw $th;
+   }
+}
