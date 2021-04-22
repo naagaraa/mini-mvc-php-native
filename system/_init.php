@@ -10,3 +10,14 @@ ini_set('session.cookie_lifetime', 30*60); // 30 minutes
 // ini_set('allow_url_fopen', true);
 // ini_set('allow_url_include', 'on');
 
+// spl autoload php atau bootstrap loading classname pada folder api
+spl_autoload_register(function ($class) {
+	$class = explode("\\", $class);
+	$class = end($class);
+	if (file_exists(__DIR__ . '/filesystem/' . $class . '.php')) {
+		require_once __DIR__ . '/filesystem/' . $class . '.php';
+	}
+	return false;
+});
+
+
