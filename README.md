@@ -6,6 +6,7 @@
 <p>indoneisa : </p>
 <p>Hi, Project ini dibuat dari latihan saya belajar web programing dari berbagai sumber di internet seperti youtube, stackoverflow dan github. project ini merupakan php native yang di buat menggunakan pattern MVC dengan konsep OOP (Object oriented programing ), mirip framework codeigniter 3, yang saya pelajari di YT WPU oleh Sandhika galih dan sudah saya modifikasi custom menyesuaikan tugas kuliah saya serta penambahan library lainnya.</p>
 <p>list library external yang mungkin dibutuhkan : jquery, bootstrap 4.2.5, owl.js , slick.js, composer, ckeditor-5, chartjs, fontawensome, datatable.js, phpoffice, mpdf saya satukan agar lebih mudah untuk mencarinya</p>
+
 <p>English : </p>
 <p>Hi, this project was made from my practice to learn web programming from various sources on the internet such as YouTube, Stackoverflow and Github. This project is a native php that is made using the MVC pattern with the concept of OOP (Object oriented programming), similar to the Codeigniter 3 framework, which I learned at YT WPU by Sandhika Galih and I have custom modifications to suit my college assignments and the addition of other libraries.</p>
 <p>include external libraries: jquery, bootstrap 4.2.5, owl.js, slick.js, composer, ckeditor-5, chartjs, fontawensome, datatable.js, phpoffice, mpdf I put together to make it easier to find</p>
@@ -26,7 +27,7 @@ belum buat rulesnya
 
 <!-- table of content YT -->
 #### Fork repo
-<p>jika mau clone repo ini ke github kalian, kalian tinggal klik forked di pojok kanan atas. thx</p>
+<p>jika mau clone repo ini ke github kalian, kalian tinggal klik forked di pojok kanan atas untuk contribute atau give start jika kamu suka</p>
 
 <!-- table of content -->
 #### Note 
@@ -43,86 +44,6 @@ git pull jika terdapat ada update ahahaha
 
 * **Naagaraa Mahasiswa Darma Persada dan Content Creator**  [ instagram ](https://www.instagram.com/naagaraa/)
 * **Sandhikagalih Dosen Unpas dan Content Creator** [ Instagram ](https://www.instagram.com/sandhikagalih/)
-
-## compress mini mvc project code 58.6mb
-
-minimvc compress zip : [ download ](http://cdn.nagara.my.id/nagara_minimvc.zip)
-
-1. clik kanan link donwload
-2. copy url address
-3. paste di tab baru
-4. extract and rename dir project
-5. masuk ke projectnya
-6. jalankan php nagara generate:copyenv
-7. jalankan php nagara generate:env
-
-## Installation via composer 
-1. buka / masuk dalam folder htdocs
-
-	```
-
-	c:\xampp> cd htdocs
-
-	``` 
-	```
-
-	c:\xampp\htdocs> 
-
-	``` 
-2. composer create project
-	<p>dev master </p>
-
-	```
-
-	composer create-project nagara/mini-mvc-php-native:dev-master namaprojectnya
-
-	``` 
-
-	```
-
-	composer create-project nagara/mini-mvc-php-native:dev-master belajarmvc
-
-	``` 
-	<p>update terbaru atau latest version : </p>
-
-	```
-
-	c:\xampp\htdocs> composer create-project nagara/mini-mvc-php-native belajaramvc
-
-	``` 
-
-
-3. update envirotment project
-
-	```
-
-	c:\xampp\htdocs> cd belajaramvc
-
-	``` 
-	```
-
-	c:\xampp\htdocs\belajaramvc> php nagara generate:env
-
-	``` 
-
-## jika envirotment project tidak ada
-"mendapat error Gagal Terhubung ke Server" maka lakukan ini :
-
-	```
-
-	c:\xampp\htdocs> cd belajaramvc
-
-	``` 
-	```
-
-	c:\xampp\htdocs\belajaramvc> php nagara generate:copyenv
-
-	``` 
-	```
-
-	c:\xampp\htdocs\belajaramvc> php nagara generate:env
-
-	``` 
 
 ## support Me
 <br>
