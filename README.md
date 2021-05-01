@@ -12,7 +12,7 @@
 ---
 
 <!-- table of content YT -->
-#### Documentasi saya dalam bentuk  video bahasa indonesia
+#### Documentasi lainnya
 * **playlist** [ Youtube ](https://www.youtube.com/playlist?list=PLK5_CL-hAKCf-H7snj3RlLVjrkJ7yql6o)
 * **documentation official** [ website ](http://docs.minimvcphp.nagara.my.id/)
 * **LICENCE** [ MIT ](https://github.com/naagaraa/mini-mvc-php-native/blob/master/LICENSE.MD)
