@@ -27,7 +27,6 @@ class User_model
 	// code here
 	public function getAllUser()
 	{
-
 		$this->db->query('SELECT * FROM ' . $this->table);
 		return $this->db->resultSetArray();
 	}
