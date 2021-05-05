@@ -2,6 +2,7 @@
 defined('BASEURL') or exit('No direct script access allowed');
 
 use MiniMvc\Apps\Core\Bootstraping\Controller;
+use MathPHP\NumberTheory\Integer;
 
 /**
  * ------------------------------------------------------------------------------------

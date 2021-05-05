@@ -22,6 +22,7 @@
     "require": {
         "php": ">=7.3.2",
         "bramus/router": "~1.5",
+        "markrogoyski/math-php": "^1.10",
         "mpdf/mpdf": "^8.0",
         "phpmailer/phpmailer": "^6.2",
         "phpoffice/phpspreadsheet": "^1.14",
