@@ -88,7 +88,7 @@ function upload_dir($url = '')
  * @author nagara 
  * @return string
  */
-function storage_dir($url = '')
+function storage($url = '')
 {
     return UPLOAD_F . $url;
 }
