@@ -23,13 +23,10 @@ hi, kamu bisa support dengan cara follow account sosial media di bawah atau memb
 **Please support me :**
 
 *Youtube Channel* : 
-* Sandhika galih : [ YT Web programing unpas ](https://www.youtube.com/channel/UCkXmLjEr95LVtGuIm3l2dPg)
 
 * Naagaraa : [ YT Naagaraa ](https://www.youtube.com/channel/UCYsZhw6Mlk23Q-nUPP9t1YA?view_as=subscriber)
 
  *instagram* : 
  
-* Sandhika galih : [ IG Web programing unpas ](https://www.instagram.com/sandhikagalih/)
-
 * Naagaraa : [ IG Naagaraa ](https://www.instagram.com/naagaraa/)
 
