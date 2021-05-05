@@ -6,13 +6,6 @@ use \Bramus\Router\Router;
 // Create a Router object
 $router = new Router();
 
-# on development | beta masih penulisan
-/**
- * belum kelar gue masih mikirin konsepnya soal route, emg rada susah dimengerti soal 
- * routing, on the future gue coba buat lib route sendiri, untuk saat ini
- * masih pakai bramus router
- */
-
 /**
  * membuat function URL masuk ke dalam group /Api
  * @author nagara 

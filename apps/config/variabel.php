@@ -35,6 +35,7 @@ define('vendor', $system["VENDOR"] );
 define('DIR_VENDOR', $system["DIR_VENDOR"] );
 define('DIR_ROOT',$system["DIR_ROOT"] );
 define('UPLOAD_F', $system["UPLOAD_F"] );
+define('TEMP_F', $system["UPLOAD_F"] );
 
 /** 
  * ----------------------------------------------------------------------------------------------

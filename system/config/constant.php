@@ -13,6 +13,7 @@ $system["APP_HOST"] 	 	=  $_ENV["APP_HOST"] 			? $_ENV["APP_HOST"] 			: 'http://
 $system["APP_DEBUG"] 	 	=  $_ENV["APP_DEBUG"] 			? $_ENV["APP_DEBUG"] 			: false;
 
 # Mail
+$system["MAIL_DEBUG"] 	 	=  $_ENV["MAIL_DEBUG"] 		    ? $_ENV["MAIL_DEBUG"] 			: 'true';
 $system["MAIL_MAILER"] 	 	=  $_ENV["MAIL_MAILER"] 		? $_ENV["MAIL_MAILER"] 			: 'smtp';
 $system["MAIL_HOST"] 	 	=  $_ENV["MAIL_HOST"] 			? $_ENV["MAIL_HOST"] 			: 'mailhog';
 $system["MAIL_PORT"] 	 	=  $_ENV["MAIL_PORT"] 			? $_ENV["MAIL_PORT"] 			: '1025';
@@ -44,3 +45,4 @@ $system["VENDOR"] 	        = $_SERVER['DOCUMENT_ROOT'] . '/' . $system['APP_NAME
 $system["DIR_VENDOR"] 	    = $_SERVER['DOCUMENT_ROOT'] . '/' . $system['APP_NAME'] . '/vendor/';
 $system["DIR_ROOT"] 	    = $_SERVER['DOCUMENT_ROOT'] . '/' . $system['APP_NAME'];
 $system["UPLOAD_F"] 	    = $_SERVER['DOCUMENT_ROOT'] . '/' . $system['APP_NAME'] . '/storage/';
+$system["TEMP_F"] 	        = $_SERVER['DOCUMENT_ROOT'] . '/' . $system['APP_NAME'] . '/temp/';

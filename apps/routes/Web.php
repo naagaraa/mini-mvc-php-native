@@ -69,7 +69,8 @@ $router->get('/info', function () {
 
 //  default welcome
 $router->get('/', function () {
-	return view('Welcome');
+	// return view('Welcome');
+	Routes::Routing("Welcome", "index");
 });
 
 // default login

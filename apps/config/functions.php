@@ -84,6 +84,27 @@ function upload_dir($url = '')
 
 
 /**
+ * Membuat function untuk directory storage base path /storage/
+ * @author nagara 
+ * @return string
+ */
+function storage_dir($url = '')
+{
+    return UPLOAD_F . $url;
+}
+
+/**
+ * Membuat function untuk directory temporar base path /temporar/
+ * @author nagara 
+ * @return string
+ */
+function temp_dir($url = '')
+{
+    return TEMP_F . $url;
+}
+
+
+/**
  * Membuat function redirect url
  * @author nagara 
  * @return redirect
