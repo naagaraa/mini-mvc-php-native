@@ -50,10 +50,10 @@ use \Bramus\Router\Router;
 $router = new Router();
 
 #custom 404 header un-commnet baris berikut
-$router->set404(function () {
-	header('HTTP/1.1 404 Not Found');
-	redirect_404();
-});
+// $router->set404(function () {
+// 	header('HTTP/1.1 404 Not Found');
+// 	redirect_404();
+// });
 
 
 // your route here

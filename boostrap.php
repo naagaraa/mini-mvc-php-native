@@ -70,10 +70,11 @@
 
  /*
  *---------------------------------------------------------------
- * REQUIRE VENDOR AUTOLOADING
+ * REQUIRE VENDOR AUTOLOADING DAN SYSTEM
  *---------------------------------------------------------------
  *
  */
+require_once "system/autoload.php";
 require_once "system/_init.php";
 require "vendor/autoload.php";
 
@@ -96,7 +97,7 @@ $dotenv->safeLoad();
 
 // require_once 'system/config/function.php";
 require_once "system/config/constant.php";
-require_once "system/mail/mail.php";
+require_once "system/mail/Mailer.php";
 require_once "apps/init.php";
 
  /*
