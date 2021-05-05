@@ -38,6 +38,8 @@ git pull jika terdapat ada update ahahaha
 #### Update 
 * saya sedang development untuk implementation template engine menggunakan twig dari symfony
  [ **Documentasi Resmi Twig 3.x** ](https://twig.symfony.com/doc/3.x/) 
+* saya sedang development untuk implementation PHPMAILER salah satu library PHP EMAIL selain swiftmailer yang digunakan Laravel
+ [ **Documentasi Resmi PHPMAILER** ](https://github.com/PHPMailer/PHPMailer) 
 
 
 ## Author dan Contribution
@@ -48,8 +50,15 @@ git pull jika terdapat ada update ahahaha
 ## support Me
 <br>
 <!-- description -->
-hi, kamu bisa support dengan cara follow account sosial media di bawah atau memberikan kami kopi pada link di bio social media mereka dibawah ini
+hi, kamu bisa support dengan cara follow account sosial media di bawah atau traktir makanan pada link di bio social media mereka dibawah ini
 <br>
+
+**History :**
+* 2017 - 2018 = belajar di WPU dengan pak [ sandhika galih ](https://github.com/sandhikagalih) 
+* 2018 = basiclly ini dibuat dari materi MVC PHP
+* 2018 - now = saya  [ miyuki nagara ](https://github.com/naagaraa)  hingga saat ini masih mencoba mengembangkannya check commit aktif
+* 2021 = add install via composer
+* 2021 = add documentation
 
 <!-- Links -->
 **Please support :**
