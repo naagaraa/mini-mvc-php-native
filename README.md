@@ -44,8 +44,8 @@ git pull jika terdapat ada update ahahaha
 
 ## Author dan Contribution
 
-* **Naagaraa Mahasiswa Darma Persada dan Content Creator**  [ instagram ](https://www.instagram.com/naagaraa/)
-* **Sandhikagalih Dosen Unpas dan Content Creator** [ Instagram ](https://www.instagram.com/sandhikagalih/)
+* **Naagaraa Mahasiswa Darma Persada dan Content Creator**  [ instagram ](https://www.instagram.com/naagaraa/) pengembang dan maintainers
+* **Sandhikagalih Dosen Unpas dan Content Creator** [ Instagram ](https://www.instagram.com/sandhikagalih/) pengajar saya pertama untuk php
 
 ## support Me
 <br>
