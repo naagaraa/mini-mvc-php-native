@@ -26,6 +26,8 @@
         "mpdf/mpdf": "^8.0",
         "phpmailer/phpmailer": "^6.2",
         "phpoffice/phpspreadsheet": "^1.14",
+        "rubix/ml": "^0.4.1",
+        "rubix/tensor": "^2.2",
         "symfony/console": "^5.2",
         "twig/twig": "3.0",
         "vlucas/phpdotenv": "^5.2"
@@ -44,9 +46,13 @@
     },
     "autoload": {
         "psr-4": {
-            "Console\\": "system"
+            "Console\\": "system",
+            "Rubix\\":"vendor/rubix/ml/src/"
         },
-        "classmap": ["system"]
+        "classmap": [
+            "system",
+            "vendor/rubix/ml/src/"
+        ]
     },
     "archive": {
         "directory": "dist",
