@@ -31,6 +31,10 @@ $system["DB_USERNAME"] 	 	=  $_ENV["DB_USERNAME"] 		? $_ENV["DB_USERNAME"] 			: 
 $system["DB_PASSWORD"] 	 	=  $_ENV["DB_PASSWORD"] 		? $_ENV["DB_PASSWORD"] 			: '';
 
 if  ($_ENV["APP_ENV"] == "development") {
+    if ($_SERVER["HTTP_HOST"] == "localhost") {
+        require dirname(__DIR__, 1) ."//error//_warning_local.html";
+        exit;
+    }
     # url configuration system shell command
     $system["ASSET"] 	        = "http://" . $_SERVER['HTTP_HOST'] . '/public/';
     $system["URL"] 	            = "http://" . $_SERVER['HTTP_HOST'] ."/" ;
@@ -39,7 +43,7 @@ if  ($_ENV["APP_ENV"] == "development") {
 }else if ($_ENV["APP_ENV"] == "local" || $_ENV["APP_ENV"] == "production") {
     # url configuration system 
     if ($_SERVER["HTTP_HOST"] == "127.0.0.1:9000") {
-        require dirname(__DIR__, 1) ."//error//_warning.html";
+        require dirname(__DIR__, 1) ."//error//_warning_development.html";
         exit;
     }else{
         $system["ASSET"] 	        = $system['APP_HOST'] . $system['APP_NAME'] . '/public/';
