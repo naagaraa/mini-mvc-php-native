@@ -38,9 +38,14 @@ if  ($_ENV["APP_ENV"] == "development") {
 
 }else if ($_ENV["APP_ENV"] == "local" || $_ENV["APP_ENV"] == "production") {
     # url configuration system 
-    $system["ASSET"] 	        = $system['APP_HOST'] . $system['APP_NAME'] . '/public/';
-    $system["URL"] 	            = $system['APP_HOST'] . $system['APP_NAME'] . '/';
-    $system["BASEURL"] 	        = $system['APP_HOST'] . $system['APP_NAME'] . '/';
+    if ($_SERVER["HTTP_HOST"] == "127.0.0.1:9000") {
+        require dirname(__DIR__, 1) ."//error//_warning.html";
+        exit;
+    }else{
+        $system["ASSET"] 	        = $system['APP_HOST'] . $system['APP_NAME'] . '/public/';
+        $system["URL"] 	            = $system['APP_HOST'] . $system['APP_NAME'] . '/';
+        $system["BASEURL"] 	        = $system['APP_HOST'] . $system['APP_NAME'] . '/';
+    }
 }
 
 
