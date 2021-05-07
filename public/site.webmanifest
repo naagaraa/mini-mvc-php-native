@@ -1,0 +1,8 @@
+{
+    "name": "Mini Mvc php native project",
+    "short_name": "code zero",
+    "start_url": ".",
+    "display": "standalone",
+    "background_color": "#fff",
+    "description": "project framework php native mvc oop in indonesia language"
+  }

@@ -59,6 +59,11 @@
         "directory": "dist",
         "skip-dev": false
       },
+      "scripts": {
+        "post-create-project-cmd": [
+            "@php nagara generate:env"
+        ]
+    },
     "minimum-stability": "dev",
     "prefer-stable": true,
     "repositories": [
