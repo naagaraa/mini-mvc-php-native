@@ -69,8 +69,21 @@ $router->get('/info', function () {
 
 //  default welcome
 $router->get('/', function () {
+	return view('Welcome');
+	// Routes::Routing("Welcome", "index");
+});
+$router->get('/apa', function () {
 	// return view('Welcome');
-	Routes::Routing("Welcome", "index");
+	var_dump($_SERVER["HTTP_HOST"]);
+	echo "apa route";
+	exit;
+	// Routes::Routing("Welcome", "index");
+});
+$router->get('/itu', function () {
+	// return view('Welcome');
+	echo "itu route";
+	exit;
+	// Routes::Routing("Welcome", "index");
 });
 
 // default login

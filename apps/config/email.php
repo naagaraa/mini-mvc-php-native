@@ -106,13 +106,14 @@ function smptp_mail($config = [])
  * Example Format Untuk melakukan kirim email (on development)
  *------------------------------------------------------------------------------------------------------
  * sending data to email
+ * 
+ * smptp_mail([
+ *  "To" => "hello@mail.com",
+ *  "Subject" => "this is subject",
+ *  "Message" => "this is message",
+ *  "Header" => "this is header",
+ * ]);
+ * 
  * @author nagara 
  * @return array
  */
-
-// smptp_mail([
-//     "To" => "hello@mail.com",
-//     "Subject" => "this is subject",
-//     "Message" => "this is message",
-//     "Header" => "this is header",
-// ]);

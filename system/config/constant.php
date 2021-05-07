@@ -30,10 +30,20 @@ $system["DB_NAME"]		 	=  $_ENV["DB_NAME"] 			? $_ENV["DB_NAME"] 				: '';
 $system["DB_USERNAME"] 	 	=  $_ENV["DB_USERNAME"] 		? $_ENV["DB_USERNAME"] 			: 'root';
 $system["DB_PASSWORD"] 	 	=  $_ENV["DB_PASSWORD"] 		? $_ENV["DB_PASSWORD"] 			: '';
 
-# url configuration system 
-$system["ASSET"] 	        = $system['APP_HOST'] . $system['APP_NAME'] . '/public/';
-$system["URL"] 	            = $system['APP_HOST'] . $system['APP_NAME'] . '/';
-$system["BASEURL"] 	        = $system['APP_HOST'] . $system['APP_NAME'] . '/';
+if  ($_ENV["APP_ENV"] == "development") {
+    # url configuration system shell command
+    $system["ASSET"] 	        = "http://" . $_SERVER['HTTP_HOST'] . '/public/';
+    $system["URL"] 	            = "http://" . $_SERVER['HTTP_HOST'] ."/" ;
+    $system["BASEURL"] 	        = "http://" . $_SERVER['HTTP_HOST'] ."/" ;
+
+}else if ($_ENV["APP_ENV"] == "local" || $_ENV["APP_ENV"] == "production") {
+    # url configuration system 
+    $system["ASSET"] 	        = $system['APP_HOST'] . $system['APP_NAME'] . '/public/';
+    $system["URL"] 	            = $system['APP_HOST'] . $system['APP_NAME'] . '/';
+    $system["BASEURL"] 	        = $system['APP_HOST'] . $system['APP_NAME'] . '/';
+}
+
+
 
 #app static folder system
 $system["ROOT_VIEW"] 	    = 'apps/views/';
@@ -46,3 +56,6 @@ $system["DIR_VENDOR"] 	    = $_SERVER['DOCUMENT_ROOT'] . '/' . $system['APP_NAME
 $system["DIR_ROOT"] 	    = $_SERVER['DOCUMENT_ROOT'] . '/' . $system['APP_NAME'];
 $system["UPLOAD_F"] 	    = $_SERVER['DOCUMENT_ROOT'] . '/' . $system['APP_NAME'] . '/storage/';
 $system["TEMP_F"] 	        = $_SERVER['DOCUMENT_ROOT'] . '/' . $system['APP_NAME'] . '/temp/';
+
+
+
