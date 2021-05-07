@@ -12,14 +12,13 @@ class DeskriptionCommand extends Command
     protected function configure()
     {
         $this->setName('about:deskription')
-            ->setDescription('view deskription about mini mvc php native project by nagara')
-            ->setHelp('Demonstration of custom commands created by Symfony Console component.')
-            ->addArgument('username', InputArgument::REQUIRED, 'Pass the username.');
+            ->setDescription("view deskription about mini mvc php native project by nagara")
+            ->setHelp("\n\nauthor ekajayanagara as miyuki nagara\nstudent infomatic at darma persada\n\n");
     }
 
     protected function execute(InputInterface $input, OutputInterface $output)
     {
-        $output->writeln(sprintf('Hello World!, %s', $input->getArgument('username')));
+        $output->writeln(sprintf("i'm a student and programmer"));
         return Command::SUCCESS;
     }
 }

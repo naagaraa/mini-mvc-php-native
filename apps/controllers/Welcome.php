@@ -39,7 +39,6 @@ class Welcome extends Controller
 	public function index()
 	{
 		// echo "ini controller index";
-		// var_dump($_SERVER);
 	}
 
 	public function about()
