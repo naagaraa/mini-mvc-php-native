@@ -16,12 +16,12 @@ class MakeControllerCommand extends Command
         $this->setName('buat:controller')
             ->setDescription('buat new controller di folder controller')
             ->setHelp("author ekajayanagara as miyuki nagara\nstudent infomatic at darma persada\n\nUntuk membuat file controller\njika kamu ingin membuat file controller dengan cepat\n\nphp nagara buat:controller\n\n")
-            ->addArgument('controllername', InputArgument::REQUIRED, 'tuliskan nama controllernya bruh.');
+            ->addArgument('ControllerName', InputArgument::REQUIRED, 'tuliskan nama controllernya bruh.');
     }
 
     protected function execute(InputInterface $input, OutputInterface $output)
     {
-        $controller = MakeControllerCommand::handle_generate($input->getArgument('controllername'));
+        $controller = MakeControllerCommand::handle_generate($input->getArgument('ControllerName'));
         $output->write($controller);
         return Command::SUCCESS;
     }

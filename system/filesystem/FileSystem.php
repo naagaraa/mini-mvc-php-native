@@ -68,6 +68,25 @@ class FileSystem
         }
     }
 
+    public function create_libraries($name = '')
+    {
+        // problem belum bisa buat nested directory
+        // belum bisa generate new class name
+        $new_filename = $name.".php";
+
+        $path_default_file = dirname(__DIR__, 1) . "/defaults/libraries/BasicLibraries.php";
+        $path_new_file = dirname(__DIR__, 2)  . "/apps/libraries/".$new_filename;
+
+        if (file_exists($path_default_file)) {
+            if (file_exists($path_new_file)) {
+                return "file " . $path_new_file ." libraries sudah ada";
+            }else{
+                copy($path_default_file, $path_new_file);
+                return "buat file " . $path_new_file . " libraries  berhasil dibuat";
+            }
+        }
+    }
+
     public function create_models($name = '')
     {
         // problem belum bisa buat nested directory

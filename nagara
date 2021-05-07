@@ -31,6 +31,7 @@ use Console\App\Commands\ClearcacheCommand;
 use Console\App\Commands\DeskriptionCommand;
 use Console\App\Commands\EnvirotmentCommand;
 use Console\App\Commands\MakeControllerCommand;
+use Console\App\Commands\MakeLibrariesCommand;
 use Console\App\Commands\MakeModelsCommand;
 use Console\App\Commands\MakeViewCommand;
 use Console\App\Commands\ServerCommand;
@@ -45,12 +46,11 @@ use Console\App\Commands\CopyEnvirotmentCommand;
 */
 
 
-
-
-$app = new Application('project nagara/mini-mvc-php-native', '2.0.0');
+$app = new Application('project nagara/mini-mvc-php-native', '2.0.9');
 $app->add(new TestCommand());
 $app->add(new ClearcacheCommand());
 $app->add(new MakeControllerCommand());
+$app->add(new MakeLibrariesCommand());
 $app->add(new MakeModelsCommand());
 $app->add(new MakeViewCommand());
 $app->add(new AuthorCommand());

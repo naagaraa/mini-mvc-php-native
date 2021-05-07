@@ -6,6 +6,8 @@
     "license": "MIT",
     "keywords": [
         "framework",
+        "native",
+        "php",
         "mini mvc php native"
     ],
     "authors": [
@@ -13,10 +15,6 @@
             "name": "nagara",
             "email": "ekabersinar@gmail.com",
             "role": "developer"
-        },
-        {
-            "name": "sandhika galih",
-            "role": "dosen unpas"
         }
     ],
     "require": {
@@ -41,15 +39,18 @@
     },
     "config": {
         "optimize-autoloader": true,
+        "apcu-autoloader": true,
         "preferred-install": "dist",
         "sort-packages": true
     },
     "autoload": {
         "psr-4": {
+            "app\\": "apps",
             "Console\\": "system",
             "Rubix\\":"vendor/rubix/ml/src/"
         },
         "classmap": [
+            "apps",
             "system",
             "vendor/rubix/ml/src/"
         ]

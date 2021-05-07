@@ -14,23 +14,30 @@ Namespace MiniMvc\Apps\Libraries;
  * contoh :
  * use MiniMvc\Apps\Libraries\Info_Agent;
  * 
- * $info_agent = new Info_Agent;
+ * $agent = new Agent;
  * 
- * $info_agent->get_os();
- * $info_agent->get_browser();
- * $info_agent->get_ip_client();
- * $info_agent->get_ip_server();
+ * $agent->get_os();
+ * $agent->get_browser();
+ * $agent->get_ip_client();
+ * $agent->get_ip_server();
+ * 
+ * atau 
+ * 
+ * Agent::get_os()
+ * Agent::get_browser()
+ * Agent::get_ip_client()
+ * Agent::get_ip_server()
  * 
  */
 
-class Info_Agent 
+class Agent 
 {
 
   /**
 	 * membuat function untuk get sistem operasi yang digunakan user
 	 * @author nagara 
 	 */
-  public function get_os()
+  public static function get_os()
   {
 
     $user_agent = $_SERVER['HTTP_USER_AGENT'];
@@ -72,7 +79,7 @@ class Info_Agent
 	 * membuat function untuk get info browser yang digunakan user
 	 * @author nagara 
 	 */
-  function get_browser()
+  public static function get_browser()
   {
 
     $user_agent = $_SERVER['HTTP_USER_AGENT'];
@@ -101,10 +108,9 @@ class Info_Agent
 	 * membuat function untuk get ip client / ip yang digunakan user
 	 * @author nagara 
 	 */
-  public function get_ip_client()
+  public static function get_ip_client()
   {
-    echo $_SERVER['REMOTE_ADDR'];
-    exit();
+    return $_SERVER['REMOTE_ADDR'];
   }
 
   /**
@@ -112,10 +118,9 @@ class Info_Agent
 	 * @author nagara 
 	 */
 
-  public function get_ip_server()
+  public static function get_ip_server()
   {
-    echo $_SERVER['SERVER_ADDR'];
-    exit();
+    return $_SERVER['SERVER_ADDR'];
   }
 
   /**
@@ -123,9 +128,8 @@ class Info_Agent
 	 * @author nagara 
 	 */
 
-  public function get_host()
+  public static function get_host()
   {
-    echo $_SERVER['HTTP_HOST'];
-    exit();
+    return $_SERVER['HTTP_HOST'];
   }
 }
