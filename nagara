@@ -4,6 +4,7 @@
 /*
 |--------------------------------------------------------------------------
 | Register The Auto Loader
+| @author ekajayanagara
 |--------------------------------------------------------------------------
 |
 */
@@ -20,6 +21,7 @@ spl_autoload_register(function ($class) {
 /*
 |--------------------------------------------------------------------------
 | Register Class Loader
+| @author ekajayanagara
 |--------------------------------------------------------------------------
 |
 */
@@ -40,13 +42,14 @@ use Console\App\Commands\CopyEnvirotmentCommand;
 
 /*
 |--------------------------------------------------------------------------
-| Register Class Loader
+| Register new object call
+| @author ekajayanagara
 |--------------------------------------------------------------------------
 |
 */
 
 
-$app = new Application('project nagara/mini-mvc-php-native', '2.0.9');
+$app = new Application('mini mvc nagara', '2.0.11');
 $app->add(new TestCommand());
 $app->add(new ClearcacheCommand());
 $app->add(new MakeControllerCommand());

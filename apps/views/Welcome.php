@@ -31,6 +31,7 @@
 <style>
 	.theme {
 		background-color: whitesmoke;
+		margin-top: 10rem;
 	}
 
 	.card-list {
@@ -99,7 +100,7 @@
 	<div class="container my-3">
 		<div class="row d-flex justify-content-center">
 			<div class="col-10">
-				<div class="row mt-2">
+				<div class="row mt-5">
 					<div class="col">
 						<h1>MINI MVC PROJECT</h1>
 						<p class="text-muted">project mini mvc php native develop by eka jaya nagara as miyuki nagara, my background can't used framework popular php like symphony or CI or Laravel for finish exam "kerja praktik", so I'm develop this is.</p>
@@ -108,28 +109,6 @@
 					</div>
 				</div>
 				<div class="row d-flex justify-content-center g-4">
-					<div class="col-md-3">
-						<a class="nav-card" href="https://www.instagram.com/naagaraa/">
-							<div class="card card-list border-primary color-one">
-								<div class="card-body">
-									<h5 class="card-title">Instagram</h5>
-									<h6 class="card-subtitle mb-3 text-muted">Support</h6>
-									<p class="card-text">support me on this platform</p>
-								</div>
-							</div>
-						</a>
-					</div>
-					<div class="col-md-3">
-						<a class="nav-card" href="https://dribbble.com/naagaraa/">
-							<div class="card card-list border-primary color-two">
-								<div class="card-body">
-									<h5 class="card-title">Dribbble</h5>
-									<h6 class="card-subtitle mb-3 text-muted">Support</h6>
-									<p class="card-text">support me on this platform</p>
-								</div>
-							</div>
-						</a>
-					</div>
 					<div class="col-md-3">
 						<a class="nav-card" href="https://www.youtube.com/channel/UCYsZhw6Mlk23Q-nUPP9t1YA">
 							<div class="card card-list border-primary color-three">
@@ -153,12 +132,12 @@
 						</a>
 					</div>
 					<div class="col-md-3">
-						<a class="nav-card" href="https://github.com/naagaraa/mini-mvc-php-native">
+						<a class="nav-card" href="http://docs.minimvcphp.nagara.my.id/">
 							<div class="card card-list border-primary color-five">
 								<div class="card-body">
 									<h5 class="card-title">Documentation</h5>
-									<h6 class="card-subtitle mb-3 text-muted">github docs</h6>
-									<p class="card-text">documentation saat ini ada di github</p>
+									<h6 class="card-subtitle mb-3 text-muted">mini mvc docs</h6>
+									<p class="card-text">documentation official</p>
 								</div>
 							</div>
 						</a>
@@ -170,28 +149,6 @@
 									<h5 class="card-title">PHP version</h5>
 									<h6 class="card-subtitle mb-3 text-muted">Support</h6>
 									<p class="card-text">check versi php yang terinstall</p>
-								</div>
-							</div>
-						</a>
-					</div>
-					<div class="col-md-3">
-						<a class="nav-card" href="<?= url('login') ?>">
-							<div class="card card-list border-primary color-seven">
-								<div class="card-body">
-									<h5 class="card-title">Login page</h5>
-									<h6 class="card-subtitle mb-3 text-muted">Template | stisla</h6>
-									<p class="card-text">Integrate frontend dengan stistla dibuat oleh Muhamad Nauval Azhar</p>
-								</div>
-							</div>
-						</a>
-					</div>
-					<div class="col-md-3">
-						<a class="nav-card" href="<?= url('register') ?>">
-							<div class="card card-list border-primary color-eight">
-								<div class="card-body">
-									<h5 class="card-title">Register page</h5>
-									<h6 class="card-subtitle mb-3 text-muted">Template | stisla</h6>
-									<p class="card-text">Integrate frontend dengan stistla dibuat oleh Muhamad Nauval Azhar</p>
 								</div>
 							</div>
 						</a>

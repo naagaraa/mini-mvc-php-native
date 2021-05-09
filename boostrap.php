@@ -100,17 +100,6 @@ require_once "system/config/constant.php";
 require_once "system/mail/Mailer.php";
 require_once "apps/init.php";
 
- /*
- *---------------------------------------------------------------
- * USE / CALL NAMESPACE IN CORE FOLDER
- *---------------------------------------------------------------
- * let go hahaha
- */
-// use MiniMvc\Apps\Core\Bootstraping\App;
-// use MiniMvc\Apps\Routes\Bootstraping\Web;
-// use MiniMvc\Apps\Routes\Bootstraping\Api;
-// use MiniMvc\System\Console\Filesystem;
-
 
  /**
  *---------------------------------------------------------------
@@ -121,10 +110,6 @@ require_once "apps/init.php";
  */
 
 (get_url(0) == 'api') ? include 'apps/routes/Api.php' : include 'apps/routes/Web.php';
-
-// $Route = new Web;
-// $Api = new Api;
-// $App = new App;  //upgrade versi nagara/mini-mvc next generation 
 
  /** 
  *---------------------------------------------------------------

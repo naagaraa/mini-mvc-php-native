@@ -62,42 +62,12 @@ $router->get('/info', function () {
 	exit;
 });
 
-/**
- * if you want default root / login page just uncommnet here default login 
- * and commnet default welcome
- */
-
 //  default welcome
 $router->get('/', function () {
 	return view('Welcome');
 	// Routes::Routing("Welcome", "index");
 });
 
-
-// default login
-// $router->get('/', function () {
-// 	Routes::Routing('/auth/SignInUserController','index');
-// });
-
-$router->get('/login', function () {
-	Routes::Routing('auth/SignInUserController', 'index');
-});
-$router->get('/register', function () {
-	Routes::Routing('auth/CreateUserController', 'index');
-});
-$router->get('/forgot-password', function () {
-	Routes::Routing('auth/ForgotPasswordController', 'index');
-});
-$router->get('/verify/reset-password', function () {
-	Routes::Routing('auth/ResetPasswordController', 'index');
-});
-
-$router->get('/home', function () {
-	Routes::Routing('frontend/HomeController', 'index');
-});
-$router->get('/profile', function () {
-	Routes::Routing('auth/UpdateInformationUserController', 'index');
-});
 
 // run route!
 $router->run();

@@ -19,7 +19,7 @@ class ServerCommand extends Command
 
     protected function execute(InputInterface $input, OutputInterface $output)
     {
-        $output->writeln(exec("php -S 127.0.0.1:9000"));
+        $output->writeln("local development server terbuka di ( http://127.0.0.1:9000 )", exec("php -S 127.0.0.1:9000"));
         return Command::SUCCESS;
     }
 }

@@ -3,54 +3,45 @@
 # MINI MVC PHP NATIVE PROJECT
 
 <!-- Description -->
-<p>indoneisa : </p>
-<p>Hi, Project ini dibuat dari latihan saya belajar web programing dari berbagai sumber di internet seperti youtube, stackoverflow dan github. project ini merupakan php native yang di buat menggunakan pattern MVC dengan konsep OOP (Object oriented programing ), mirip framework codeigniter 3, yang saya pelajari di YT WPU oleh Sandhika galih dan sudah saya modifikasi custom menyesuaikan tugas kuliah saya serta penambahan library lainnya.</p>
-<p>list library external yang mungkin dibutuhkan : jquery, bootstrap 4.2.5, owl.js , slick.js, composer, ckeditor-5, chartjs, fontawensome, datatable.js, phpoffice, mpdf saya satukan agar lebih mudah untuk mencarinya</p>
+<p>pembukaan indonesia : </p>
+<p>Hi, Project ini dibuat dari latihan saya belajar web programing dari berbagai sumber di internet seperti youtube, stackoverflow dan github. project ini merupakan php native yang di buat menggunakan pattern MVC dengan konsep OOP (Object oriented programing ), mirip framework codeigniter 3, yang saya pelajari di YT WPU oleh Sandhika galih dan sudah saya kembangkan. menjadi framework php mvc oop bahasa indonesia pertama saya</p>
 
-<p>English : </p>
-<p>Hi, this project was made from my practice to learn web programming from various sources on the internet such as YouTube, Stackoverflow and Github. This project is a native php that is made using the MVC pattern with the concept of OOP (Object oriented programming), similar to the Codeigniter 3 framework, which I learned at YT WPU by Sandhika Galih and I have custom modifications to suit my college assignments and the addition of other libraries.</p>
-<p>include external libraries: jquery, bootstrap 4.2.5, owl.js, slick.js, composer, ckeditor-5, chartjs, fontawensome, datatable.js, phpoffice, mpdf I put together to make it easier to find</p>
+<p>English Introduction: </p>
+<p>Hi, this project was made from my practice to learn web programming from various sources on the internet such as YouTube, Stackoverflow and Github. This project is a native php that is made using the MVC pattern with the concept of OOP (Object oriented programming), similar to the Codeigniter 3 framework, which I learned at YT WPU by Sandhika Galih and I have custom development. to be framework php mvc oop in indonesia langauge my first time</p>
+
 ---
 
 <!-- table of content YT -->
-#### Documentasi lainnya
-* **playlist** [ Youtube ](https://www.youtube.com/playlist?list=PLK5_CL-hAKCf-H7snj3RlLVjrkJ7yql6o)
-* **documentation official** [ website ](http://docs.minimvcphp.nagara.my.id/)
-* **LICENCE** [ MIT ](https://github.com/naagaraa/mini-mvc-php-native/blob/master/LICENSE.MD)
+## Documentasi lainnya
+* **Playlist project** [ Youtube ](https://www.youtube.com/playlist?list=PLK5_CL-hAKCf-H7snj3RlLVjrkJ7yql6o)
+* **Documentation** [ website ](http://docs.minimvcphp.nagara.my.id/)
+* **github wiki** [ wiki ](https://github.com/naagaraa/mini-mvc-php-native/wiki)
 
-#### contribute
+<br><br>
+
+### contribute
 belum buat rulesnya
 
-#### License
+<br><br>
+
+### License
 * **license** [ MIT ](https://github.com/naagaraa/mini-mvc-php-native/blob/master/LICENSE.MD)
 
+<br><br>
 
-<!-- table of content YT -->
-#### Fork repo
-<p>jika mau clone repo ini ke github kalian, kalian tinggal klik forked di pojok kanan atas untuk contribute atau give start jika kamu suka</p>
+### Creator , Contribution dan development
 
-<!-- table of content -->
-#### Note 
-* saya sering melakukan update pada repo, saya sarankan untuk melakukan
-git pull jika terdapat ada update ahahaha
-
-<!-- update -->
-#### Update 
-* saya sedang development untuk implementation template engine menggunakan twig dari symfony
- [ **Documentasi Resmi Twig 3.x** ](https://twig.symfony.com/doc/3.x/) 
-* saya sedang development untuk implementation PHPMAILER salah satu library PHP EMAIL selain swiftmailer yang digunakan Laravel
- [ **Documentasi Resmi PHPMAILER** ](https://github.com/PHPMailer/PHPMailer) 
-
-
-## Author dan Contribution
-
-* **Naagaraa Mahasiswa Darma Persada dan Content Creator**  [ instagram ](https://www.instagram.com/naagaraa/) pengembang dan maintainers
+* **Naagaraa Mahasiswa Darma Persada dan Content Creator**  [ instagram ](https://www.instagram.com/naagaraa/) creator ,  pengembang dan maintainers mini mvc
 * **Sandhikagalih Dosen Unpas dan Content Creator** [ Instagram ](https://www.instagram.com/sandhikagalih/) pengajar saya pertama untuk php
+
+<br><br>
 
 ## support Me
 <br>
 <!-- description -->
 hi, kamu bisa support dengan cara follow account sosial media di bawah atau traktir makanan pada link di bio social media mereka dibawah ini
+<br>
+
 <br>
 
 **History :**
@@ -59,6 +50,8 @@ hi, kamu bisa support dengan cara follow account sosial media di bawah atau trak
 * 2018 - now = saya  [ miyuki nagara ](https://github.com/naagaraa)  hingga saat ini masih mencoba mengembangkannya check commit aktif
 * 2021 = add install via composer
 * 2021 = add documentation
+
+<br>
 
 <!-- Links -->
 **Please support :**
@@ -76,4 +69,4 @@ hi, kamu bisa support dengan cara follow account sosial media di bawah atau trak
 
 
  *Donasi ?* : 
-* Naagaraa : [ Traktir baso aja ](https://saweria.co/naagaraa)
+* Naagaraa : [ Traktir baso aja at saweria [ DANA, OVO, dll ] ](https://saweria.co/naagaraa)
