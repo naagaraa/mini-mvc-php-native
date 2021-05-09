@@ -309,23 +309,6 @@ function model($model = '')
     }
 }
 
-/**
- * membuat function testing atau debug variabel
- * @author nagara
- */
-function dd($val = '')
-{
-
-    try {
-        var_dump($val);
-        die;
-        exit;
-    } catch (\Throwable $th) {
-        $my_error = new Error_Handling;
-        $my_error->showerror_message($exception->getMessage(), $exception->getFile(), $exception->getLine(), $exception->getTraceAsString());
-        exit;
-    }
-}
 
 /**
  * untuk membuat slug
