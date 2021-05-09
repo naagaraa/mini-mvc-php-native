@@ -1,5 +1,9 @@
 <?php
-
+/**
+ * Documentation
+ * @author eka jaya nagara 
+ * ini ada configurasi core system
+ */
 if (empty($_ENV)) {
     require dirname(__DIR__, 1) ."//error//_500_error.html";
     exit;
@@ -30,6 +34,8 @@ $system["DB_NAME"]		 	=  $_ENV["DB_NAME"] 			? $_ENV["DB_NAME"] 				: '';
 $system["DB_USERNAME"] 	 	=  $_ENV["DB_USERNAME"] 		? $_ENV["DB_USERNAME"] 			: 'root';
 $system["DB_PASSWORD"] 	 	=  $_ENV["DB_PASSWORD"] 		? $_ENV["DB_PASSWORD"] 			: '';
 
+
+# application mode
 if  ($_ENV["APP_ENV"] == "development") {
     if ($_SERVER["HTTP_HOST"] == "localhost") {
         require dirname(__DIR__, 1) ."//error//_warning_local.html";
@@ -52,7 +58,11 @@ if  ($_ENV["APP_ENV"] == "development") {
     }
 }
 
-
+#main tenance mode
+if ($_ENV["APP_MAINTENANCE"] == "on") {
+    require dirname(__DIR__, 1) ."//error//_maintenance.html";
+    exit;
+}
 
 #app static folder system
 $system["ROOT_VIEW"] 	    = 'apps/views/';
