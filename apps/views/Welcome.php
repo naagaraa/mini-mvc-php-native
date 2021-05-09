@@ -31,7 +31,7 @@
 <style>
 	.theme {
 		background-color: whitesmoke;
-		margin-top: 10rem;
+		margin-top: 5rem;
 	}
 
 	.card-list {
@@ -102,7 +102,7 @@
 			<div class="col-10">
 				<div class="row mt-5">
 					<div class="col">
-						<h1>MINI MVC PROJECT</h1>
+						<h1>MINI MVC PHP NATIVE</h1>
 						<p class="text-muted">project mini mvc php native develop by eka jaya nagara as miyuki nagara, my background can't used framework popular php like symphony or CI or Laravel for finish exam "kerja praktik", so I'm develop this is.</p>
 						<span>kamu bisa mencoba Edit tampilan view ini : </span>
 						<p class="code mt-2">welcome page = apps/views/welcome.php</p>
