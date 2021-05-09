@@ -3,6 +3,8 @@ Options -Multiviews
 RewriteEngine On
 RewriteCond %{REQUEST_FILENAME} !-d
 RewriteCond %{REQUEST_FILENAME} !-f 
+# RewriteCond %{REQUEST_URI} !/$
+
 
 # untuk membuat pretty url menghilangkan index.php?url=$url
 RewriteRule ^(.*)$ index.php?url=$1 [L]

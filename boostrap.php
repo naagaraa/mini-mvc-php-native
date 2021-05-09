@@ -109,6 +109,7 @@ require_once "apps/init.php";
  * okay here we go
  */
 
+
 (get_url(0) == 'api') ? include 'apps/routes/Api.php' : include 'apps/routes/Web.php';
 
  /** 

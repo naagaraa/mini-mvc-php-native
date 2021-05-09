@@ -204,13 +204,25 @@ function get_url($index = '')
          *  Merapikan url menggukan method rtrim untuk menhapus / dibagian akhir url
          * 	mengamankan url dari variabel aneh dengan method Filter_var 
          *  memecar URL menjadi array dengan method explode setiap bertemu string atau karakter /
-         */
+         */        
         $url = rtrim($_GET['url'], '/');
         $url = filter_var($url, FILTER_SANITIZE_URL);
         $url = explode('/', $url);
 
         if ($index !== '') {
             return $url[$index];
+        } else {
+            return $url;
+        }
+    }else{
+        
+        $url = trim($_SERVER["REQUEST_URI"], '/');
+        $url = filter_var($url, FILTER_SANITIZE_URL);
+        $url = explode('/', $url);
+
+        if ($index !== '') {
+            return $url[$index];
+            unset($url[0]);
         } else {
             return $url;
         }
