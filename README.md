@@ -36,13 +36,6 @@ belum buat rulesnya
 
 <br><br>
 
-## support Me
-<br>
-<!-- description -->
-hi, kamu bisa support dengan cara follow account sosial media di bawah atau traktir makanan pada link di bio social media mereka dibawah ini
-<br>
-
-<br>
 
 **History :**
 * 2017 - 2018 = belajar di WPU dengan pak [ sandhika galih ](https://github.com/sandhikagalih) 
@@ -55,18 +48,6 @@ hi, kamu bisa support dengan cara follow account sosial media di bawah atau trak
 
 <!-- Links -->
 **Please support :**
-
-*Youtube Channel* : 
-* Sandhika galih : [ YT Web programing unpas ](https://www.youtube.com/channel/UCkXmLjEr95LVtGuIm3l2dPg)
-
-* Naagaraa : [ YT Naagaraa ](https://www.youtube.com/channel/UCYsZhw6Mlk23Q-nUPP9t1YA?view_as=subscriber)
-
- *instagram* : 
- 
-* Sandhika galih : [ IG Web programing unpas ](https://www.instagram.com/sandhikagalih/)
-
-* Naagaraa : [ IG Naagaraa ](https://www.instagram.com/naagaraa/)
-
 
  *Donasi ?* : 
 * Naagaraa : [ Traktir baso aja at saweria [ DANA, OVO, dll ] ](https://saweria.co/naagaraa)
