@@ -263,9 +263,10 @@ function random_file_name($keyname = '')
  * membuat function panggil view
  * @author nagara
  */
-function view($view = '', $data = [])
+function view($views = '', $data = [])
 {
     // mengarah pada folder apps/views/ namaviews.php
+    $view = str_replace(".","/", $views);
     try {
         if (!file_exists(_ROOT_VIEW . $view . '.php')) {
             throw new Exception("View " . $view . " Not Found. Check Controllernya Bro");
