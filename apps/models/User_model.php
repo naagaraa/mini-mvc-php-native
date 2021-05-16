@@ -16,7 +16,7 @@ use MiniMvc\Apps\Core\Bootstraping\Database;
 
 class User_model
 {
-	private $table = 'tb_user';
+	private $table = 'tb_users';
 	private $db;
 
 	public function __construct()

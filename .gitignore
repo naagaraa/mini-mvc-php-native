@@ -1,5 +1,5 @@
 # Ignore everything in this directory
-*/uploads
+*/storage
 
 # Except this file
 !.gitignore
@@ -9,6 +9,7 @@ composer.lock
 # folder vendor
 /vendor/*
 .env/*
+.github/*
 
 # folder example tidak perlu di add ke git jika diinginka un-comment baris ini
 # /example/*

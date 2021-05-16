@@ -23,6 +23,7 @@ class Database
 	private $dbh;
 	private $statement;
 
+
 	public function __construct()
 	{
 		// data source name
