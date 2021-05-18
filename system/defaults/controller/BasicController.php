@@ -13,7 +13,7 @@ class BasicController extends Controller
 
 	public function index()
 	{
-		// echo "ini controller home";
+		// echo "ini BasicController function index";
 	}
 
 	public function show($request)

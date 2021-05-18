@@ -52,17 +52,23 @@ class FileSystem
     public function create_controller($name = '')
     {
         // problem belum bisa buat nested directory
-        // belum bisa generate new class name
         $new_filename = $name.".php";
 
         $path_default_file = dirname(__DIR__, 1) . "/defaults/controller/BasicController.php";
-        $path_new_file = dirname(__DIR__, 2)  . "/apps/controllers/".$new_filename;
+        $path_new_file = dirname(__DIR__, 2)  . "/apps/controllers/". $new_filename;
 
         if (file_exists($path_default_file)) {
             if (file_exists($path_new_file)) {
                 return "file " . $path_new_file ." controller sudah ada";
             }else{
-                copy($path_default_file, $path_new_file);
+
+                $default_name = "BasicController";
+
+                $file = file_get_contents($path_default_file);          # read file
+                $file = str_replace($default_name, $name , $file);      # replace string
+
+                file_put_contents($path_new_file , $file);              # create file
+
                 return "buat file " . $path_new_file . " controller  berhasil";
             }
         }
@@ -71,7 +77,6 @@ class FileSystem
     public function create_libraries($name = '')
     {
         // problem belum bisa buat nested directory
-        // belum bisa generate new class name
         $new_filename = $name.".php";
 
         $path_default_file = dirname(__DIR__, 1) . "/defaults/libraries/BasicLibraries.php";
@@ -81,7 +86,12 @@ class FileSystem
             if (file_exists($path_new_file)) {
                 return "file " . $path_new_file ." libraries sudah ada";
             }else{
-                copy($path_default_file, $path_new_file);
+                $default_name = "BasicLibraries";
+
+                $file = file_get_contents($path_default_file);          # read file
+                $file = str_replace($default_name, $name , $file);      # replace string
+
+                file_put_contents($path_new_file , $file);              # create file
                 return "buat file " . $path_new_file . " libraries  berhasil dibuat";
             }
         }
@@ -90,7 +100,6 @@ class FileSystem
     public function create_models($name = '')
     {
         // problem belum bisa buat nested directory
-        // belum bisa generate new class name
         $new_filename = $name.".php";
 
         $path_default_file = dirname(__DIR__, 1) . "/defaults/models/BasicModels.php";
@@ -100,7 +109,12 @@ class FileSystem
             if (file_exists($path_new_file)) {
                 return "file " . $path_new_file ." models sudah ada";
             }else{
-                copy($path_default_file, $path_new_file);
+                $default_name = "MainModel";
+
+                $file = file_get_contents($path_default_file);          # read file
+                $file = str_replace($default_name, $name , $file);      # replace string
+
+                file_put_contents($path_new_file , $file);              # create file
                 return "buat file " .$path_new_file . " models berhasil";
             }
         }
@@ -118,7 +132,12 @@ class FileSystem
             if (file_exists($path_new_file)) {
                 return "file " . $path_new_file ." view sudah ada";
             }else{
-                copy($path_default_file, $path_new_file);
+                $default_name = "Basic View";
+
+                $file = file_get_contents($path_default_file);          # read file
+                $file = str_replace($default_name, $name , $file);      # replace string
+
+                file_put_contents($path_new_file , $file);              # create file
                 return "buat file " . $path_new_file . " views berhasil";
             }
             
