@@ -31,13 +31,13 @@ class FileSystem
 
         if (file_exists($newpt . '//.env')) {
             $FileEnvirotmentVariabel = fopen($newpt . '//.env', "w") or die("Unable to open file!");
-            $txt = "# config file .env untuk configurasi pada file\n# apps/config/database.php\n# apps/config/constant.php\n\nAPP_DEBUG=true\nAPP_ENV=local\nAPP_MAINTENANCE=off\n\n# configurasi Path here\nAPP_NAME=" . $new_project . "\nAPP_HOST=http://localhost/\n\n# configurasi Database here\nDB_HOST=localhost\nDB_PORT=3306\nDB_NAME=\nDB_USERNAME=root\nDB_PASSWORD=\n\n# configurasi mailer (on development)\nMAIL_DEBUG=true\nMAIL_MAILER=smtp\nMAIL_HOST=mailhog\nMAIL_PORT=1025\nMAIL_USERNAME=null\nMAIL_PASSWORD=null\nMAIL_ENCRYPTION=null\nMAIL_FROM_ADDRESS=null\nMAIL_FROM_NAME='$"."{". "APP_NAME"."}'";
+            $txt = "# config file .env untuk configurasi pada file\n# apps/config/database.php\n# apps/config/constant.php\n\nAPP_DEBUG=true\nAPP_ENV=local\nAPP_MAINTENANCE=off\n\n# configurasi Path here\nAPP_NAME=" . $new_project . "\nAPP_HOST=http://localhost/\n\n# configurasi Database here\nDB_HOST=localhost\nDB_PORT=3306\nDB_NAME=" . $new_project . "\nDB_USERNAME=root\nDB_PASSWORD=\n\n# configurasi mailer (on development)\nMAIL_DEBUG=true\nMAIL_MAILER=smtp\nMAIL_HOST=mailhog\nMAIL_PORT=1025\nMAIL_USERNAME=null\nMAIL_PASSWORD=null\nMAIL_ENCRYPTION=null\nMAIL_FROM_ADDRESS=null\nMAIL_FROM_NAME='$"."{". "APP_NAME"."}'";
 
             fwrite($FileEnvirotmentVariabel, $txt);
             fclose($FileEnvirotmentVariabel);
         } else {
             $FileEnvirotmentVariabel = fopen($newpt . '//.env', "w") or die("Unable to open file!");
-            $txt = "# config file .env untuk configurasi pada file\n# apps/config/database.php\n# apps/config/constant.php\n\nAPP_DEBUG=true\nAPP_ENV=local\nAPP_MAINTENANCE=off\n\n# configurasi Path here\nAPP_NAME=" . $new_project . "\nAPP_HOST=http://localhost/\n\n# configurasi Database here\nDB_HOST=localhost\nDB_PORT=3306\nDB_NAME=\nDB_USERNAME=root\nDB_PASSWORD=\n\n# configurasi mailer (on development)\nMAIL_DEBUG=true\nMAIL_MAILER=smtp\nMAIL_HOST=mailhog\nMAIL_PORT=1025\nMAIL_USERNAME=null\nMAIL_PASSWORD=null\nMAIL_ENCRYPTION=null\nMAIL_FROM_ADDRESS=null\nMAIL_FROM_NAME='$"."{". "APP_NAME"."}'";
+            $txt = "# config file .env untuk configurasi pada file\n# apps/config/database.php\n# apps/config/constant.php\n\nAPP_DEBUG=true\nAPP_ENV=local\nAPP_MAINTENANCE=off\n\n# configurasi Path here\nAPP_NAME=" . $new_project . "\nAPP_HOST=http://localhost/\n\n# configurasi Database here\nDB_HOST=localhost\nDB_PORT=3306\nDB_NAME=" . $new_project . "\nDB_USERNAME=root\nDB_PASSWORD=\n\n# configurasi mailer (on development)\nMAIL_DEBUG=true\nMAIL_MAILER=smtp\nMAIL_HOST=mailhog\nMAIL_PORT=1025\nMAIL_USERNAME=null\nMAIL_PASSWORD=null\nMAIL_ENCRYPTION=null\nMAIL_FROM_ADDRESS=null\nMAIL_FROM_NAME='$"."{". "APP_NAME"."}'";
 
             fwrite($FileEnvirotmentVariabel, $txt);
             fclose($FileEnvirotmentVariabel);
@@ -116,6 +116,31 @@ class FileSystem
 
                 file_put_contents($path_new_file , $file);              # create file
                 return "buat file " .$path_new_file . " models berhasil";
+            }
+        }
+    }
+
+    public function create_migration($name = '')
+    {
+        // problem belum bisa buat nested directory
+        $time = str_replace(":", "",date('H:i:s'));
+        $date = str_replace("-", "",date("Y-m-d"));
+        $new_filename = $date . $time . "_" . $name .".php";
+
+        $path_default_file = dirname(__DIR__, 1) . "/defaults/database/BasicDatabase.php";
+        $path_new_file = dirname(__DIR__, 2)  . "/database/migration/".$new_filename;
+
+        if (file_exists($path_default_file)) {
+            if (file_exists($path_new_file)) {
+                return "file " . $path_new_file ." migration sudah ada";
+            }else{
+                $default_name = "Template";
+
+                $file = file_get_contents($path_default_file);          # read file
+                $file = str_replace($default_name, $name , $file);      # replace string
+
+                file_put_contents($path_new_file , $file);              # create file
+                return "buat file " .$path_new_file . " migration berhasil";
             }
         }
     }

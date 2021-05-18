@@ -38,7 +38,11 @@ use Console\App\Commands\MakeModelsCommand;
 use Console\App\Commands\MakeViewCommand;
 use Console\App\Commands\ServerCommand;
 use Console\App\Commands\CopyEnvirotmentCommand;
-
+use Console\App\Commands\MakeMigrationCommand;
+use Console\App\Commands\MigrationHelpCommnand;
+use Console\App\Commands\MigrationCommnand;
+use Console\App\Commands\RollbackMigrationCommnand;
+use Phinx\Console\Command\Rollback;
 
 /*
 |--------------------------------------------------------------------------
@@ -49,7 +53,7 @@ use Console\App\Commands\CopyEnvirotmentCommand;
 */
 
 
-$app = new Application('mini mvc nagara', '2.0.11');
+$app = new Application('mini mvc nagara', '3.0.3');
 $app->add(new TestCommand());
 $app->add(new ClearcacheCommand());
 $app->add(new MakeControllerCommand());
@@ -61,4 +65,9 @@ $app->add(new DeskriptionCommand());
 $app->add(new ServerCommand());
 $app->add(new EnvirotmentCommand());
 $app->add(new CopyEnvirotmentCommand());
+$app->add(new MakeMigrationCommand());
+$app->add(new MigrationHelpCommnand());
+$app->add(new MigrationCommnand());
+$app->add(new RollbackMigrationCommnand());
+
 $app->run();

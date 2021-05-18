@@ -25,7 +25,7 @@
         "mpdf/mpdf": "^8.0",
         "phpmailer/phpmailer": "^6.2",
         "phpoffice/phpspreadsheet": "^1.14",
-        "robmorgan/phinx": "^0.12.6",
+        "robmorgan/phinx": "^0.12.7",
         "rubix/ml": "^0.4.1",
         "rubix/tensor": "^2.2",
         "symfony/console": "^5.2",
