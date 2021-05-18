@@ -24,6 +24,12 @@ belum buat rulesnya
 
 <br><br>
 
+### start and fork
+- give start if you want support
+- fork if you want contribute 
+
+<br><br>
+
 ### License
 * **license** [ MIT ](https://github.com/naagaraa/mini-mvc-php-native/blob/master/LICENSE.MD)
 
