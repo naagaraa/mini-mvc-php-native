@@ -50,12 +50,15 @@
         "psr-4": {
             "app\\": "apps",
             "Console\\": "system",
-            "Rubix\\":"vendor/rubix/ml/src/"
+            "Rubix\\":"vendor/rubix/ml/src/",
+            "env\\":"vendor/vlucas/phpdotenv"
+           
         },
         "classmap": [
             "apps",
             "system",
-            "vendor/rubix/ml/src/"
+            "vendor/rubix/ml/src/",
+            "vendor/vlucas/phpdotenv/src"
         ]
     },
     "archive": {

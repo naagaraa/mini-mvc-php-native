@@ -9,7 +9,6 @@
  * @return array
  */
 
-
 $migration = 
 [
     'paths' => [
@@ -50,4 +49,5 @@ $migration =
     'version_order' => 'creation'
 ];
 
+// var_dump($_ENV);
 return $migration;
