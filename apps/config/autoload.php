@@ -4,7 +4,7 @@
  * Documentation
  * ----------------------------------------------------------------------------------------
  * untuk membuat auto require file pada folder config dengan memanfaatkan build in 
- * function pada php yaitu scandir dna is_dir dan dilakuikan loop sebanyak
+ * function pada php yaitu scandir dna is_dir , is_file dan dilakukan loop sebanyak
  * jumlah array atau file pada dir tersebut
  * 
  * @author nagara
@@ -41,7 +41,10 @@ function directory_children($dir){
 // load direactory
 function load_dir_config($files)
 {
-    require_once $files;
+    // load jika itu file
+    if (is_file($files)) {
+        require_once $files;
+    }
 }
 
 // call function karena prosedural, jika oop maka menggunakan object dan contructor

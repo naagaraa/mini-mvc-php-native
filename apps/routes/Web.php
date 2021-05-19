@@ -1,7 +1,5 @@
 <?php
 
-namespace MiniMvc\Apps\Routes\Bootstraping;
-
 use \MiniMvc\Apps\Core\Bootstraping\Routes;
 use \Bramus\Router\Router;
 

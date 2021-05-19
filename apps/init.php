@@ -43,14 +43,14 @@ spl_autoload_register(function ($class) {
 });
 
 // spl autoload php atau bootstrap loading classname pada folder routes
-spl_autoload_register(function ($class) {
-	$class = explode("\\", $class);
-	$class = end($class);
-	if (file_exists(__DIR__ . '/routes/' . $class . '.php')) {
-		require_once __DIR__ . '/routes/' . $class . '.php';
-	}
-	return false;
-});
+// spl_autoload_register(function ($class) {
+// 	$class = explode("\\", $class);
+// 	$class = end($class);
+// 	if (file_exists(__DIR__ . '/routes/' . $class . '.php')) {
+// 		require_once __DIR__ . '/routes/' . $class . '.php';
+// 	}
+// 	return false;
+// });
 
 // spl autoload php atau bootstrap loading classname pada folder libraries
 spl_autoload_register(function ($class) {
@@ -63,13 +63,24 @@ spl_autoload_register(function ($class) {
 });
 
 // spl autoload php atau bootstrap loading classname pada folder api
-spl_autoload_register(function ($class) {
-	$class = explode("\\", $class);
-	$class = end($class);
-	if (file_exists(__DIR__ . '/api/' . $class . '.php')) {
-		require_once __DIR__ . '/api/' . $class . '.php';
-	}
-	return false;
-});
+// spl_autoload_register(function ($class) {
+// 	$class = explode("\\", $class);
+// 	$class = end($class);
+// 	if (file_exists(__DIR__ . '/api/' . $class . '.php')) {
+// 		require_once __DIR__ . '/api/' . $class . '.php';
+// 	}
+// 	return false;
+// });
+
+// spl auto load atau bottstrap autoloading classname pada folder controller
+// spl_autoload_register(function ($class) {
+// 	$class = explode("\\", $class);
+// 	$class = end($class);
+
+// 	// call autoload files function
+// 	directory(__DIR__ . "\\controllers\\");
+
+// 	return false;
+// });
 
 
