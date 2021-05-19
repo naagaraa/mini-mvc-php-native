@@ -42,7 +42,8 @@ use Console\App\Commands\MakeMigrationCommand;
 use Console\App\Commands\MigrationHelpCommnand;
 use Console\App\Commands\MigrationCommnand;
 use Console\App\Commands\RollbackMigrationCommnand;
-use Phinx\Console\Command\Rollback;
+use Console\App\Commands\MakeSeedMigrationCommand;
+use Console\App\Commands\SeedRunMigrationCommand;
 
 /*
 |--------------------------------------------------------------------------
@@ -69,5 +70,7 @@ $app->add(new MakeMigrationCommand());
 $app->add(new MigrationHelpCommnand());
 $app->add(new MigrationCommnand());
 $app->add(new RollbackMigrationCommnand());
+$app->add(new MakeSeedMigrationCommand());
+$app->add(new SeedRunMigrationCommand());
 
 $app->run();

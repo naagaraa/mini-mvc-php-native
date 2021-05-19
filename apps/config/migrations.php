@@ -17,7 +17,7 @@ $migration =
         'seeds' => './database/seeds'
     ],
     'environments' => [
-        'default_migration_table' => 'mini-mvc',
+        'default_migration_table' => 'mini-mvc-log',
         'default_environment' => 'testing',
         'production' => [
             'adapter' => 'mysql',

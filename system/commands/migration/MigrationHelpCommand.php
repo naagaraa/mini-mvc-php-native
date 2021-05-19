@@ -20,7 +20,7 @@ class MigrationHelpCommnand extends Command
     protected function execute(InputInterface $input, OutputInterface $output)
     {
         $cmd = dirname(__DIR__, 3) . "/vendor/bin/phinx";
-        $output->writeln("migration data table");
+        $output->writeln("help migration data table");
         $output->writeln(exec($cmd  ));
         return Command::SUCCESS;
     }
