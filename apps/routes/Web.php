@@ -62,12 +62,9 @@ $router->get('/info', function () {
 
 //  default welcome
 $router->get('/', function () {
-	// return view('Welcome');
-	Routes::Routing("welcome", "index");
+	return view('Welcome');
+	// Routes::Routing("welcome", "index");
 });
-
-
-// Routes::GET("about", "admin/classadmin", "about");
 
 // run route!
 $router->run();

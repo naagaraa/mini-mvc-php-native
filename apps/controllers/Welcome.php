@@ -1,6 +1,4 @@
 <?php
-// defined('BASEURL') or exit('No direct script access allowed');
-
 use MiniMvc\Apps\Core\Bootstraping\Controller;
 use MiniMvc\Apps\Libraries\Agent;
 
