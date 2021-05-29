@@ -2,6 +2,7 @@
 // defined('BASEURL') or exit('No direct script access allowed');
 
 use MiniMvc\Apps\Core\Bootstraping\Controller;
+use MiniMvc\Apps\Libraries\Agent;
 
 /**
  * ------------------------------------------------------------------------------------
@@ -39,6 +40,7 @@ class Welcome extends Controller
 	public function index()
 	{
 		echo "ini controller index <br>";	
+		echo Agent::get_browser();
 	}
 
 	public function about()
