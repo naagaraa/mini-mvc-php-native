@@ -6,20 +6,8 @@
  * @author Nagara 
  * -----------------------------------------------------------------------------
  * pada file constant ini dilakukannya file configurasi variabel constant, variabel
- * constant yang ditetapkan akan bisa dipanggil secara global
+ * constant yang ditetapkan akan bisa dipanggil secara global menggunaka ke global
  *
- * example define sebuah constant :
- * 
- * define('setnamaconstant', 'value');
- *
- * example untuk set url asset :
- * define('assets', 'localhost/project/public );
- *
- * example untuk set url vendor:
- * define('vendor', 'localhost/project/vendor );
- *
- * example untuk set root url atau baseurl :
- * define('url', 'localhost/project/ );
  */
 
 # config file .env untuk configurasi pada file

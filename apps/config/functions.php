@@ -47,9 +47,9 @@ use MiniMvc\Apps\Core\Bootstraping\Error_Handling;
  * ----------------------------------------------------------------------------------------
  * model()
  * @return fucntion
- * UNTUK DEGUB ONLY
+ * UNTUK get rest api json - php curl ONLY
  * ----------------------------------------------------------------------------------------
- * testme()
+ * get_rest_api()
  */
 
 /**

@@ -27,7 +27,8 @@ $config["DB_PASSWORD"] 	 	=  $system["DB_PASSWORD"] 		? $system["DB_PASSWORD"] 	
 
 /**
  * ----------------------------------------------------------------------------------------------
- * Documentation Config @database
+ * 	Database - constant
+ *  @author nagara 
  * ----------------------------------------------------------------------------------------------
  * 
  * untuk configurasi database digunakan pada file apps/config/config.php

@@ -24,7 +24,7 @@ class Autoload
 
         foreach( $scanDir as $file){
 
-            // skip file if found
+            // skip file if found . or ..
             if ($file == "." || $file == ".." ) {
                 continue;
             }

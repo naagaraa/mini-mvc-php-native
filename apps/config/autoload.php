@@ -14,6 +14,7 @@ function directory($dir){
     directory_children($dir);
 }
 
+// pass firectory
 function directory_children($dir){
     $dirPath = realpath($dir) . DIRECTORY_SEPARATOR;
     $scanDir =  scandir($dirPath); // read directory bro

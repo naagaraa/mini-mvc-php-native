@@ -1,5 +1,5 @@
 # gue memberi aturan bahwa kalian tidak di izinkan akses
-# folder apps dan sub foldernya melalui web browser
+# folder apps dan sub foldernya melalui web browser di port 80
 
 deny from all
 RedirectMatch 301 ^/apps$
