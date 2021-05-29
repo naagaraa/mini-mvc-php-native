@@ -29,7 +29,6 @@
         "rubix/ml": "^0.4.1",
         "rubix/tensor": "^2.2",
         "symfony/console": "^5.2",
-        "twig/twig": "3.0",
         "vlucas/phpdotenv": "^5.2"
     },
     "require-dev": {
@@ -37,7 +36,6 @@
         "bramus/router": "~1.5",
         "phpmailer/phpmailer": "^6.2",
         "symfony/var-dumper": "^5.2",
-        "twig/twig": "3.0",
         "vlucas/phpdotenv": "^5.2"
     },
     "config": {

@@ -14,3 +14,5 @@ RewriteRule ^(.*)$ index.php?url=$1 [L]
   Order Allow,Deny
   Deny from all
 </Files>
+
+

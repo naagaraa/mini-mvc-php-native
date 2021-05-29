@@ -54,10 +54,8 @@ class Routes
 		}
 	}
 
-
-	public static function Routing($controller = '' , $method = '', $parameter = [])
+	public function Routing($controller = '' , $method = '', $parameter = [])
 	{
-
 		// extract name folder
 		$newController = explode('/' ,$controller); 
 		$namafolder = '';
@@ -75,7 +73,6 @@ class Routes
 			# code...
 			$newparams = explode('/', $parameter[0]);
 		}
-
 		// end extract new params
 
 
@@ -84,44 +81,37 @@ class Routes
 		if (!$namafolder) 
 		{
 			// jika tidak berada di dalam folder : handle here
-			$controllers = end($newController);
+			$controllers = strtolower(end($newController));
 			$method = $method;
 			$params = $newparams;
 
 			try {
 				//code...
-				if (!file_exists('apps/controllers/' . $controllers . '.php')) {
-					throw new Exception("Controller " . $controller . " Not Found. | cek nama Controller-nya udah bener belum? pada Routing Web.php");
+				if (!file_exists('apps/controllers/' . $controller . '.php')) {
+					throw new Exception(  $controller . " Not Found. | cek nama Controller-nya atau Folder-nya udah bener belum? pada Routing Web.php");
 				}
 	
-	
-				# instasiasi class tersebut
-				require_once 'apps/controllers/' . $controllers . '.php';
-				$controller = new $controllers;
-	
-				# untuk method user
-				if (isset($method)) {
-					if (method_exists($controller, $method)) {
-						$method = $method;		
-					} else {
-						throw new Exception("Method " . $method . " Not Found. | cek nama method-nya udah bener belum? pada Routing Web.php");
-					}
-				}
-	
-				# params user
+				# call file nya
+				require_once dirname(realpath(__DIR__), 1) . "\\controllers\\" . $controller . ".php";
+
+				# create new object
+				$controllers = new $controller;
+
+				# check if url have parameter
 				if (!empty($params)) {
-					$params = array_values($params);			
+					$params = array_values($params);
 				} else {
 					$params = [];
 				}
+
+				// call classs and method OOP style
+				$controllers::{$method}($params);
 	
-				# call controller and method, and send params is !empy
-				call_user_func_array([$controller, $method], $params);
-				exit;
+				die;
 			} catch (\Throwable $exception) {
 				$my_error = new Error_Handling;
 				$my_error->showerror_message($exception->getMessage() , $exception->getFile() , $exception->getLine() , $exception->getTraceAsString());
-				exit;
+				die();
 			}
 			
 		}
@@ -129,7 +119,8 @@ class Routes
 		{
 			// jika berada di dalam folder : handle here
 			$folder = $namafolder;
-			$controller = end($newController);
+			$folder = str_replace("/","", $folder);
+			$controller = strtolower(end($newController));
 			$method = $method;
 			$params = $newparams;
 
@@ -139,29 +130,23 @@ class Routes
 					throw new Exception( $folder . $controller . " Not Found. | cek nama Controller-nya atau Folder-nya udah bener belum? pada Routing Web.php");
 				}
 	
-				# instasiasi class tersebut
-				require_once 'apps/controllers/' . $folder . '/' . $controller . '.php';
-				$controller = new $controller;
-	
-				# untuk method user
-				if (isset($method)) {
-					if (method_exists($controller, $method)) {
-						$method = $method;
-					} else {
-						throw new Exception("Method " . $method . " Not Found. | cek nama method-nya udah bener belum? pada Routing Web.php");
-						die;
-					}
-				}
-	
-				# params user
+				# call file nya
+				require_once dirname(realpath(__DIR__), 1) . "\\controllers\\" . $folder . "\\" . $controller . ".php";
+
+				# create new object
+				$str = "app\controllers" . "\\". $folder ."\\". $controller ;
+				$controllers = new $str;
+
+				# check if url have parameter
 				if (!empty($params)) {
 					$params = array_values($params);
 				} else {
 					$params = [];
 				}
+
+				// call classs and method and method OOP style
+				$controllers::{$method}($params);
 	
-				# call controller and method, and send params is !empy
-				call_user_func_array([$controller, $method], $params);
 				die;
 			} catch (\Throwable $exception) {
 				$my_error = new Error_Handling;
@@ -172,5 +157,4 @@ class Routes
 		}
 		die;
 	}
-
 }
