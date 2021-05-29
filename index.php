@@ -1,4 +1,14 @@
 <?php
+header("X-Frame-Options: DENY");
+header("X-Content-Type-Options: nosniff");
+header("X-Webkit-CSP: Deprecated");
+header("X-Content-Security-Policy: Deprecated");
+header("Content-Security-Policy: script-src");
+header("X-Permitted-Cross-Domain-Policies: none");
+header("Keep-Alive: timeout=5, max=100");
+header("Referrer-Policy: same-origin");
+header("X-Powered-By: lua");
+
  /**
  *-----------------------------------------------------------------------------------------------
  * Boostrap APLIKASI
