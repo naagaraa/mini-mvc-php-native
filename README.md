@@ -4,10 +4,10 @@
 
 <!-- Description -->
 <p>pembukaan indonesia : </p>
-<p>Hi, Project ini dibuat dari latihan saya belajar web programing dari berbagai sumber di internet seperti youtube, stackoverflow dan github. project ini merupakan php native yang di buat menggunakan pattern MVC dengan konsep OOP (Object oriented programing ), mirip framework codeigniter 3, yang saya pelajari di YT WPU oleh Sandhika galih dan sudah saya kembangkan. menjadi framework php mvc oop bahasa indonesia pertama saya</p>
+<p>Hi, Project ini dibuat dari latihan saya belajar web programing dari berbagai sumber di internet seperti youtube, stackoverflow dan github. project ini merupakan php native yang di buat menggunakan pattern MVC dengan konsep OOP (Object oriented programing ), mirip framework codeigniter 3, yang saya pelajari di YT WPU oleh Sandhika galih dan sudah saya kembangkan. menjadi framework native php mvc oop bahasa indonesia pertama saya</p>
 
 <p>English Introduction: </p>
-<p>Hi, this project was made from my practice to learn web programming from various sources on the internet such as YouTube, Stackoverflow and Github. This project is a native php that is made using the MVC pattern with the concept of OOP (Object oriented programming), similar to the Codeigniter 3 framework, which I learned at YT WPU by Sandhika Galih and I have custom development. to be framework php mvc oop in indonesia langauge my first time</p>
+<p>Hi, this project was made from my practice to learn web programming from various sources on the internet such as YouTube, Stackoverflow and Github. This project is a native php that is made using the MVC pattern with the concept of OOP (Object oriented programming), similar to the Codeigniter 3 framework, which I learned at YT WPU by Sandhika Galih and I have custom development. to be framework native php mvc oop in indonesia langauge my first time</p>
 
 ---
 
