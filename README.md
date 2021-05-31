@@ -18,7 +18,7 @@
 
 ### contribute
 for contribute
-* [ contribute ](https://github.com/naagaraa/mini-mvc-php-native/blob/master/README.md)
+* [ contribute ](https://github.com/naagaraa/mini-mvc-php-native/blob/master/CONTRIBUTING.md)
 
 <br><br>
 
