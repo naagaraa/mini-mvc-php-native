@@ -256,3 +256,41 @@ class MyNewMigration extends AbstractMigration
 }
 
 ```
+
+### Query builder phinx
+
+```
+use Phinx\Migration\AbstractMigration;
+$database = new AbstractMigration;
+
+// fetch a user
+$row = $database->fetchRow('SELECT * FROM users');
+
+// fetch an array of messages
+$rows = $database->fetchAll('SELECT * FROM messages');
+
+// inserting only one row
+$singleRow = [
+    'id'    => 1,
+    'name'  => 'In Progress'
+];
+
+$table = $database->table('status');
+$table->insert($singleRow);
+$table->saveData();
+
+// inserting multiple rows
+$rows = [
+    [
+        'id'    => 2,
+        'name'  => 'Stopped'
+    ],
+    [
+        'id'    => 3,
+        'name'  => 'Queued'
+    ]
+];
+
+$database->table('status')->insert($rows)->save();
+
+```

@@ -20,6 +20,7 @@ class MigrationCommnand extends Command
     protected function execute(InputInterface $input, OutputInterface $output)
     {
         $cmd = dirname(__DIR__, 3) . "/vendor/bin/phinx";
+        // $basepath = "phinx.php";
         $basepath = "apps/config/migrations.php";
         $output->writeln("migration data table");
         $output->writeln(exec($cmd . " migrate --configuration=" . $basepath));

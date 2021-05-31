@@ -8,6 +8,7 @@
  * @author nagara
  * @return array
  */
+// $dbhost = $_ENV["DB_HOST"];
 
 $migration = 
 [
