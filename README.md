@@ -42,9 +42,9 @@ for contribute
 
 
 **History :**
-* 2017 - 2018 = belajar di WPU dengan pak [ sandhika galih ](https://github.com/sandhikagalih) 
+* 2017 = belajar di WPU dengan pak [ sandhika galih ](https://github.com/sandhikagalih) 
 * 2018 = basiclly ini dibuat dari materi MVC PHP
-* 2018 - now = saya  [ miyuki nagara ](https://github.com/naagaraa)  hingga saat ini masih mencoba mengembangkannya check commit aktif
+* 2019 = mengembangkannya dan menambahkan library pendukung
 * 2021 = add install via composer
 * 2021 = add documentation
 
