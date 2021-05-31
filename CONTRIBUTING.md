@@ -12,11 +12,6 @@
 
 ### 6. Issue that pull request!
 
-> For something that is bigger than a one or two line fix:
-
-> 1.  Create your own fork of the code
-> 2.  Do the changes in your fork
-
 ### If you have a different process for small or "obvious" fixes, let them know.
 
 > Small contributions such as fixing spelling errors, where the content is small enough to not be considered intellectual property, can be submitted by a contributor as a patch, without a CLA.
