@@ -32,7 +32,7 @@
 
 <style>
 	.theme {
-		background-color: whitesmoke;
+		background-color: dark-grey;
 		margin-top: 5rem;
 	}
 
