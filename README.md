@@ -8,9 +8,16 @@
 
 ---
 
-## bug
+## Bug and problem
 if you working in linux or continue project using linux like ubuntu or kali, my project doesn't work IDK , i need knowledge about directory separator for both OS windows and linux, caused I develop this project used windows 10 single home. maybe if you develop in linux you will get problem, for know i can't help. cause my self don't know about that hahaha try solve your problem.
 
+## Deployment 
+on going
+
+
+## example project
+
+on going
 
 <!-- table of content YT -->
 ## Documentasi lainnya
