@@ -15,7 +15,7 @@ use MiniMVC\System\Mail\Mailer;
 
 global $system;
 if (empty($system)) {
-    require dirname(__DIR__, 2) . "\\system\\error\\_500_error.html";
+    require dirname(__DIR__, 2) . "/system/error/_500_error.html";
     exit;
 }
 

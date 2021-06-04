@@ -5,7 +5,7 @@
  * ini ada configurasi core system
  */
 if (empty($_ENV)) {
-    require dirname(__DIR__, 1) ."//error//_500_error.html";
+    require dirname(__DIR__, 1) ."/error/_500_error.html";
     exit;
 }
 
@@ -60,7 +60,7 @@ if  ($_ENV["APP_ENV"] == "development") {
 
 #main tenance mode
 if ($_ENV["APP_MAINTENANCE"] == "on") {
-    require dirname(__DIR__, 1) ."//error//_maintenance.html";
+    require dirname(__DIR__, 1) ."/error/_maintenance.html";
     exit;
 }
 

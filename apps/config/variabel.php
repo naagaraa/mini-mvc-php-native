@@ -18,7 +18,7 @@
 global $system;
 
 if (empty($system)) {
-    require dirname(__DIR__, 2) . '\system\_500_error.html';
+    require dirname(__DIR__, 2) . '/system/_500_error.html';
     exit;
 }
 
