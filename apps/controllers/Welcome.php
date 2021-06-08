@@ -1,6 +1,7 @@
 <?php
 use MiniMvc\Apps\Core\Bootstraping\Controller;
 use MiniMvc\Apps\Libraries\Agent;
+use MiniMVC\System\Storage;
 
 /**
  * ------------------------------------------------------------------------------------
