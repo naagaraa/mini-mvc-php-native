@@ -13,11 +13,14 @@ if you working in linux or continue project using linux like ubuntu or kali, my 
 
 if official documentation in indonesia have problem maybe next i will update
 
-## Deployment 
+## Deployment guide example
 on going
 
 
-## example project
+## About release
+for release after i'm fixed and tested new fiture update, you can enjoy install used composer again,  but if you want tested beta test install via git clone and run composer install. check [ website ](http://docs.minimvcphp.nagara.my.id/) for detail how to install with git cli in bahasa indonesia.
+
+## Example Project
 
 on going
 
