@@ -24,9 +24,12 @@ class gambar extends Controller
 	public function create()
 	{
 		// code here create here
+		$directory = temp_dir();
 		$storage = new Storage();
-		$data = $storage->files("gambar");
+		// $data = $storage->Upload("gambar", $directory);
+		$data = $storage->UpdateFile($directory . "f086e28994b7f9ac5bd8b4e6b2fb470f.png" , "gambar" , $directory);
 		var_dump($data);
+		// var_dump($directory . "aaae1a8fac61ac7a78e834484c012875.png", $directory . "aaae1a8fac61ac7a78e834484c012873.png");
 	}
 
 	public function update($request)

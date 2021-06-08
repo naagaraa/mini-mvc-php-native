@@ -11,7 +11,7 @@ class Storage
 	private $file_tmp;
 	private $file_error;
 	private $size;
-	private $ext =["jpg", "jpeg", "png"];
+	private $ext = ["jpg", "jpeg", "png", "gif", "svg"];
 
 	public function __construct()
 	{
@@ -41,43 +41,74 @@ class Storage
 		}
 	}
 
-	public function ConvertImage($filename){
-		# convert image to base64
-		$file_base64 = base64_encode(file_get_contents($filename));
-		$coverImage = 'data:image/' . $imageCoverFileType . ';base64,' . $file_base64;
-	}
-
-	public function MoveFile($filename, $target_directory)
+	public function Already($files)
 	{
-		// check extension
-		
-		// move file to foler
-		move_uploaded_file($filename, $target_directory);
-		exit;
+		try {
+			if(file_exists($files)){
+				# file sudah ada
+				return false;
+			}else{
+				# file belum ada
+				return true;
+			}
+		} catch (\Throwable $th) {
+			//throw $th;
+		}
 	}
 
-	public function RemoveFile($filename = "")
+	public function ConvertImage($filename , $extention){
+		# convert image tmp to base64
+		$file_base64 = base64_encode(file_get_contents($filename));
+		$files = 'data:image/' . $extention . ';base64,' . $file_base64;
+	}
+
+	public function Upload($filename, $target_directory)
+	{
+		$files = self::Files($filename);
+		$name_of_file = random_file_name($files->file_name);
+		$files_path = $target_directory. basename($files->file_name);
+		$extention = strtolower(pathinfo($files_path, PATHINFO_EXTENSION));
+		
+		if (in_array($extention, $this->ext)) {
+			# convert image tmp to base64
+			self::ConvertImage($files->file_tmp, $extention);
+			# check file already exits
+			$already = self::Already($target_directory . $name_of_file);
+
+			if ($already == false) echo "gagal";
+			if ($already == true) { 
+				if ( move_uploaded_file($files->file_tmp, $target_directory . $name_of_file)) {
+					return $files->file_error;
+				} else{
+					echo "Sorry, there was an error uploading your file.";
+				}
+			};
+
+		}
+	}
+
+	public function RemoveFile($path_file_name = "")
 	{
 		# check jika file tidak ada.
-		if ( !file_exists( __DIR__ . DIRECTORY_SEPARATOR . $filename) ) {
+		if ( !file_exists( $path_file_name) ) {
 			echo "file tidak ada";
+			return false;
 		}else {
-			unlink($this->directory . DIRECTORY_SEPARATOR . $filename);
+			unlink($path_file_name);
 			echo "success file berhasil di hapus";
 			return true;
 		}
-		exit;
 	}
 
-	public function UpdateFile($oldfiles, $newfiles){
+	public function UpdateFile($path_old_files, $path_new_files, $target_directory){
 		# remove file
+		$success = self::RemoveFile($path_old_files);
 		# move tmpt file ke dir temp
-		# move file form temp ke storage dir
-		self::RemoveFile($oldfiles);
-
+		if ($success == true) {
+			if (self::Upload($path_new_files, $target_directory)){
+				echo "gambar berhasil di update";
+			};
+		}
 	}
 
 }
-
-// $file = new Storage;
-// $file->RemoveFile("downloads.php");
