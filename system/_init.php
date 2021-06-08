@@ -1,16 +1,21 @@
 <?php
 
-#set php.ini hardcode untuk hidden technology by php ini
-ini_set('poweredByHeader', false);
-ini_set('expose_php', 'off');
-ini_set('display_errors', true);
-ini_set('safe_mode', false);
+// var_dump(__DIR__ . DIRECTORY_SEPARATOR . "config" . DIRECTORY_SEPARATOR . "config.php");
+if (file_exists(__DIR__ . DIRECTORY_SEPARATOR . "config" . DIRECTORY_SEPARATOR . "config.php")) {
+	require_once __DIR__ . DIRECTORY_SEPARATOR . "config" . DIRECTORY_SEPARATOR . "config.php";
+}else{
+	echo "config file system tidak ditemukan";
+}
 
-// session dan cookie time expired
-ini_set('session.gc_maxlifetime', 30*60); // expires in 30 minutes
-ini_set('session.cookie_lifetime', 30*60); // 30 minutes
-// ini_set('allow_url_fopen', true);
-// ini_set('allow_url_include', 'on');
+// spl autoload php atau bootstrap loading classname pada system/mail
+spl_autoload_register(function ($class) {
+	$class = explode("\\", $class);
+	$class = end($class);
+	if (file_exists(__DIR__ . '/mail/' . $class . '.php')) {
+		require_once __DIR__ . '/mail/' . $class . '.php';
+	}
+	return false;
+});
 
 // spl autoload php atau bootstrap loading classname pada system/filesystem
 spl_autoload_register(function ($class) {

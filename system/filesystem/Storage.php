@@ -1,6 +1,13 @@
 <?php 
 namespace MiniMVC\System;
-
+/**
+ * ===============================================================================================
+ * STORAGE 
+ * @author nagara 
+ * ===============================================================================================
+ *  
+ * storage ada file uploaded system native build from zero
+ */
 class Storage
 {
 	private $directory;
@@ -110,5 +117,4 @@ class Storage
 			};
 		}
 	}
-
 }

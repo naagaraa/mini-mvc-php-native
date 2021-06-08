@@ -1,27 +1,6 @@
 <?php
  /**
  *-----------------------------------------------------------------------------------------------
- * header response
- * @return header
- *-----------------------------------------------------------------------------------------------
-
- * Melakuka Required file bootstrap
- *
- */
-header("Cache-Control: no-store, no-cache, must-revalidate, max-age=0");
-header("Cache-Control: post-check=0, pre-check=0", false);
-header("Pragma: no-cache");
-header("X-Frame-Options: DENY");
-header("X-Content-Type-Options: nosniff");
-header("X-Webkit-CSP: Deprecated");
-header("X-Content-Security-Policy: Deprecated");
-header("X-Permitted-Cross-Domain-Policies: none");
-header("Keep-Alive: timeout=5, max=100");
-header("Referrer-Policy: same-origin");
-header("X-Powered-By: lua");
-
- /**
- *-----------------------------------------------------------------------------------------------
  * Boostrap APLIKASI
  * @return file
  *-----------------------------------------------------------------------------------------------
@@ -29,6 +8,7 @@ header("X-Powered-By: lua");
  * Melakuka Required file bootstrap
  *
  */
+
 require_once __DIR__ . "/boostrap.php";
 
  /** *-------------------------------------------------------------------------------------------
@@ -44,7 +24,5 @@ require_once __DIR__ . "/boostrap.php";
  *
  */
 
-// var_dump($_ENV["DB_HOST"]);
-// var_dump($_SERVER);
 
 

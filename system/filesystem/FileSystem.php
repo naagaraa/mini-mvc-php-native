@@ -5,11 +5,11 @@ namespace MiniMVC\System\Console;
 
 /**
  * ===============================================================================================
- * Documentasi Code
+ * FILE SYSTEM
  * @author nagara 
  * ===============================================================================================
  *  
- *  File system handling
+ * File system adalah handling native build untuk CR (created, read) file system
  */
 
 

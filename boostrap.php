@@ -74,7 +74,7 @@
  *---------------------------------------------------------------
  *
  */
-require_once "system/autoload.php";
+
 require_once "system/_init.php";
 require "vendor/autoload.php";
 
