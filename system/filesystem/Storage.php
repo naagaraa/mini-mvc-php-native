@@ -85,6 +85,7 @@ class Storage
 			if ($already == false) echo "gagal";
 			if ($already == true) { 
 				if ( move_uploaded_file($files->file_tmp, $target_directory . $name_of_file)) {
+					echo "gambar berhasil di upload ";
 					return $files->file_error;
 				} else{
 					echo "Sorry, there was an error uploading your file.";
@@ -97,24 +98,30 @@ class Storage
 	public function RemoveFile($path_file_name = "")
 	{
 		# check jika file tidak ada.
-		if ( !file_exists( $path_file_name) ) {
-			echo "file tidak ada";
+		if ( !file_exists($path_file_name) ) {
+			// echo "file tidak ada";
 			return false;
 		}else {
 			unlink($path_file_name);
-			echo "success file berhasil di hapus";
+			// echo "success file berhasil di hapus";
 			return true;
 		}
 	}
 
 	public function UpdateFile($path_old_files, $path_new_files, $target_directory){
+		#check file exist
+		if (!file_exists($path_old_files)) {
+			echo "maaf, filenya ". htmlspecialchars($path_old_files) ." tidak ada dalam direactory check nama filenya di controllernya";
+			exit;
+		};
+
 		# remove file
 		$success = self::RemoveFile($path_old_files);
 		# move tmpt file ke dir temp
 		if ($success == true) {
-			if (self::Upload($path_new_files, $target_directory)){
-				echo "gambar berhasil di update";
-			};
+			self::Upload($path_new_files, $target_directory);
+			echo "gambar berhasil di update";
+			return true; 
 		}
 	}
 }
