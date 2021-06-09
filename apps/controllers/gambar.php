@@ -1,18 +1,17 @@
 <?php
-namespace app\controllers\BasicController;
+namespace app\controllers;
 use MiniMvc\Apps\Core\Bootstraping\Controller;
 
-class BasicController extends Controller
+class gambar extends Controller
 {
-
 	public function __construct()
 	{
-		// code here
+		# code	
 	}
 
 	public function index()
 	{
-		// echo "ini BasicController function index";
+		echo "hello";
 	}
 
 	public function show($request)

@@ -55,15 +55,15 @@ $router = new Router();
 
 
 // your route here
-$router->get('/info', function () {
+$router->get('info', function () {
 	phpinfo(INFO_GENERAL);
 	exit;
 });
 
 //  default welcome
 $router->get('/', function () {
-	return view('Welcome');
-	// Routes::Routing("welcome", "index");
+	// return view('Welcome');
+	Routes::Routing("welcome", "index");
 });
 
 //  default welcome

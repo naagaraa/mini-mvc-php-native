@@ -30,7 +30,7 @@ use MiniMVC\System\Storage;
  * return view('namaview');
  */
 
-class Welcome extends Controller
+class welcome extends Controller
 {
 
 	public function __construct()

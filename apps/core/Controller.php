@@ -28,11 +28,14 @@ use MiniMvc\Apps\Core\Bootstraping\Error_Handling;
  * $this->lib('namalib');
  */
 
-class Controller
+class Controller 
 {
+	private $input;
+
 	public function __construct()
 	{
 		try {
+			// $this->input = new Request;
 		} catch (\Throwable $th) {
 			throw $th;
 		}
@@ -42,7 +45,7 @@ class Controller
 	 * @author nagara
 	 * function untuk memanggil views
 	 */
-	public static function view($views = '', $data = [])
+	public function view($views = '', $data = [])
 	{
 		// mengarah pada folder apps/views/ namaviews.php
 		$view = str_replace(".","/", $views);
@@ -72,7 +75,7 @@ class Controller
 	 * @author nagara
 	 * function untuk memanggil Models
 	 */
-	public static function model($model = '')
+	public  function model($model = '')
 	{
 		// mengarah pada folder apps/models/ namamodels.php
 		
@@ -96,7 +99,7 @@ class Controller
 	 * @author nagara
 	 * function untuk memanggil error view pada folder error/pages
 	 */
-	public static function error_view($view = '', $data = [])
+	public  function error_view($view = '', $data = [])
 	{
 		// mengarah pada folder apps/error/pages/ namaviews.php
 		try {

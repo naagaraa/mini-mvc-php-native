@@ -1,7 +1,6 @@
 <?php
 
 namespace MiniMvc\Apps\Core\Bootstraping;
-use Exception;
 use MiniMvc\Apps\Core\Bootstraping\Error_Handling;
 
 /**
@@ -24,16 +23,16 @@ class Routes
 	{
 		// In case one is using PHP 5.4's built-in server
 		// by example bramus lib router
-		try {
-			$filename = __DIR__ . preg_replace('#(\?.*)$#', '', $_SERVER['REQUEST_URI']);
-			if (
-				php_sapi_name() === 'cli-server' && is_file($filename)
-			) {
-				return false;
-			}
-		} catch (\Throwable $th) {
-			throw $th;
-		}
+		// try {
+			// $filename = __DIR__ . preg_replace('#(\?.*)$#', '', $_SERVER['REQUEST_URI']);
+			// if (
+			// 	php_sapi_name() === 'cli-server' && is_file($filename)
+			// ) {
+			// 	return false;
+			// }
+		// } catch (\Throwable $th) {
+		// 	throw $th;
+		// }
 	}
 
 	// get URL
@@ -81,7 +80,7 @@ class Routes
 
 
 
-		// jika nama folder ada handle here
+		// jika nama folder tidak ada handle here
 		if (!$namafolder) 
 		{
 			// jika tidak berada di dalam folder : handle here
@@ -89,18 +88,21 @@ class Routes
 			$method = $method;
 			$params = $newparams;
 
+			
+
 			try {
 				//code...
-				if (!file_exists('apps/controllers/' . $controller . '.php')) {
-					throw new Exception( "controller " . $controller . " Not Found. | cek nama Controller-nya atau Folder-nya udah bener belum? pada Routing Web.php");
+				if (!file_exists('apps/controllers/' . $controllers . '.php')) {
+					throw new Exception( "controller " . $controllers . " Not Found. | cek nama Controller-nya atau Folder-nya udah bener belum? pada Routing Web.php");
 				}
 	
 				# call file nya
-				require_once dirname(realpath(__DIR__), 1) . "\\controllers\\" . $controller . ".php";
+				require_once dirname(realpath(__DIR__), 1) . "/controllers/" . $controllers . ".php";
 
-				# create new object
-				$controllers = new $controller;
-
+				# create new object form class
+				$class = "app\\controllers\\" . $controller;
+				$controllers = new $class;
+				
 				# check if url have parameter
 				if (!empty($params)) {
 					$params = array_values($params);
@@ -137,9 +139,9 @@ class Routes
 				# call file nya
 				require_once dirname(realpath(__DIR__), 1) . "\\controllers\\" . $folder . "\\" . $controller . ".php";
 
-				# create new object
-				$str = "app\controllers" . "\\". $folder ."\\". $controller ;
-				$controllers = new $str;
+				# create new object form class
+				$class = "app\controllers" . "\\". str_replace("/","\\", $folder)."\\". $controller ;
+				$controllers = new $class;
 
 				# check if url have parameter
 				if (!empty($params)) {
