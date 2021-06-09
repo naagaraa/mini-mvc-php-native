@@ -2,6 +2,7 @@
 namespace app\controllers;
 
 use MiniMvc\Apps\Core\Bootstraping\Controller;
+use MiniMvc\Apps\Core\Bootstraping\Request;
 use MiniMvc\Apps\Libraries\Agent;
 use MiniMVC\System\Storage;
 
@@ -40,8 +41,7 @@ class welcome extends Controller
 
 	public function index()
 	{
-		echo "ini controller index <br>";	
-		echo Agent::get_browser();
+		// echo Agent::get_browser();
 	}
 
 	public function about()

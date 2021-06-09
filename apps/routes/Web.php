@@ -62,17 +62,10 @@ $router->get('info', function () {
 
 //  default welcome
 $router->get('/', function () {
-	// return view('Welcome');
-	Routes::Routing("welcome", "index");
+	return view('Welcome');
+	// Routes::Routing("welcome", "index");
 });
 
-//  default welcome
-$router->get('gambar', function () {
-	Routes::Routing("gambar", "index");
-});
-$router->post('gambar/upload', function () {
-	Routes::Routing("gambar", "create");
-});
 
 
 
