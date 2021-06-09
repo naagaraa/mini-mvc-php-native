@@ -30,6 +30,13 @@ use MiniMvc\Apps\Core\Bootstraping\Error_Handling;
 
 class Controller
 {
+	public function __construct()
+	{
+		try {
+		} catch (\Throwable $th) {
+			throw $th;
+		}
+	}
 	/**
 	 * VIEWS
 	 * @author nagara

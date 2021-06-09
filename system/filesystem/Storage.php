@@ -25,6 +25,11 @@ class Storage
 		$this->directory = __DIR__ . DIRECTORY_SEPARATOR;
 	}
 
+	public function Config($config = [])
+	{
+		var_dump($config);
+	}
+
 	public function Files($name = "")
 	{
 		try {
@@ -69,10 +74,19 @@ class Storage
 		$files = 'data:image/' . $extention . ';base64,' . $file_base64;
 	}
 
-	public function Upload($filename, $target_directory)
+	public function Upload($filename, $target_directory , $genereate_name = false)
 	{
+		# files checker
 		$files = self::Files($filename);
-		$name_of_file = random_file_name($files->file_name);
+
+
+		$name_of_file = "";
+		if ($genereate_name == false ) {
+			$name_of_file = $files->file_name;
+		} else {
+			$name_of_file = random_file_name($files->file_name);
+		}
+
 		$files_path = $target_directory. basename($files->file_name);
 		$extention = strtolower(pathinfo($files_path, PATHINFO_EXTENSION));
 		
@@ -86,7 +100,14 @@ class Storage
 			if ($already == true) { 
 				if ( move_uploaded_file($files->file_tmp, $target_directory . $name_of_file)) {
 					echo "gambar berhasil di upload ";
-					return $files->file_error;
+					$image = [
+						"image_original_name" => $files->file_name,
+						"image_name" => $name_of_file,
+						"image_type" => $files->file_type,
+						"image_size" => $files->file_size,
+						"image_error" => $files->file_error,
+					];
+					return (object) $image;
 				} else{
 					echo "Sorry, there was an error uploading your file.";
 				}
@@ -95,7 +116,7 @@ class Storage
 		}
 	}
 
-	public function RemoveFile($path_file_name = "")
+	public function RemoveFile($path_file_name = "" )
 	{
 		# check jika file tidak ada.
 		if ( !file_exists($path_file_name) ) {
@@ -108,7 +129,7 @@ class Storage
 		}
 	}
 
-	public function UpdateFile($path_old_files, $path_new_files, $target_directory){
+	public function UpdateFile($path_old_files, $path_new_files, $target_directory, $genereate_name =  false){
 		#check file exist
 		if (!file_exists($path_old_files)) {
 			echo "maaf, filenya ". htmlspecialchars($path_old_files) ." tidak ada dalam direactory check nama filenya di controllernya";
@@ -119,9 +140,14 @@ class Storage
 		$success = self::RemoveFile($path_old_files);
 		# move tmpt file ke dir temp
 		if ($success == true) {
-			self::Upload($path_new_files, $target_directory);
-			echo "gambar berhasil di update";
-			return true; 
+			if ($genereate_name == false ) {
+				echo "gambar berhasil di update";
+				self::Upload($path_new_files, $target_directory, false);
+
+			} else {
+				echo "gambar berhasil di update";
+				return self::Upload($path_new_files, $target_directory , true);
+			}
 		}
 	}
 }

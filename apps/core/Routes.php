@@ -24,11 +24,15 @@ class Routes
 	{
 		// In case one is using PHP 5.4's built-in server
 		// by example bramus lib router
-		$filename = __DIR__ . preg_replace('#(\?.*)$#', '', $_SERVER['REQUEST_URI']);
-		if (
-			php_sapi_name() === 'cli-server' && is_file($filename)
-		) {
-			return false;
+		try {
+			$filename = __DIR__ . preg_replace('#(\?.*)$#', '', $_SERVER['REQUEST_URI']);
+			if (
+				php_sapi_name() === 'cli-server' && is_file($filename)
+			) {
+				return false;
+			}
+		} catch (\Throwable $th) {
+			throw $th;
 		}
 	}
 
@@ -88,7 +92,7 @@ class Routes
 			try {
 				//code...
 				if (!file_exists('apps/controllers/' . $controller . '.php')) {
-					throw new Exception(  $controller . " Not Found. | cek nama Controller-nya atau Folder-nya udah bener belum? pada Routing Web.php");
+					throw new Exception( "controller " . $controller . " Not Found. | cek nama Controller-nya atau Folder-nya udah bener belum? pada Routing Web.php");
 				}
 	
 				# call file nya
@@ -127,7 +131,7 @@ class Routes
 			try {
 				//code...
 				if (!file_exists('apps/controllers/' . $folder . '/' . $controller . '.php')) {
-					throw new Exception( $folder . $controller . " Not Found. | cek nama Controller-nya atau Folder-nya udah bener belum? pada Routing Web.php");
+					throw new Exception( $folder . $controller . " controller Not Found. | cek nama Controller-nya atau Folder-nya udah bener belum? pada Routing Web.php");
 				}
 	
 				# call file nya
