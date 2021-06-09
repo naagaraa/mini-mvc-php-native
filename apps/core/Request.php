@@ -8,13 +8,13 @@ class Request
 
     public function get($data = null)
     {
-        self::$str = mysqli_real_escape_string((htmlspecialchars($_GET[$data])));
+        self::$str = strip_tags(mysqli_real_escape_string((htmlspecialchars($_GET[$data]))));
         return self::$str;
     }
 
     public function post($data = null)
     {
-        self::$str = mysqli_real_escape_string((htmlspecialchars($_POST[$data])));
+        self::$str = strip_tags(mysqli_real_escape_string((htmlspecialchars($_POST[$data]))));
         return self::$str;
     }
 }
