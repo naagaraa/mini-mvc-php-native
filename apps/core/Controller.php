@@ -45,7 +45,7 @@ class Controller
 	 * @author nagara
 	 * function untuk memanggil views
 	 */
-	public function view($views = '', $data = [])
+	public function view($views = '', Array $var = null)
 	{
 		// mengarah pada folder apps/views/ namaviews.php
 		$view = str_replace(".","/", $views);
@@ -60,7 +60,14 @@ class Controller
 
             // echo $twig->render($view . '.php' , $data);
 
+			# convert array assoc to object
+			$object = json_decode(json_encode($var));
+
+			#extract key object to variabel
+			extract((array) $object);
+
 			# uncomment this jika tidak ingin menggunakan twig engine
+
 			require_once _ROOT_VIEW . $view . '.php';  //update template engine menggunakan twig
 			exit;
 		} catch (Exception $exception) {

@@ -32,7 +32,7 @@ class Error_Handling
 	 */
     public static function showerror_404($message = "404 Not Found")
 	{
-		header($_SERVER['SERVER_PROTOCOL'] . ' 404 Not Found');
+		// header($_SERVER['SERVER_PROTOCOL'] . ' 404 Not Found');
 		$controller = 'Error_404'; 				# ini untuk controller
 		$method = 'index'; 							# ini untuk method
 		$params = [$message];						# ini unutk parameter
@@ -59,7 +59,7 @@ class Error_Handling
 	 */
     public static function showerror_message($message='', $filename='', $line='', $trace='')
 	{
-        header($_SERVER['SERVER_PROTOCOL'] . ' 404 Not Found');
+        // header($_SERVER['SERVER_PROTOCOL'] . ' 404 Not Found');
 		$controller = 'Error_Message'; 				# ini untuk controller
 		$method = 'index'; 								# ini untuk method
 		$params = [$message, $filename, $line, $trace];	# ini unutk parameter

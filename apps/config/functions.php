@@ -263,7 +263,9 @@ function random_file_name($keyname = '')
  * membuat function panggil view
  * @author nagara
  */
-function view($views = '', $data = [])
+
+
+function view($views = '', Array $var = null)
 {
     // mengarah pada folder apps/views/ namaviews.php
     $view = str_replace(".","/", $views);
@@ -271,12 +273,17 @@ function view($views = '', $data = [])
         if (!file_exists(_ROOT_VIEW . $view . '.php')) {
             throw new Exception("View " . $view . " Not Found. Check Controllernya Bro");
         } else {
-
             # comment this jika tidak ingin menggunakan twig engine
             // $loader = new \Twig\Loader\FilesystemLoader(_ROOT_VIEW);
             // $twig = new \Twig\Environment($loader, ['debug' => true]);
 
             // echo $twig->render($view . '.php' , $data);
+
+            # convert array assoc to object
+            $object = json_decode(json_encode($var));
+
+            #extract key object to variabel
+            extract((array) $object);
 
             # uncomment this jika tidak ingin menggunakan twig engine
             require_once _ROOT_VIEW . $view . '.php';  //update template engine menggunakan twig
