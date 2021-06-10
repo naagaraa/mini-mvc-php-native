@@ -1,6 +1,7 @@
 <?php
 
 namespace MiniMvc\Apps\Core\Bootstraping;
+use Exception;
 use MiniMvc\Apps\Core\Bootstraping\Error_Handling;
 
 /**
@@ -23,16 +24,16 @@ class Routes
 	{
 		// In case one is using PHP 5.4's built-in server
 		// by example bramus lib router
-		// try {
-			// $filename = __DIR__ . preg_replace('#(\?.*)$#', '', $_SERVER['REQUEST_URI']);
-			// if (
-			// 	php_sapi_name() === 'cli-server' && is_file($filename)
-			// ) {
-			// 	return false;
-			// }
-		// } catch (\Throwable $th) {
-		// 	throw $th;
-		// }
+		try {
+			$filename = __DIR__ . preg_replace('#(\?.*)$#', '', $_SERVER['REQUEST_URI']);
+			if (
+				php_sapi_name() === 'cli-server' && is_file($filename)
+			) {
+				return false;
+			}
+		} catch (\Throwable $th) {
+			throw $th;
+		}
 	}
 
 	// get URL
@@ -102,7 +103,12 @@ class Routes
 				# create new object form class
 				$class = "app\\controllers\\" . $controller;
 				$controllers = new $class;
-				
+
+				# check method exits
+				if (method_exists($controllers, $method) == false) {
+					throw new Exception( $method . " Not Found check controller " . $controller, 1);
+				}
+
 				# check if url have parameter
 				if (!empty($params)) {
 					$params = array_values($params);
@@ -112,7 +118,7 @@ class Routes
 
 				// call classs and method OOP style
 				$controllers::{$method}($params);
-	
+
 				die;
 			} catch (\Throwable $exception) {
 				$my_error = new Error_Handling;
@@ -133,7 +139,7 @@ class Routes
 			try {
 				//code...
 				if (!file_exists('apps/controllers/' . $folder . '/' . $controller . '.php')) {
-					throw new Exception( $folder . $controller . " controller Not Found. | cek nama Controller-nya atau Folder-nya udah bener belum? pada Routing Web.php");
+					throw new Exception( $folder . "/" . $controller . " controller Not Found. | cek nama Controller-nya atau Folder-nya udah bener belum? pada Routing Web.php");
 				}
 	
 				# call file nya
@@ -142,6 +148,12 @@ class Routes
 				# create new object form class
 				$class = "app\controllers" . "\\". str_replace("/","\\", $folder)."\\". $controller ;
 				$controllers = new $class;
+
+
+				# check if method exist
+				if (method_exists($controllers, $method) == false) {
+					throw new Exception( $method . " Not Found check controller " . $controller, 1);
+				}
 
 				# check if url have parameter
 				if (!empty($params)) {

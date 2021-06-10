@@ -110,7 +110,14 @@ require_once "apps/init.php";
  */
 
 
-(get_url(0) == 'api') ? include 'apps/routes/Api.php' : include 'apps/routes/Web.php';
+// (get_url(0) == 'api') ? include 'apps/routes/api.php' : include 'apps/routes/web.php';
+if (get_url(0) == 'api') {
+    include 'apps/routes/api.php';
+}elseif(get_url(0) == 'mail'){
+    include 'apps/routes/mail.php';
+}else{
+    include 'apps/routes/web.php';
+}
 
  /** 
  *---------------------------------------------------------------

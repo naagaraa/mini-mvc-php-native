@@ -3,6 +3,7 @@ namespace app\controllers;
 
 use MiniMvc\Apps\Core\Bootstraping\Controller;
 use MiniMvc\Apps\Core\Bootstraping\Request;
+use Symfony\Component\Console\EventListener\ErrorListener;
 
 class gambar extends Controller
 {
@@ -12,9 +13,23 @@ class gambar extends Controller
 		// code here
 	}
 
+
 	public function index()
 	{
-		// echo "ini gambar function index";
+		echo "controller gambar";
+
+		// smptp_mail([
+		// 	"To" => "hello@mail.com",
+		// 	"Subject" => "this is subject",
+		// 	"Message" => "this is message",
+		// 	"Header" => "this is header",
+		// ]);
+
+		// $content = [
+		// 	"post" => $data,
+		// 	"nama" => "nagara",
+		// 	"datas" => $data
+		// ];
 	}
 
 	public function show($request)
@@ -25,8 +40,8 @@ class gambar extends Controller
 	public function create()
 	{
 		// code here create here
-		// $data = Request::post("name");
-		$data = $_POST["name"];
+		$data = Request::html("name");
+		// $data = $_POST["name"];
 		
 
 		$content = [

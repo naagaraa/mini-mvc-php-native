@@ -92,7 +92,7 @@ function smptp_mail($config = [])
         // validate email
         if (filter_var($data["to"] , FILTER_VALIDATE_EMAIL)) {
             // email valid 
-            $email->send_mail($data );
+            $email->send_mail($data);
             // echo  $data["to"] ."is a valid email address" ;
         } else {
         //   email tidak valid

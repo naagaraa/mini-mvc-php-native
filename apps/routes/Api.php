@@ -1,6 +1,7 @@
 <?php
 
 use MiniMvc\Apps\Core\Bootstraping\API_Handling;
+use \MiniMvc\Apps\Core\Bootstraping\Routes;
 use \Bramus\Router\Router;
 
 // Create a Router object

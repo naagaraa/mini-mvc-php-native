@@ -51,7 +51,7 @@
 			<div class="col">
 				<h5 class="mt-5 mb-3">Error Handling </h5>
 				<ul class="list-group">
-					<li class="list-group-item list-group-item-success">Routing : <?= $data['route'] ?>  &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; | &nbsp;&nbsp;&nbsp;    Not Found </li>
+					<li class="list-group-item list-group-item-success">Routing : <?= $data['route'] ?>  &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; | &nbsp;&nbsp;&nbsp;     </li>
 					<li class="list-group-item list-group-item-warning">Message : <?= $data['message'] ?></li>
 					<li class="list-group-item list-group-item-primary">File : <?= $data['file'] ?></li>
 					<li class="list-group-item list-group-item-danger">Core Line  : <?= $data['line'] ?></li>
