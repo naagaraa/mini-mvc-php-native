@@ -54,7 +54,7 @@ use Console\App\Commands\SeedRunMigrationCommand;
 */
 
 
-$app = new Application('mini mvc nagara', '3.0.3');
+$app = new Application('mini mvc nagara', '4.0.1');
 $app->add(new TestCommand());
 $app->add(new ClearcacheCommand());
 $app->add(new MakeControllerCommand());
