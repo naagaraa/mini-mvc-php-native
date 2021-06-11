@@ -28,6 +28,6 @@ class Error_404 extends Controller
 		$data = [
 			'message' => $response,
 		];
-		$this->error_view('error_404_v1', $data);
+		$this->error_view('error_404_v3', $data);
 	}
 }

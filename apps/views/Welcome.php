@@ -41,7 +41,7 @@
                <h5> Nagara </h5>
             </a>
             <div class="d-flex">
-                <p>view <a href="#" class="navbar-item release">release notes</a> for mini mvc 4.0.1</p> 
+                <p>view <a href="https://github.com/naagaraa/mini-mvc-php-native/tags" target="_blank" class="navbar-item release">release notes</a> for mini mvc 4.0.4</p> 
             </div>
         </div>
     </nav>  
@@ -75,7 +75,7 @@
                         <i class="fas fa-code align-self-center"></i>
                    </div>
                    <div class="col">
-                        <h5 class="color-orange" ><a href="#" class="navbar-item release">Documentation</a></h5>
+                        <h5 class="color-orange" ><a href="https://docs.minimvcphp.nagara.my.id"  target="_blank" class="navbar-item release">Documentation</a></h5>
                         <span>Topics, references, & how to's</span>
                    </div>
                </div>
@@ -86,7 +86,7 @@
                         <i class="fab fa-youtube align-self-center"></i>
                    </div>
                    <div class="col">
-                        <h5 class="color-orange"><a href="#" class="navbar-item release">Video : Documentation</a></h5>
+                        <h5 class="color-orange"><a href="https://www.youtube.com/playlist?list=PLK5_CL-hAKCf-H7snj3RlLVjrkJ7yql6o" target="_blank" class="navbar-item release">Video : Documentation</a></h5>
                         <span>Short documentation at youtube</span>
                    </div>
                </div>
@@ -97,7 +97,7 @@
                         <i class="fab fa-github align-self-center"></i>
                    </div>
                    <div class="col">
-                        <h5 class="color-orange"><a href="#" class="navbar-item release">Start Github</a></h5>
+                        <h5 class="color-orange"><a href="https://github.com/naagaraa/mini-mvc-php-native" target="_blank" class="navbar-item release">Start Github</a></h5>
                         <span>source code, fork & start</span>
                    </div>
                </div>
@@ -108,7 +108,7 @@
                         <i class="fas fa-hand-holding-usd align-self-center"></i>
                    </div>
                    <div class="col">
-                        <h5 class="color-orange"><a href="#" class="navbar-item release">Support</a></h5>
+                        <h5 class="color-orange"><a href="https://saweria.co/naagaraa" target="_blank" class="navbar-item release">Support</a></h5>
                         <span>donation support indonesia only</span>
                    </div>
                </div>
