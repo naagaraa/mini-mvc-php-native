@@ -1,6 +1,10 @@
 <?php
 namespace app\controllers;
+
 use MiniMvc\Apps\Core\Bootstraping\Controller;
+use MiniMvc\Apps\Core\Bootstraping\Request;
+use app\controllers\email\mailer;
+use MiniMVC\System\Storage;
 
 class BasicController extends Controller
 {

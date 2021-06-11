@@ -54,7 +54,6 @@ class Mailer {
  */
     public function send_mail($email = [])
     {
-        // dd($email);
         //Instantiation and passing `true` enables exceptions
         $mail = new PHPMailer(true);
     
@@ -86,7 +85,7 @@ class Mailer {
             //Content
             $mail->isHTML(true);                                  //Set email format to HTML
             $mail->Subject = $email["subject"];
-            $mail->Body    = $this->template_email_verfication($email);
+            $mail->Body    = $this->template_email($email["template"]);
             // $mail->AltBody = 'This is the body in plain text for non-HTML mail clients';
     
            //send the message, check for errors
@@ -108,11 +107,9 @@ class Mailer {
  * @return String
  * ------------------------------------------------------------------------- 
  */
-    public function template_email_verfication($datas = [])
+    public function template_email($string = null)
     {
-        $data = $datas;
-        $template = MailTemplate("basic_template", $data);
-        return $template;
+        return $string;
     }
 }
 

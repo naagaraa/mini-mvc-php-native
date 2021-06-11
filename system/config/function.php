@@ -2,33 +2,30 @@
 
 use MiniMvc\Apps\Core\Bootstraping\Error_Handling;
 
-function MailTemplate($views = '', Array $var = null)
+function template($views = '', Array $var = null)
 {
-    $directory = dirname(__DIR__, 1) . "/" . "mail/html/";
     // mengarah pada folder apps/views/ namaviews.php
     $view = str_replace(".","/", $views);
     try {
-        if (!file_exists($directory . $view . '.php')) {
+        if (!file_exists(_ROOT_VIEW . "email/" . $view . '.php')) {
             throw new Exception("View " . $view . " Not Found. Check Controllernya Bro");
         } else {
-            # comment this jika tidak ingin menggunakan twig engine
-            // $loader = new \Twig\Loader\FilesystemLoader($directory);
-            // $twig = new \Twig\Environment($loader, ['debug' => true]);
 
-            // echo $twig->render($view . '.php' , $data);
+            # start buffer untuk get source code to string tampa execute code
+            ob_start();
 
             # convert array assoc to object
             $object = json_decode(json_encode($var));
-
-            #extract key object to variabel
             extract((array) $object);
 
-            dump($object);
+            require _ROOT_VIEW . "email/" . $view . '.php';  
 
-            # uncomment this jika tidak ingin menggunakan twig engine
-            $template = file_get_contents($directory . $view . '.php');  //update template engine menggunakan twig
-            dump($template);
-            return $template;
+            $output_string = ob_get_contents();
+            
+            ob_end_clean();
+            # end buffer untuk get source code to string tampa execute code
+            
+            return $output_string;
         }
         return false;
     } catch (Exception $exception) {

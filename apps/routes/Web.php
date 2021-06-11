@@ -66,18 +66,6 @@ $router->get('/', function () {
 	// Routes::Routing("welcome", "index");
 });
 
-$router->get('gambar', function () {
-	// return view('gambar');
-	Routes::Routing("gambar", "index");
-});
-$router->post('upload', function () {
-	Routes::Routing("gambar", "create");
-});
-
-
-
-
-
 
 // run route!
 $router->run();

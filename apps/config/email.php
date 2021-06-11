@@ -76,10 +76,11 @@ function smptp_mail($config = [])
 
     $email = new Mailer($mail_system);
 
-    $data["to"]         = $config["To"] ? $config["To"] : "";
-    $data["subject"]    = $config["Subject"]? $config["Subject"] : "";
-    $data["message"]    = $config["Message"] ?  $config["Message"] : "";  
-    $data["header"]     = $config["Header"] ? $config["Header"] : "";
+    $data["to"]         = $config["to"] ? $config["to"] : "";
+    $data["subject"]    = $config["subject"]? $config["subject"] : "";
+    $data["message"]    = $config["message"] ?  $config["message"] : "";  
+    $data["header"]     = $config["header"] ? $config["header"] : "";
+    $data["template"]   = $config["template"] ? $config["template"] : "";
 
     /**
      * Check email validation

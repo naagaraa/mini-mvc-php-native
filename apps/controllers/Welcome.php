@@ -3,8 +3,10 @@ namespace app\controllers;
 
 use MiniMvc\Apps\Core\Bootstraping\Controller;
 use MiniMvc\Apps\Core\Bootstraping\Request;
-use MiniMvc\Apps\Libraries\Agent;
+use app\controllers\email\mailer;
 use MiniMVC\System\Storage;
+
+use MiniMvc\Apps\Libraries\Agent;
 
 /**
  * ------------------------------------------------------------------------------------
@@ -41,7 +43,7 @@ class welcome extends Controller
 
 	public function index()
 	{
-		// echo Agent::get_browser();
+		// echo "controller welcome method index
 	}
 
 	public function about()
