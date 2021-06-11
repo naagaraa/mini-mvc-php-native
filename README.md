@@ -67,7 +67,7 @@ for contribute
 <br>
 
 <!-- Links -->
-**Please support :**
+**Buy me a indomie :**
 
  *Donasi ?* : 
 * Naagaraa : [ Traktir baso aja at saweria [ DANA, OVO, dll ] ](https://saweria.co/naagaraa)
