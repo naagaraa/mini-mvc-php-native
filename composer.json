@@ -19,7 +19,7 @@
         }
     ],
     "require": {
-        "php": ">=7.4.0",
+        "php": ">=7.1.0",
         "bramus/router": "~1.5",
         "markrogoyski/math-php": "^1.10",
         "mpdf/mpdf": "^8.0",
