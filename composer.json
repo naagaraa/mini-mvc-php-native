@@ -19,7 +19,7 @@
         }
     ],
     "require": {
-        "php": ">=7.1.0",
+        "php": ">=7.4",
         "bramus/router": "~1.5",
         "markrogoyski/math-php": "^1.10",
         "mpdf/mpdf": "^8.0",
@@ -29,9 +29,7 @@
         "rubix/ml": "^0.4.1",
         "rubix/tensor": "^2.2",
         "symfony/console": "^5.2",
-        "vlucas/phpdotenv": "^5.2"
-    },
-    "require-dev": {
+        "vlucas/phpdotenv": "^5.2",
         "symfony/var-dumper": "^5.2"
     },
     "config": {
