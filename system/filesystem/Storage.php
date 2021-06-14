@@ -41,7 +41,7 @@ class Storage
 				$data = [
 					"file_name" => $_FILES[$name]["name"],
 					"file_type" => $_FILES[$name]["type"],
-					"file_tmp" => $_FILES[$name]["tmp_name"],
+					"file_tmp" => chmod($_FILES[$name]["tmp_name"], 0777),
 					"file_error" => $_FILES[$name]["error"],
 					"file_size" => $_FILES[$name]["size"]
 				];

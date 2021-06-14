@@ -43,6 +43,7 @@ class office
         $old_name = explode(".", $file->name);
         $extension = end($old_name);
 
+        // kasih permision pada filenya
         chmod($file->tmp_name, 0777);
 
         // Identify the type of $inputFileName  
