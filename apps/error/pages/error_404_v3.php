@@ -33,7 +33,7 @@
                 </div>
                 <div class="flex items-center pt-8 sm:justify-start sm:pt-0">
                     <div class="px-4 text-lg text-gray-500 border-gray-400 tracking-wider" style="margin-top: 5px;">
-                       <a href="<?= URL; ?>">Return To Homepage</a>
+                       <!-- <small><a href="<?= url() ; ?>">Return To Homepage</a></small>  -->
                     </div>
                 </div>
             </div>

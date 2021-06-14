@@ -19,12 +19,11 @@ use PhpOffice\PhpSpreadsheet\Writer\Xlsx;
  * use MiniMvc\Apps\Libraries\office;
  * 
  * $office = new office;
- * 
- * $agent->read_file_csv();
+ * $office->read_file_csv();
  * 
  * atau 
  * 
- * Agent::read_file_csv()
+ * office::read_file_csv()
  * 
  */
 
