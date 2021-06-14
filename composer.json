@@ -24,13 +24,13 @@
         "markrogoyski/math-php": "^1.10",
         "mpdf/mpdf": "^8.0",
         "phpmailer/phpmailer": "^6.2",
-        "phpoffice/phpspreadsheet": "^1.14",
+        "phpoffice/phpspreadsheet": "^1.18",
         "robmorgan/phinx": "^0.12.7",
         "rubix/ml": "^0.4.1",
         "rubix/tensor": "^2.2",
         "symfony/console": "^5.2",
-        "vlucas/phpdotenv": "^5.2",
-        "symfony/var-dumper": "^5.2"
+        "symfony/var-dumper": "^5.2",
+        "vlucas/phpdotenv": "^5.2"
     },
     "config": {
         "optimize-autoloader": true,
