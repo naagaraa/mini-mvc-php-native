@@ -68,7 +68,7 @@ class FileSystem
 
         $path_core = dirname(__DIR__, 2)  . "/apps/controllers/";
         $path_default_file = dirname(__DIR__, 1) . "/defaults/controller/BasicController.php";
-        $path_new_file = dirname(__DIR__, 2)  . "/apps/controllers/". $new_structur . DIRECTORY_SEPARATOR . $new_filename;
+        $path_new_file = dirname(__DIR__, 2)  . "/apps/controllers/". $new_structur . DIRECTORY_SEPARATOR . str_replace('controller', 'Controller', ucwords(strtolower($new_filename))); # convert first character to uppercase and replace character controller to uppercase
 
         if (file_exists($path_default_file)) {
             if (file_exists($path_new_file)) {
@@ -86,7 +86,7 @@ class FileSystem
                     $default_name = "BasicController";
     
                     $file = file_get_contents($path_default_file);          # read file
-                    $file = str_replace($default_name, $nama_file , $file);      # replace string
+                    $file = str_replace($default_name, str_replace('controller', 'Controller', ucwords(strtolower($nama_file))), $file);      # replace string and # convert first character to uppercase and replace character controller to uppercase
     
                     file_put_contents($path_new_file , $file);              # create file
     
@@ -115,7 +115,7 @@ class FileSystem
 
         $path_core = dirname(__DIR__, 2)  . "/apps/libraries/";
         $path_default_file = dirname(__DIR__, 1) . "/defaults/libraries/BasicLibraries.php";
-        $path_new_file = dirname(__DIR__, 2)  . "/apps/libraries/". $new_structur . DIRECTORY_SEPARATOR . $new_filename;
+        $path_new_file = dirname(__DIR__, 2)  . "/apps/libraries/". $new_structur . DIRECTORY_SEPARATOR . ucwords(strtolower($new_filename));
 
         if (file_exists($path_default_file)) {
             if (file_exists($path_new_file)) {
@@ -132,7 +132,7 @@ class FileSystem
                     $default_name = "BasicLibraries";
 
                     $file = file_get_contents($path_default_file);              # read file
-                    $file = str_replace($default_name, $nama_file , $file);     # replace string
+                    $file = str_replace($default_name, ucwords(strtolower($nama_file)) , $file);     # replace string
 
                     file_put_contents($path_new_file , $file);                  # create file
                     return "buat file " . $path_new_file . " libraries  berhasil dibuat";
@@ -147,7 +147,7 @@ class FileSystem
         $new_filename = $name.".php";
 
         $path_default_file = dirname(__DIR__, 1) . "/defaults/models/BasicModels.php";
-        $path_new_file = dirname(__DIR__, 2)  . "/apps/models/".$new_filename;
+        $path_new_file = dirname(__DIR__, 2)  . "/apps/models/". ucwords(strtolower($new_filename));
 
         if (file_exists($path_default_file)) {
             if (file_exists($path_new_file)) {
@@ -156,7 +156,7 @@ class FileSystem
                 $default_name = "MainModel";
 
                 $file = file_get_contents($path_default_file);          # read file
-                $file = str_replace($default_name, $name , $file);      # replace string
+                $file = str_replace($default_name, ucwords(strtolower($name)) , $file);      # replace string
 
                 file_put_contents($path_new_file , $file);              # create file
                 return "buat file " .$path_new_file . " models berhasil";
