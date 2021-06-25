@@ -14,10 +14,12 @@ Namespace MiniMvc\Apps\Libraries;
  * use MiniMvc\Apps\Libraries\template;
  * 
  * $template = new template;
+ * $template->backend();
  * $template->frontend();
  * 
  * atau 
  * 
+ * template::backend()
  * template::frontend()
  * 
  */

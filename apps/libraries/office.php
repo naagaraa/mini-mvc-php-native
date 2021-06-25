@@ -88,7 +88,7 @@ class office
             
     }
 
-    public function read_file_pd()
+    public function read_file_pdf()
     {
         // under development
     }
