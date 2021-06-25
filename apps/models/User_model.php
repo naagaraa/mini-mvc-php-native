@@ -24,13 +24,23 @@ class User_model
 		$this->db = new Database;
 	}
 
-	// code here
+	/**
+	 * method for get all user
+	 * @author nagara 
+   	 * @return array
+	 */
 	public function getAllUser()
 	{
 		$this->db->query('SELECT * FROM ' . $this->table);
 		return $this->db->resultSetArray();
 	}
 
+	/**
+	 * method for get user by id
+	 * @author nagara
+	 * @param string 
+   	 * @return array
+	 */
 	public function getUserId($id)
 	{
 		$this->db->query('SELECT * FROM ' . $this->table . ' WHERE id=:id');
@@ -39,6 +49,11 @@ class User_model
 		return $this->db->singleArray();
 	}
 
+	/**
+	 * method for delete user by id
+	 * @author nagara 
+   	 * @param string
+	 */
 	public function deleteUserId($id)
 	{
 		$this->db->query('DELETE FROM ' . $this->table . ' WHERE id=:id');
@@ -48,6 +63,12 @@ class User_model
 		return $this->db->rowCount();
 	}
 
+	/**
+	 * method for get user by username and password
+	 * @author nagara 
+	 * @param string
+   	 * @return array
+	 */
 	public function getUser($username, $password)
 	{
 
@@ -58,6 +79,12 @@ class User_model
 		return $this->db->singleArray();
 	}
 
+	/**
+	 * method for insert data
+	 * @author nagara 
+	 * @param array
+   	 * @return integer
+	 */
 	public function register($data)
 	{
 		// (`id`, `userid`, `nama`, `deskripsi`, `foto`, `user_name`, `passw`, `level`);

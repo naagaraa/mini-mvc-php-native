@@ -34,8 +34,9 @@ class Agent
 {
 
   /**
-	 * membuat function untuk get sistem operasi yang digunakan user
-	 * @author nagara 
+	 * method for get operationg system
+	 * @author nagara and internet
+   * @return string
 	 */
   public static function get_os()
   {
@@ -76,8 +77,9 @@ class Agent
   }
 
   /**
-	 * membuat function untuk get info browser yang digunakan user
+	 * method for get client browser
 	 * @author nagara 
+   * @return string
 	 */
   public static function get_browser()
   {
@@ -105,8 +107,9 @@ class Agent
   }
 
   /**
-	 * membuat function untuk get ip client / ip yang digunakan user
+	 * method for get ip client
 	 * @author nagara 
+   * @return string
 	 */
   public static function get_ip_client()
   {
@@ -114,20 +117,20 @@ class Agent
   }
 
   /**
-	 * membuat function untuk get ip server / ip yang digunakan pada server
+	 * method for get ip server
 	 * @author nagara 
+   * @return string
 	 */
-
   public static function get_ip_server()
   {
     return $_SERVER['SERVER_ADDR'];
   }
 
   /**
-	 * membuat function untuk get host atau host yang digunakan 
+	 * method for get ip host
 	 * @author nagara 
+   * @return string
 	 */
-
   public static function get_host()
   {
     return $_SERVER['HTTP_HOST'];

@@ -10,11 +10,20 @@
  * @author nagara
  * @return function
  */
+
+
+/**
+ * function for read root directory
+ * @param directory
+ */
 function directory_system($dir){
     directory_system_children($dir);
 }
 
-// pass firectory
+/**
+ * function for read child directory
+ * @param directory
+ */
 function directory_system_children($dir){
     $dirPath = realpath($dir) . DIRECTORY_SEPARATOR;
     $scanDir =  scandir($dirPath); // read directory bro
@@ -39,7 +48,10 @@ function directory_system_children($dir){
 
 }
 
-// load direactory
+/**
+ * function for load files
+ * @param files
+ */
 function load_dir_system_config($files)
 {
     // load jika itu file

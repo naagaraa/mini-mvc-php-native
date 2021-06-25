@@ -11,6 +11,11 @@ use MiniMvc\System\Console\FileSystem;
 class MakeViewCommand extends Command
 {
 
+    /**
+     * method for config console buat:view
+     * @author nagara
+     * @return file
+     */
     protected function configure()
     {
         $this->setName('buat:view')
@@ -19,6 +24,11 @@ class MakeViewCommand extends Command
             ->addArgument('ViewName', InputArgument::REQUIRED, 'tuliskan nama viewnya bruh.');
     }
 
+    /**
+     * method for execute console buat:controller
+     * @author nagara
+     * @return file
+     */
     protected function execute(InputInterface $input, OutputInterface $output)
     {
         $view = MakeviewCommand::handle_generate($input->getArgument('ViewName'));
@@ -26,6 +36,11 @@ class MakeViewCommand extends Command
         return Command::SUCCESS;
     }
 
+    /**
+     * method for handle filesystem
+     * @author nagara
+     * @return file
+     */
     static public function handle_generate($input)
     {
         return FileSystem::create_view($input);

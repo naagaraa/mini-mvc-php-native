@@ -30,9 +30,10 @@ use MiniMvc\Apps\Core\Bootstraping\Error_Handling;
 class API_Handling
 {
 	/**
-	 * Models
-	 * @author nagara
 	 * function untuk memanggil Models
+	 * @author nagara
+	 * @param string
+	 * @return files
 	 */
 	public static function model($model = '')
 	{
@@ -53,9 +54,10 @@ class API_Handling
 	}
 
 	/**
-	 * Routing
+	 * method for routes api
 	 * @author nagara
-	 * function untuk handling routing
+	 * @param string and array
+	 * @return object
 	 */
 	
 	public static function Routing($controller = '' , $method = '', $parameter = [])

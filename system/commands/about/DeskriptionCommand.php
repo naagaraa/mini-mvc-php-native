@@ -9,6 +9,11 @@ use Symfony\Component\Console\Input\InputArgument;
 
 class DeskriptionCommand extends Command
 {
+    /**
+     * method for config console about:deskription
+     * @author nagara
+     * @return string
+     */
     protected function configure()
     {
         $this->setName('about:deskription')
@@ -16,6 +21,11 @@ class DeskriptionCommand extends Command
             ->setHelp("\n\nauthor ekajayanagara as miyuki nagara\nstudent infomatic at darma persada\n\n");
     }
 
+    /**
+     * method for execute console about:deskription
+     * @author nagara
+     * @return string
+     */
     protected function execute(InputInterface $input, OutputInterface $output)
     {
         $output->writeln(sprintf("i'm a student and programmer"));

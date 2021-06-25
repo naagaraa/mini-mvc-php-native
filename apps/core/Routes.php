@@ -36,7 +36,11 @@ class Routes
 		}
 	}
 
-	// get URL
+	/**
+	 * method for parserURL or get URL
+	 * @author sandhika galih and nagara
+	 * @return array
+	 */
 	public function ParserURL()
 	{
 	 /**
@@ -58,6 +62,12 @@ class Routes
 		}
 	}
 
+	/**
+	 * method for handling routes
+	 * @author nagara
+	 * @param string, array
+	 * @return object dynamic
+	 */
 	public function Routing($controller = '' , $method = '', $parameter = [])
 	{
 		// extract name folder

@@ -11,6 +11,11 @@ use MiniMvc\System\Console\FileSystem;
 class MakeMigrationCommand extends Command
 {
 
+    /**
+     * method for config console buat:migration
+     * @author nagara
+     * @return file
+     */
     protected function configure()
     {
         $this->setName('buat:migration')
@@ -19,6 +24,11 @@ class MakeMigrationCommand extends Command
             ->addArgument('migration_name', InputArgument::REQUIRED, 'tuliskan nama migrationnyanya bruh.');
     }
 
+    /**
+     * method for execute console buat:migration
+     * @author nagara
+     * @return file
+     */
     protected function execute(InputInterface $input, OutputInterface $output)
     {
         $migration = MakeMigrationCommand::handle_generate($input->getArgument('migration_name'));
@@ -26,6 +36,11 @@ class MakeMigrationCommand extends Command
         return Command::SUCCESS;
     }
 
+    /**
+     * method for handle filesystem
+     * @author nagara
+     * @return file
+     */
     static public function handle_generate($input)
     {
         return FileSystem::create_migration($input);

@@ -27,8 +27,10 @@ namespace MiniMvc\Apps\Core\Bootstraping;
 class Error_Handling
 {
 	/**
-	 * membuat function untuk get show error_404
+	 * method for show error 404 message template
 	 * @author nagara 
+	 * @param string
+	 * @return object
 	 */
     public static function showerror_404($message = "404 Not Found")
 	{
@@ -53,9 +55,11 @@ class Error_Handling
 	}
 
 
-	  /**
-	 * membuat function untuk show meesage error code
+	/**
+	 * method for show error message
 	 * @author nagara 
+	 * @param string
+	 * @return object
 	 */
     public static function showerror_message($message='', $filename='', $line='', $trace='')
 	{

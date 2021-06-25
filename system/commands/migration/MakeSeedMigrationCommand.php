@@ -11,6 +11,11 @@ use MiniMvc\System\Console\FileSystem;
 class MakeSeedMigrationCommand extends Command
 {
 
+    /**
+     * method for config console buat:seed
+     * @author nagara
+     * @return file
+     */
     protected function configure()
     {
         $this->setName('migrate:seed')
@@ -19,6 +24,11 @@ class MakeSeedMigrationCommand extends Command
             ->addArgument('seeder_name', InputArgument::REQUIRED, 'tuliskan nama seedernya bruh.');
     }
 
+    /**
+     * method for execute console buat:seed
+     * @author nagara
+     * @return file
+     */
     protected function execute(InputInterface $input, OutputInterface $output)
     {
         $cmd = dirname(__DIR__, 3) . "/vendor/bin/phinx";

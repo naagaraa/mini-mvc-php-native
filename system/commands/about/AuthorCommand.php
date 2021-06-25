@@ -10,6 +10,11 @@ use Symfony\Component\Console\Input\InputArgument;
 class AuthorCommand extends Command
 {
 
+    /**
+     * method for config console about:author
+     * @author nagara
+     * @return string
+     */
     protected function configure()
     {
         $this->setName('about:author')
@@ -17,6 +22,11 @@ class AuthorCommand extends Command
             ->setHelp("\n\nauthor ekajayanagara as miyuki nagara\nstudent infomatic at darma persada\n\n");
     }
 
+    /**
+     * method for execure console about:author
+     * @author nagara
+     * @return string
+     */
     protected function execute(InputInterface $input, OutputInterface $output)
     {
         $output->writeln(sprintf("miyuki nagara student infomatics at darma persada"));

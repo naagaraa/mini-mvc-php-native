@@ -11,6 +11,11 @@ use MiniMvc\System\Console\FileSystem;
 class MakeControllerCommand extends Command
 {
 
+    /**
+     * method for config console buat:controller
+     * @author nagara
+     * @return file
+     */
     protected function configure()
     {
         $this->setName('buat:controller')
@@ -19,6 +24,11 @@ class MakeControllerCommand extends Command
             ->addArgument('ControllerName', InputArgument::REQUIRED, 'tuliskan nama controllernya bruh.');
     }
 
+    /**
+     * method for execute console buat:controller
+     * @author nagara
+     * @return file
+     */
     protected function execute(InputInterface $input, OutputInterface $output)
     {
         $controller = MakeControllerCommand::handle_generate($input->getArgument('ControllerName'));
@@ -26,6 +36,11 @@ class MakeControllerCommand extends Command
         return Command::SUCCESS;
     }
 
+    /**
+     * method for handle filesystem
+     * @author nagara
+     * @return file
+     */
     static public function handle_generate($input)
     {
         return FileSystem::create_controller($input);

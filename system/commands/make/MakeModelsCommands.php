@@ -11,6 +11,11 @@ use MiniMvc\System\Console\FileSystem;
 class MakeModelsCommand extends Command
 {
 
+    /**
+     * method for config console buat:models
+     * @author nagara
+     * @return file
+     */
     protected function configure()
     {
         $this->setName('buat:models')
@@ -19,6 +24,11 @@ class MakeModelsCommand extends Command
             ->addArgument('ModelName', InputArgument::REQUIRED, 'tuliskan nama modelnya bruh.');
     }
 
+    /**
+     * method for execute console buat:models
+     * @author nagara
+     * @return file
+     */
     protected function execute(InputInterface $input, OutputInterface $output)
     {
         $models = MakeModelsCommand::handle_generate($input->getArgument('ModelName'));
@@ -26,6 +36,11 @@ class MakeModelsCommand extends Command
         return Command::SUCCESS;
     }
 
+    /**
+     * method for handle filesystem
+     * @author nagara
+     * @return file
+     */
     static public function handle_generate($input)
     {
         return FileSystem::create_models($input);

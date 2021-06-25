@@ -1,7 +1,15 @@
 <?php
 namespace MiniMvc\Apps\Core\Bootstraping;
 use MiniMvc\Apps\Core\Bootstraping\Error_Handling;
-
+/**
+ * ===============================================================================================
+ * Documentasi Request
+ * @author nagara 
+ * ===============================================================================================
+ * 
+ * request adalah sebuah class object yang dibuat untuk melakukan filter atau sanitize script melalui
+ * method GET ataupun POST
+ */
 class Request 
 {
     private static $str;

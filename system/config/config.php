@@ -10,5 +10,5 @@
  * automatis pada folder config saja
  * 
  */
-// include 'autoload.php';
+
 require_once __DIR__ . DIRECTORY_SEPARATOR . "autoload.php";

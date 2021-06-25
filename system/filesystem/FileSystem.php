@@ -15,7 +15,11 @@ namespace MiniMVC\System\Console;
 
 class FileSystem
 {
-
+    /**
+     * method for create env
+     * @author nagara
+     * @return file
+     */
     public function create_env()
     {
         /**
@@ -44,11 +48,22 @@ class FileSystem
         }
     }
 
+    /**
+     * method for copy env
+     * @author nagara
+     * @return file
+     */
     public function copy_exampe_env()
     {
         copy(".env.example", ".env");
     }
 
+    /**
+     * method for create controller
+     * @author nagara
+     * @return file
+     * @param string
+     */
     public function create_controller($name = '')
     {
         // config structure directory nested
@@ -97,6 +112,12 @@ class FileSystem
         }
     }
 
+     /**
+     * method for create libraries
+     * @author nagara
+     * @return file
+     * @param string
+     */
     public function create_libraries($name = '')
     {
         // config structure directory nested
@@ -141,6 +162,12 @@ class FileSystem
         }
     }
 
+     /**
+     * method for create models
+     * @author nagara
+     * @return file
+     * @param string
+     */
     public function create_models($name = '')
     {
         // khusus models tidak bisa nested
@@ -164,6 +191,13 @@ class FileSystem
         }
     }
 
+
+     /**
+     * method for create migration
+     * @author nagara
+     * @return file
+     * @param string
+     */
     public function create_migration($name = '')
     {
         // problem belum bisa buat nested directory
@@ -189,6 +223,12 @@ class FileSystem
         }
     }
 
+     /**
+     * method for create view
+     * @author nagara
+     * @return file
+     * @param string
+     */
     public function create_view($name = '')
     {
         // config structure directory nested
@@ -233,6 +273,7 @@ class FileSystem
             
         }
     }
+
 
     public function create_dir($dirname = '')
     {

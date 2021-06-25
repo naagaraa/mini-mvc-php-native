@@ -48,8 +48,9 @@ class Database
 
 	/**
 	 * 
-	 * function untuk membuat query
+	 * method for membuat query
 	 * @author sandhika galih and nagara
+	 * @param string
 	 */
 	public function query($query)
 	{
@@ -58,8 +59,9 @@ class Database
 
 	/**
 	 * 
-	 * function untuk handle data binding
+	 * method for handle data binding
 	 * @author sandhika galih and nagara
+	 * @param string
 	 */
 	public function bind($param, $value, $type =  null)
 	{
@@ -87,7 +89,7 @@ class Database
 
 	/**
 	 * 
-	 * function untuk handle execute statement
+	 * method untuk handle execute statement
 	 * @author sandhika galih and nagara
 	 */
 	public function execute()
@@ -96,8 +98,9 @@ class Database
 	}
 
 	/**
-	 * resultSetArray
+	 * method for result set array
 	 * @author sandhika galih dan nagara
+	 * @return array
 	 * 
 	 * untuk menampilkan semua data query dengan array
 	 * assosiatif foramt
@@ -109,8 +112,9 @@ class Database
 	}
 
 	/**
-	 * resultSetJSON
+	 * method for result set JSON
 	 * @author nagara
+	 * @return json
 	 * 
 	 * untuk menampilkan semua data query dengan JSON
 	 * format
@@ -123,8 +127,10 @@ class Database
 	}
 
 	/**
-	 * resultSetObject
+	 * method for result set Object
 	 * @author nagara
+	 * @return object
+	 * 
 	 * untuk menampilkan semua data query dengan Object
 	 * format
 	 */
@@ -135,8 +141,9 @@ class Database
 	}
 
 	/**
-	 * singleArray
+	 * method for single array
 	 * @author sandhika galih dan nagara
+	 * @return array
 	 * 
 	 * untuk menampilkan single data query dengan array
 	 * assosiatif format
@@ -148,8 +155,9 @@ class Database
 	}
 
 	/**
-	 * singleJSON
+	 * method for single JSON
 	 * @author nagara
+	 * @return json
 	 * 
 	 * untuk menampilkan single data query dengan JSON
 	 * format
@@ -162,8 +170,9 @@ class Database
 	}
 
 	/**
-	 * singleObject
+	 * method for single object
 	 * @author nagara
+	 * @return object
 	 * 
 	 * untuk menampilkan single data query dengan object
 	 * format
@@ -176,8 +185,9 @@ class Database
 
 
 	/**
-	 * rowCount
+	 * method for row counting
 	 * @author nagara
+	 * @return integer
 	 * 
 	 * untuk menampilkan jumlah row yang ada pada tabel
 	 */

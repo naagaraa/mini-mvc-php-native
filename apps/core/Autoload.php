@@ -13,11 +13,18 @@ use MiniMvc\Apps\Core\Bootstraping\Error_Handling;
  */
 class Autoload  
 {
-    
+    /**
+     * method for read root directory
+     * @param directory
+     */
     public static function directorys($dir){
         self::directory_childrens($dir);
     }
 
+    /**
+     * method for read file at children directory
+     * @param directory
+     */
     public static  function directory_childrens($dir){
         $dirPath = realpath($dir) . DIRECTORY_SEPARATOR;
         $scanDir =  scandir($dirPath); // read directory bro
@@ -44,7 +51,10 @@ class Autoload
 
     }
 
-    // load files
+    /**
+     * method for load files
+     * @param files
+     */
     public static function load_dir_configs($files)
     {
         require_once $files;

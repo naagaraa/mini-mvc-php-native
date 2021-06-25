@@ -20,16 +20,30 @@ class Storage
 	private $size;
 	private $ext = ["jpg", "jpeg", "png", "gif", "svg"];
 
+	/**
+	 * 
+	 */
 	public function __construct()
 	{
 		$this->directory = __DIR__ . DIRECTORY_SEPARATOR;
 	}
 
+	/**
+	 * method for debug config (development)
+	 * @author nagara
+	 * @param array
+	 */
 	public function Config($config = [])
 	{
 		var_dump($config);
 	}
 
+	/**
+	 * method for get Files 
+	 * @author nagara
+	 * @param string
+	 * @return object
+	 */
 	public function Files($name = "")
 	{
 		try {
@@ -53,6 +67,12 @@ class Storage
 		}
 	}
 
+	/**
+	 * method for check files already or no in directory
+	 * @author nagara
+	 * @param string
+	 * @return boolean
+	 */
 	public function Already($files)
 	{
 		try {
@@ -68,12 +88,24 @@ class Storage
 		}
 	}
 
+	/**
+	 * method for convert image to base64
+	 * @author nagara
+	 * @param string
+	 * @return string
+	 */
 	public function ConvertImage($filename , $extention){
 		# convert image tmp to base64
 		$file_base64 = base64_encode(file_get_contents($filename));
 		$files = 'data:image/' . $extention . ';base64,' . $file_base64;
 	}
 
+	/**
+	 * method for upload files image
+	 * @author nagara
+	 * @param string
+	 * @return object
+	 */
 	public function Upload($filename, $target_directory , $genereate_name = false)
 	{
 		# files checker
@@ -116,6 +148,12 @@ class Storage
 		}
 	}
 
+	/**
+	 * method for remove files image
+	 * @author nagara
+	 * @param string
+	 * @return boolean
+	 */
 	public function RemoveFile($path_file_name = "" )
 	{
 		# check jika file tidak ada.
@@ -129,6 +167,12 @@ class Storage
 		}
 	}
 
+	/**
+	 * method for remove files image
+	 * @author nagara
+	 * @param string
+	 * @return boolean
+	 */
 	public function UpdateFile($path_old_files, $path_new_files, $target_directory, $genereate_name =  false){
 		#check file exist
 		if (!file_exists($path_old_files)) {

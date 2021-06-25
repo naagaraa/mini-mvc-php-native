@@ -9,34 +9,77 @@ use MiniMVC\System\Storage;
 class BasicController extends Controller
 {
 
+	/**
+	 * method constructor
+	 * @param
+	 */
 	public function __construct()
 	{
 		// code here
 	}
 
+	/**
+	 * method index
+	 * @param
+	 */
 	public function index()
 	{
 		// echo "ini BasicController function index";
 	}
 
+	/**
+	 * method show
+	 * @param
+	 */
 	public function show($request)
 	{
 		// code here show here
 	}
 
+	/**
+	 * method create
+	 * @param
+	 */
 	public function create()
 	{
 		// code here create here
 	}
 
-	public function update($request)
+
+	/**
+	 * method store
+	 * @param
+	 */
+	public function store()
+	{
+		// code here store here
+	}
+
+	/**
+	 * method edit
+	 * @param string
+	 */
+	public function edit($request)
+	{
+		// code here edit here
+	}
+
+	/**
+	 * method update
+	 * @param
+	 */
+	public function update()
 	{
 		// code here update here
 	}
 
-	public function remove($request)
+	/**
+	 * method destroy
+	 * @param string
+	 */
+	public function destroy($request)
 	{
-		// code here remove here
+		// code here destroy here
 	}
 
 }

@@ -11,6 +11,11 @@ use MiniMvc\System\Console\FileSystem;
 class SeedRunMigrationCommand extends Command
 {
 
+     /**
+     * method for config console migrate:seedrun
+     * @author nagara
+     * @return help
+     */
     protected function configure()
     {
         $this->setName('migrate:seedrun')
@@ -19,6 +24,11 @@ class SeedRunMigrationCommand extends Command
             // ->addArgument('seeder_name', InputArgument::REQUIRED, 'tuliskan nama seedernya bruh.');
     }
 
+     /**
+     * method for execute console migrate:seedrun
+     * @author nagara
+     * @return help
+     */
     protected function execute(InputInterface $input, OutputInterface $output)
     {
         $cmd = dirname(__DIR__, 3) . "/vendor/bin/phinx";

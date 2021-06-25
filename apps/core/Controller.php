@@ -41,9 +41,10 @@ class Controller
 		}
 	}
 	/**
-	 * VIEWS
-	 * @author nagara
 	 * function untuk memanggil views
+	 * @author nagara
+	 * @param string and array
+	 * @return file
 	 */
 	public function view($views = '', Array $var = null)
 	{
@@ -78,9 +79,10 @@ class Controller
 	}
 
 	/**
-	 * Models
+	 * method for call object model
 	 * @author nagara
-	 * function untuk memanggil Models
+	 * @param string
+	 * @return object
 	 */
 	public  function model($model = '')
 	{
@@ -102,9 +104,10 @@ class Controller
 	}
 
 	/**
-	 * Error_view
+	 * method for handling error view
 	 * @author nagara
-	 * function untuk memanggil error view pada folder error/pages
+	 * @param string and array
+	 * @return view
 	 */
 	public  function error_view($view = '', $data = [])
 	{
