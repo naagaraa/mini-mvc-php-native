@@ -34,12 +34,12 @@ class template
      * @param page and data
      * @return view
      */
-    public static function frontend($page = "", $data)
+    public static function backend($page = "", $data)
     {
         $view = [
-            "header" => read_view("frondend/layout/header", $data),
-            "content" => read_view("frondend/pages/".$page, $data),
-            "footer" => read_view("frondend/layout/footer", $data),
+            "header" => read_view("backend/layout/header", $data),
+            "content" => read_view("backend/pages/".$page, $data),
+            "footer" => read_view("backend/layout/footer", $data),
         ];
 
         return $view;
