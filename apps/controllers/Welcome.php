@@ -43,7 +43,8 @@ class welcome extends Controller
 
 	public function index()
 	{
-		// echo "controller welcome method index
+		echo "controller welcome method index";
+		// echo $data;
 	}
 
 	public function about()

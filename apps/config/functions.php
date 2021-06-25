@@ -265,7 +265,7 @@ function random_file_name($keyname = '')
  */
 
 
-function view($views = '', Array $var = null)
+function view($views = '', $var = null)
 {
     // mengarah pada folder apps/views/ namaviews.php
     $view = str_replace(".","/", $views);
@@ -279,6 +279,49 @@ function view($views = '', Array $var = null)
 
             // echo $twig->render($view . '.php' , $data);
 
+            // check type data yang dikirim
+            if (is_array($var)) {
+                # convert array assoc to object
+                $object = json_decode(json_encode($var));
+  
+                #extract key object to variabel
+                extract((array) $object);
+           }elseif(is_object($var)){
+                # convert array assoc to object
+                $object = json_decode(json_encode($var));
+                #extract key object to variabel
+                extract((object) $object);
+           }else{
+               # convert array assoc to object
+               $object = json_decode(json_encode($var));
+            }
+            # uncomment this jika tidak ingin menggunakan twig engine
+            require_once _ROOT_VIEW . $view . '.php';  //update template engine menggunakan twig
+        }
+        return false;
+    } catch (Exception $exception) {
+        $my_error = new Error_Handling;
+        $my_error->showerror_message($exception->getMessage(), $exception->getFile(), $exception->getLine(), $exception->getTraceAsString());
+        exit;
+    }
+}
+
+function read_view($views = '', Array $var = null)
+{
+    // mengarah pada folder apps/views/ namaviews.php
+    $view = str_replace(".","/", $views);
+    try {
+        if (!file_exists(_ROOT_VIEW . $view . '.php')) {
+            throw new Exception("View " . $view . " Not Found. Check Controllernya Bro");
+        } else {
+            # comment this jika tidak ingin menggunakan twig engine
+            // $loader = new \Twig\Loader\FilesystemLoader(_ROOT_VIEW);
+            // $twig = new \Twig\Environment($loader, ['debug' => true]);
+            
+            // echo $twig->render($view . '.php' , $data);
+            
+            # start buffer untuk get source code to string tampa execute code
+            ob_start();
             # convert array assoc to object
             $object = json_decode(json_encode($var));
 
@@ -287,6 +330,12 @@ function view($views = '', Array $var = null)
 
             # uncomment this jika tidak ingin menggunakan twig engine
             require_once _ROOT_VIEW . $view . '.php';  //update template engine menggunakan twig
+
+            $output_string = ob_get_contents();
+
+            ob_end_clean();
+
+            return $output_string;
         }
         return false;
     } catch (Exception $exception) {

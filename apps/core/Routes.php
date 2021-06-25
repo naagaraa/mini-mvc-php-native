@@ -119,6 +119,7 @@ class Routes
 				// call classs and method OOP style
 				$controllers::{$method}($params);
 
+
 				die;
 			} catch (\Throwable $exception) {
 				$my_error = new Error_Handling;
