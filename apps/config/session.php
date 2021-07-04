@@ -11,9 +11,12 @@ use Mpdf\Tag\Time;
  */
  
 function start_session() {
-    session_start();
-    $_SESSION['_minimvc_session'] = sha1(uniqid());
-    // $_SESSION['_token'] = sha1(Time());
+    if(!isset($_SESSION)) 
+    { 
+        session_start(); 
+        $_SESSION['_minimvc_session'] = sha1(uniqid());
+        // $_SESSION['_token'] = sha1(Time());
+    } 
 }
 
 
@@ -28,9 +31,12 @@ function start_session() {
  * call destroy_session di controller, saat ingin mendelete session
  */
 function destroy_session(){
-    session_destroy();
-    $_SESSION = [];
-    $_COOKIE = [];
+    if(isset($_SESSION)) 
+    {
+        session_destroy();
+        $_SESSION = [];
+        $_COOKIE = [];
+    }
 }
 
 /**

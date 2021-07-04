@@ -28,7 +28,7 @@ $system["MAIL_FROM_ADDRESS"]=  $_ENV["MAIL_FROM_ADDRESS"]	? $_ENV["MAIL_FROM_ADD
 $system["MAIL_FROM_NAME"] 	=  $_ENV["MAIL_FROM_NAME"] 		? $_ENV["MAIL_FROM_NAME"] 		: 'mini-mvc-php-native';
 
 # Database
-$system["DB_TYPE"] 		 	=  $_ENV["DB_HOST"] 			? $_ENV["DB_HOST"] 				: 'mysql';
+$system["DB_TYPE"] 		 	=  $_ENV["DB_TYPE"] 			? $_ENV["DB_TYPE"] 				: 'mysql';
 $system["DB_HOST"] 		 	=  $_ENV["DB_HOST"] 			? $_ENV["DB_HOST"] 				: 'http://localhost/';
 $system["DB_PORT"]		 	=  $_ENV["DB_PORT"] 			? $_ENV["DB_PORT"] 				: '3306';
 $system["DB_NAME"]		 	=  $_ENV["DB_NAME"] 			? $_ENV["DB_NAME"] 				: '';

@@ -23,61 +23,80 @@ class MainModel
 		$this->db = new Database;
 	}
 
-	public function getall()
+	/**
+	 * method for get all data
+	 * @author nagara
+	 * @return array
+	 */
+	public function all()
 	{
 		$this->db->query('SELECT * FROM ' . $this->table);
 		return $this->db->resultSetArray();
 	}
 
-	public function get_data_by_condition($urlid)
+	/**
+	 * method for get all data by condition
+	 * @author nagara
+	 * @return array
+	 */
+	public function select_where($value)
 	{
-		$this->db->query('SELECT * FROM ' . $this->table . ' WHERE urlid=:urlid');
-		$this->db->bind('urlid', $urlid);
+		$this->db->query('SELECT * FROM ' . $this->table . ' WHERE column=:value');
+		$this->db->bind('value', $value);
 		return $this->db->singleArray();
 	}
 
 
-	public function insert_data($data)
+	/**
+	 * method for insert data
+	 * @author nagara
+	 */
+	public function save($data)
 	{
-		// INSERT INTO `tb_visitor`(`id`, `urlid`,`uniqid`, `judul_content`, `visit_views`, `visitor_ip`, `date`) 
-		$query = "INSERT INTO $this->table VALUES ('',:uniqid , :urlid, :judul_content, :visit_views, :visitor_ip, :waktu)";
+		// query
+		$query = "INSERT INTO $this->table VALUES ('',:column1 , :column2, :column3, :column4)";
 		$this->db->query($query);
 
 		// binding untuk data text
-		$this->db->bind('uniqid', $data['uniqid']);
-		$this->db->bind('urlid', $data['urlid']);
-		$this->db->bind('judul_content', $data['judul']);
-		$this->db->bind('visit_views', $data['current_visit']);
-		$this->db->bind('visitor_ip', $data['remote_adr']);
-		$this->db->bind('waktu', $data['posting']);
+		$this->db->bind('column1', $data['column1']);
+		$this->db->bind('column2', $data['column2']);
+		$this->db->bind('column3', $data['column3']);
+		$this->db->bind('column4', $data['column4']);
 
 		$this->db->execute();
 		return $this->db->rowCount();
 	}
 
-	public function remove_data_by_condition($uniqid)
+	/**
+	 * method for delete data by condition or where
+	 * @author nagara
+	 */
+	public function delete($value)
 	{
-		$this->db->query('DELETE FROM ' . $this->table . ' WHERE uniqid=:uniqid');
-		$this->db->bind('uniqid', $uniqid);
+		// query
+		$this->db->query('DELETE FROM ' . $this->table . ' WHERE column=:value');
+		$this->db->bind('value', $value);
 
 		$this->db->execute();
 		return $this->db->rowCount();
 	}
 
-	public function update_data($data)
+	/**
+	 * method for update data by condition 
+	 * @author nagara
+	 */
+	public function update($data)
 	{
-		// UPDATE `tb_visitor` SET `id`=[value-1],`urlid`=[value-2],`judul_content`=[value-3],`visit_views`=[value-4],`visitor_ip`=[value-5],`waktu`=[value-6] WHERE 1
-		$query = "UPDATE " . $this->table . " SET id=:id, uniqid=:uniqid, urlid=:urlid, judul_content=:judul_content, visit_views=:visit_views, visitor_ip=:visitor_ip, waktu=:waktu WHERE uniqid=:uniqid";
+		// query
+		$query = "UPDATE " . $this->table . " SET id=:id, column1=:column1, column2=:column2, column3=:column3, column4=:column4";
 		$this->db->query($query);
 
 		// binding untuk data text
 		$this->db->bind('id', $data['id']);
-		$this->db->bind('uniqid', $data['uniqid']);
-		$this->db->bind('urlid', $data['urlid']);
-		$this->db->bind('judul_content', $data['judul_content']);
-		$this->db->bind('visit_views', $data['visit_views']);
-		$this->db->bind('visitor_ip', $data['visitor_ip']);
-		$this->db->bind('waktu', $data['waktu']);
+		$this->db->bind('column1', $data['column1']);
+		$this->db->bind('column2', $data['column2']);
+		$this->db->bind('column3', $data['column3']);
+		$this->db->bind('column4', $data['column4']);
 
 		$this->db->execute();
 		return $this->db->rowCount();

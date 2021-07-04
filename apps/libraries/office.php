@@ -73,18 +73,19 @@ class office
         ];
 
         foreach ($worksheetData  as $worksheet) {
-        // $reader->setLoadSheetsOnly($sheetName);
-        $spreadsheet = $reader->load($file->tmp_name);
-        $worksheet = $spreadsheet->getActiveSheet();
-        $sheetData = $worksheet->toArray();
+            // $reader->setLoadSheetsOnly($sheetName);
+            $spreadsheet = $reader->load($file->tmp_name);
+            $worksheet = $spreadsheet->getActiveSheet();
+            $sheetData = $worksheet->toArray();
 
-        // save data ke array
-        $data["worksheet"] = $sheetData;
+            // save data ke array
+            $data["worksheet"] = $sheetData;
         
         }
         // convert array to object
         $object = json_decode(json_encode($data));
 
+        // index 0 adalah nama columnnya
         return $object;
             
     }

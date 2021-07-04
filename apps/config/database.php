@@ -18,13 +18,12 @@ if (empty($system)) {
 
 
 # Database
-$config["DB_TYPE"] 		 	=  $system["DB_HOST"] 			? $system["DB_HOST"] 				: 'mysql';
+$config["DB_TYPE"] 		 	=  $system["DB_TYPE"] 			? $system["DB_TYPE"] 				: 'mysql';
 $config["DB_HOST"] 		 	=  $system["DB_HOST"] 			? $system["DB_HOST"] 				: 'http://localhost/';
 $config["DB_PORT"]		 	=  $system["DB_PORT"] 			? $system["DB_PORT"] 				: '3306';
 $config["DB_NAME"]		 	=  $system["DB_NAME"] 			? $system["DB_NAME"] 				: '';
 $config["DB_USERNAME"] 	 	=  $system["DB_USERNAME"] 		? $system["DB_USERNAME"] 			: 'root';
 $config["DB_PASSWORD"] 	 	=  $system["DB_PASSWORD"] 		? $system["DB_PASSWORD"] 			: '';
-
 
 /**
  * ----------------------------------------------------------------------------------------------
