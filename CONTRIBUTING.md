@@ -4,7 +4,7 @@
 
 ### 1. Fork the repo
 
-### 2. Create a branch from `master`
+### 2. Create a branch from `master` or `main`
 
 ### 3. If you've changed or add or remove codes, update the php documentation.
 
