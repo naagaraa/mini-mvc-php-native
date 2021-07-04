@@ -30,7 +30,7 @@
 
 	<link rel="stylesheet" href="<?= asset('css/style.min.css') ?>">
     <style>
-       body{background-color:#090909;color:whitesmoke}.release{display:inline-block;color:orange!important;text-decoration:none}.color-orange{color:orange!important}.release:hover{color:orangered!important}.nav-bottom{background-color:black!important}.card-custom{margin-top:12rem}.creator{font-size:12px}
+       body{background-color:#090909;color:whitesmoke}.release{display:inline-block;color:#00FF00!important;text-decoration:none}.color-orange{color:#00FF00!important}.release:hover{color:#FFFF00!important}.nav-bottom{background-color:black!important}.card-custom{margin-top:12rem}.creator{font-size:12px}
     </style>
 </head>
 
