@@ -39,6 +39,7 @@ class office
     public function read_file_csv($namefiles = "")
     {
           
+        // convert data to object
         $file = json_decode(json_encode($_FILES[$namefiles]));
         $old_name = explode(".", $file->name);
         $extension = end($old_name);

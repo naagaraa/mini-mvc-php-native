@@ -18,6 +18,7 @@ if (empty($system)) {
 
 
 # Database
+$config["DB_TYPE"] 		 	=  $system["DB_HOST"] 			? $system["DB_HOST"] 				: 'mysql';
 $config["DB_HOST"] 		 	=  $system["DB_HOST"] 			? $system["DB_HOST"] 				: 'http://localhost/';
 $config["DB_PORT"]		 	=  $system["DB_PORT"] 			? $system["DB_PORT"] 				: '3306';
 $config["DB_NAME"]		 	=  $system["DB_NAME"] 			? $system["DB_NAME"] 				: '';
@@ -50,6 +51,7 @@ $config["DB_PASSWORD"] 	 	=  $system["DB_PASSWORD"] 		? $system["DB_PASSWORD"] 	
 # apps/config/database.php
 
 // config Database wrapper
+define('DB_TYPE', $config['DB_TYPE']);
 define('DB_HOST', $config['DB_HOST']);
 define('DB_USER', $config['DB_USERNAME']);
 define('DB_PASS', $config['DB_PASSWORD']);

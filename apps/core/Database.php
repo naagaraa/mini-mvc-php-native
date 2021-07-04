@@ -19,6 +19,7 @@ class Database
 	private $user = DB_USER;
 	private $pass = DB_PASS;
 	private $db_name = DB_NAME;
+	private $db_type = DB_TYPE;
 
 	private $dbh;
 	private $statement;
@@ -27,7 +28,7 @@ class Database
 	public function __construct()
 	{
 		// data source name
-		$dsn = 'mysql:host=' . $this->host . ';dbname=' . $this->db_name;
+		$dsn = $this->db_type .':host=' . $this->host . ';dbname=' . $this->db_name;
 
 		$option = [
 			PDO::ATTR_PERSISTENT => TRUE,
@@ -50,7 +51,7 @@ class Database
 	 * 
 	 * method for membuat query
 	 * @author sandhika galih and nagara
-	 * @param string
+	 * @param string query database
 	 */
 	public function query($query)
 	{
@@ -61,7 +62,7 @@ class Database
 	 * 
 	 * method for handle data binding
 	 * @author sandhika galih and nagara
-	 * @param string
+	 * @param string param query
 	 */
 	public function bind($param, $value, $type =  null)
 	{

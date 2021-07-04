@@ -8,7 +8,8 @@ Namespace MiniMvc\Apps\Libraries;
  * ===============================================================================================
  * 
  * untuk menggunakan template libraries yang ada disini silahkan panggil mengunakan nama namespacenya
- * lalu deklarasi sebuah object baru.
+ * lalu deklarasi sebuah object baru. libraries ini dibuat jika menggunakan structur yang sudah di
+ * tentukan yakni directory frontend dan backend
  * 
  * contoh :
  * use MiniMvc\Apps\Libraries\template;
