@@ -8,7 +8,6 @@
  * @author nagara
  * @return array
  */
-// $dbhost = $_ENV["DB_HOST"];
 
 $migration = 
 [
@@ -50,5 +49,4 @@ $migration =
     'version_order' => 'creation'
 ];
 
-// var_dump($_ENV);
 return $migration;
