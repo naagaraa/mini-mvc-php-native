@@ -41,7 +41,7 @@
                <h5> Nagara </h5>
             </a>
             <div class="d-flex">
-                <p>view <a href="https://github.com/naagaraa/mini-mvc-php-native/tags" target="_blank" class="navbar-item release">release notes</a> for mini mvc 4.0.4</p> 
+                <p>view <a href="https://github.com/naagaraa/mini-mvc-php-native/tags" target="_blank" class="navbar-item release">release notes</a> for mini mvc 4.0.9</p> 
             </div>
         </div>
     </nav>  
