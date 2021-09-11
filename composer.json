@@ -42,9 +42,8 @@
         "psr-4": {
             "app\\": "apps",
             "Console\\": "system",
-            "Rubix\\":"vendor/rubix/ml/src/",
-            "env\\":"vendor/vlucas/phpdotenv"
-           
+            "Rubix\\": "vendor/rubix/ml/src/",
+            "env\\": "vendor/vlucas/phpdotenv"
         },
         "classmap": [
             "apps",
@@ -57,8 +56,8 @@
     "archive": {
         "directory": "dist",
         "skip-dev": false
-      },
-      "scripts": {
+    },
+    "scripts": {
         "post-create-project-cmd": [
             "@php nagara generate:env"
         ]
@@ -70,5 +69,10 @@
             "type": "vcs",
             "url": "https://github.com/naagaraa/mini-mvc-php-native.git"
         }
-    ]
+    ],
+    "require-dev": {
+        "codeception/codeception": "^4.1",
+        "codeception/module-phpbrowser": "^1.0.0",
+        "codeception/module-asserts": "^1.0.0"
+    }
 }
