@@ -1,5 +1,6 @@
 <?php
- /**
+
+/**
  *-----------------------------------------------------------------------------------------------
  * Boostrap APLIKASI
  * @return file
@@ -10,7 +11,7 @@
  */
 require_once __DIR__ . "/boostrap.php";
 
- /** *-------------------------------------------------------------------------------------------
+/** *-------------------------------------------------------------------------------------------
  * About author or Developer
  *-----------------------------------------------------------------------------------------------
  *
@@ -19,10 +20,6 @@ require_once __DIR__ . "/boostrap.php";
  * @copyright eka jaya nagara
  * @license	https://github.com/naagaraa/mini-mvc-php-native/blob/master/LICENSE.MD	MIT License public
  * @link	https://github.com/naagaraa/mini-mvc-php-native
- * @since	Version project beta - now
+ * @since	Version project beta 2021 - now
  *
  */
-
-
-
-

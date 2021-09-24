@@ -62,8 +62,8 @@ $router->get('info', function () {
 
 //  default welcome
 $router->get('/', function () {
-	return view('Welcome');
-	// Routes::Routing("welcome", "index");
+	return view('Welcome'); # langsung view
+	// Routes::Routing("welcome", "index"); # panggil controller
 });
 
 

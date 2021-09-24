@@ -1,4 +1,5 @@
 <?php
+
 /**
  * -----------------------------------------------------------------------------------------------------------
  * Documentasi Code by me
@@ -55,7 +56,7 @@
  * 
  */
 
- /*
+/*
  *---------------------------------------------------------------
  * ENCIROTMENT APLIKASI
  *---------------------------------------------------------------
@@ -68,7 +69,7 @@
  */
 
 
- /*
+/*
  *---------------------------------------------------------------
  * REQUIRE VENDOR AUTOLOADING DAN SYSTEM
  *---------------------------------------------------------------
@@ -78,7 +79,7 @@
 require_once "system/_init.php";
 require "vendor/autoload.php";
 
- /*
+/*
  *---------------------------------------------------------------
  * REQUIRE ENV CREATE IMMUTABLE DIR
  *---------------------------------------------------------------
@@ -87,7 +88,7 @@ require "vendor/autoload.php";
 $dotenv = Dotenv\Dotenv::createImmutable(__DIR__);
 $dotenv->safeLoad();
 
- /*
+/*
  *---------------------------------------------------------------
  * REQUIRE FILE INTI YANG MELAKUKAN AUTOLOADING PADA APPS
  *---------------------------------------------------------------
@@ -101,7 +102,7 @@ require_once "system/mail/Mailer.php";
 require_once "apps/init.php";
 
 
- /**
+/**
  *---------------------------------------------------------------
  * ROUTING BOOTSTRAPING CONFIG
  *---------------------------------------------------------------
@@ -113,13 +114,13 @@ require_once "apps/init.php";
 // (get_url(0) == 'api') ? include 'apps/routes/api.php' : include 'apps/routes/web.php';
 if (get_url(0) == 'api') {
     include 'apps/routes/api.php';
-}elseif(get_url(0) == 'mail'){
+} elseif (get_url(0) == 'mail') {
     include 'apps/routes/mail.php';
-}else{
+} else {
     include 'apps/routes/web.php';
 }
 
- /** 
+/** 
  *---------------------------------------------------------------
  * NOTE : me
  * 
@@ -128,8 +129,7 @@ if (get_url(0) == 'api') {
  * Project ini sepenuhnya di dipelajari oleh saya nagara yang 
  * mempelajari programing php melalui internet dan youtube dan
  * salah satunya adalah channel web programing unpas bersama
- * pak sandhika galih sebagai dasar dan terus dikembangkan hingga
- * saat ini oleh saya dan lahir mini mvc
+ * pak sandhika galih sebagai dasar tahun 2017 dan terus 
+ * dikembangkan hingga saat ini oleh saya dan lahir mini mvc
  * 
  */
-
