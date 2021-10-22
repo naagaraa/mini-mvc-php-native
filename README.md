@@ -2,7 +2,7 @@
 
 # MINI MVC PHP NATIVE PROJECT
 
-## This project is currently on break
+## This project is currently on break, cause of me, for now has working my TA ( final project for my graduation )
 
 <!-- Description -->
 <p>pembukaan indonesia : </p>
