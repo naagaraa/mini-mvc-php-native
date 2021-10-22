@@ -82,4 +82,5 @@ for contribute
 
 _Donasi ?_ :
 
-- Naagaraa : [ Traktir baso aja at saweria [ DANA, OVO, dll ] ](https://saweria.co/naagaraa)
+- saweria.co : [ Traktir baso aja at saweria [ DANA, OVO, dll ] ](https://saweria.co/naagaraa)
+- trakterr.id : [ Traktir baso aja at saweria [ DANA, OVO, dll ] ](https://trakteer.id/naagaraa)
