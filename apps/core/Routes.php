@@ -1,6 +1,7 @@
 <?php
 
 namespace MiniMvc\Apps\Core\Bootstraping;
+
 use Exception;
 use MiniMvc\Apps\Core\Bootstraping\Error_Handling;
 
@@ -43,12 +44,12 @@ class Routes
 	 */
 	public function ParserURL()
 	{
-	 /**
-     * $_GET['url'] merupakan URL atau pretty url yang di set
-     * atau dirapikan pada file .htaccess, jadi penulisannya yang di set
-     * menggunakan htaccess adalah index.php?url=xyz sebagai default
-     * maka dari itu bisa memanggil $_get['url']
-     */
+		/**
+		 * $_GET['url'] merupakan URL atau pretty url yang di set
+		 * atau dirapikan pada file .htaccess, jadi penulisannya yang di set
+		 * menggunakan htaccess adalah index.php?url=xyz sebagai default
+		 * maka dari itu bisa memanggil $_get['url']
+		 */
 		if (isset($_GET['url'])) {
 			/**
 			 *  Merapikan url menggukan method rtrim untuk menhapus / dibagian akhir url
@@ -68,14 +69,14 @@ class Routes
 	 * @param string, array
 	 * @return object dynamic
 	 */
-	public function Routing($controller = '' , $method = '', $parameter = [])
+	public static function Routing($controller = '', $method = '', $parameter = [])
 	{
 		// extract name folder
-		$newController = explode('/' ,$controller); 
+		$newController = explode('/', $controller);
 		$namafolder = '';
 
 		// var_dump(count($newController));
-		for ($i=0 ; $i <= count($newController) - 2 ; $i++) { 
+		for ($i = 0; $i <= count($newController) - 2; $i++) {
 			$namafolder .= $newController[$i] . '/';
 		}
 		// end extract name folder
@@ -92,21 +93,20 @@ class Routes
 
 
 		// jika nama folder tidak ada handle here
-		if (!$namafolder) 
-		{
+		if (!$namafolder) {
 			// jika tidak berada di dalam folder : handle here
 			$controllers = strtolower(end($newController));
 			$method = $method;
 			$params = $newparams;
 
-			
+
 
 			try {
 				//code...
 				if (!file_exists('apps/controllers/' . $controllers . '.php')) {
-					throw new Exception( "controller " . $controllers . " Not Found. | cek nama Controller-nya atau Folder-nya udah bener belum? pada Routing Web.php");
+					throw new Exception("controller " . $controllers . " Not Found. | cek nama Controller-nya atau Folder-nya udah bener belum? pada Routing Web.php");
 				}
-	
+
 				# call file nya
 				require_once dirname(realpath(__DIR__), 1) . "/controllers/" . $controllers . ".php";
 
@@ -116,7 +116,7 @@ class Routes
 
 				# check method exits
 				if (method_exists($controllers, $method) == false) {
-					throw new Exception( $method . " Not Found check controller " . $controller, 1);
+					throw new Exception($method . " Not Found check controller " . $controller, 1);
 				}
 
 				# check if url have parameter
@@ -133,16 +133,13 @@ class Routes
 				die;
 			} catch (\Throwable $exception) {
 				$my_error = new Error_Handling;
-				$my_error->showerror_message($exception->getMessage() , $exception->getFile() , $exception->getLine() , $exception->getTraceAsString());
+				$my_error->showerror_message($exception->getMessage(), $exception->getFile(), $exception->getLine(), $exception->getTraceAsString());
 				die();
 			}
-			
-		}
-		else
-		{
+		} else {
 			// jika berada di dalam folder : handle here
 			$folder = $namafolder;
-			$folder = str_replace("/","", $folder);
+			$folder = str_replace("/", "", $folder);
 			$controller = strtolower(end($newController));
 			$method = $method;
 			$params = $newparams;
@@ -150,20 +147,20 @@ class Routes
 			try {
 				//code...
 				if (!file_exists('apps/controllers/' . $folder . '/' . $controller . '.php')) {
-					throw new Exception( $folder . "/" . $controller . " controller Not Found. | cek nama Controller-nya atau Folder-nya udah bener belum? pada Routing Web.php");
+					throw new Exception($folder . "/" . $controller . " controller Not Found. | cek nama Controller-nya atau Folder-nya udah bener belum? pada Routing Web.php");
 				}
-	
+
 				# call file nya
 				require_once dirname(realpath(__DIR__), 1) . "\\controllers\\" . $folder . "\\" . $controller . ".php";
 
 				# create new object form class
-				$class = "app\controllers" . "\\". str_replace("/","\\", $folder)."\\". $controller ;
+				$class = "app\controllers" . "\\" . str_replace("/", "\\", $folder) . "\\" . $controller;
 				$controllers = new $class;
 
 
 				# check if method exist
 				if (method_exists($controllers, $method) == false) {
-					throw new Exception( $method . " Not Found check controller " . $controller, 1);
+					throw new Exception($method . " Not Found check controller " . $controller, 1);
 				}
 
 				# check if url have parameter
@@ -175,14 +172,13 @@ class Routes
 
 				// call classs and method and method OOP style
 				$controllers::{$method}($params);
-	
+
 				die;
 			} catch (\Throwable $exception) {
 				$my_error = new Error_Handling;
-				$my_error->showerror_message($exception->getMessage() , $exception->getFile() , $exception->getLine() , $exception->getTraceAsString());
+				$my_error->showerror_message($exception->getMessage(), $exception->getFile(), $exception->getLine(), $exception->getTraceAsString());
 				die();
 			}
-			
 		}
 		die;
 	}
