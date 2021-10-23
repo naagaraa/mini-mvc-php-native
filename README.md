@@ -1,8 +1,12 @@
 <!-- title -->
 
-# MINI MVC PHP NATIVE PROJECT
+# MINI MVC PHP NATIVE
 
-## This project is currently on break, cause of me, for now has working my TA ( final project for my graduation )
+---
+
+## PROJECT NATIVE FRAMEWORK PHP
+
+##### This project is currently on break time, cause of me, for now has working my TA ( final project for my graduation )
 
 <!-- Description -->
 <p>pembukaan indonesia : </p>
@@ -36,7 +40,7 @@ on going
 - **Documentation** [ website ](http://docs.minimvcphp.nagara.my.id/)
 - **github wiki** [ wiki ](https://github.com/naagaraa/mini-mvc-php-native/wiki)
 
-<br><br>
+<br>
 
 ### contribute
 
@@ -44,27 +48,27 @@ for contribute
 
 - **contribute**[ contribute ](https://github.com/naagaraa/mini-mvc-php-native/blob/master/CONTRIBUTING.md)
 
-<br><br>
+<br>
 
 ### start and fork
 
 - give start if you want support
 - fork if you want contribute
 
-<br><br>
+<br>
 
 ### License
 
 - **license** [ MIT ](https://github.com/naagaraa/mini-mvc-php-native/blob/master/LICENSE.MD)
 
-<br><br>
+<br>
 
 ### Creator , Contribution dan development
 
 - **Naagaraa Mahasiswa Darma Persada dan Content Creator** [ instagram ](https://www.instagram.com/naagaraa/) creator , pengembang dan maintainers mini mvc
 - **Sandhikagalih Dosen Unpas dan Content Creator** [ Instagram ](https://www.instagram.com/sandhikagalih/) pengajar saya pertama untuk php
 
-<br><br>
+<br>
 
 **History :**
 
@@ -84,3 +88,9 @@ _Donasi ?_ :
 
 - saweria.co : [ Traktir baso aja at saweria [ DANA, OVO, dll ] ](https://saweria.co/naagaraa)
 - trakterr.id : [ Traktir baso aja at saweria [ DANA, OVO, dll ] ](https://trakteer.id/naagaraa)
+
+<br>
+
+# About Permission
+
+project ini sepenuhnya dibangun berdasarkan pengalaman saya belajar di internet dan saya memodifikasi dan mengembangkannya hingga saat ini, ini adalah full stack framework php pertama buatanku, please tell me if you save my framework. don't copy without permission. for now only support indonesia language not in english. i need more time for translate about documentation.
