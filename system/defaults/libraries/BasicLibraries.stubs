@@ -1,5 +1,5 @@
 <?php
-namespace MiniMvc\Apps\Libraries;
+namespace MiniMvc\Apps\Libraries\basicnamespace;
 
 class BasicLibraries
 {

@@ -1,5 +1,5 @@
 <?php
-namespace app\controllers;
+namespace app\controllers\basicnamespace;
 
 use MiniMvc\Apps\Core\Bootstraping\Controller;
 use MiniMvc\Apps\Core\Bootstraping\Request;
