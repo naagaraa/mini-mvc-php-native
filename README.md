@@ -57,6 +57,11 @@ for contribute
 
 <br>
 
+### How get update from fork at github ?
+
+untuk mendapatkan update kamu bisa baca disini syncing a fork
+[ Documentasi ](https://docs.github.com/en/github/collaborating-with-pull-requests/working-with-forks/syncing-a-fork)
+
 ### License
 
 - **license** [ MIT ](https://github.com/naagaraa/mini-mvc-php-native/blob/master/LICENSE.MD)
