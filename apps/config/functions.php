@@ -204,7 +204,7 @@ function get_url($index = '')
          *  Merapikan url menggukan method rtrim untuk menhapus / dibagian akhir url
          * 	mengamankan url dari variabel aneh dengan method Filter_var 
          *  memecar URL menjadi array dengan method explode setiap bertemu string atau karakter /
-         */        
+         */
         $url = rtrim($_GET['url'], '/');
         $url = filter_var($url, FILTER_SANITIZE_URL);
         $url = explode('/', $url);
@@ -214,8 +214,8 @@ function get_url($index = '')
         } else {
             return $url;
         }
-    }else{
-        
+    } else {
+
         $url = trim($_SERVER["REQUEST_URI"], '/');
         $url = filter_var($url, FILTER_SANITIZE_URL);
         $url = explode('/', $url);
@@ -268,7 +268,7 @@ function random_file_name($keyname = '')
 function view($views = '', $var = null)
 {
     // mengarah pada folder apps/views/ namaviews.php
-    $view = str_replace(".","/", $views);
+    $view = str_replace(".", "/", $views);
     try {
         if (!file_exists(_ROOT_VIEW . $view . '.php')) {
             throw new Exception("View " . $view . " Not Found. Check Controllernya Bro");
@@ -283,17 +283,17 @@ function view($views = '', $var = null)
             if (is_array($var)) {
                 # convert array assoc to object
                 $object = json_decode(json_encode($var));
-  
+
                 #extract key object to variabel
                 extract((array) $object);
-           }elseif(is_object($var)){
+            } elseif (is_object($var)) {
                 # convert array assoc to object
                 $object = json_decode(json_encode($var));
                 #extract key object to variabel
                 extract((object) $object);
-           }else{
-               # convert array assoc to object
-               $object = json_decode(json_encode($var));
+            } else {
+                # convert array assoc to object
+                $object = json_decode(json_encode($var));
             }
             # uncomment this jika tidak ingin menggunakan twig engine
             require_once _ROOT_VIEW . $view . '.php';  //update template engine menggunakan twig
@@ -306,10 +306,10 @@ function view($views = '', $var = null)
     }
 }
 
-function read_view($views = '', Array $var = null)
+function read_view($views = '', array $var = null)
 {
     // mengarah pada folder apps/views/ namaviews.php
-    $view = str_replace(".","/", $views);
+    $view = str_replace(".", "/", $views);
     try {
         if (!file_exists(_ROOT_VIEW . $view . '.php')) {
             throw new Exception("View " . $view . " Not Found. Check Controllernya Bro");
@@ -317,9 +317,9 @@ function read_view($views = '', Array $var = null)
             # comment this jika tidak ingin menggunakan twig engine
             // $loader = new \Twig\Loader\FilesystemLoader(_ROOT_VIEW);
             // $twig = new \Twig\Environment($loader, ['debug' => true]);
-            
+
             // echo $twig->render($view . '.php' , $data);
-            
+
             # start buffer untuk get source code to string tampa execute code
             ob_start();
             # convert array assoc to object
@@ -344,6 +344,33 @@ function read_view($views = '', Array $var = null)
         exit;
     }
 }
+
+/**
+ * membuat function membaca file markdown
+ * @author nagara
+ * @return string
+ */
+function read_markdown($markdown = '')
+{
+    // mengarah pada folder apps/views/ namaviews.php
+    $file = str_replace(".", "/", $markdown);
+    // dd(_ROOT_MARKDOWN . $file . '.md');
+    try {
+        if (!file_exists(_ROOT_MARKDOWN . $file . '.md')) {
+            throw new Exception("Markdown name " . $file . " Not Found. Check Controllernya Bro");
+        } else {
+            // call markdown file
+            $file_mark_down = file_get_contents(_ROOT_MARKDOWN . $file . '.md');
+            return $file_mark_down;  //return file markdown
+        }
+        return false;
+    } catch (Exception $exception) {
+        $my_error = new Error_Handling;
+        $my_error->showerror_message($exception->getMessage(), $exception->getFile(), $exception->getLine(), $exception->getTraceAsString());
+        exit;
+    }
+}
+
 
 /**
  * membuat function panggil model
@@ -388,25 +415,24 @@ function slug($str = '', $slug = '-')
 
 function get_rest_api($api_url = '')
 {
-   try {
-    // url
-    $url = $api_url;
+    try {
+        // url
+        $url = $api_url;
 
-    // init
-    $curl = curl_init();
-    // execute rest
-    curl_setopt($curl, CURLOPT_URL, $url);
-    curl_setopt($curl, CURLOPT_RETURNTRANSFER, 1);
-    
-    // save data 
-    $response = curl_exec($curl);    
+        // init
+        $curl = curl_init();
+        // execute rest
+        curl_setopt($curl, CURLOPT_URL, $url);
+        curl_setopt($curl, CURLOPT_RETURNTRANSFER, 1);
 
-    // close connection
-    curl_close($curl);
+        // save data 
+        $response = curl_exec($curl);
 
-    return $response;
+        // close connection
+        curl_close($curl);
 
-   } catch (\Throwable $th) {
-       //throw $th;
-   }
+        return $response;
+    } catch (\Throwable $th) {
+        //throw $th;
+    }
 }
