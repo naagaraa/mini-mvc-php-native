@@ -22,7 +22,7 @@ if official documentation in indonesia have problem maybe next i will update
 
 ## Deployment guide example
 
-on going
+- mini mvc v0.1 - simple blog | on going
 
 ## About release
 
@@ -37,14 +37,15 @@ on going
 ## Documentasi lainnya
 
 - **Playlist project** [ Youtube ](https://www.youtube.com/playlist?list=PLK5_CL-hAKCf-H7snj3RlLVjrkJ7yql6o)
-- **Documentation** [ website ](http://docs.minimvcphp.nagara.my.id/)
+- **Documentation - Indonesia** [ website ](http://docs.minimvcphp.nagara.my.id/)
+- **Documentation - english** : :warning: not avaliable for now.
 - **github wiki** [ wiki ](https://github.com/naagaraa/mini-mvc-php-native/wiki)
 
 <br>
 
 ### contribute
 
-for contribute
+for contribute read this
 
 - **contribute**[ contribute ](https://github.com/naagaraa/mini-mvc-php-native/blob/master/CONTRIBUTING.md)
 
