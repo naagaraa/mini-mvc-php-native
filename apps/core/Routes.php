@@ -21,7 +21,7 @@ use MiniMvc\Apps\Core\Bootstraping\Error_Handling;
 class Routes
 {
 
-	public function __construct()
+	protected function __construct()
 	{
 		// In case one is using PHP 5.4's built-in server
 		// by example bramus lib router

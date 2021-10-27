@@ -44,6 +44,10 @@ use Console\App\Commands\MigrationCommnand;
 use Console\App\Commands\RollbackMigrationCommnand;
 use Console\App\Commands\MakeSeedMigrationCommand;
 use Console\App\Commands\SeedRunMigrationCommand;
+use Console\App\Commands\UnitTestBootsrapCommnad;
+use Console\App\Commands\UnitTestRunCommand;
+use Console\App\Commands\UnitTestBuildCommnad;
+use Console\App\Commands\UnitTestScenenarioCommand;
 
 /*
 |--------------------------------------------------------------------------
@@ -72,5 +76,9 @@ $app->add(new MigrationCommnand());
 $app->add(new RollbackMigrationCommnand());
 $app->add(new MakeSeedMigrationCommand());
 $app->add(new SeedRunMigrationCommand());
+$app->add(new UnitTestBootsrapCommnad());
+$app->add(new UnitTestRunCommand());
+$app->add(new UnitTestBuildCommnad());
+$app->add(new UnitTestScenenarioCommand());
 
 $app->run();

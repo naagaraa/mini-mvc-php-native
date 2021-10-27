@@ -6,8 +6,8 @@
 
 actor: AcceptanceTester
 modules:
-  enabled:
-    - PhpBrowser:
-        url: http://localhost/mini-mvc-php-native/
-    - \Helper\Acceptance
-step_decorators: ~
+    enabled:
+        - PhpBrowser:
+            url: http://localhost/myapp
+        - \Helper\Acceptance
+step_decorators: ~        

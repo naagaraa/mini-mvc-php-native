@@ -1,52 +1,54 @@
 <?php
+
 /**
  * ----------------------------------------------------------------------------------------
  * Documentation migration
  * ----------------------------------------------------------------------------------------
- * untuk database migration config phinx
+ * untuk database migration config phinx, w lupa wkwkw udh lama gak di maintence 
+ * lupa sama alurnya hahah
  * 
  * @author nagara
  * @return array
  */
 
-$migration = 
-[
-    'paths' => [
-        'migrations' => './database/migrations',
-        'seeds' => './database/seeds'
-    ],
-    'environments' => [
-        'default_migration_table' => 'mini-mvc-log',
-        'default_environment' => 'testing',
-        'production' => [
-            'adapter' => 'mysql',
-            'host' => 'localhost',
-            'name' => 'production_db',
-            'user' => 'root',
-            'pass' => '',
-            'port' => '3306',
-            'charset' => 'utf8',
+$migration =
+    [
+        'paths' => [
+            'migrations' => './database/migrations',
+            'seeds' => './database/seeds'
         ],
-        'development' => [
-            'adapter' => 'mysql',
-            'host' => 'localhost',
-            'name' => 'development_db',
-            'user' => 'root',
-            'pass' => '',
-            'port' => '3306',
-            'charset' => 'utf8',
+        'environments' => [
+            'default_migration_table' => 'mini-mvc-log',
+            'default_environment' => 'testing',
+            'production' => [
+                'adapter' => 'mysql',
+                'host' => 'localhost',
+                'name' => 'production_db',
+                'user' => 'root',
+                'pass' => '',
+                'port' => '3306',
+                'charset' => 'utf8',
+            ],
+            'development' => [
+                'adapter' => 'mysql',
+                'host' => 'localhost',
+                'name' => 'development_db',
+                'user' => 'root',
+                'pass' => '',
+                'port' => '3306',
+                'charset' => 'utf8',
+            ],
+            'testing' => [
+                'adapter' => 'mysql',
+                'host' => 'localhost',
+                'name' => 'testing_db',
+                'user' => 'root',
+                'pass' => '',
+                'port' => '3306',
+                'charset' => 'utf8',
+            ]
         ],
-        'testing' => [
-            'adapter' => 'mysql',
-            'host' => 'localhost',
-            'name' => 'testing_db',
-            'user' => 'root',
-            'pass' => '',
-            'port' => '3306',
-            'charset' => 'utf8',
-        ]
-    ],
-    'version_order' => 'creation'
-];
+        'version_order' => 'creation'
+    ];
 
 return $migration;

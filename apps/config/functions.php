@@ -112,8 +112,10 @@ function temp_dir($url = '')
 function redirect($url = '', $permanent = false)
 {
     if ($url != '') {
+        ob_clean();
         header('Location: ' . URL . $url, true, $permanent ? 301 : 302);
     } else {
+        ob_clean();
         header('Location: ' . URL, true, $permanent ? 301 : 302);
     }
 }
@@ -126,6 +128,7 @@ function redirect($url = '', $permanent = false)
 function redirect_404()
 {
     // prevent Browser cache for php site
+    ob_clean();
     header("Cache-Control: no-store, no-cache, must-revalidate, max-age=0");
     header("Cache-Control: post-check=0, pre-check=0", false);
     header("Pragma: no-cache");
@@ -142,6 +145,7 @@ function redirect_404()
 function redirect_403()
 {
     // prevent Browser cache for php site
+    ob_clean();
     header("Cache-Control: no-store, no-cache, must-revalidate, max-age=0");
     header("Cache-Control: post-check=0, pre-check=0", false);
     header("Pragma: no-cache");
@@ -157,6 +161,7 @@ function redirect_403()
 function redirect_301($url = '', $permanent = false)
 {
     // prevent Browser cache for php site
+    ob_clean();
     header("Cache-Control: no-store, no-cache, must-revalidate, max-age=0");
     header("Cache-Control: post-check=0, pre-check=0", false);
     header("Pragma: no-cache");

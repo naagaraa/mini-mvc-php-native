@@ -1,0 +1,8 @@
+I WANT TO SIGN IN SUCCESSFULLY
+
+I am on page '/login' 
+I fill field 'Username'," 'davert' 
+I fill field 'Password'," 'qwerty' 
+I click 'Login' 
+I see 'Hello"," davert'
+

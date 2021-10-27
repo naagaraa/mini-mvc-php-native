@@ -1,5 +1,7 @@
-<?php 
+<?php
+
 namespace MiniMVC\System;
+
 /**
  * ===============================================================================================
  * STORAGE 
@@ -7,11 +9,12 @@ namespace MiniMVC\System;
  * ===============================================================================================
  *  
  * storage ada file uploaded system native build from zero
+ * ini juga lupa w bgst wkwkw
  */
 class Storage
 {
 	private $directory;
-	
+
 	#file config
 	private $file_name;
 	private $file_type;
@@ -47,7 +50,7 @@ class Storage
 	public function Files($name = "")
 	{
 		try {
-			if ($name == "") { 
+			if ($name == "") {
 				echo "file name belum di input";
 				exit;
 			} else {
@@ -76,10 +79,10 @@ class Storage
 	public function Already($files)
 	{
 		try {
-			if(file_exists($files)){
+			if (file_exists($files)) {
 				# file sudah ada
 				return false;
-			}else{
+			} else {
 				# file belum ada
 				return true;
 			}
@@ -94,7 +97,8 @@ class Storage
 	 * @param string
 	 * @return string
 	 */
-	public function ConvertImage($filename , $extention){
+	public function ConvertImage($filename, $extention)
+	{
 		# convert image tmp to base64
 		$file_base64 = base64_encode(file_get_contents($filename));
 		$files = 'data:image/' . $extention . ';base64,' . $file_base64;
@@ -106,22 +110,22 @@ class Storage
 	 * @param string
 	 * @return object
 	 */
-	public function Upload($filename, $target_directory , $genereate_name = false)
+	public function Upload($filename, $target_directory, $genereate_name = false)
 	{
 		# files checker
 		$files = self::Files($filename);
 
 
 		$name_of_file = "";
-		if ($genereate_name == false ) {
+		if ($genereate_name == false) {
 			$name_of_file = $files->file_name;
 		} else {
 			$name_of_file = random_file_name($files->file_name);
 		}
 
-		$files_path = $target_directory. basename($files->file_name);
+		$files_path = $target_directory . basename($files->file_name);
 		$extention = strtolower(pathinfo($files_path, PATHINFO_EXTENSION));
-		
+
 		if (in_array($extention, $this->ext)) {
 			# convert image tmp to base64
 			self::ConvertImage($files->file_tmp, $extention);
@@ -129,8 +133,8 @@ class Storage
 			$already = self::Already($target_directory . $name_of_file);
 
 			if ($already == false) echo "gagal";
-			if ($already == true) { 
-				if ( move_uploaded_file($files->file_tmp, $target_directory . $name_of_file)) {
+			if ($already == true) {
+				if (move_uploaded_file($files->file_tmp, $target_directory . $name_of_file)) {
 					echo "gambar berhasil di upload ";
 					$image = [
 						"image_original_name" => $files->file_name,
@@ -140,11 +144,10 @@ class Storage
 						"image_error" => $files->file_error,
 					];
 					return (object) $image;
-				} else{
+				} else {
 					echo "Sorry, there was an error uploading your file.";
 				}
 			};
-
 		}
 	}
 
@@ -154,13 +157,13 @@ class Storage
 	 * @param string
 	 * @return boolean
 	 */
-	public function RemoveFile($path_file_name = "" )
+	public function RemoveFile($path_file_name = "")
 	{
 		# check jika file tidak ada.
-		if ( !file_exists($path_file_name) ) {
+		if (!file_exists($path_file_name)) {
 			// echo "file tidak ada";
 			return false;
-		}else {
+		} else {
 			unlink($path_file_name);
 			// echo "success file berhasil di hapus";
 			return true;
@@ -173,10 +176,11 @@ class Storage
 	 * @param string
 	 * @return boolean
 	 */
-	public function UpdateFile($path_old_files, $path_new_files, $target_directory, $genereate_name =  false){
+	public function UpdateFile($path_old_files, $path_new_files, $target_directory, $genereate_name =  false)
+	{
 		#check file exist
 		if (!file_exists($path_old_files)) {
-			echo "maaf, filenya ". htmlspecialchars($path_old_files) ." tidak ada dalam direactory check nama filenya di controllernya";
+			echo "maaf, filenya " . htmlspecialchars($path_old_files) . " tidak ada dalam direactory check nama filenya di controllernya";
 			exit;
 		};
 
@@ -184,13 +188,12 @@ class Storage
 		$success = self::RemoveFile($path_old_files);
 		# move tmpt file ke dir temp
 		if ($success == true) {
-			if ($genereate_name == false ) {
+			if ($genereate_name == false) {
 				echo "gambar berhasil di update";
 				self::Upload($path_new_files, $target_directory, false);
-
 			} else {
 				echo "gambar berhasil di update";
-				return self::Upload($path_new_files, $target_directory , true);
+				return self::Upload($path_new_files, $target_directory, true);
 			}
 		}
 	}

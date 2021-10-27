@@ -231,7 +231,7 @@ class FileSystem
      * @return file
      * @param string
      */
-    public function create_migration($name = '')
+    public static function create_migration($name = '')
     {
         // problem belum bisa buat nested directory
         $time = str_replace(":", "", date('H:i:s'));
