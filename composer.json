@@ -1,9 +1,8 @@
 {
     "name": "nagara/mini-mvc-php-native",
-    "description": "MINI MVC PHP NATIVE PROJECT",
+    "description": "MINI MVC PHP NATIVE PROJECT NATIVE FRAMEWORK",
     "homepage": "https://github.com/naagaraa/mini-mvc-php-native",
     "type": "project",
-    "license": "MIT",
     "keywords": [
         "framework",
         "native",
@@ -11,15 +10,7 @@
         "oop",
         "mini mvc php native"
     ],
-    "authors": [
-        {
-            "name": "nagara",
-            "email": "ekabersinar@gmail.com",
-            "role": "developer"
-        }
-    ],
     "require": {
-        "php": ">=7.4",
         "bramus/router": "~1.5",
         "markrogoyski/math-php": "^1.10",
         "mpdf/mpdf": "^8.0",
@@ -32,15 +23,15 @@
         "symfony/var-dumper": "^5.2",
         "vlucas/phpdotenv": "^5.2"
     },
-    "config": {
-        "optimize-autoloader": true,
-        "apcu-autoloader": true,
-        "preferred-install": "dist",
-        "sort-packages": true
+    "require-dev": {
+        "codeception/codeception": "^4.1",
+        "codeception/module-phpbrowser": "^1.0.0",
+        "codeception/module-asserts": "^1.0.0"
     },
+    "license": "MIT",
     "autoload": {
         "psr-4": {
-            "app\\": "apps",
+            "app\\": "apps/",
             "Console\\": "system",
             "Rubix\\": "vendor/rubix/ml/src/",
             "env\\": "vendor/vlucas/phpdotenv"
@@ -52,27 +43,33 @@
             "vendor/vlucas/phpdotenv/src"
         ]
     },
-    "composer-runtime-api": "^2.0",
+    "authors": [
+        {
+            "name": "naagaraa",
+            "email": "ekabersinar@gmail.com",
+            "role": "developer"
+        }
+    ],
+    "minimum-stability": "dev",
     "archive": {
         "directory": "dist",
         "skip-dev": false
+    },
+    "config": {
+        "optimize-autoloader": true,
+        "apcu-autoloader": true,
+        "preferred-install": "dist",
+        "sort-packages": true
     },
     "scripts": {
         "post-create-project-cmd": [
             "@php nagara generate:env"
         ]
     },
-    "minimum-stability": "dev",
-    "prefer-stable": true,
     "repositories": [
         {
             "type": "vcs",
             "url": "https://github.com/naagaraa/mini-mvc-php-native.git"
         }
-    ],
-    "require-dev": {
-        "codeception/codeception": "^4.1",
-        "codeception/module-phpbrowser": "^1.0.0",
-        "codeception/module-asserts": "^1.0.0"
-    }
+    ]
 }
