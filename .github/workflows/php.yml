@@ -17,13 +17,7 @@ jobs:
         run: composer validate
 
       - name: Cache Composer packages
-        id: composer-cache
-        uses: actions/cache@v2
-        with:
-          path: vendor
-          key: ${{ runner.os }}-php-${{ hashFiles('**/composer.lock') }}
-          restore-keys: |
-            ${{ runner.os }}-php-
+        run: composer clear-cache
 
       - name: Install dependencies
         run: composer install
