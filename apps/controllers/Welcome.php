@@ -1,4 +1,5 @@
 <?php
+
 namespace app\controllers;
 
 use MiniMvc\Apps\Core\Bootstraping\Controller;
@@ -49,7 +50,6 @@ class welcome extends Controller
 
 	public function about()
 	{
-		// echo "controller about";
+		echo "controller about";
 	}
-
 }

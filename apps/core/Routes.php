@@ -4,6 +4,7 @@ namespace MiniMvc\Apps\Core\Bootstraping;
 
 use Exception;
 use MiniMvc\Apps\Core\Bootstraping\Error_Handling;
+use \Bramus\Router\Router;
 
 /**
  * ===============================================================================================
@@ -21,11 +22,18 @@ use MiniMvc\Apps\Core\Bootstraping\Error_Handling;
 class Routes
 {
 
-	protected function __construct()
+	protected function __construct($url, $controller, $method)
 	{
+
+		// masih bingun untuk create object reintance
+		$route = new Router;
+		$route->get($url, self::Routing($controller, $method));
+		$route->run();
+
 		// In case one is using PHP 5.4's built-in server
 		// by example bramus lib router
 		try {
+
 			$filename = __DIR__ . preg_replace('#(\?.*)$#', '', $_SERVER['REQUEST_URI']);
 			if (
 				php_sapi_name() === 'cli-server' && is_file($filename)
@@ -182,4 +190,29 @@ class Routes
 		}
 		die;
 	}
+
+	public static function get_test($url = "", $action = null)
+	{
+		// pecah array
+		$array = explode("@", $action);
+
+		$controller = array_shift($array);
+		$method = end($array);
+
+
+		$object = new Routes($url, $controller, $method);
+		// $object::__construct($url, $controller, $method);
+		/**
+		 * butuh create instance setiap pemanggilan
+		 */
+		$route = new Router;
+		$route->get($url, self::Routing($controller, $method));
+		$route->run();
+	}
+
+	// protected function __destruct()
+	// {
+	// 	$router = new Router();
+	// 	$router->run();
+	// }
 }
