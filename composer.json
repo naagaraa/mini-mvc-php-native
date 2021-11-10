@@ -13,6 +13,7 @@
     "require": {
         "bramus/router": "~1.5",
         "markrogoyski/math-php": "^1.10",
+        "michelf/php-markdown": "dev-lib",
         "mpdf/mpdf": "^8.0",
         "phpmailer/phpmailer": "^6.2",
         "phpoffice/phpspreadsheet": "^1.18",

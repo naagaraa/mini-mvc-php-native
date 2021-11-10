@@ -2,6 +2,7 @@
 
 use MiniMvc\Apps\Core\Bootstraping\Error_Handling;
 use MiniMvc\Apps\Core\Bootstraping\Security;
+use Michelf\MarkdownExtra;
 
 /**
  * Documentasi functions file
@@ -368,7 +369,9 @@ function read_markdown($markdown = '')
         } else {
             // call markdown file
             $file_mark_down = file_get_contents(_ROOT_MARKDOWN . $file . '.md');
-            return $file_mark_down;  //return file markdown
+
+            $my_html = MarkdownExtra::defaultTransform($file_mark_down);
+            return $my_html;  //return file markdown
         }
         return false;
     } catch (Exception $exception) {

@@ -191,6 +191,7 @@ class Routes
 		die;
 	}
 
+	// new route development test
 	public static function get_test($url = "", $action = null)
 	{
 		// pecah array

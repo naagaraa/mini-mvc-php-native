@@ -69,6 +69,3 @@ $router->get('/', function () {
 
 // run route!
 $router->run();
-
-// Routes::get_test("/", "welcome@index");
-// Routes::get_test("/about", "welcome@about");

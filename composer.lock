@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "d135682b1572eb7c72440105326d952c",
+    "content-hash": "740df39cb6adc6b96e9b4f29e4c2a6be",
     "packages": [
         {
             "name": "amphp/amp",
@@ -1347,6 +1347,64 @@
                 "source": "https://github.com/markrogoyski/math-php/tree/v1.11.0"
             },
             "time": "2021-05-09T05:40:47+00:00"
+        },
+        {
+            "name": "michelf/php-markdown",
+            "version": "dev-lib",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/michelf/php-markdown.git",
+                "reference": "9d7fb2c8ae9155081dcbab275ef945e546cf72ba"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/michelf/php-markdown/zipball/9d7fb2c8ae9155081dcbab275ef945e546cf72ba",
+                "reference": "9d7fb2c8ae9155081dcbab275ef945e546cf72ba",
+                "shasum": ""
+            },
+            "require": {
+                "php": ">=7.4"
+            },
+            "require-dev": {
+                "friendsofphp/php-cs-fixer": "^3.0",
+                "phpspec/prophecy": "^1.6",
+                "phpstan/phpstan": "^1.0",
+                "phpstan/phpstan-phpunit": "^1.0",
+                "phpunit/phpunit": "^9.5"
+            },
+            "default-branch": true,
+            "type": "library",
+            "autoload": {
+                "psr-4": {
+                    "Michelf\\": "Michelf/"
+                }
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "BSD-3-Clause"
+            ],
+            "authors": [
+                {
+                    "name": "Michel Fortin",
+                    "email": "michel.fortin@michelf.ca",
+                    "homepage": "https://michelf.ca/",
+                    "role": "Developer"
+                },
+                {
+                    "name": "John Gruber",
+                    "homepage": "https://daringfireball.net/"
+                }
+            ],
+            "description": "PHP Markdown",
+            "homepage": "https://michelf.ca/projects/php-markdown/",
+            "keywords": [
+                "markdown"
+            ],
+            "support": {
+                "issues": "https://github.com/michelf/php-markdown/issues",
+                "source": "https://github.com/michelf/php-markdown/tree/lib"
+            },
+            "time": "2021-11-08T17:51:31+00:00"
         },
         {
             "name": "mpdf/mpdf",
@@ -7193,7 +7251,9 @@
     ],
     "aliases": [],
     "minimum-stability": "dev",
-    "stability-flags": [],
+    "stability-flags": {
+        "michelf/php-markdown": 20
+    },
     "prefer-stable": false,
     "prefer-lowest": false,
     "platform": [],
