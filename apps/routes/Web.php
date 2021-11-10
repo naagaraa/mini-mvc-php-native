@@ -44,31 +44,31 @@ use \Bramus\Router\Router;
  * 
  */
 
-// // Create a Router object
-// $router = new Router();
+// Create a Router object
+$router = new Router();
 
-// #custom 404 header un-commnet baris berikut
-// $router->set404(function () {
-// 	header('HTTP/1.1 404 Not Found');
-// 	redirect_404();
-// });
-
-
-// // your route here
-// $router->get('info', function () {
-// 	phpinfo(INFO_GENERAL);
-// 	exit;
-// });
-
-// //  default welcome
-// $router->get('/', function () {
-// 	return view('Welcome'); # langsung view
-// 	// Routes::Routing("welcome", "index"); # panggil controller
-// });
+#custom 404 header un-commnet baris berikut
+$router->set404(function () {
+    header('HTTP/1.1 404 Not Found');
+    redirect_404();
+});
 
 
-// // run route!
-// $router->run();
+// your route here
+$router->get('info', function () {
+    phpinfo(INFO_GENERAL);
+    exit;
+});
 
-Routes::get_test("/", "welcome@index");
-Routes::get_test("/about", "welcome@about");
+//  default welcome
+$router->get('/', function () {
+    return view('Welcome'); # langsung view
+    // Routes::Routing("welcome", "index"); # panggil controller
+});
+
+
+// run route!
+$router->run();
+
+// Routes::get_test("/", "welcome@index");
+// Routes::get_test("/about", "welcome@about");

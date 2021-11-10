@@ -1,6 +1,7 @@
 <?php
 
 use MiniMvc\Apps\Core\Bootstraping\Error_Handling;
+use MiniMvc\Apps\Core\Bootstraping\Security;
 
 /**
  * Documentasi functions file
@@ -300,6 +301,7 @@ function view($views = '', $var = null)
                 # convert array assoc to object
                 $object = json_decode(json_encode($var));
             }
+
             # uncomment this jika tidak ingin menggunakan twig engine
             require_once _ROOT_VIEW . $view . '.php';  //update template engine menggunakan twig
         }

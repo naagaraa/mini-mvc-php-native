@@ -1,6 +1,9 @@
 <?php
+
 namespace MiniMvc\Apps\Core\Bootstraping;
+
 use MiniMvc\Apps\Core\Bootstraping\Error_Handling;
+
 /**
  * ===============================================================================================
  * Documentasi Request
@@ -10,11 +13,11 @@ use MiniMvc\Apps\Core\Bootstraping\Error_Handling;
  * request adalah sebuah class object yang dibuat untuk melakukan filter atau sanitize script melalui
  * method GET ataupun POST
  */
-class Request 
+class Request
 {
     private static $str;
 
-     /**
+    /**
      * get request | sanitize filter XSS 
      * @author nagara
      * @return string
@@ -35,7 +38,7 @@ class Request
         self::$str = strip_tags((htmlspecialchars($_POST[$data])));
         return self::$str;
     }
-    
+
     /**
      * html request | no sanitize untuk content html dari wysg
      * @author nagara
@@ -46,5 +49,4 @@ class Request
         self::$str = $_POST[$data];
         return self::$str;
     }
-    
 }

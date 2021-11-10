@@ -1,3 +1,7 @@
+<?php
+
+use MiniMvc\Apps\Core\Bootstraping\Security;
+?>
 <!DOCTYPE html>
 <html lang="en">
 
@@ -79,8 +83,11 @@
         <div class="row d-flex justify-content-center d-flex align-items-center mx-auto my-auto">
             <div class="col-6 align-self-center">
                 <div class="card-custom text-center">
+
                     <h5 class="color-orange">The install worked successfully! Congratulations!</h5>
-                    <span>project mini mvc php native develop by eka jaya nagara as miyuki nagara, my background can't used framework popular php like CI or Laravel for finish exam "kerja praktik", so I'm develop this is.</span>
+                    <span>
+                        project mini mvc php native develop by eka jaya nagara as miyuki nagara, my background can't used framework popular php like CI or Laravel for finish exam "kerja praktik", so I'm develop this is.
+                    </span>
                     <!-- <p class="mt-3 bg-warning text-dark">'trying edit this page at apps/views/welcome.php'</p> -->
                 </div>
             </div>
