@@ -30,7 +30,11 @@ for release after i'm fixed and tested new fiture update, you can enjoy install 
 
 ## Example Project
 
-on going
+⚠️this is beta version from mini mvc
+- ** simple blog ** [simple blog](https://github.com/naagaraa/blog-kerja-praktek-v2)
+
+🆕this on going for example code on current version of mini mvc 
+- **on going**
 
 <!-- table of content YT -->
 
@@ -88,9 +92,9 @@ untuk mendapatkan update kamu bisa baca disini syncing a fork
 
 <!-- Links -->
 
-**Buy me a indomie :**
-
-_Donasi ?_ :
+**sponsoship**
+you can support me to keep update and make content with this link, i need eat, place, and pay a service.
+siapapun, berapapun, saya ucapkan terimakasih
 
 - saweria.co : [ Traktir baso aja at saweria [ DANA, OVO, dll ] ](https://saweria.co/naagaraa)
 - trakterr.id : [ Traktir baso aja at saweria [ DANA, OVO, dll ] ](https://trakteer.id/naagaraa)
