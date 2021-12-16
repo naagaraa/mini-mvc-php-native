@@ -9,7 +9,6 @@ namespace MiniMVC\System;
  * ===============================================================================================
  *  
  * storage ada file uploaded system native build from zero
- * ini juga lupa w bgst wkwkw
  */
 class Storage
 {
@@ -21,14 +20,15 @@ class Storage
 	private $file_tmp;
 	private $file_error;
 	private $size;
-	private $ext = ["jpg", "jpeg", "png", "gif", "svg"];
+	private static $ext = ["jpg", "jpeg", "png", "gif", "svg", "pdf", "doc", "docx", "txt"];
 
 	/**
 	 * 
 	 */
 	public function __construct()
 	{
-		$this->directory = __DIR__ . DIRECTORY_SEPARATOR;
+		$this->directory = getcwd() . DIRECTORY_SEPARATOR;
+		dump($this->directory);
 	}
 
 	/**
@@ -47,7 +47,7 @@ class Storage
 	 * @param string
 	 * @return object
 	 */
-	public function Files($name = "")
+	private static function Files($name = "")
 	{
 		try {
 			if ($name == "") {
@@ -58,7 +58,7 @@ class Storage
 				$data = [
 					"file_name" => $_FILES[$name]["name"],
 					"file_type" => $_FILES[$name]["type"],
-					"file_tmp" => chmod($_FILES[$name]["tmp_name"], 0777),
+					"file_tmp" => $_FILES[$name]["tmp_name"],
 					"file_error" => $_FILES[$name]["error"],
 					"file_size" => $_FILES[$name]["size"]
 				];
@@ -66,7 +66,7 @@ class Storage
 				return (object) $data;
 			};
 		} catch (\Throwable $th) {
-			//throw $th;
+			throw $th;
 		}
 	}
 
@@ -76,7 +76,7 @@ class Storage
 	 * @param string
 	 * @return boolean
 	 */
-	public function Already($files)
+	private static function Already($files)
 	{
 		try {
 			if (file_exists($files)) {
@@ -97,11 +97,13 @@ class Storage
 	 * @param string
 	 * @return string
 	 */
-	public function ConvertImage($filename, $extention)
+	private static function ConvertImage($filename, $extention)
 	{
 		# convert image tmp to base64
+		dump($filename);
 		$file_base64 = base64_encode(file_get_contents($filename));
 		$files = 'data:image/' . $extention . ';base64,' . $file_base64;
+		return $files;
 	}
 
 	/**
@@ -110,11 +112,10 @@ class Storage
 	 * @param string
 	 * @return object
 	 */
-	public function Upload($filename, $target_directory, $genereate_name = false)
+	public static function Upload($filename, $target_directory, $genereate_name = false)
 	{
 		# files checker
 		$files = self::Files($filename);
-
 
 		$name_of_file = "";
 		if ($genereate_name == false) {
@@ -126,7 +127,8 @@ class Storage
 		$files_path = $target_directory . basename($files->file_name);
 		$extention = strtolower(pathinfo($files_path, PATHINFO_EXTENSION));
 
-		if (in_array($extention, $this->ext)) {
+		if (in_array($extention, self::$ext)) {
+			dump($files->file_tmp, $extention);
 			# convert image tmp to base64
 			self::ConvertImage($files->file_tmp, $extention);
 			# check file already exits
@@ -134,8 +136,10 @@ class Storage
 
 			if ($already == false) echo "gagal";
 			if ($already == true) {
+				dump($files->file_tmp);
+				dump($target_directory . $name_of_file);
 				if (move_uploaded_file($files->file_tmp, $target_directory . $name_of_file)) {
-					echo "gambar berhasil di upload ";
+					echo "file {$extention} berhasil di upload ";
 					$image = [
 						"image_original_name" => $files->file_name,
 						"image_name" => $name_of_file,
@@ -157,7 +161,7 @@ class Storage
 	 * @param string
 	 * @return boolean
 	 */
-	public function RemoveFile($path_file_name = "")
+	public static function RemoveFile($path_file_name = "")
 	{
 		# check jika file tidak ada.
 		if (!file_exists($path_file_name)) {
