@@ -12,6 +12,10 @@
 <p>pembukaan indonesia : </p>
 <p>Hi, Project ini dibuat dari latihan saya belajar web programing dari berbagai sumber di internet seperti youtube, stackoverflow dan github. project ini merupakan php native yang di buat menggunakan pattern MVC dengan konsep OOP (Object oriented programing )</p>
 
+Thank you kindly for the ⭐ and forks. When I first started working on this project in 2019, I had just undergraduated from college and had no prior exposure to web-development or open source. cause i'am start learn web-development and also explorer to many algorithm mostly used at skripsi (TA). so why i'am not build the package for reusability ? why not.
+
+Without financial support, it was overwhelming to fix these issues, adding new method, reading a journal, not to mention that I felt like an absolute imposter. With a heavy heart 💔, I decided to keep continue :( and this in my portofolio my project
+
 ---
 
 ## Bug and problem
@@ -19,7 +23,8 @@
 if you working in linux or continue project using linux like ubuntu or kali, my project doesn't work IDK , i need knowledge about directory separator for both OS windows and linux, caused I develop this project used windows 10 single home. maybe if you develop in linux you will get problem, for know i can't help. cause my self don't know about that hahaha try solve your problem.
 
 - database migration not ready , just for beta test u want to use
-- - linux deployment has problem
+- linux deployment has problem
+- i'am not always update documentation cause forget it.
 
 if official documentation in indonesia have problem maybe next i will update
 
@@ -47,6 +52,7 @@ for release after i'm fixed and tested new fiture update, you can enjoy install 
 - **Documentation - Indonesia** [ website ](http://docs.minimvcphp.nagara.my.id/)
 - **Documentation - english** : :warning: not avaliable for now.
 - **github wiki** [ wiki ](https://github.com/naagaraa/mini-mvc-php-native/wiki)
+- **another library** [metode-skripshit](https://github.com/naagaraa/metode-skriphit)
 
 <br>
 

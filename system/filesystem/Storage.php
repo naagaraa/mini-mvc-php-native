@@ -28,7 +28,6 @@ class Storage
 	public function __construct()
 	{
 		$this->directory = getcwd() . DIRECTORY_SEPARATOR;
-		dump($this->directory);
 	}
 
 	/**
@@ -81,9 +80,11 @@ class Storage
 		try {
 			if (file_exists($files)) {
 				# file sudah ada
+				echo "files sudah ada <br>";
 				return false;
 			} else {
 				# file belum ada
+				echo "files belum ada <br>";
 				return true;
 			}
 		} catch (\Throwable $th) {
@@ -100,7 +101,6 @@ class Storage
 	private static function ConvertImage($filename, $extention)
 	{
 		# convert image tmp to base64
-		dump($filename);
 		$file_base64 = base64_encode(file_get_contents($filename));
 		$files = 'data:image/' . $extention . ';base64,' . $file_base64;
 		return $files;
@@ -124,34 +124,66 @@ class Storage
 			$name_of_file = random_file_name($files->file_name);
 		}
 
-		$files_path = $target_directory . basename($files->file_name);
-		$extention = strtolower(pathinfo($files_path, PATHINFO_EXTENSION));
+		// make folder
+		if (!file_exists($target_directory)) {
+			mkdir($target_directory, 777, true);
 
-		if (in_array($extention, self::$ext)) {
-			dump($files->file_tmp, $extention);
-			# convert image tmp to base64
-			self::ConvertImage($files->file_tmp, $extention);
-			# check file already exits
-			$already = self::Already($target_directory . $name_of_file);
+			// first upload
+			$files_path = $target_directory . basename($files->file_name);
+			$extention = strtolower(pathinfo($files_path, PATHINFO_EXTENSION));
 
-			if ($already == false) echo "gagal";
-			if ($already == true) {
-				dump($files->file_tmp);
-				dump($target_directory . $name_of_file);
-				if (move_uploaded_file($files->file_tmp, $target_directory . $name_of_file)) {
-					echo "file {$extention} berhasil di upload ";
-					$image = [
-						"image_original_name" => $files->file_name,
-						"image_name" => $name_of_file,
-						"image_type" => $files->file_type,
-						"image_size" => $files->file_size,
-						"image_error" => $files->file_error,
-					];
-					return (object) $image;
-				} else {
-					echo "Sorry, there was an error uploading your file.";
-				}
-			};
+			if (in_array($extention, self::$ext)) {
+				# convert image tmp to base64
+				self::ConvertImage($files->file_tmp, $extention);
+				# check file already exits
+				$already = self::Already($target_directory . $name_of_file);
+
+				if ($already == false) echo "gagal";
+				if ($already == true) {
+					if (move_uploaded_file($files->file_tmp, $target_directory . $name_of_file)) {
+						echo "file {$extention} berhasil di upload <br>";
+						$image = [
+							"file_original_name" => $files->file_name,
+							"file_name" => $name_of_file,
+							"file_type" => $files->file_type,
+							"file_size" => $files->file_size,
+							"file_error" => $files->file_error,
+						];
+						return (object) $image;
+					} else {
+						echo "Sorry, there was an error uploading your file. <br>";
+					}
+				};
+			}
+		} else {
+			echo "directory sudah ada. <br>";
+			// first upload
+			$files_path = $target_directory . basename($files->file_name);
+			$extention = strtolower(pathinfo($files_path, PATHINFO_EXTENSION));
+
+			if (in_array($extention, self::$ext)) {
+				# convert image tmp to base64
+				self::ConvertImage($files->file_tmp, $extention);
+				# check file already exits
+				$already = self::Already($target_directory . $name_of_file);
+
+				if ($already == false) echo "gagal";
+				if ($already == true) {
+					if (move_uploaded_file($files->file_tmp, $target_directory . $name_of_file)) {
+						echo "file {$extention} berhasil di upload <br>";
+						$image = [
+							"file_original_name" => $files->file_name,
+							"file_name" => $name_of_file,
+							"file_type" => $files->file_type,
+							"file_size" => $files->file_size,
+							"file_error" => $files->file_error,
+						];
+						return (object) $image;
+					} else {
+						echo "Sorry, there was an error uploading your file. <br>";
+					}
+				};
+			}
 		}
 	}
 
@@ -193,10 +225,10 @@ class Storage
 		# move tmpt file ke dir temp
 		if ($success == true) {
 			if ($genereate_name == false) {
-				echo "gambar berhasil di update";
+				echo "file berhasil di update";
 				self::Upload($path_new_files, $target_directory, false);
 			} else {
-				echo "gambar berhasil di update";
+				echo "file berhasil di update";
 				return self::Upload($path_new_files, $target_directory, true);
 			}
 		}

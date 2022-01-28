@@ -91,11 +91,13 @@ class Routes
 
 
 		// extract new params
-		$newparams = [];
-		if ($parameter) {
-			# code...
-			$newparams = explode('/', $parameter[0]);
-		}
+		$newparams = $parameter; #update 2022
+		// $newparams = [];
+		// if ($parameter) {
+		// 	# code...
+		// 	$newparams = explode('/', $parameter[0]);
+		// }
+		// dump($parameter);
 		// end extract new params
 
 

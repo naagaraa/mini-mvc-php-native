@@ -20,7 +20,7 @@ date_default_timezone_set('Asia/Jakarta');
 
 function time_now()
 {
-    echo date('H:i:s');
+    return date('H:i:s');
 }
 
  /** 
@@ -34,7 +34,7 @@ function time_now()
 
 function time_wib()
 {
-    echo date("h:i:sa");
+    return date("h:i:sa");
 }
 
  /** 
@@ -48,7 +48,7 @@ function time_wib()
 
 function date_now()
 {
-    echo date("Y-m-d");
+    return date("Y-m-d");
 }
 
 
@@ -63,5 +63,5 @@ function date_now()
 
 function year_now()
 {
-    echo date("Y");
+    return date("Y");
 }
