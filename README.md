@@ -84,7 +84,7 @@ untuk mendapatkan update kamu bisa baca disini syncing a fork
 
 ### Creator , Contribution dan development
 
-- **Naagaraa Mahasiswa Darma Persada dan Content Creator** [ instagram ](https://www.instagram.com/naagaraa/) creator , pengembang dan maintainers mini mvc
+- **Naagaraa Mahasiswa Darma Persada dan Content Creator** creator , pengembang dan maintainers mini mvc
 - **Sandhikagalih Dosen Unpas dan Content Creator** [ Instagram ](https://www.instagram.com/sandhikagalih/) pengajar saya pertama untuk php
 
 <br>
