@@ -50,6 +50,7 @@ for release after i'm fixed and tested new fiture update, you can enjoy install 
 
 - **Playlist project** [ Youtube ](https://www.youtube.com/playlist?list=PLK5_CL-hAKCf-H7snj3RlLVjrkJ7yql6o)
 - **Documentation - Indonesia** [ website ](http://docs.minimvcphp.nagara.my.id/)
+- **Documentation Repo - Indonesia** [ repo ](https://github.com/naagaraa/minimvc-docs)
 - **Documentation - english** : :warning: not avaliable for now.
 - **github wiki** [ wiki ](https://github.com/naagaraa/mini-mvc-php-native/wiki)
 - **another library** [metode-skripshit](https://github.com/naagaraa/metode-skriphit)
@@ -59,7 +60,6 @@ for release after i'm fixed and tested new fiture update, you can enjoy install 
 ### contribute
 
 for contribute read this
-
 - **contribute**[ contribute ](https://github.com/naagaraa/mini-mvc-php-native/blob/master/CONTRIBUTING.md)
 
 <br>
