@@ -34,7 +34,7 @@ if official documentation in indonesia have problem maybe next i will update
 
 ## About release
 
-for release after i'm fixed and tested new fiture update, you can enjoy install used composer again, but if you want tested beta test install via git clone and run composer install. check [ website ](http://docs.minimvcphp.nagara.my.id/) for detail how to install with git cli in bahasa indonesia.
+for release after i'm fixed and tested new fiture update, you can enjoy install used composer again, but if you want tested beta test install via git clone and run composer install. check [ website ](https://nagara.gitbook.io/code-zero-project/) for detail how to install with git cli in bahasa indonesia.
 
 ## Example Project
 
@@ -49,7 +49,7 @@ for release after i'm fixed and tested new fiture update, you can enjoy install 
 ## Documentasi lainnya
 
 - **Playlist project** [ Youtube ](https://www.youtube.com/playlist?list=PLK5_CL-hAKCf-H7snj3RlLVjrkJ7yql6o)
-- **Documentation - Indonesia** [ website ](http://docs.minimvcphp.nagara.my.id/)
+- **Documentation - Indonesia** [ website ](https://nagara.gitbook.io/code-zero-project/)
 - **Documentation Repo - Indonesia** [ repo ](https://github.com/naagaraa/minimvc-docs)
 - **Documentation - english** : :warning: not avaliable for now.
 - **github wiki** [ wiki ](https://github.com/naagaraa/mini-mvc-php-native/wiki)
