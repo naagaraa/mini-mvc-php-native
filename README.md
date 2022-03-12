@@ -6,7 +6,7 @@
 
 ## PROJECT NATIVE FRAMEWORK PHP
 
-##### This project is currently on break time, cause of me, for now has working my TA ( final project for my graduation )
+##### This project is currently on archive, because, for now, i'm  currenly learn new language suck as golang. and i'm also tired for maintenance this framework haha. and this framework it's peronal my fortofolio for php languague.
 
 <!-- Description -->
 <p>pembukaan indonesia : </p>
