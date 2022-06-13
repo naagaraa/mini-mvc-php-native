@@ -40,7 +40,7 @@ for release after i'm fixed and tested new fiture update, you can enjoy install 
 
 ⚠️this is beta version from mini mvc
 - ** simple blog ** [simple blog](https://github.com/naagaraa/blog-kerja-praktek-v2) v0.0-beta
-- ** simple similarity index detection ** [similarity index](https://github.com/naagaraa/orion-scanner) v-latest
+- ** simple similarity index detection ** [similarity index](https://github.com/naagaraa/orion-scanner) | change to private
 
 🆕this on going for example code on current version of mini mvc 
 - **on going**
