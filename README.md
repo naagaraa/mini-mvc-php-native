@@ -1,12 +1,12 @@
 <!-- title -->
 
-# MINI MVC PHP NATIVE
+# MINI MVC PHP NATIVE - UNDERMAINTENACE (UBUNTU)
 
 ---
 
 ## PROJECT NATIVE FRAMEWORK PHP
 
-##### This project is currently on archive, because, for now, i'm  currenly learn new language suck as golang. and i'm also tired for maintenance this framework haha. and this framework it's peronal my fortofolio for php languague.
+##### This project is currently on archive, because, for now, i'm currenly learn new language suck as golang. and i'm also tired for maintenance this framework haha. and this framework it's peronal my fortofolio for php languague.
 
 <!-- Description -->
 <p>pembukaan indonesia : </p>
@@ -39,10 +39,12 @@ for release after i'm fixed and tested new fiture update, you can enjoy install 
 ## Example Project
 
 ⚠️this is beta version from mini mvc
+
 - ** simple blog ** [simple blog](https://github.com/naagaraa/blog-kerja-praktek-v2) v0.0-beta
 - ** simple similarity index detection ** [similarity index](https://github.com/naagaraa/orion-scanner) | change to private
 
-🆕this on going for example code on current version of mini mvc 
+🆕this on going for example code on current version of mini mvc
+
 - **on going**
 
 <!-- table of content YT -->
@@ -61,6 +63,7 @@ for release after i'm fixed and tested new fiture update, you can enjoy install 
 ### contribute
 
 for contribute read this
+
 - **contribute**[ contribute ](https://github.com/naagaraa/mini-mvc-php-native/blob/master/CONTRIBUTING.md)
 
 <br>
