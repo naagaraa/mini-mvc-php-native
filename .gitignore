@@ -4,6 +4,7 @@
 # Except this file
 !.gitignore
 .env
+composer.lock
 
 # folder vendor
 .github/*
