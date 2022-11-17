@@ -15,7 +15,7 @@ $system["APP_NAME"]          =  $_ENV["APP_NAME"]             ? $_ENV["APP_NAME"
 $system["APP_HOST"]          =  $_ENV["APP_HOST"]             ? $_ENV["APP_HOST"]             : 'http://localhost/';
 
 #app debug
-$system["APP_DEBUG"]          =  $_ENV["APP_DEBUG"]             ? $_ENV["APP_DEBUG"]             : false;
+$system["APP_DEBUG"]          =  $_ENV["APP_DEBUG"]             ? $_ENV["APP_DEBUG"]             : "false";
 
 # Mail
 $system["MAIL_DEBUG"]          =  $_ENV["MAIL_DEBUG"]             ? $_ENV["MAIL_DEBUG"]             : 'true';

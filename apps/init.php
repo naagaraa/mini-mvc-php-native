@@ -41,17 +41,16 @@ spl_autoload_register(function ($class) { # spl autoload php atau bootstrap load
  * 
  */
 
-use MiniMvc\Apps\Core\Bootstraping\Autoload; 
-
+use MiniMvc\Apps\Core\Bootstraping\Autoload;
 
 
 /**
  * -------------------------------------------------------------------------------------------
  * Documentasi Code init
- * @author nagara 
+ * @author nagara
  * -------------------------------------------------------------------------------------------
- *  load libraries folder and all file in sub folder
- * 
+ * load libraries folder and all file in sub folder
+ *
  */
 
 $autoload = new Autoload;
