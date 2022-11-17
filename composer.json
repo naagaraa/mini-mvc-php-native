@@ -12,9 +12,9 @@
     ],
     "require": {
         "bramus/router": "~1.5",
-        "kint-php/kint": "dev-master",
+        "kint-php/kint": "^4.2.3",
         "markrogoyski/math-php": "^1.10",
-        "maximebf/debugbar": "1.18.x-dev",
+        "maximebf/debugbar": "^1.18.1",
         "michelf/php-markdown": "dev-lib",
         "mpdf/mpdf": "^8.0",
         "phpmailer/phpmailer": "^6.2",
