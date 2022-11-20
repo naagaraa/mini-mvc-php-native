@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "6933c6b2484b9d6545eb86af1edfbded",
+    "content-hash": "3cca67ed187414ffedde931c79aa9e3f",
     "packages": [
         {
             "name": "amphp/amp",
@@ -1435,7 +1435,7 @@
         },
         {
             "name": "michelf/php-markdown",
-            "version": "dev-lib",
+            "version": "2.0.0",
             "source": {
                 "type": "git",
                 "url": "https://github.com/michelf/php-markdown.git",
@@ -1456,7 +1456,6 @@
                 "phpstan/phpstan-phpunit": ">=1.0",
                 "phpunit/phpunit": "^9.5"
             },
-            "default-branch": true,
             "type": "library",
             "autoload": {
                 "psr-4": {
@@ -2883,12 +2882,12 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/symfony/console.git",
-                "reference": "3836ffa8ca0f9c7b8c59c259df4f471281d53b51"
+                "reference": "f2dd071d091edca54ac2ad4acb549be7463af975"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/symfony/console/zipball/3836ffa8ca0f9c7b8c59c259df4f471281d53b51",
-                "reference": "3836ffa8ca0f9c7b8c59c259df4f471281d53b51",
+                "url": "https://api.github.com/repos/symfony/console/zipball/f2dd071d091edca54ac2ad4acb549be7463af975",
+                "reference": "f2dd071d091edca54ac2ad4acb549be7463af975",
                 "shasum": ""
             },
             "require": {
@@ -2974,7 +2973,7 @@
                     "type": "tidelift"
                 }
             ],
-            "time": "2022-11-14T10:14:56+00:00"
+            "time": "2022-11-19T14:44:42+00:00"
         },
         {
             "name": "symfony/deprecation-contracts",
@@ -5097,12 +5096,12 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/sebastianbergmann/php-code-coverage.git",
-                "reference": "2dfaeeb12a6fdff91557d2817828f82a09e53c73"
+                "reference": "c77b56b63e3d2031bd8997fcec43c1925ae46559"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/sebastianbergmann/php-code-coverage/zipball/2dfaeeb12a6fdff91557d2817828f82a09e53c73",
-                "reference": "2dfaeeb12a6fdff91557d2817828f82a09e53c73",
+                "url": "https://api.github.com/repos/sebastianbergmann/php-code-coverage/zipball/c77b56b63e3d2031bd8997fcec43c1925ae46559",
+                "reference": "c77b56b63e3d2031bd8997fcec43c1925ae46559",
                 "shasum": ""
             },
             "require": {
@@ -5158,7 +5157,7 @@
             ],
             "support": {
                 "issues": "https://github.com/sebastianbergmann/php-code-coverage/issues",
-                "source": "https://github.com/sebastianbergmann/php-code-coverage/tree/9.2"
+                "source": "https://github.com/sebastianbergmann/php-code-coverage/tree/9.2.19"
             },
             "funding": [
                 {
@@ -5166,7 +5165,7 @@
                     "type": "github"
                 }
             ],
-            "time": "2022-11-16T04:22:16+00:00"
+            "time": "2022-11-18T07:47:47+00:00"
         },
         {
             "name": "phpunit/php-file-iterator",
@@ -7141,9 +7140,7 @@
     ],
     "aliases": [],
     "minimum-stability": "dev",
-    "stability-flags": {
-        "michelf/php-markdown": 20
-    },
+    "stability-flags": [],
     "prefer-stable": false,
     "prefer-lowest": false,
     "platform": [],

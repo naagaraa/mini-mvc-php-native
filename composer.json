@@ -1,7 +1,6 @@
 {
-    "name": "nagara/mini-mvc-php-native",
-    "description": "MINI MVC PHP NATIVE PROJECT NATIVE FRAMEWORK",
-    "homepage": "https://github.com/naagaraa/mini-mvc-php-native",
+    "name": "nagara/framework",
+    "description": "php framework project bahasa indonesia for old school",
     "type": "project",
     "keywords": [
         "framework",
@@ -15,7 +14,7 @@
         "kint-php/kint": "^4.2.3",
         "markrogoyski/math-php": "^1.10",
         "maximebf/debugbar": "^1.18.1",
-        "michelf/php-markdown": "dev-lib",
+        "michelf/php-markdown": "^2.0.0",
         "mpdf/mpdf": "^8.0",
         "phpmailer/phpmailer": "^6.2",
         "phpoffice/phpspreadsheet": "^1.18",
@@ -32,6 +31,13 @@
         "codeception/module-asserts": "^1.0.0"
     },
     "license": "MIT",
+    "authors": [
+        {
+            "name": "naagaraa",
+            "email": "ekabersinar@gmail.com"
+        }
+    ],
+    "minimum-stability": "dev",
     "autoload": {
         "psr-4": {
             "app\\": "apps/",
@@ -46,14 +52,6 @@
             "vendor/vlucas/phpdotenv/src"
         ]
     },
-    "authors": [
-        {
-            "name": "naagaraa",
-            "email": "ekabersinar@gmail.com",
-            "role": "developer"
-        }
-    ],
-    "minimum-stability": "dev",
     "archive": {
         "directory": "dist",
         "skip-dev": false
@@ -66,7 +64,8 @@
     },
     "scripts": {
         "post-create-project-cmd": [
-            "@php nagara generate:env"
+            "@php nagara generate:env",
+            "composer update"
         ]
     },
     "repositories": [
